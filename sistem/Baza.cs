@@ -17,7 +17,8 @@ namespace sistem
         private Baza() { }
 
        
-        /*registracija */
+        /*registracija korisnika, dozvoljeno je da postoji samo jedan korisnik
+          baza reguliše broj registrovanih korinsika */
 
         public int Registracija_korisnika(string admin_ime,string admin_lozinka, string email, string telefon)
         {
@@ -43,8 +44,9 @@ namespace sistem
 
                     if (rdr.Read())
                     {
-                        int d = rdr.GetInt32(0);
+                        status = rdr.GetInt32(rdr.GetOrdinal("status"));
                     }
+                    
                     return status;
                     
                 }

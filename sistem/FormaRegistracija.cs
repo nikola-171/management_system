@@ -65,14 +65,14 @@ namespace sistem
                         }
                         else
                         {
-                            MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije. ", "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije. "+status , "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
 
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." , "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." + exception.ToString() , "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

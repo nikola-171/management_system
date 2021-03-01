@@ -83,11 +83,9 @@ begin
 		
 			set brojac = brojac + 1;
 		end while l;
-		select 0 as 'status';
-    else
-		select 1 as 'status';
     end if;
-	
+    
+	select admin_vec_registrovan as 'status';
 	commit;
 end\\
 delimiter ;
