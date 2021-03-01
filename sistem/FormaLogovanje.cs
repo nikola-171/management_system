@@ -31,9 +31,10 @@ namespace sistem
             {
                 try
                 {
-                    //MessageBox.Show(r.Field<string>("ime"));
+                    /*provera da li korisnik postoji u bazi*/
+
                     Baza b = Baza.daj_instancu();
-                    b.Provera_autentifikacije_korisnika("zz", "hh");
+                    
                 }
                 catch (Exception excpetion)
                 {

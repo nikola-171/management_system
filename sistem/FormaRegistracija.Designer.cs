@@ -76,7 +76,7 @@ namespace sistem
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 391);
+            this.groupBox1.Size = new System.Drawing.Size(383, 391);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -86,7 +86,7 @@ namespace sistem
             this.dugme_nazad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dugme_nazad.Location = new System.Drawing.Point(10, 342);
             this.dugme_nazad.Name = "dugme_nazad";
-            this.dugme_nazad.Size = new System.Drawing.Size(300, 32);
+            this.dugme_nazad.Size = new System.Drawing.Size(339, 32);
             this.dugme_nazad.TabIndex = 15;
             this.dugme_nazad.Text = "nazad";
             this.dugme_nazad.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@ namespace sistem
             this.dugme_registracija.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dugme_registracija.Location = new System.Drawing.Point(10, 301);
             this.dugme_registracija.Name = "dugme_registracija";
-            this.dugme_registracija.Size = new System.Drawing.Size(300, 32);
+            this.dugme_registracija.Size = new System.Drawing.Size(339, 32);
             this.dugme_registracija.TabIndex = 14;
             this.dugme_registracija.Text = "prosledi";
             this.dugme_registracija.UseVisualStyleBackColor = false;
@@ -106,63 +106,70 @@ namespace sistem
             // 
             // telefon_unos
             // 
+            this.telefon_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefon_unos.Location = new System.Drawing.Point(159, 256);
             this.telefon_unos.MaxLength = 15;
             this.telefon_unos.Name = "telefon_unos";
-            this.telefon_unos.Size = new System.Drawing.Size(152, 29);
+            this.telefon_unos.Size = new System.Drawing.Size(190, 25);
             this.telefon_unos.TabIndex = 13;
             // 
             // email_unos
             // 
+            this.email_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_unos.Location = new System.Drawing.Point(159, 221);
-            this.email_unos.MaxLength = 20;
+            this.email_unos.MaxLength = 40;
             this.email_unos.Name = "email_unos";
-            this.email_unos.Size = new System.Drawing.Size(152, 29);
+            this.email_unos.Size = new System.Drawing.Size(190, 25);
             this.email_unos.TabIndex = 12;
             // 
             // lozinka_ponovo_unos
             // 
+            this.lozinka_ponovo_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinka_ponovo_unos.Location = new System.Drawing.Point(159, 186);
             this.lozinka_ponovo_unos.MaxLength = 20;
             this.lozinka_ponovo_unos.Name = "lozinka_ponovo_unos";
-            this.lozinka_ponovo_unos.Size = new System.Drawing.Size(152, 29);
+            this.lozinka_ponovo_unos.Size = new System.Drawing.Size(190, 25);
             this.lozinka_ponovo_unos.TabIndex = 11;
             this.lozinka_ponovo_unos.UseSystemPasswordChar = true;
             // 
             // lozinka_unos
             // 
+            this.lozinka_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinka_unos.Location = new System.Drawing.Point(159, 151);
             this.lozinka_unos.MaxLength = 20;
             this.lozinka_unos.Name = "lozinka_unos";
-            this.lozinka_unos.Size = new System.Drawing.Size(152, 29);
+            this.lozinka_unos.Size = new System.Drawing.Size(190, 25);
             this.lozinka_unos.TabIndex = 10;
             this.lozinka_unos.UseSystemPasswordChar = true;
             // 
             // korisnicko_ime_unos
             // 
             this.korisnicko_ime_unos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.korisnicko_ime_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.korisnicko_ime_unos.Location = new System.Drawing.Point(159, 116);
             this.korisnicko_ime_unos.MaxLength = 20;
             this.korisnicko_ime_unos.Name = "korisnicko_ime_unos";
-            this.korisnicko_ime_unos.Size = new System.Drawing.Size(152, 29);
+            this.korisnicko_ime_unos.Size = new System.Drawing.Size(190, 25);
             this.korisnicko_ime_unos.TabIndex = 9;
             // 
             // prezime_unos
             // 
             this.prezime_unos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.prezime_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prezime_unos.Location = new System.Drawing.Point(159, 81);
             this.prezime_unos.MaxLength = 15;
             this.prezime_unos.Name = "prezime_unos";
-            this.prezime_unos.Size = new System.Drawing.Size(152, 29);
+            this.prezime_unos.Size = new System.Drawing.Size(190, 25);
             this.prezime_unos.TabIndex = 8;
             // 
             // ime_unos
             // 
             this.ime_unos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.ime_unos.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ime_unos.Location = new System.Drawing.Point(159, 46);
             this.ime_unos.MaxLength = 15;
             this.ime_unos.Name = "ime_unos";
-            this.ime_unos.Size = new System.Drawing.Size(152, 29);
+            this.ime_unos.Size = new System.Drawing.Size(190, 25);
             this.ime_unos.TabIndex = 7;
             // 
             // label7
@@ -244,7 +251,7 @@ namespace sistem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(355, 474);
+            this.ClientSize = new System.Drawing.Size(407, 474);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

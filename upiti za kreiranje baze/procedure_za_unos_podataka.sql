@@ -13,6 +13,10 @@ begin
 	declare exit handler for sqlexception
     begin
 		rollback;
+        GET DIAGNOSTICS CONDITION 1
+		@p2 = MESSAGE_TEXT;
+        
+        select @p2 as 'msg';
     end;
     
     start transaction;
@@ -79,7 +83,9 @@ begin
 		
 			set brojac = brojac + 1;
 		end while l;
-    
+		select 0 as 'status';
+    else
+		select 1 as 'status';
     end if;
 	
 	commit;
