@@ -13,7 +13,7 @@ namespace sistem
         /*implementacija mysql baze*/
 
         private static Baza instanca = null;
-        private static string KONEKCIJA = "server=localhost;user id=fakultet_admin;database=fakultet;port=3308;password=admin_lozinka";
+        private static readonly string KONEKCIJA = "server=localhost;user id=fakultet_admin;database=fakultet;port=3308;password=admin_lozinka";
         private Baza() { }
 
        

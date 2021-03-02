@@ -9,6 +9,7 @@ begin
     declare godina_brojac tinyint unsigned default 0;
     declare id_prim tinyint unsigned default 0;
     declare admin_vec_registrovan tinyint unsigned default 0;
+    declare hesirana_lozinka varchar(255) default '';
     
 	declare exit handler for sqlexception
     begin
@@ -83,9 +84,11 @@ begin
 		
 			set brojac = brojac + 1;
 		end while l;
+        select 0 as 'status';
+	else
+		select 1 as 'status';
     end if;
     
-	select admin_vec_registrovan as 'status';
 	commit;
 end\\
 delimiter ;

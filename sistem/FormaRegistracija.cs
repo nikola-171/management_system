@@ -42,17 +42,23 @@ namespace sistem
                 }
                 else
                 {
+                    this.UseWaitCursor = true;
+                    ucitavanje_poruka.Text = "Loading, please wait...";
+                    dugme_nazad.Enabled = false;
+                    dugme_registracija.Enabled = false;
+                    ime_unos.Enabled = false;
+                    prezime_unos.Enabled = false;
+                    korisnicko_ime_unos.Enabled = false;
+                    lozinka_unos.Enabled = false;
+                    lozinka_ponovo_unos.Enabled = false;
+                    email_unos.Enabled = false;
+                    telefon_unos.Enabled = false;
+
                     try
                     {
                         int status = Baza.daj_instancu().Registracija_korisnika(korisnicko_ime_unos.Text.Trim(), lozinka_unos.Text.Trim(),
                                                                     email_unos.Text.Trim(), telefon_unos.Text.Trim());
-                        korisnicko_ime_unos.Text = "";
-                        lozinka_unos.Text = "";
-                        ime_unos.Text = "";
-                        prezime_unos.Text = "";
-                        email_unos.Text = "";
-                        telefon_unos.Text = "";
-                        lozinka_ponovo_unos.Text = "";
+                        
 
                         if (status.Equals(0))
                         {
@@ -66,13 +72,33 @@ namespace sistem
                         else
                         {
                             MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije. "+status , "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-
+                        }             
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." + exception.ToString() , "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." , "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        korisnicko_ime_unos.Text = "";
+                        lozinka_unos.Text = "";
+                        ime_unos.Text = "";
+                        prezime_unos.Text = "";
+                        email_unos.Text = "";
+                        telefon_unos.Text = "";
+                        lozinka_ponovo_unos.Text = "";
+
+                        this.UseWaitCursor = false;
+                        ucitavanje_poruka.Text = "";
+                        dugme_nazad.Enabled = true;
+                        dugme_registracija.Enabled = true;
+                        ime_unos.Enabled = true;
+                        prezime_unos.Enabled = true;
+                        korisnicko_ime_unos.Enabled = true;
+                        lozinka_unos.Enabled = true;
+                        lozinka_ponovo_unos.Enabled = true;
+                        email_unos.Enabled = true;
+                        telefon_unos.Enabled = true;
                     }
                 }
             }
