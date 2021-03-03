@@ -40,6 +40,7 @@ namespace sistem
             this.lozinka_unos = new System.Windows.Forms.TextBox();
             this.korisnicko_ime_unos = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelaUcitavanje = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +79,7 @@ namespace sistem
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.labelaUcitavanje);
             this.groupBox1.Controls.Add(this.dugme_registracija);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dugme_logovanje);
@@ -88,7 +90,7 @@ namespace sistem
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 250);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(284, 221);
+            this.groupBox1.Size = new System.Drawing.Size(284, 253);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ulogujte se";
@@ -154,12 +156,21 @@ namespace sistem
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // labelaUcitavanje
+            // 
+            this.labelaUcitavanje.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaUcitavanje.Location = new System.Drawing.Point(10, 216);
+            this.labelaUcitavanje.Name = "labelaUcitavanje";
+            this.labelaUcitavanje.Size = new System.Drawing.Size(248, 20);
+            this.labelaUcitavanje.TabIndex = 8;
+            this.labelaUcitavanje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormaLogovanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(304, 483);
+            this.ClientSize = new System.Drawing.Size(304, 515);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -189,5 +200,6 @@ namespace sistem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button dugme_registracija;
+        private System.Windows.Forms.Label labelaUcitavanje;
     }
 }

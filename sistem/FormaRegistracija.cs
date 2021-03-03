@@ -17,12 +17,40 @@ namespace sistem
             InitializeComponent();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            MenadzerFormi.Zatvori();
+        }
+
         private void dugme_nazad_Click(object sender, EventArgs e)
         {
-            FormaLogovanje logovanje = new FormaLogovanje();
-            this.Hide();
-            logovanje.ShowDialog();
-            this.Close();
+             MenadzerFormi.dajFormu<FormaLogovanje>(this);   
+        }
+
+        private void Zakljucaj_polja(bool zakljucaj)
+        {
+            if (zakljucaj)
+            {
+                ucitavanje_poruka.Text = "Loading, please wait...";
+            }
+            else
+            {
+                ucitavanje_poruka.Text = "";
+            }
+            this.UseWaitCursor = zakljucaj;
+            dugme_nazad.Enabled = zakljucaj;
+            dugme_registracija.Enabled = zakljucaj;
+            ime_unos.Enabled = zakljucaj;
+            prezime_unos.Enabled = zakljucaj;
+            korisnicko_ime_unos.Enabled = zakljucaj;
+            lozinka_unos.Enabled = zakljucaj;
+            lozinka_ponovo_unos.Enabled = zakljucaj;
+            email_unos.Enabled = zakljucaj;
+            telefon_unos.Enabled = zakljucaj;
         }
 
         private void dugme_registracija_Click(object sender, EventArgs e)
@@ -42,6 +70,7 @@ namespace sistem
                 }
                 else
                 {
+                    
                     this.UseWaitCursor = true;
                     ucitavanje_poruka.Text = "Loading, please wait...";
                     dugme_nazad.Enabled = false;
@@ -57,7 +86,7 @@ namespace sistem
                     try
                     {
                         int status = Baza.daj_instancu().Registracija_korisnika(korisnicko_ime_unos.Text.Trim(), lozinka_unos.Text.Trim(),
-                                                                    email_unos.Text.Trim(), telefon_unos.Text.Trim());
+                                                                    email_unos.Text.Trim(), telefon_unos.Text.Trim(), ime_unos.Text.Trim(), prezime_unos.Text.Trim());
                         
 
                         if (status.Equals(0))
@@ -71,12 +100,12 @@ namespace sistem
                         }
                         else
                         {
-                            MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije. "+status , "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije. " +status , "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }             
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." , "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." + exception.ToString(), "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -87,6 +116,8 @@ namespace sistem
                         email_unos.Text = "";
                         telefon_unos.Text = "";
                         lozinka_ponovo_unos.Text = "";
+
+                       
 
                         this.UseWaitCursor = false;
                         ucitavanje_poruka.Text = "";

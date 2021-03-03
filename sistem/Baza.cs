@@ -20,7 +20,43 @@ namespace sistem
         /*registracija korisnika, dozvoljeno je da postoji samo jedan korisnik
           baza reguliše broj registrovanih korinsika */
 
-        public int Registracija_korisnika(string admin_ime,string admin_lozinka, string email, string telefon)
+        public bool Validacija_korisnika(string admin_ime, string admin_lozinka)
+        {
+            bool status = false;
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+                {
+                    con.Open();
+
+                    string rtn = "validacija";
+                    MySqlCommand cmd = new MySqlCommand(rtn, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@admin_ime_in", admin_ime);
+                    cmd.Parameters.AddWithValue("@admin_lozinka_in", admin_lozinka);
+
+
+
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read())
+                    {
+                        status = rdr.GetBoolean(rdr.GetOrdinal("status"));
+                    }
+
+               
+                }
+            }
+            catch (MySqlException excpetion)
+            {
+                throw new Exception("could not connect to mysql" + excpetion.ToString());
+            }
+            return status;
+        }
+
+        public int Registracija_korisnika(string admin_ime,string admin_lozinka, string email, string telefon, string ime, string prezime)
         {
             try
             {
@@ -36,6 +72,8 @@ namespace sistem
                     cmd.Parameters.AddWithValue("@admin_lozinka", admin_lozinka);
                     cmd.Parameters.AddWithValue("@email_in", email);
                     cmd.Parameters.AddWithValue("@telefon_in", telefon);
+                    cmd.Parameters.AddWithValue("@ime_in", ime);
+                    cmd.Parameters.AddWithValue("@prezime_in", prezime);
 
 
                     MySqlDataReader rdr = cmd.ExecuteReader();

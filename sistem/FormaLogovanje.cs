@@ -29,29 +29,64 @@ namespace sistem
             }
             else
             {
+
+                /*provera da li korisnik postoji u bazi*/
+                korisnicko_ime_unos.Enabled = false;
+                lozinka_unos.Enabled = false;
+                dugme_logovanje.Enabled = false;
+                dugme_registracija.Enabled = false;
+                labelaUcitavanje.Text = "učitavanje, molimo sačekajte";
+
                 try
                 {
-                    /*provera da li korisnik postoji u bazi*/
-
                     Baza b = Baza.daj_instancu();
-                    
+
+                    bool status = b.Validacija_korisnika(korisnicko_ime_unos.Text.Trim(), lozinka_unos.Text.Trim());
+                    if (status)
+                    {
+                        /*stavljamo korisnika u sesiji*/
+                        korisnicko_ime_unos.Text = "";
+                        lozinka_unos.Text = "";
+                        Sesija.dajSessiju().Registruj_korisnika(korisnicko_ime_unos.Text.Trim());
+                        MenadzerFormi.dajFormu<FormaPocetnaStrana>(this);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("korisničko ime ili lozinka nisu ispravni", "neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception excpetion)
+                catch (Exception exception)
                 {
-                    MessageBox.Show("Could not connect to server, please try again later.");
+                    MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." + exception.ToString(), "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-              
-           
+                finally
+                {
+                    korisnicko_ime_unos.Enabled = true;
+                    korisnicko_ime_unos.Text = "";
+                    lozinka_unos.Enabled = true;
+                    lozinka_unos.Text = "";
+                    dugme_logovanje.Enabled = true;
+                    dugme_registracija.Enabled = true;
+                    labelaUcitavanje.Text = "";
+                }
+                       
             }
         }
 
         private void dugme_registracija_Click(object sender, EventArgs e)
         {
-            FormaRegistracija registracija = new FormaRegistracija();
-            this.Hide();
+             MenadzerFormi.dajFormu<FormaRegistracija>(this);       
+        }
+
+        
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
             
-            registracija.ShowDialog();
-            this.Close();
+            MenadzerFormi.Zatvori();      
         }
 
         

@@ -16,7 +16,8 @@ namespace sistem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormaLogovanje());
+            
+            Application.Run(MenadzerFormi.dajFormu<FormaLogovanje>(null));
         }
     }
 }

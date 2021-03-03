@@ -3,7 +3,8 @@ use fakultet;
   i tom prilikom će se uneti i podaci*/
 delimiter \\
 create procedure upis_administratora(in admin_ime varchar(45), in admin_lozinka varchar(255),
-                                     in email_in varchar(45), in telefon_in varchar(45))
+                                     in email_in varchar(45), in telefon_in varchar(45), 
+                                     in ime_in varchar(45), in prezime_in varchar(45))
 begin
 	declare brojac tinyint unsigned default 1;
     declare godina_brojac tinyint unsigned default 0;
@@ -21,13 +22,15 @@ begin
     end;
     
     start transaction;
+    /*hesiramo lozinku*/
+    set hesirana_lozinka = sha1(admin_lozinka);
     
     select count(*) into admin_vec_registrovan
     from administrator;
     
     if admin_vec_registrovan = 0 then
-		insert into administrator(administrator_ime, administrator_lozinka, email, telefon)
-		values(trim(admin_ime), admin_lozinka, trim(email_in), trim(telefon_in));
+		insert into administrator(administrator_ime, administrator_lozinka, email, telefon, ime, prezime)
+		values(trim(admin_ime), hesirana_lozinka, trim(email_in), trim(telefon_in), trim(ime_in), trim(prezime_in));
     
 		insert into fakultetska_godina(fakultetska_godina)
 		values('2017/18');
@@ -77,18 +80,17 @@ begin
 		call dodaj_novog_profesora('pera', 'perić', 1972, 1, 16, '06547859', 'pera.peric@gmail.com', 'pera.peric', 'pera019');
     
 		/*predmet na smeru, profesor na predmetu, student sluša predmet*/
-		l : while brojac <= 8 do
+		/*l : while brojac <= 8 do
 			call dodaj_predmet_smer_par(brojac, 1);
 			call dodaj_profesor_predmet_par(1, brojac, 1);
 			call dodaj_student_slusa_predmet_par(1, brojac);
 		
 			set brojac = brojac + 1;
-		end while l;
-        select 0 as 'status';
-	else
-		select 1 as 'status';
+		end while l;*/
+		
     end if;
     
+    select admin_vec_registrovan as 'status';
 	commit;
 end\\
 delimiter ;
