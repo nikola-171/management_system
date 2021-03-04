@@ -1,5 +1,7 @@
 use fakultet;
 /*svake godine prazni arhive*/
+SET GLOBAL event_scheduler = ON;
+
 delimiter \\
 create event prazni_arhive
 on schedule every 1 year

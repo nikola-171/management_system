@@ -1,4 +1,12 @@
 use fakultet;
+/*uzimanje podataka o administratoru*/
+delimiter \\
+create procedure daj_podatke_o_administrator(in admin_ime_in varchar(45))
+begin
+	select * from daj_podatke_o_administratoru
+    where administrator_ime = admin_ime;
+end\\
+delimiter ;
 /*uzimanje podataka o studentu na osnovu broja indeksa*/
 delimiter \\
 create procedure daj_podatke_o_studentu(in broj_indeksa_in int unsigned)

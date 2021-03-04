@@ -45,9 +45,12 @@ namespace sistem
                     if (status)
                     {
                         /*stavljamo korisnika u sesiji*/
+                        
+                        //OVDE GRESKAAA
+                        
+                        Sesija.dajSessiju().Registruj_korisnika(korisnicko_ime_unos.Text.Trim());
                         korisnicko_ime_unos.Text = "";
                         lozinka_unos.Text = "";
-                        Sesija.dajSessiju().Registruj_korisnika(korisnicko_ime_unos.Text.Trim());
                         MenadzerFormi.dajFormu<FormaPocetnaStrana>(this);
 
                     }

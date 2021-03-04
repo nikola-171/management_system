@@ -28,6 +28,11 @@ namespace sistem
             sesija_niz.Remove(ADMIN_IME);
         }
 
+        public string Daj_admina()
+        {
+            return sesija_niz[ADMIN_IME];
+        }
+
         public bool Provera_validnosti()
         {
             return sesija_niz.ContainsKey(ADMIN_IME);

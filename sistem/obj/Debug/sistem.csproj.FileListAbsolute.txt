@@ -133,3 +133,5 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.csproj.CopyComplete
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.exe
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.pdb
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaPocetnaStrana.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeUniverzitetom.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaIzmenaUniverziteta.resources
