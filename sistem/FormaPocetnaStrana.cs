@@ -95,5 +95,32 @@ namespace sistem
         {
             MenadzerFormi.dajFormu<FormaUpravljanjeDepartmana>(this, null, true);
         }
+
+        private void dugmeLogout_Click(object sender, EventArgs e)
+        {
+            /*logout*/
+            Sesija.dajSessiju().Logout_korisnika();
+            MenadzerFormi.dajFormu<FormaLogovanje>(this);
+        }
+
+        private void dugmeUpravljanjeUniverzitetom_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this);
+        }
+
+        private void dugmeUpravljanjeFakultetom_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this);
+        }
+
+        private void dugmeUpravljanjeDepartmanima_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeDepartmana>(this, null, true);
+        }
+
+        private void dugmeUpravljanjeStudentima_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeStudentima>(this, null, true);
+        }
     }
 }

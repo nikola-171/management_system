@@ -10,6 +10,18 @@ namespace sistem
 {
     public partial class Baza
     {
+        public void Dodaj_departman(int fakultet, string naziv, string trajanje, string espb, string nivo_studija)
+        {
+            List<Tuple<string, Tuple<string, string>>> parametri = new List<Tuple<string, Tuple<string, string>>>();
+            parametri.Add(new Tuple<string, Tuple<string, string>>("int", new Tuple<string, string>("fakultet_in", fakultet.ToString())));
+            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("naziv_in", naziv)));
+            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("nivo_studija_in", nivo_studija)));
+            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("espb_in", espb)));
+            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("trajanje_in", trajanje)));
+
+
+            Izvrši_upit("dodaj_smer", ref parametri);
+        }
         public List<Dictionary<string, string>> Daj_sve_departmane()
         {
             

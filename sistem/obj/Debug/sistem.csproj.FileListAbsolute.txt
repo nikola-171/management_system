@@ -143,3 +143,5 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeFakul
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaIzmenaFakultet.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeDepartmana.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeDepartmana.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeStudentima.resources

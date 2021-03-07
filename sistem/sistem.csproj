@@ -127,7 +127,14 @@
     <Compile Include="Baza.cs" />
     <Compile Include="BazaOperacijeSaDepartmanima.cs" />
     <Compile Include="BazaOperacijeSaFakultetom.cs" />
+    <Compile Include="BazaOperacijeSaStudentima.cs" />
     <Compile Include="DodavanjeParametara.cs" />
+    <Compile Include="FormaDodavanjeDepartmana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaDodavanjeDepartmana.Designer.cs">
+      <DependentUpon>FormaDodavanjeDepartmana.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaUpravljanjeDepartmana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +189,12 @@
     <Compile Include="FormaUpravljanjeFakultetom.Designer.cs">
       <DependentUpon>FormaUpravljanjeFakultetom.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaUpravljanjeStudentima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaUpravljanjeStudentima.Designer.cs">
+      <DependentUpon>FormaUpravljanjeStudentima.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaUpravljanjeUniverzitetom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,9 +203,13 @@
     </Compile>
     <Compile Include="ISesija.cs" />
     <Compile Include="MenadzerFormi.cs" />
+    <Compile Include="MenadzerStatusnihKodova.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesija.cs" />
+    <EmbeddedResource Include="FormaDodavanjeDepartmana.resx">
+      <DependentUpon>FormaDodavanjeDepartmana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeDepartmana.resx">
       <DependentUpon>FormaUpravljanjeDepartmana.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeFakultetom.resx">
       <DependentUpon>FormaUpravljanjeFakultetom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaUpravljanjeStudentima.resx">
+      <DependentUpon>FormaUpravljanjeStudentima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeUniverzitetom.resx">
       <DependentUpon>FormaUpravljanjeUniverzitetom.cs</DependentUpon>
@@ -249,6 +269,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="slike\student_ikonica.png" />
+    <None Include="slike\admin.png" />
     <Content Include="slike\app.ico" />
     <None Include="slike\departman.png" />
     <Content Include="slike\korisnik.png" />

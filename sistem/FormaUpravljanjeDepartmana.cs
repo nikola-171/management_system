@@ -70,5 +70,10 @@ namespace sistem
         {
             Osvezi_sadrzaj();
         }
+
+        private void dugmeDodaj_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaDodavanjeDepartmana>(this, null, true);
+        }
     }
 }
