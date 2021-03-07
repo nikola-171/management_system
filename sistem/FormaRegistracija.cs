@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sistem
 {
-    public partial class FormaRegistracija : Form
+    public partial class FormaRegistracija : Form, DodavanjeParametara
     {
         public FormaRegistracija()
         {
@@ -134,6 +134,16 @@ namespace sistem
                 }
             }
           
+        }
+
+        public void Postavi_parametre(List<Tuple<string, string>> parametri)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Osvezi_sadrzaj()
+        {
+            throw new NotImplementedException();
         }
     }
 }

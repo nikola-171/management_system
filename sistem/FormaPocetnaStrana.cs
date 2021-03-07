@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sistem
 {
-    public partial class FormaPocetnaStrana : Form
+    public partial class FormaPocetnaStrana : Form, DodavanjeParametara
     {
         public FormaPocetnaStrana()
         {
@@ -74,6 +74,26 @@ namespace sistem
                 // korisnik je ulogovan
                 MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this);
             }
+        }
+
+        public void Postavi_parametre(List<Tuple<string, string>> parametri)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Osvezi_sadrzaj()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void dugmeFakultet_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this);
+        }
+
+        private void dugmeDepartmani_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeDepartmana>(this, null, true);
         }
     }
 }

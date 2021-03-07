@@ -10,13 +10,40 @@ using System.Windows.Forms;
 
 namespace sistem
 {
-    public partial class FormaUpravljanjeUniverzitetom : Form
+    public partial class FormaUpravljanjeUniverzitetom : Form, DodavanjeParametara
     {
         
         public FormaUpravljanjeUniverzitetom()
         {
             InitializeComponent();
             Stilizovanje_tabele();
+        }
+
+        public void Osvezi_sadrzaj()
+        {
+            try
+            {
+                tabelaPrikazUniverziteta.Rows.Clear();
+                var dd = Baza.daj_instancu().Daj_sve_univerzitete();
+
+
+                foreach (var elem in dd)
+                {
+
+                    tabelaPrikazUniverziteta.Rows.Add(elem["id"], elem["naziv"], elem["grad"], elem["drzava"], "izmeni");
+                }
+
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("doslo je do greske " + ee.ToString());
+            }
+        }
+
+        public void Postavi_parametre(List<Tuple<string, string>> parametri)
+        {
+            throw new NotImplementedException();
         }
 
         public void Stilizovanje_tabele()
@@ -41,21 +68,7 @@ namespace sistem
 
         private void FormaUpravljanjeUniverzitetom_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var dd = Baza.daj_instancu().Daj_sve_univerzitete();
-
-                foreach (var elem in dd)
-                {
-                    tabelaPrikazUniverziteta.Rows.Add(elem["id"], elem["naziv"], elem["grad"], elem["drzava"], "izmeni");
-                }
-
-
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show("doslo je do greske " + ee.ToString());
-            }
+            Osvezi_sadrzaj();
         }
 
         
@@ -69,11 +82,22 @@ namespace sistem
         {
             if (e.ColumnIndex == tabelaPrikazUniverziteta.Columns["akcija"].Index && e.RowIndex >= 0)
             {
-                
-                MenadzerFormi.dajFormu<FormaIzmenaUniverziteta>(this);
-               // MessageBox.Show(tabelaPrikazUniverziteta.Rows[e.RowIndex].Cells[0].Value.ToString());
+                List<Tuple<string, string>> parametri = new List<Tuple<string, string>>();
+                parametri.Add(new Tuple<string, string>("ID", tabelaPrikazUniverziteta.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                parametri.Add(new Tuple<string, string>("naziv", tabelaPrikazUniverziteta.Rows[e.RowIndex].Cells[1].Value.ToString()));
+                parametri.Add(new Tuple<string, string>("grad", tabelaPrikazUniverziteta.Rows[e.RowIndex].Cells[2].Value.ToString()));
+                parametri.Add(new Tuple<string, string>("drzava", tabelaPrikazUniverziteta.Rows[e.RowIndex].Cells[3].Value.ToString()));
+
+                MenadzerFormi.dajFormu<FormaIzmenaUniverziteta>(this, parametri);
+               
 
             }
+        }
+
+        private void dodajUniverzitetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //dodavanje novog univerziteta
+            MenadzerFormi.dajFormu<FormaDodavanjeUniverziteta>(this);
         }
     }
 }

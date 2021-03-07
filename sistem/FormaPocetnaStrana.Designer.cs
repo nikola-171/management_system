@@ -46,7 +46,7 @@ namespace sistem
             this.dugmeIzvestaj = new System.Windows.Forms.Button();
             this.dugmeProfesor = new System.Windows.Forms.Button();
             this.dugmeStudent = new System.Windows.Forms.Button();
-            this.dugmePredmet = new System.Windows.Forms.Button();
+            this.dugmeDepartmani = new System.Windows.Forms.Button();
             this.dugmeFakultet = new System.Windows.Forms.Button();
             this.dugmeUniverzitet = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -197,7 +197,7 @@ namespace sistem
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dugmeProfesor);
             this.panel2.Controls.Add(this.dugmeStudent);
-            this.panel2.Controls.Add(this.dugmePredmet);
+            this.panel2.Controls.Add(this.dugmeDepartmani);
             this.panel2.Controls.Add(this.dugmeFakultet);
             this.panel2.Controls.Add(this.dugmeUniverzitet);
             this.panel2.Controls.Add(this.label7);
@@ -240,15 +240,16 @@ namespace sistem
             this.dugmeStudent.Text = "button4";
             this.dugmeStudent.UseVisualStyleBackColor = false;
             // 
-            // dugmePredmet
+            // dugmeDepartmani
             // 
-            this.dugmePredmet.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dugmePredmet.Location = new System.Drawing.Point(199, 175);
-            this.dugmePredmet.Name = "dugmePredmet";
-            this.dugmePredmet.Size = new System.Drawing.Size(114, 30);
-            this.dugmePredmet.TabIndex = 8;
-            this.dugmePredmet.Text = "button3";
-            this.dugmePredmet.UseVisualStyleBackColor = false;
+            this.dugmeDepartmani.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dugmeDepartmani.Location = new System.Drawing.Point(199, 175);
+            this.dugmeDepartmani.Name = "dugmeDepartmani";
+            this.dugmeDepartmani.Size = new System.Drawing.Size(114, 30);
+            this.dugmeDepartmani.TabIndex = 8;
+            this.dugmeDepartmani.Text = "departmanima";
+            this.dugmeDepartmani.UseVisualStyleBackColor = false;
+            this.dugmeDepartmani.Click += new System.EventHandler(this.dugmeDepartmani_Click);
             // 
             // dugmeFakultet
             // 
@@ -257,8 +258,9 @@ namespace sistem
             this.dugmeFakultet.Name = "dugmeFakultet";
             this.dugmeFakultet.Size = new System.Drawing.Size(114, 30);
             this.dugmeFakultet.TabIndex = 7;
-            this.dugmeFakultet.Text = "button2";
+            this.dugmeFakultet.Text = "fakultetom";
             this.dugmeFakultet.UseVisualStyleBackColor = false;
+            this.dugmeFakultet.Click += new System.EventHandler(this.dugmeFakultet_Click);
             // 
             // dugmeUniverzitet
             // 
@@ -397,7 +399,7 @@ namespace sistem
         private System.Windows.Forms.Button dugmeIzvestaj;
         private System.Windows.Forms.Button dugmeProfesor;
         private System.Windows.Forms.Button dugmeStudent;
-        private System.Windows.Forms.Button dugmePredmet;
+        private System.Windows.Forms.Button dugmeDepartmani;
         private System.Windows.Forms.Button dugmeFakultet;
         private System.Windows.Forms.Button dugmeUniverzitet;
         private System.Windows.Forms.Label label7;

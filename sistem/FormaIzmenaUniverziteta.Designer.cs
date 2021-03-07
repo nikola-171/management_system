@@ -34,12 +34,13 @@ namespace sistem
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dugmeNazad = new System.Windows.Forms.Button();
             this.dugmeIzmeni = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gradUnos = new System.Windows.Forms.TextBox();
+            this.drzavaUnos = new System.Windows.Forms.TextBox();
+            this.nazivUnos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dugmeBrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.slikaUniverzitet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,11 +64,12 @@ namespace sistem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.dugmeBrisi);
             this.groupBox1.Controls.Add(this.dugmeNazad);
             this.groupBox1.Controls.Add(this.dugmeIzmeni);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.gradUnos);
+            this.groupBox1.Controls.Add(this.drzavaUnos);
+            this.groupBox1.Controls.Add(this.nazivUnos);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -81,9 +83,9 @@ namespace sistem
             // 
             // dugmeNazad
             // 
-            this.dugmeNazad.Location = new System.Drawing.Point(194, 235);
+            this.dugmeNazad.Location = new System.Drawing.Point(223, 235);
             this.dugmeNazad.Name = "dugmeNazad";
-            this.dugmeNazad.Size = new System.Drawing.Size(121, 34);
+            this.dugmeNazad.Size = new System.Drawing.Size(92, 34);
             this.dugmeNazad.TabIndex = 7;
             this.dugmeNazad.Text = "nazad";
             this.dugmeNazad.UseVisualStyleBackColor = true;
@@ -91,33 +93,34 @@ namespace sistem
             // 
             // dugmeIzmeni
             // 
-            this.dugmeIzmeni.Location = new System.Drawing.Point(72, 235);
+            this.dugmeIzmeni.Location = new System.Drawing.Point(129, 235);
             this.dugmeIzmeni.Name = "dugmeIzmeni";
-            this.dugmeIzmeni.Size = new System.Drawing.Size(116, 34);
+            this.dugmeIzmeni.Size = new System.Drawing.Size(88, 34);
             this.dugmeIzmeni.TabIndex = 6;
             this.dugmeIzmeni.Text = "izmeni";
             this.dugmeIzmeni.UseVisualStyleBackColor = true;
+            this.dugmeIzmeni.Click += new System.EventHandler(this.dugmeIzmeni_Click);
             // 
-            // textBox3
+            // gradUnos
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(186, 25);
-            this.textBox3.TabIndex = 5;
+            this.gradUnos.Location = new System.Drawing.Point(129, 176);
+            this.gradUnos.Name = "gradUnos";
+            this.gradUnos.Size = new System.Drawing.Size(186, 25);
+            this.gradUnos.TabIndex = 5;
             // 
-            // textBox2
+            // drzavaUnos
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 25);
-            this.textBox2.TabIndex = 4;
+            this.drzavaUnos.Location = new System.Drawing.Point(129, 113);
+            this.drzavaUnos.Name = "drzavaUnos";
+            this.drzavaUnos.Size = new System.Drawing.Size(186, 25);
+            this.drzavaUnos.TabIndex = 4;
             // 
-            // textBox1
+            // nazivUnos
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 25);
-            this.textBox1.TabIndex = 3;
+            this.nazivUnos.Location = new System.Drawing.Point(129, 48);
+            this.nazivUnos.Name = "nazivUnos";
+            this.nazivUnos.Size = new System.Drawing.Size(186, 25);
+            this.nazivUnos.TabIndex = 3;
             // 
             // label3
             // 
@@ -149,6 +152,16 @@ namespace sistem
             this.label1.TabIndex = 0;
             this.label1.Text = "naziv: ";
             // 
+            // dugmeBrisi
+            // 
+            this.dugmeBrisi.Location = new System.Drawing.Point(28, 235);
+            this.dugmeBrisi.Name = "dugmeBrisi";
+            this.dugmeBrisi.Size = new System.Drawing.Size(95, 34);
+            this.dugmeBrisi.TabIndex = 8;
+            this.dugmeBrisi.Text = "izbriši";
+            this.dugmeBrisi.UseVisualStyleBackColor = true;
+            this.dugmeBrisi.Click += new System.EventHandler(this.dugmeBrisi_Click);
+            // 
             // FormaIzmenaUniverziteta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,11 +187,12 @@ namespace sistem
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button dugmeNazad;
         private System.Windows.Forms.Button dugmeIzmeni;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox gradUnos;
+        private System.Windows.Forms.TextBox drzavaUnos;
+        private System.Windows.Forms.TextBox nazivUnos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button dugmeBrisi;
     }
 }

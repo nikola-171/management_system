@@ -8,13 +8,148 @@ using System.Threading.Tasks;
 
 namespace sistem
 {
-    public sealed class Baza
+    public partial class Baza
     {
         /*implementacija mysql baze*/
+        //brisanje univerziteta nije uvek moguće zboh ograničenja stranih ključeva, implementiraj status codes
 
         private static Baza instanca = null;
+        private static MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA);
         private static readonly string KONEKCIJA = "server=localhost;user id=fakultet_admin;database=fakultet;port=3308;password=admin_lozinka";
         private Baza() { }
+
+        public void Otvori_konekciju()
+        {
+            con.Open();
+        }
+
+        public void Zatvori_konekciju()
+        {
+            con.Close();
+        }
+
+        
+        public MySqlDataReader Izvrši_upit(string naziv_upita, ref List<Tuple<string, Tuple<string, string>>> parametri)
+        {
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                
+                con.Open();
+
+                string rtn = naziv_upita;
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                //dodavanje parametara
+
+                foreach(var elem in parametri)
+                {
+                    if(elem.Item1 == "string")
+                    {
+                        cmd.Parameters.AddWithValue("@"+elem.Item2.Item1, elem.Item2.Item2);
+                    }else if(elem.Item1 == "int")
+                    {
+                        cmd.Parameters.AddWithValue("@" + elem.Item2.Item1, Convert.ToInt32(elem.Item2.Item2));
+
+                    }
+                }
+               
+      
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                return rdr;
+
+            }
+        }
+
+        public void Dodavanje_univerziteta(string naziv, string drzava, string grad)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+                {
+                    con.Open();
+
+                    string rtn = "upis_univerziteta";
+
+                    MySqlCommand cmd = new MySqlCommand(rtn, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+
+                    cmd.Parameters.AddWithValue("@naziv", naziv);
+                    cmd.Parameters.AddWithValue("@drzava", drzava);
+                    cmd.Parameters.AddWithValue("@grad", grad);
+
+
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                }
+
+            }
+            catch (MySqlException exception)
+            {
+                throw new Exception("došlo je do greške prilikom uzimanja podatke iz baze " + exception.ToString());
+            }
+        }
+
+        //brisanje univerziteta
+        public void Izbrisi_univerzitet(int id)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+                {
+                    con.Open();
+
+                    string rtn = "izbrisi_univerzitet";
+
+                    MySqlCommand cmd = new MySqlCommand(rtn, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@id_in", id);
+                    
+
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                }
+
+            }
+            catch (MySqlException exception)
+            {
+                throw new Exception("došlo je do greške prilikom uzimanja podatke iz baze " + exception.ToString());
+            }
+        }
+
+        //savucaj izmene na univerzitetu
+        public void Sacuvaj_izmene_na_univerzitetu(int id, string naziv, string drzava, string grad)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+                {
+                    con.Open();
+
+                    string rtn = "promeni_univerzitet";
+
+                    MySqlCommand cmd = new MySqlCommand(rtn, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@id_in", id);
+                    cmd.Parameters.AddWithValue("@naziv_in", naziv);
+                    cmd.Parameters.AddWithValue("@drzava_in", drzava);
+                    cmd.Parameters.AddWithValue("@grad_in", grad);
+
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    
+                }
+
+            }
+            catch (MySqlException exception)
+            {
+                throw new Exception("došlo je do greške prilikom uzimanja podatke iz baze " + exception.ToString());
+            }
+        }
 
         public List<Dictionary<string, string>> Daj_sve_univerzitete()
         {

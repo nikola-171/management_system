@@ -41,6 +41,7 @@ namespace sistem
             this.grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drzava = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.akcija = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dodajUniverzitetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaPrikazUniverziteta)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,8 @@ namespace sistem
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.meniNazad});
+            this.meniNazad,
+            this.dodajUniverzitetToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
@@ -105,14 +107,14 @@ namespace sistem
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tabelaPrikazUniverziteta.DefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPrikazUniverziteta.EnableHeadersVisualStyles = false;
-            this.tabelaPrikazUniverziteta.Location = new System.Drawing.Point(12, 113);
+            this.tabelaPrikazUniverziteta.Location = new System.Drawing.Point(0, 77);
             this.tabelaPrikazUniverziteta.Name = "tabelaPrikazUniverziteta";
             this.tabelaPrikazUniverziteta.RowHeadersVisible = false;
             this.tabelaPrikazUniverziteta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.tabelaPrikazUniverziteta.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.tabelaPrikazUniverziteta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabelaPrikazUniverziteta.RowTemplate.Height = 30;
-            this.tabelaPrikazUniverziteta.Size = new System.Drawing.Size(998, 282);
+            this.tabelaPrikazUniverziteta.Size = new System.Drawing.Size(1022, 330);
             this.tabelaPrikazUniverziteta.TabIndex = 2;
             this.tabelaPrikazUniverziteta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaPrikazUniverziteta_CellClick);
             // 
@@ -145,6 +147,14 @@ namespace sistem
             this.akcija.HeaderText = "akcija";
             this.akcija.Name = "akcija";
             this.akcija.ReadOnly = true;
+            // 
+            // dodajUniverzitetToolStripMenuItem
+            // 
+            this.dodajUniverzitetToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dodajUniverzitetToolStripMenuItem.Name = "dodajUniverzitetToolStripMenuItem";
+            this.dodajUniverzitetToolStripMenuItem.Size = new System.Drawing.Size(138, 68);
+            this.dodajUniverzitetToolStripMenuItem.Text = "dodaj univerzitet";
+            this.dodajUniverzitetToolStripMenuItem.Click += new System.EventHandler(this.dodajUniverzitetToolStripMenuItem_Click);
             // 
             // FormaUpravljanjeUniverzitetom
             // 
@@ -179,5 +189,6 @@ namespace sistem
         private System.Windows.Forms.DataGridViewTextBoxColumn drzava;
         private System.Windows.Forms.DataGridViewButtonColumn akcija;
         private System.Windows.Forms.DataGridView tabelaPrikazUniverziteta;
+        private System.Windows.Forms.ToolStripMenuItem dodajUniverzitetToolStripMenuItem;
     }
 }

@@ -11,10 +11,7 @@ namespace sistem
     {
         private static readonly List<System.Windows.Forms.Form> forme = new List<System.Windows.Forms.Form>();
 
-        public static int test()
-        {
-            return MenadzerFormi.forme.Count;
-        }
+
         public static void Zatvori()
         {
             foreach (var forma in MenadzerFormi.forme)
@@ -29,9 +26,9 @@ namespace sistem
             }
             Environment.Exit(0);
         }
-        public static T dajFormu<T>(System.Windows.Forms.Form trenutna) where T : System.Windows.Forms.Form, new()
+        public static T dajFormu<T>(System.Windows.Forms.Form trenutna, List<Tuple<string, string>> parametri_formi = null, bool osvezi_sadrzaj = false) where T : System.Windows.Forms.Form, DodavanjeParametara, new()
         {
-            
+
             T nazad = null;
             foreach (var forma in MenadzerFormi.forme)
             {
@@ -41,22 +38,35 @@ namespace sistem
                     break;
                 }
             }
-            if(nazad == null)
+            if (nazad == null)
             {
+
                 T nova = new T();
+
                 MenadzerFormi.forme.Add(nova);
                 nazad = nova;
             }
-            
-            if(trenutna != null)
+
+
+
+            if (parametri_formi != null)
+            {
+                nazad.Postavi_parametre(parametri_formi);
+            }
+
+            if (osvezi_sadrzaj)
+            {
+                nazad.Osvezi_sadrzaj();
+            }
+
+            if (trenutna != null)
             {
                 trenutna.Hide();
-                nazad.Show();  
-                
             }
-            
+            nazad.Show();
+
             return nazad;
-            
+
         }
     }
 }

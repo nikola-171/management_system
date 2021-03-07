@@ -135,3 +135,11 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.pdb
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaPocetnaStrana.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeUniverzitetom.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaIzmenaUniverziteta.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeUniverziteta.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeFakultetom.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeFakultet.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaIzmenaFakultet.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeDepartmana.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\FontAwesome.Sharp.dll

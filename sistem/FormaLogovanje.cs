@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace sistem
 {
-    public partial class FormaLogovanje : Form
+    public partial class FormaLogovanje : Form, DodavanjeParametara
     {
         public FormaLogovanje()
         {
@@ -92,6 +92,14 @@ namespace sistem
             MenadzerFormi.Zatvori();      
         }
 
-        
+        public void Postavi_parametre(List<Tuple<string, string>> parametri)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Osvezi_sadrzaj()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
