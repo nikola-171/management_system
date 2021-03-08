@@ -21,6 +21,41 @@ namespace sistem
             Izvrši_upit("izbrisi_studenta", ref parametri);
             
         }
+
+        public void Dodaj_studenta(string ime, string prezime, string email, string telefon, int dan, int mesec,
+                                   int godina, string mesto_boravka, string ulica, string broj, string korisnicko_ime,
+                                   string lozinka, int departman, int status)
+        {
+            
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "dodaj_novog_studenta";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@smer_in", departman);
+                cmd.Parameters.AddWithValue("@ime_in", ime);
+                cmd.Parameters.AddWithValue("@prezime_in", prezime);
+                cmd.Parameters.AddWithValue("@godina_rodjenja_in", godina);
+                cmd.Parameters.AddWithValue("@mesec_rodjenja_in", mesec);
+                cmd.Parameters.AddWithValue("@dan_rodjenja_in", dan);
+                cmd.Parameters.AddWithValue("@ulica_in", ulica);
+                cmd.Parameters.AddWithValue("@broj_in", broj);
+                cmd.Parameters.AddWithValue("@mesto_boravka_in", mesto_boravka);
+                cmd.Parameters.AddWithValue("@korisnicko_ime_in", korisnicko_ime);
+                cmd.Parameters.AddWithValue("@lozinka_in", lozinka);
+                cmd.Parameters.AddWithValue("@status_in",status);
+                cmd.Parameters.AddWithValue("@telefon_in", telefon);
+                cmd.Parameters.AddWithValue("@email_in", email);
+
+
+                MySqlDataReader rdr = cmd.ExecuteReader();         
+
+            }
+        }
+
         public Dictionary<string, string> Daj_informacije_o_studentu(int broj_indeksa)
         {
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))

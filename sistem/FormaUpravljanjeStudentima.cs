@@ -39,7 +39,7 @@ namespace sistem
             smerPrikaz.Text = "";
             diplomiraoPrikaz.Text = "";
             statusPrikaz.Text = "";
-            dugmeUkloniStudenta.Enabled = false;
+            dugmeUkloniProfesora.Enabled = false;
             this.id_studenta_za_brisanje = -1;
         }
 
@@ -95,7 +95,7 @@ namespace sistem
                         statusPrikaz.Text = MenadzerStatusnihKodova.STUDENT_SAMOFINANSIRANJE_PORUKA;
                     }
 
-                    dugmeUkloniStudenta.Enabled = true;
+                    dugmeUkloniProfesora.Enabled = true;
                     panelPrikazRezultata.Visible = true;
 
                 }
@@ -125,6 +125,11 @@ namespace sistem
             {
                 Osvezi_sadrzaj();
             }
+        }
+
+        private void dugmeDodajStudenta_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaDodavanjeStudenata>(this, null, true);
         }
     }
 }

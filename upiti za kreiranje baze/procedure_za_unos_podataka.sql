@@ -126,7 +126,7 @@ create procedure dodaj_novog_studenta(in smer_in int, in ime_in varchar(45), in 
 									  in godina_rodjenja_in int, in mesec_rodjenja_in int,
                                       in dan_rodjenja_in int, in mesto_boravka_in varchar(45),
                                       in ulica_in varchar(45), in broj_in varchar(45),
-                                      in telefon_in varchar(45), in email_in varchar(45), in status_in tinyint unsigned,
+                                      in telefon_in varchar(45), in email_in varchar(45), in status_in int,
                                       in korisnicko_ime_in varchar(45), in lozinka_in varchar(200))
 begin
 	declare hesirana_lozinka varchar(200) default '';

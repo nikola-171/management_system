@@ -36,6 +36,7 @@ namespace sistem
                 dugme_logovanje.Enabled = false;
                 dugme_registracija.Enabled = false;
                 labelaUcitavanje.Text = "učitavanje, molimo sačekajte";
+                this.Cursor = Cursors.WaitCursor;
 
                 try
                 {
@@ -65,6 +66,7 @@ namespace sistem
                 }
                 finally
                 {
+                    this.Cursor = Cursors.Arrow;
                     korisnicko_ime_unos.Enabled = true;
                     korisnicko_ime_unos.Text = "";
                     lozinka_unos.Enabled = true;

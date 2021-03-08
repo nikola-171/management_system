@@ -122,5 +122,10 @@ namespace sistem
         {
             MenadzerFormi.dajFormu<FormaUpravljanjeStudentima>(this, null, true);
         }
+
+        private void dugmeUpravljanjeProfesorima_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeProfesorima>(this, null, true);
+        }
     }
 }

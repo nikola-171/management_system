@@ -22,6 +22,11 @@ namespace sistem
         public static readonly string STUDENT_NIJE_DIPLOMIRAO_PORUKA = "nije diplomirao";
         public static readonly string STUDENT_DIPLOMIRAO_PORUKA = "diplomirao";
 
+        //tipovi koje saljemo kao parametre
+        public static readonly string INT = "int";
+        public static readonly string STRING = "string";
+
+
 
 
 
