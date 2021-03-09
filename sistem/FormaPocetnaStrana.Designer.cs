@@ -33,7 +33,7 @@ namespace sistem
             this.panelMeni = new System.Windows.Forms.Panel();
             this.dugmeUpravljanjeProfesorima = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjeStudentima = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.dugmeUpravljanjePredmetima = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjeDepartmanima = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjeFakultetom = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjeUniverzitetom = new FontAwesome.Sharp.IconButton();
@@ -67,7 +67,7 @@ namespace sistem
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeProfesorima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeStudentima);
-            this.panelMeni.Controls.Add(this.iconButton4);
+            this.panelMeni.Controls.Add(this.dugmeUpravljanjePredmetima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeDepartmanima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeFakultetom);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeUniverzitetom);
@@ -126,27 +126,28 @@ namespace sistem
             this.dugmeUpravljanjeStudentima.UseVisualStyleBackColor = true;
             this.dugmeUpravljanjeStudentima.Click += new System.EventHandler(this.dugmeUpravljanjeStudentima_Click);
             // 
-            // iconButton4
+            // dugmeUpravljanjePredmetima
             // 
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 50;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 440);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton4.Size = new System.Drawing.Size(199, 68);
-            this.iconButton4.TabIndex = 5;
-            this.iconButton4.Text = "upravljanje predmetima";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.dugmeUpravljanjePredmetima.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeUpravljanjePredmetima.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dugmeUpravljanjePredmetima.FlatAppearance.BorderSize = 0;
+            this.dugmeUpravljanjePredmetima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeUpravljanjePredmetima.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeUpravljanjePredmetima.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.dugmeUpravljanjePredmetima.IconColor = System.Drawing.Color.Black;
+            this.dugmeUpravljanjePredmetima.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeUpravljanjePredmetima.IconSize = 50;
+            this.dugmeUpravljanjePredmetima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeUpravljanjePredmetima.Location = new System.Drawing.Point(0, 440);
+            this.dugmeUpravljanjePredmetima.Name = "dugmeUpravljanjePredmetima";
+            this.dugmeUpravljanjePredmetima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeUpravljanjePredmetima.Size = new System.Drawing.Size(199, 68);
+            this.dugmeUpravljanjePredmetima.TabIndex = 5;
+            this.dugmeUpravljanjePredmetima.Text = "upravljanje predmetima";
+            this.dugmeUpravljanjePredmetima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeUpravljanjePredmetima.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeUpravljanjePredmetima.UseVisualStyleBackColor = true;
+            this.dugmeUpravljanjePredmetima.Click += new System.EventHandler(this.dugmeUpravljanjePredmetima_Click);
             // 
             // dugmeUpravljanjeDepartmanima
             // 
@@ -453,7 +454,7 @@ namespace sistem
         private FontAwesome.Sharp.IconButton dugmeUpravljanjeUniverzitetom;
         private FontAwesome.Sharp.IconButton dugmeUpravljanjeProfesorima;
         private FontAwesome.Sharp.IconButton dugmeUpravljanjeStudentima;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton dugmeUpravljanjePredmetima;
         private FontAwesome.Sharp.IconButton dugmeUpravljanjeDepartmanima;
         private System.Windows.Forms.Label labelaNaslov;
         private System.Windows.Forms.Panel panelNaslov;

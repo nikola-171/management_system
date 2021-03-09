@@ -147,3 +147,6 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeDepar
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeStudentima.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeStudenata.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeProfesorima.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeProfesora.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjePredmetima.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeProfesoraPredmetu.resources

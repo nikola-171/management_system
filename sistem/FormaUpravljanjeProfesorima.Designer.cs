@@ -51,7 +51,7 @@ namespace sistem
             this.idUnos = new System.Windows.Forms.TextBox();
             this.BrojIndeksa = new System.Windows.Forms.Label();
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.dugmeDodajStudenta = new FontAwesome.Sharp.IconButton();
+            this.dugmeDodajProfesora = new FontAwesome.Sharp.IconButton();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -344,7 +344,7 @@ namespace sistem
             // panelMeni
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMeni.Controls.Add(this.dugmeDodajStudenta);
+            this.panelMeni.Controls.Add(this.dugmeDodajProfesora);
             this.panelMeni.Controls.Add(this.dugmeNazad);
             this.panelMeni.Controls.Add(this.panelLogo);
             this.panelMeni.Dock = System.Windows.Forms.DockStyle.Left;
@@ -354,23 +354,24 @@ namespace sistem
             this.panelMeni.Size = new System.Drawing.Size(199, 485);
             this.panelMeni.TabIndex = 15;
             // 
-            // dugmeDodajStudenta
+            // dugmeDodajProfesora
             // 
-            this.dugmeDodajStudenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeDodajStudenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dugmeDodajStudenta.FlatAppearance.BorderSize = 0;
-            this.dugmeDodajStudenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeDodajStudenta.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmeDodajStudenta.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.dugmeDodajStudenta.IconColor = System.Drawing.Color.Black;
-            this.dugmeDodajStudenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodajStudenta.Location = new System.Drawing.Point(0, 242);
-            this.dugmeDodajStudenta.Name = "dugmeDodajStudenta";
-            this.dugmeDodajStudenta.Size = new System.Drawing.Size(199, 68);
-            this.dugmeDodajStudenta.TabIndex = 4;
-            this.dugmeDodajStudenta.Text = "dodaj profesora";
-            this.dugmeDodajStudenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeDodajStudenta.UseVisualStyleBackColor = true;
+            this.dugmeDodajProfesora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeDodajProfesora.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dugmeDodajProfesora.FlatAppearance.BorderSize = 0;
+            this.dugmeDodajProfesora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeDodajProfesora.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeDodajProfesora.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.dugmeDodajProfesora.IconColor = System.Drawing.Color.Black;
+            this.dugmeDodajProfesora.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeDodajProfesora.Location = new System.Drawing.Point(0, 242);
+            this.dugmeDodajProfesora.Name = "dugmeDodajProfesora";
+            this.dugmeDodajProfesora.Size = new System.Drawing.Size(199, 68);
+            this.dugmeDodajProfesora.TabIndex = 4;
+            this.dugmeDodajProfesora.Text = "dodaj profesora";
+            this.dugmeDodajProfesora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeDodajProfesora.UseVisualStyleBackColor = true;
+            this.dugmeDodajProfesora.Click += new System.EventHandler(this.dugmeDodajStudenta_Click);
             // 
             // dugmeNazad
             // 
@@ -477,7 +478,7 @@ namespace sistem
         private System.Windows.Forms.TextBox idUnos;
         private System.Windows.Forms.Label BrojIndeksa;
         private System.Windows.Forms.Panel panelMeni;
-        private FontAwesome.Sharp.IconButton dugmeDodajStudenta;
+        private FontAwesome.Sharp.IconButton dugmeDodajProfesora;
         private FontAwesome.Sharp.IconButton dugmeNazad;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox2;

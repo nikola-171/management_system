@@ -109,5 +109,10 @@ namespace sistem
 
             }
         }
+
+        private void dugmeDodajStudenta_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaDodavanjeProfesora>(this);
+        }
     }
 }

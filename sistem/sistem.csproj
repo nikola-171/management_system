@@ -128,6 +128,7 @@
     <Compile Include="BazaOperacijeSaDepartmanima.cs" />
     <Compile Include="BazaOperacijeSaFakultetom.cs" />
     <Compile Include="BazaOperacijeSaKorisnikom.cs" />
+    <Compile Include="BazaOperacijeSaPredmetima.cs" />
     <Compile Include="BazaOperacijeSaProfesorima.cs" />
     <Compile Include="BazaOperacijeSaStudentima.cs" />
     <Compile Include="BazaOperacijeSaUniverzitetom.cs" />
@@ -137,6 +138,18 @@
     </Compile>
     <Compile Include="FormaDodavanjeDepartmana.Designer.cs">
       <DependentUpon>FormaDodavanjeDepartmana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaDodavanjeProfesora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaDodavanjeProfesora.Designer.cs">
+      <DependentUpon>FormaDodavanjeProfesora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaDodavanjeProfesoraPredmetu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaDodavanjeProfesoraPredmetu.Designer.cs">
+      <DependentUpon>FormaDodavanjeProfesoraPredmetu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormaDodavanjeStudenata.cs">
       <SubType>Form</SubType>
@@ -198,6 +211,12 @@
     <Compile Include="FormaUpravljanjeFakultetom.Designer.cs">
       <DependentUpon>FormaUpravljanjeFakultetom.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaUpravljanjePredmetima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaUpravljanjePredmetima.Designer.cs">
+      <DependentUpon>FormaUpravljanjePredmetima.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaUpravljanjeProfesorima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +243,12 @@
     <Compile Include="Sesija.cs" />
     <EmbeddedResource Include="FormaDodavanjeDepartmana.resx">
       <DependentUpon>FormaDodavanjeDepartmana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaDodavanjeProfesora.resx">
+      <DependentUpon>FormaDodavanjeProfesora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaDodavanjeProfesoraPredmetu.resx">
+      <DependentUpon>FormaDodavanjeProfesoraPredmetu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaDodavanjeStudenata.resx">
       <DependentUpon>FormaDodavanjeStudenata.cs</DependentUpon>
@@ -254,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeFakultetom.resx">
       <DependentUpon>FormaUpravljanjeFakultetom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaUpravljanjePredmetima.resx">
+      <DependentUpon>FormaUpravljanjePredmetima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeProfesorima.resx">
       <DependentUpon>FormaUpravljanjeProfesorima.cs</DependentUpon>

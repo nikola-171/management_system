@@ -69,14 +69,13 @@ namespace sistem
             // dugmeDodaj
             // 
             this.dugmeDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeDodaj.Dock = System.Windows.Forms.DockStyle.Top;
             this.dugmeDodaj.FlatAppearance.BorderSize = 0;
             this.dugmeDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dugmeDodaj.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
             this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodaj.Location = new System.Drawing.Point(0, 254);
+            this.dugmeDodaj.Location = new System.Drawing.Point(0, 350);
             this.dugmeDodaj.Name = "dugmeDodaj";
             this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
             this.dugmeDodaj.TabIndex = 2;
@@ -88,7 +87,6 @@ namespace sistem
             // dugmeNazad
             // 
             this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeNazad.Dock = System.Windows.Forms.DockStyle.Top;
             this.dugmeNazad.FlatAppearance.BorderSize = 0;
             this.dugmeNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dugmeNazad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
@@ -97,7 +95,7 @@ namespace sistem
             this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeNazad.IconSize = 50;
             this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeNazad.Location = new System.Drawing.Point(0, 186);
+            this.dugmeNazad.Location = new System.Drawing.Point(0, 282);
             this.dugmeNazad.Name = "dugmeNazad";
             this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeNazad.Size = new System.Drawing.Size(199, 68);
@@ -111,8 +109,7 @@ namespace sistem
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Location = new System.Drawing.Point(0, 93);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(199, 186);
             this.panelLogo.TabIndex = 0;
@@ -131,17 +128,16 @@ namespace sistem
             // 
             this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelNaslov.Controls.Add(this.labelaNaslov);
-            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNaslov.Location = new System.Drawing.Point(199, 0);
+            this.panelNaslov.Location = new System.Drawing.Point(0, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(809, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(1008, 93);
             this.panelNaslov.TabIndex = 2;
             // 
             // labelaNaslov
             // 
             this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaNaslov.ForeColor = System.Drawing.Color.White;
-            this.labelaNaslov.Location = new System.Drawing.Point(23, 29);
+            this.labelaNaslov.Location = new System.Drawing.Point(193, 24);
             this.labelaNaslov.Name = "labelaNaslov";
             this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
             this.labelaNaslov.TabIndex = 2;
@@ -180,7 +176,6 @@ namespace sistem
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tabelaPrikazDepartmana.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tabelaPrikazDepartmana.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabelaPrikazDepartmana.EnableHeadersVisualStyles = false;
             this.tabelaPrikazDepartmana.Location = new System.Drawing.Point(199, 93);
             this.tabelaPrikazDepartmana.Name = "tabelaPrikazDepartmana";

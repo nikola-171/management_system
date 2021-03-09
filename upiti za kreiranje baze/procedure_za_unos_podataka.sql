@@ -156,11 +156,31 @@ delimiter ;
 /*upis novog predmeta u bazi*/
 delimiter \\
 create procedure dodaj_novi_predmet(in naziv_in varchar(45), in godina_in tinyint, 
-									in semestar_in tinyint, in espb_in tinyint)
+									in semestar_in tinyint, in espb_in tinyint, in departman_in int unsigned)
 begin
+    declare id_predmeta int unsigned default 0;
+    
+    declare exit handler for sqlexception
+    begin
+		rollback;
+        GET DIAGNOSTICS CONDITION 1
+		@p2 = MESSAGE_TEXT;
+        
+        select @p2 as 'msg';
+    end;
+    
+	start transaction;
+    
 	insert into predmet(naziv, godina, semestar, espb)
     values(trim(replace(naziv_in, '  ', '')), trim(replace(godina_in, '  ', '')),
 		   trim(replace(semestar_in, '  ', '')), trim(replace(espb_in, '  ', '')));
+           
+	select max(id) into id_predmeta
+    from predmet;
+    
+    call dodaj_predmet_smer_par(id_predmeta, departman_in);
+	
+    commit;
 end\\
 delimiter ;
 /*upis novog profesora u bazi*/
