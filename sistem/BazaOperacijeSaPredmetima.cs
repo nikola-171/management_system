@@ -10,7 +10,7 @@ namespace sistem
 {
     public partial class Baza
     {
-        public void Dodavanje_predmeta(string naziv, sbyte godina, sbyte semestar, sbyte espb, UInt32 departman)//izmeni proceduru
+        public void Dodavanje_predmeta(string naziv, sbyte godina, sbyte semestar, sbyte espb, UInt32 departman)
         {
             
                 using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -33,9 +33,7 @@ namespace sistem
 
                     MySqlDataReader rdr = cmd.ExecuteReader();
 
-                }
-
-            
+                }       
         }
 
         //nije testirano!!!!!!!!!!!!
@@ -47,13 +45,25 @@ namespace sistem
             {
                 con.Open();
 
-                string rtn = "daj_sve_predmete";
+                string rtn = "daj_predmete_po_smerovima";
 
                 MySqlCommand cmd = new MySqlCommand(rtn, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-
                 MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+                    red.Add("id", rdr.GetString(rdr.GetOrdinal("predmet")));
+                    red.Add("naziv", rdr.GetString(rdr.GetOrdinal("predmet_naziv")));
+                    red.Add("godina", rdr.GetString(rdr.GetOrdinal("predmet_godina")));
+                    red.Add("semestar", rdr.GetString(rdr.GetOrdinal("predmet_semestar")));
+                    red.Add("espb", rdr.GetString(rdr.GetOrdinal("predmet_espb")));
+                    red.Add("departman", rdr.GetString(rdr.GetOrdinal("smer_naziv")));
+
+                    rezultat.Add(red);
+                }
 
             }
 

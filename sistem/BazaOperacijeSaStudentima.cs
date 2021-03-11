@@ -10,7 +10,7 @@ namespace sistem
 {
     public partial class Baza
     {
-
+        #region brisanje_studenta_iz_baze
         public void Izbrisi_studenta(int id)
         {
             
@@ -21,6 +21,7 @@ namespace sistem
             Izvrši_upit("izbrisi_studenta", ref parametri);
             
         }
+        #endregion
 
         public void Dodaj_studenta(string ime, string prezime, string email, string telefon, int dan, int mesec,
                                    int godina, string mesto_boravka, string ulica, string broj, string korisnicko_ime,
@@ -56,8 +57,43 @@ namespace sistem
             }
         }
 
+        public List<Dictionary<string, string>> Daj_sve_studente()
+        {
+            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_sve_studente";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+           
+                MySqlDataReader rdr = cmd.ExecuteReader();
+        
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+                    red.Add("broj_indeksa", rdr.GetString(rdr.GetOrdinal("broj_indeksa")));
+                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
+                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
+                    red.Add("departman", rdr.GetString(rdr.GetOrdinal("naziv")));
+                    red.Add("fakultet", rdr.GetString(rdr.GetOrdinal("fakultet")));
+                    red.Add("diplomirao", rdr.GetString(rdr.GetOrdinal("diplomirao")));
+                    red.Add("espb", rdr.GetString(rdr.GetOrdinal("espb")));
+                    red.Add("prosek", rdr.GetString(rdr.GetOrdinal("prosek")));
+                    red.Add("status", rdr.GetString(rdr.GetOrdinal("status_studenta")));
+
+                    rezultat.Add(red);
+
+                }
+            }
+            return rezultat;
+        }
         public Dictionary<string, string> Daj_informacije_o_studentu(int broj_indeksa)
         {
+            Dictionary<string, string> rezultat = new Dictionary<string, string>();
+
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
             {
                 con.Open();
@@ -70,12 +106,8 @@ namespace sistem
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-                Dictionary<string, string> rezultat = new Dictionary<string, string>();
-
                 if (rdr.Read())
                 {
-
-
                     rezultat.Add("broj_indeksa", rdr.GetString(rdr.GetOrdinal("broj_indeksa")));
                     rezultat.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
                     rezultat.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
@@ -85,12 +117,31 @@ namespace sistem
                     rezultat.Add("espb", rdr.GetString(rdr.GetOrdinal("espb")));
                     rezultat.Add("prosek", rdr.GetString(rdr.GetOrdinal("prosek")));
                     rezultat.Add("status_studenta", rdr.GetString(rdr.GetOrdinal("status_studenta")));
-
-
-
                 }
-                return rezultat;
+            }
+            return rezultat;
+        }
 
+        public void Dodeli_studenta_predmetu(UInt32 broj_indeksa, UInt32 predmet_id)
+        {
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "dodaj_student_slusa_predmet_par";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@student_in", broj_indeksa);
+                cmd.Parameters.AddWithValue("@predmet_in", predmet_id);
+
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    int status = rdr.GetOrdinal("msg");           
+                }
             }
         }
     }

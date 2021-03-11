@@ -32,7 +32,7 @@ namespace sistem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaUpravljanjePredmetima));
             this.panelMeni = new System.Windows.Forms.Panel();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.dugmeDodajStudentaPredmetu = new FontAwesome.Sharp.IconButton();
             this.dugmeDodajPredmetProfesoru = new FontAwesome.Sharp.IconButton();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -73,7 +73,7 @@ namespace sistem
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMeni.Controls.Add(this.iconButton5);
-            this.panelMeni.Controls.Add(this.iconButton3);
+            this.panelMeni.Controls.Add(this.dugmeDodajStudentaPredmetu);
             this.panelMeni.Controls.Add(this.dugmeDodajPredmetProfesoru);
             this.panelMeni.Controls.Add(this.dugmeNazad);
             this.panelMeni.Controls.Add(this.panelLogo);
@@ -102,23 +102,24 @@ namespace sistem
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // dugmeDodajStudentaPredmetu
             // 
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(0, 323);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(199, 68);
-            this.iconButton3.TabIndex = 6;
-            this.iconButton3.Text = "dodaj studenta predmetu";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.dugmeDodajStudentaPredmetu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeDodajStudentaPredmetu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dugmeDodajStudentaPredmetu.FlatAppearance.BorderSize = 0;
+            this.dugmeDodajStudentaPredmetu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeDodajStudentaPredmetu.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeDodajStudentaPredmetu.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.dugmeDodajStudentaPredmetu.IconColor = System.Drawing.Color.Black;
+            this.dugmeDodajStudentaPredmetu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeDodajStudentaPredmetu.Location = new System.Drawing.Point(0, 323);
+            this.dugmeDodajStudentaPredmetu.Name = "dugmeDodajStudentaPredmetu";
+            this.dugmeDodajStudentaPredmetu.Size = new System.Drawing.Size(199, 68);
+            this.dugmeDodajStudentaPredmetu.TabIndex = 6;
+            this.dugmeDodajStudentaPredmetu.Text = "dodaj studenta predmetu";
+            this.dugmeDodajStudentaPredmetu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeDodajStudentaPredmetu.UseVisualStyleBackColor = true;
+            this.dugmeDodajStudentaPredmetu.Click += new System.EventHandler(this.dugmeDodajStudentaPredmetu_Click);
             // 
             // dugmeDodajPredmetProfesoru
             // 
@@ -511,7 +512,7 @@ namespace sistem
         private System.Windows.Forms.TextBox nazivUnos;
         private System.Windows.Forms.Label BrojIndeksa;
         private FontAwesome.Sharp.IconButton dugmeDodajPredmet;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton dugmeDodajStudentaPredmetu;
         private FontAwesome.Sharp.IconButton dugmeDodajPredmetProfesoru;
         private FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.GroupBox groupBox2;

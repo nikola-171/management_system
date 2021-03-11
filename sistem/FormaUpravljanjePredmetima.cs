@@ -111,13 +111,13 @@ namespace sistem
 
         private void dugmeDodajPredmetProfesoru_Click(object sender, EventArgs e)
         {
-            MenadzerFormi.dajFormu<FormaDodavanjeProfesoraPredmetu>(this);
+            MenadzerFormi.dajFormu<FormaDodavanjeProfesoraPredmetu>(this, null, true);
         }
 
         private void FormaUpravljanjePredmetima_Load(object sender, EventArgs e)
         {
             //uzmem sve departmane pa posle
-            Osvezi_sadrzaj();
+            //Osvezi_sadrzaj();
 
 
         }
@@ -165,6 +165,11 @@ namespace sistem
                     listaDepartmana.Items.Add(elem["smer"]);
                 }
             }
+        }
+
+        private void dugmeDodajStudentaPredmetu_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaDodavanjeStudentaPredmetu>(this, null, true);
         }
     }
 }

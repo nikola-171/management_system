@@ -80,7 +80,7 @@ namespace sistem
             this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeNazad.IconSize = 50;
             this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeNazad.Location = new System.Drawing.Point(-3, 299);
+            this.dugmeNazad.Location = new System.Drawing.Point(-3, 317);
             this.dugmeNazad.Name = "dugmeNazad";
             this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeNazad.Size = new System.Drawing.Size(199, 68);
@@ -94,17 +94,17 @@ namespace sistem
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Location = new System.Drawing.Point(0, 105);
+            this.panelLogo.Location = new System.Drawing.Point(0, 102);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 193);
+            this.panelLogo.Size = new System.Drawing.Size(199, 215);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sistem.Properties.Resources.univerzitet;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 196);
+            this.pictureBox1.Size = new System.Drawing.Size(199, 212);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -209,7 +209,7 @@ namespace sistem
             "osnovne akademske studije",
             "master akademske studije",
             "doktorske akadamske studije"});
-            this.listaNivoaStudija.Location = new System.Drawing.Point(256, 147);
+            this.listaNivoaStudija.Location = new System.Drawing.Point(256, 148);
             this.listaNivoaStudija.Name = "listaNivoaStudija";
             this.listaNivoaStudija.Size = new System.Drawing.Size(224, 26);
             this.listaNivoaStudija.TabIndex = 8;
@@ -269,7 +269,7 @@ namespace sistem
             // espb_unos
             // 
             this.espb_unos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.espb_unos.Location = new System.Drawing.Point(256, 110);
+            this.espb_unos.Location = new System.Drawing.Point(256, 111);
             this.espb_unos.MaxLength = 3;
             this.espb_unos.Name = "espb_unos";
             this.espb_unos.Size = new System.Drawing.Size(224, 24);

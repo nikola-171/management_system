@@ -157,6 +157,12 @@
     <Compile Include="FormaDodavanjeStudenata.Designer.cs">
       <DependentUpon>FormaDodavanjeStudenata.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaDodavanjeStudentaPredmetu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaDodavanjeStudentaPredmetu.Designer.cs">
+      <DependentUpon>FormaDodavanjeStudentaPredmetu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaUpravljanjeDepartmana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     <EmbeddedResource Include="FormaDodavanjeStudenata.resx">
       <DependentUpon>FormaDodavanjeStudenata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormaDodavanjeStudentaPredmetu.resx">
+      <DependentUpon>FormaDodavanjeStudentaPredmetu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeDepartmana.resx">
       <DependentUpon>FormaUpravljanjeDepartmana.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +327,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="slike\student.png" />
+    <None Include="slike\profesor.png" />
     <None Include="slike\student_ikonica.png" />
     <None Include="slike\admin.png" />
     <Content Include="slike\app.ico" />
