@@ -108,6 +108,8 @@ begin
     
 			delete from student_slusa_predmet
 			where student = student_in and predmet = predmet_in;
+		else
+            select 'nije moguće polaganje ispita, na predmetu nije registrovan profesor ili student ne sluša predmet' as 'msg';
 		end if;
 	else
 		select 'nije moguće polaganje ispita, ispit nije na odgovarajućem departmanu' as 'msg';

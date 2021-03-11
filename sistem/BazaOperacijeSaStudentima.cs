@@ -23,6 +23,7 @@ namespace sistem
         }
         #endregion
 
+        #region dodavanje_studenata
         public void Dodaj_studenta(string ime, string prezime, string email, string telefon, int dan, int mesec,
                                    int godina, string mesto_boravka, string ulica, string broj, string korisnicko_ime,
                                    string lozinka, int departman, int status)
@@ -56,7 +57,9 @@ namespace sistem
 
             }
         }
+        #endregion
 
+        #region uzimanje_svih_studenata_iz_baze
         public List<Dictionary<string, string>> Daj_sve_studente()
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
@@ -90,6 +93,9 @@ namespace sistem
             }
             return rezultat;
         }
+        #endregion
+
+        #region uzimanje_podataka_o_studentu_na_osnovu_broja_indeksa
         public Dictionary<string, string> Daj_informacije_o_studentu(int broj_indeksa)
         {
             Dictionary<string, string> rezultat = new Dictionary<string, string>();
@@ -121,7 +127,9 @@ namespace sistem
             }
             return rezultat;
         }
+        #endregion
 
+        #region dodelivanje_studenta_predmetu
         public void Dodeli_studenta_predmetu(UInt32 broj_indeksa, UInt32 predmet_id)
         {
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -144,5 +152,37 @@ namespace sistem
                 }
             }
         }
+        #endregion
+
+        #region dodavanje_polozenog_ispita_studentu
+        public string Dodaj_polozen_ispit_studentu(UInt32 broj_indeksa, UInt32 predmet_id, string datum, byte ocena)
+        {
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "dodaj_polozen_ispit_studentu";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@student_in", broj_indeksa);
+                cmd.Parameters.AddWithValue("@predmet_in", predmet_id);
+                cmd.Parameters.AddWithValue("@ocena_in", ocena);
+                cmd.Parameters.AddWithValue("@datum_in", datum);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                // povratna informacija iz baze
+                string status = "";
+
+                if (rdr.Read())
+                {
+                    status = rdr.GetString(rdr.GetOrdinal("msg"));
+                }
+
+                return status;
+            }
+        }
+        #endregion
     }
 }

@@ -151,3 +151,4 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeProfe
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjePredmetima.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeProfesoraPredmetu.resources
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaDodavanjeStudentaPredmetu.resources
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.formaDodavanjePolozenogIspitaStudentu.resources

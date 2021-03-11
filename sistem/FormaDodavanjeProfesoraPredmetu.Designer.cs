@@ -336,7 +336,7 @@ namespace sistem
             this.panelLogo.Controls.Add(this.pictureBox2);
             this.panelLogo.Location = new System.Drawing.Point(0, 112);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(219, 222);
+            this.panelLogo.Size = new System.Drawing.Size(219, 242);
             this.panelLogo.TabIndex = 0;
             // 
             // dugmePretragaProfesor
@@ -418,7 +418,7 @@ namespace sistem
             this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeNazad.IconSize = 50;
             this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeNazad.Location = new System.Drawing.Point(0, 340);
+            this.dugmeNazad.Location = new System.Drawing.Point(0, 356);
             this.dugmeNazad.Name = "dugmeNazad";
             this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeNazad.Size = new System.Drawing.Size(219, 68);
@@ -431,10 +431,10 @@ namespace sistem
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::sistem.Properties.Resources.profesor;
+            this.pictureBox2.Image = global::sistem.Properties.Resources.slika_profesor;
             this.pictureBox2.Location = new System.Drawing.Point(3, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(216, 219);
+            this.pictureBox2.Size = new System.Drawing.Size(216, 242);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;

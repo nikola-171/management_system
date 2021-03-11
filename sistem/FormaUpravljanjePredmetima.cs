@@ -171,5 +171,10 @@ namespace sistem
         {
             MenadzerFormi.dajFormu<FormaDodavanjeStudentaPredmetu>(this, null, true);
         }
+
+        private void dugmeStudentPolozioPredmet_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<formaDodavanjePolozenogIspitaStudentu>(this, null, true);
+        }
     }
 }
