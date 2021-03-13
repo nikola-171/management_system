@@ -16,7 +16,7 @@ namespace sistem
         public FormaUpravljanjeUniverzitetom()
         {
             InitializeComponent();
-            Stilizovanje_tabele();
+            
         }
 
         public void Osvezi_sadrzaj()
@@ -50,8 +50,7 @@ namespace sistem
         {
        
             tabelaPrikazUniverziteta.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 20);
-
-            
+            tabelaPrikazUniverziteta.Columns[4].Width = 100;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -68,12 +67,20 @@ namespace sistem
 
         private void FormaUpravljanjeUniverzitetom_Load(object sender, EventArgs e)
         {
-            Osvezi_sadrzaj();
+            // Osvezi_sadrzaj();
+            Stilizovanje_tabele();
         }
 
-        
+       
 
-        private void meniNazad_Click(object sender, EventArgs e)
+       
+
+        private void dugmeDodaj_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaDodavanjeUniverziteta>(this);
+        }
+
+        private void dugmeNazad_Click(object sender, EventArgs e)
         {
             MenadzerFormi.dajFormu<FormaPocetnaStrana>(this);
         }
@@ -89,15 +96,9 @@ namespace sistem
                 parametri.Add(new Tuple<string, string>("drzava", tabelaPrikazUniverziteta.Rows[e.RowIndex].Cells[3].Value.ToString()));
 
                 MenadzerFormi.dajFormu<FormaIzmenaUniverziteta>(this, parametri);
-               
+
 
             }
-        }
-
-        private void dodajUniverzitetToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //dodavanje novog univerziteta
-            MenadzerFormi.dajFormu<FormaDodavanjeUniverziteta>(this);
         }
     }
 }

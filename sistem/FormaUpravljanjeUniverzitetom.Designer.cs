@@ -31,43 +31,26 @@ namespace sistem
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaUpravljanjeUniverzitetom));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.meniNazad = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaPrikazUniverziteta = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drzava = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.akcija = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dodajUniverzitetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.panelNaslov = new System.Windows.Forms.Panel();
+            this.labelaNaslov = new System.Windows.Forms.Label();
+            this.panelMeni = new System.Windows.Forms.Panel();
+            this.dugmeDodaj = new FontAwesome.Sharp.IconButton();
+            this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaPrikazUniverziteta)).BeginInit();
+            this.panelNaslov.SuspendLayout();
+            this.panelMeni.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.meniNazad,
-            this.dodajUniverzitetToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1022, 74);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // meniNazad
-            // 
-            this.meniNazad.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.meniNazad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.meniNazad.Name = "meniNazad";
-            this.meniNazad.Size = new System.Drawing.Size(80, 68);
-            this.meniNazad.Text = "nazad";
-            this.meniNazad.Click += new System.EventHandler(this.meniNazad_Click);
             // 
             // tabelaPrikazUniverziteta
             // 
@@ -75,95 +58,167 @@ namespace sistem
             this.tabelaPrikazUniverziteta.AllowUserToDeleteRows = false;
             this.tabelaPrikazUniverziteta.AllowUserToResizeColumns = false;
             this.tabelaPrikazUniverziteta.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabelaPrikazUniverziteta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tabelaPrikazUniverziteta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tabelaPrikazUniverziteta.BackgroundColor = System.Drawing.Color.White;
-            this.tabelaPrikazUniverziteta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tabelaPrikazUniverziteta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabelaPrikazUniverziteta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tabelaPrikazUniverziteta.ColumnHeadersHeight = 52;
-            this.tabelaPrikazUniverziteta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tabelaPrikazUniverziteta.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.tabelaPrikazUniverziteta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaPrikazUniverziteta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabelaPrikazUniverziteta.ColumnHeadersHeight = 50;
             this.tabelaPrikazUniverziteta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.dataGridViewTextBoxColumn1,
             this.naziv,
             this.grad,
             this.drzava,
             this.akcija});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabelaPrikazUniverziteta.DefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPrikazUniverziteta.EnableHeadersVisualStyles = false;
-            this.tabelaPrikazUniverziteta.Location = new System.Drawing.Point(0, 77);
+            this.tabelaPrikazUniverziteta.Location = new System.Drawing.Point(199, 102);
             this.tabelaPrikazUniverziteta.Name = "tabelaPrikazUniverziteta";
             this.tabelaPrikazUniverziteta.RowHeadersVisible = false;
+            this.tabelaPrikazUniverziteta.RowHeadersWidth = 70;
             this.tabelaPrikazUniverziteta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.tabelaPrikazUniverziteta.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tabelaPrikazUniverziteta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabelaPrikazUniverziteta.RowTemplate.Height = 30;
-            this.tabelaPrikazUniverziteta.Size = new System.Drawing.Size(1022, 330);
-            this.tabelaPrikazUniverziteta.TabIndex = 2;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.tabelaPrikazUniverziteta.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tabelaPrikazUniverziteta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabelaPrikazUniverziteta.RowTemplate.Height = 40;
+            this.tabelaPrikazUniverziteta.Size = new System.Drawing.Size(823, 489);
+            this.tabelaPrikazUniverziteta.TabIndex = 4;
             this.tabelaPrikazUniverziteta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaPrikazUniverziteta_CellClick);
             // 
-            // id
+            // dataGridViewTextBoxColumn1
             // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // naziv
             // 
             this.naziv.HeaderText = "naziv";
             this.naziv.Name = "naziv";
-            this.naziv.ReadOnly = true;
             // 
             // grad
             // 
             this.grad.HeaderText = "grad";
             this.grad.Name = "grad";
-            this.grad.ReadOnly = true;
             // 
             // drzava
             // 
             this.drzava.HeaderText = "država";
             this.drzava.Name = "drzava";
-            this.drzava.ReadOnly = true;
             // 
             // akcija
             // 
             this.akcija.HeaderText = "akcija";
             this.akcija.Name = "akcija";
-            this.akcija.ReadOnly = true;
             // 
-            // dodajUniverzitetToolStripMenuItem
+            // panelNaslov
             // 
-            this.dodajUniverzitetToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dodajUniverzitetToolStripMenuItem.Name = "dodajUniverzitetToolStripMenuItem";
-            this.dodajUniverzitetToolStripMenuItem.Size = new System.Drawing.Size(138, 68);
-            this.dodajUniverzitetToolStripMenuItem.Text = "dodaj univerzitet";
-            this.dodajUniverzitetToolStripMenuItem.Click += new System.EventHandler(this.dodajUniverzitetToolStripMenuItem_Click);
+            this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelNaslov.Controls.Add(this.labelaNaslov);
+            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNaslov.Location = new System.Drawing.Point(199, 0);
+            this.panelNaslov.Name = "panelNaslov";
+            this.panelNaslov.Size = new System.Drawing.Size(823, 102);
+            this.panelNaslov.TabIndex = 6;
+            // 
+            // labelaNaslov
+            // 
+            this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaNaslov.ForeColor = System.Drawing.Color.White;
+            this.labelaNaslov.Location = new System.Drawing.Point(24, 40);
+            this.labelaNaslov.Name = "labelaNaslov";
+            this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
+            this.labelaNaslov.TabIndex = 2;
+            this.labelaNaslov.Text = "Upravljanje univerzitetom";
+            this.labelaNaslov.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelMeni
+            // 
+            this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMeni.Controls.Add(this.dugmeDodaj);
+            this.panelMeni.Controls.Add(this.dugmeNazad);
+            this.panelMeni.Controls.Add(this.panelLogo);
+            this.panelMeni.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelMeni.Location = new System.Drawing.Point(0, 0);
+            this.panelMeni.Name = "panelMeni";
+            this.panelMeni.Size = new System.Drawing.Size(199, 591);
+            this.panelMeni.TabIndex = 5;
+            // 
+            // dugmeDodaj
+            // 
+            this.dugmeDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeDodaj.FlatAppearance.BorderSize = 0;
+            this.dugmeDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeDodaj.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
+            this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeDodaj.Location = new System.Drawing.Point(0, 391);
+            this.dugmeDodaj.Name = "dugmeDodaj";
+            this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
+            this.dugmeDodaj.TabIndex = 3;
+            this.dugmeDodaj.Text = "dodaj univerzitet";
+            this.dugmeDodaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeDodaj.UseVisualStyleBackColor = true;
+            this.dugmeDodaj.Click += new System.EventHandler(this.dugmeDodaj_Click);
+            // 
+            // dugmeNazad
+            // 
+            this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeNazad.FlatAppearance.BorderSize = 0;
+            this.dugmeNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeNazad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeNazad.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.dugmeNazad.IconColor = System.Drawing.Color.Black;
+            this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeNazad.IconSize = 50;
+            this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeNazad.Location = new System.Drawing.Point(-3, 317);
+            this.dugmeNazad.Name = "dugmeNazad";
+            this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeNazad.Size = new System.Drawing.Size(199, 68);
+            this.dugmeNazad.TabIndex = 1;
+            this.dugmeNazad.Text = "nazad";
+            this.dugmeNazad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeNazad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeNazad.UseVisualStyleBackColor = true;
+            this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Location = new System.Drawing.Point(0, 102);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(199, 215);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::sistem.Properties.Resources.univerzitet;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FormaUpravljanjeUniverzitetom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1022, 399);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(1022, 591);
+            this.Controls.Add(this.panelNaslov);
+            this.Controls.Add(this.panelMeni);
             this.Controls.Add(this.tabelaPrikazUniverziteta);
-            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -173,22 +228,28 @@ namespace sistem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prikaz univerziteta";
             this.Load += new System.EventHandler(this.FormaUpravljanjeUniverzitetom_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaPrikazUniverziteta)).EndInit();
+            this.panelNaslov.ResumeLayout(false);
+            this.panelMeni.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem meniNazad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridView tabelaPrikazUniverziteta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn grad;
         private System.Windows.Forms.DataGridViewTextBoxColumn drzava;
         private System.Windows.Forms.DataGridViewButtonColumn akcija;
-        private System.Windows.Forms.DataGridView tabelaPrikazUniverziteta;
-        private System.Windows.Forms.ToolStripMenuItem dodajUniverzitetToolStripMenuItem;
+        private System.Windows.Forms.Panel panelNaslov;
+        private System.Windows.Forms.Label labelaNaslov;
+        private System.Windows.Forms.Panel panelMeni;
+        private FontAwesome.Sharp.IconButton dugmeNazad;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton dugmeDodaj;
     }
 }

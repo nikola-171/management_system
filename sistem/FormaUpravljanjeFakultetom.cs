@@ -55,23 +55,16 @@ namespace sistem
             throw new NotImplementedException();
         }
 
-        private void dugmeNazad_Click(object sender, EventArgs e)
-        {
-            MenadzerFormi.dajFormu<FormaPocetnaStrana>(this);
-        }
-
+       
        
 
         private void FormaUpravljanjeFakultetom_Load(object sender, EventArgs e)
         {
-            Osvezi_sadrzaj();
+            tabelaPrikazFakulteta.Columns[0].Width = 60;
+            tabelaPrikazFakulteta.Columns[4].Width = 100;   
         }
 
-        private void dugmeDodavanje_Click(object sender, EventArgs e)
-        {
-            MenadzerFormi.dajFormu<FormaDodavanjeFakultet>(this,null,true);
-            //dodvanje fakulteta
-        }
+
 
         private void tabelaPrikazFakulteta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,6 +80,17 @@ namespace sistem
 
 
             }
+        }
+
+        private void dugmeZaNazad_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaPocetnaStrana>(this);
+        }
+
+        private void dugmeDodaj_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaDodavanjeFakultet>(this, null, true);
+            //dodvanje fakulteta
         }
     }
 }

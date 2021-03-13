@@ -65,7 +65,9 @@ namespace sistem
             MenadzerFormi.dajFormu<FormaUpravljanjeDepartmana>(this, null, true);
         }
 
-        private void dugmeDodajDepartman_Click(object sender, EventArgs e)
+        
+
+        private void dugmeDodajDepartman_Click_1(object sender, EventArgs e)
         {
             // upisivanje departmana 
             try
@@ -77,7 +79,7 @@ namespace sistem
             }
             catch (Exception excpetion)
             {
-                MessageBox.Show("došlo je do greške " + excpetion.ToString(),"greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("došlo je do greške " + excpetion.ToString(), "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

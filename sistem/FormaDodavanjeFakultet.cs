@@ -63,12 +63,13 @@ namespace sistem
             Osvezi_sadrzaj();
         }
 
-        private void dugmeNazad_Click(object sender, EventArgs e)
+
+        private void dugmeZaNazad_Click(object sender, EventArgs e)
         {
             MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this, null, true);
         }
 
-        private void dugmeProsledi_Click(object sender, EventArgs e)
+        private void dugmeZaProsledi_Click(object sender, EventArgs e)
         {
             //dodavanje fakulteta
 
@@ -77,11 +78,11 @@ namespace sistem
                 Baza.daj_instancu().Dodavanje_fakulteta(nazivUnos.Text, gradUnos.Text, mapa_id_naziv[Convert.ToString(comboUniverziteti.SelectedItem)]);
                 MessageBox.Show("uspešno dodat fakultet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }catch(Exception exception)
+            }
+            catch (Exception exception)
             {
                 MessageBox.Show("greška " + exception.ToString());
             }
-            
 
         }
     }

@@ -6,9 +6,6 @@ create procedure upis_administratora(in admin_ime varchar(45), in admin_lozinka 
                                      in email_in varchar(45), in telefon_in varchar(45), 
                                      in ime_in varchar(45), in prezime_in varchar(45))
 begin
-	declare brojac tinyint unsigned default 1;
-    declare godina_brojac tinyint unsigned default 0;
-    declare id_prim tinyint unsigned default 0;
     declare admin_vec_registrovan tinyint unsigned default 0;
     declare hesirana_lozinka varchar(255) default '';
     
@@ -34,59 +31,6 @@ begin
     
 		insert into fakultetska_godina(fakultetska_godina)
 		values('2017/18');
-    
-		/*univerzitet*/
-		call upis_univerziteta('univerzitet u nišu', 'srbija', 'niš');/*id - 1*/
-		/*fakultet*/
-		call dodaj_fakultet('prirodno-matematički fakultet', 'niš', 1);/*id 1*/
-		/*smer*/
-		call dodaj_smer(1, 'osnovne akademske studije', 'računarske nauke', 180, 3); /*id 1*/
-    
-		/*predmeti prva godina*/
-		call dodaj_novi_predmet('uvod u programiranje', 1, 1, 8);
-		call dodaj_novi_predmet('diskretne strukture 1', 1, 1, 7);
-		call dodaj_novi_predmet('uvod u računarstvo', 1, 1, 7);
-		call dodaj_novi_predmet('matematička analiza 1', 1, 1, 8);
-    
-		call dodaj_novi_predmet('objektnno-orijentisano programiranje 1', 1, 2, 8);
-		call dodaj_novi_predmet('diskretne strukture 2', 1, 2, 7);
-		call dodaj_novi_predmet('uvod u veb programiranje', 1, 2, 7);
-		call dodaj_novi_predmet('matematička analiza 2', 1, 2, 8);
-		/*druga*/
-		/*call dodaj_novi_predmet('struktura podataka i algoritmi', 2, 3, 8);
-		call dodaj_novi_predmet('linearna algebra', 2, 3, 7);
-		call dodaj_novi_predmet('uvod u baze podataka', 2, 3, 8);
-		call dodaj_novi_predmet('objektno-orijentisano programiranje 2', 2, 3, 7);
-    
-		call dodaj_novi_predmet('dizajn i analiza algoritama', 2, 4, 8);
-		call dodaj_novi_predmet('objektno-orijentisano programiranje 3', 2, 4, 8);
-		call dodaj_novi_predmet('uvod u operativne sisteme', 2, 4, 7);
-		call dodaj_novi_predmet('elektronsko izdavaštvo', 2, 4, 7);*/
-		/*treća*/
-		/* call dodaj_novi_predmet('verovatnoća', 3, 5, 8);
-		call dodaj_novi_predmet('numerički metodi 1', 3, 5, 7);
-		call dodaj_novi_predmet('upravljanje projektima u IT', 3, 5, 8);
-		call dodaj_novi_predmet('uvod u softversko inženjerstvo', 2, 5, 7);
-    
-		call dodaj_novi_predmet('Open source matematički softver', 3, 6, 7);
-		call dodaj_novi_predmet('računarske mreže', 3, 6, 7);
-		call dodaj_novi_predmet('engleski jezik 1', 3, 6, 5);
-		call dodaj_novi_predmet('engleski jezik 2', 3, 6, 5);
-		call dodaj_novi_predmet('veb programiranje', 3, 6, 6);*/
-    
-		/*student*/
-		call dodaj_novog_studenta(1, 'nikola', 'tošić', 1998, 9, 4, 'trnavac', 'bb', 'bb', '0616066787', 'nikola.tosic@pmf.edu.rs', 1, 'nikola.tosic', 'nikola019');
-		/*profesor*/
-		call dodaj_novog_profesora('pera', 'perić', 1972, 1, 16, '06547859', 'pera.peric@gmail.com', 'pera.peric', 'pera019');
-    
-		/*predmet na smeru, profesor na predmetu, student sluša predmet*/
-		/*l : while brojac <= 8 do
-			call dodaj_predmet_smer_par(brojac, 1);
-			call dodaj_profesor_predmet_par(1, brojac, 1);
-			call dodaj_student_slusa_predmet_par(1, brojac);
-		
-			set brojac = brojac + 1;
-		end while l;*/
 		
     end if;
     
@@ -131,6 +75,7 @@ create procedure dodaj_novog_studenta(in smer_in int, in ime_in varchar(45), in 
 begin
 	declare hesirana_lozinka varchar(200) default '';
     declare id_prim int unsigned default 0;
+    declare student_broj_indeksa int default 0;
     
     declare exit handler for sqlexception
     begin
@@ -150,6 +95,12 @@ begin
 		   dan_rodjenja_in, trim(replace(mesto_boravka_in, '  ', '')), trim(replace(ulica_in, '  ', '')), 
 			trim(replace(broj_in, '  ', '')), trim(replace(telefon_in, '  ', '')), trim(replace(email_in, '  ', '')),
            status_in, trim(replace(korisnicko_ime_in, '  ', '')), hesirana_lozinka, id_prim);
+           
+	select max(broj_indeksa) into student_broj_indeksa
+    from student;
+    
+    select student_broj_indeksa as 'broj_indeksa';
+    
 	commit;
 end\\
 delimiter ;
@@ -183,7 +134,7 @@ begin
     commit;
 end\\
 delimiter ;
-/*upis novog profesora u bazi*/
+/*upis novog profesora u bazi, vraca njegov ID*/
 delimiter \\
 create procedure dodaj_novog_profesora(in ime_in varchar(45), in prezime_in varchar(45),
 									  in godina_rodjenja_in SMALLINT, in mesec_rodjenja_in TINYINT,
@@ -192,6 +143,7 @@ create procedure dodaj_novog_profesora(in ime_in varchar(45), in prezime_in varc
                                       in korisnicko_ime_in varchar(45), in lozinka_in varchar(45))
 begin
 	declare hesirana_lozinka varchar(200) default '';
+    declare id_profesora int default 0;
     declare exit handler for sqlexception
     begin
 		rollback;
@@ -206,30 +158,38 @@ begin
 	values(trim(replace(ime_in, '  ', '')), trim(replace(prezime_in, '  ', '')), godina_rodjenja_in,
            mesec_rodjenja_in, dan_rodjenja_in, trim(replace(telefon_in, '  ', '')),
            trim(replace(email_in, '  ', '')), trim(replace(korisnicko_ime_in, '  ', '')), hesirana_lozinka);
+	select max(id) into id_profesora
+    from profesor;
+    
+    select id_profesora as 'id_profesora';
 	commit;
 end\\
 delimiter ;
 /*Unos nove fakultetske godine. Pre nego što se unese u bazi vrši se presek studenata.
   Na osnovu ostvarenih espb bodova u prethodnoj fakultetskoj godini će se utvrditi da li
-  će student u novog fakultetskoj godini biti na budžetu ili ne */
+  će student u novog fakultetskoj godini biti na budžetu ili ne */  
+  drop procedure unos_nove_fakultetske_godine;
 delimiter \\
-create procedure unos_nove_fakultetske_godine(in fakultetska_godina_in varchar(10))
+create procedure unos_nove_fakultetske_godine(in godina varchar(45))
 begin
-	declare broj_bodova smallint unsigned default 0;
-    declare novi_status bit(1) default 0;
+
+	declare broj_bodova int default 0;
+    declare novi_status tinyint unsigned default 0;
     declare student_indeks int unsigned default 0;
-    declare potreban_broj_bodova tinyint unsigned default 48; /*potreban broj bodova za budzet*/
     
-    declare id_stare_godine tinyint unsigned default 1;
-    declare id_nove_godine tinyint unsigned default 1;
+    declare potreban_broj_bodova int default 48; /*potreban broj bodova za budzet*/
     
-    declare c cursor for
+    declare id_stare_godine int unsigned default 1;
+    declare id_nove_godine int unsigned default 1;
+    
+     declare c cursor for
 		select broj_indeksa from student;
-	
-	declare exit handler for not found
+    
+    declare exit handler for not found
     begin
     end;
     
+	
     declare exit handler for sqlexception
     begin
         rollback;
@@ -239,36 +199,52 @@ begin
         select @p2 as 'msg';
     end;
     
-    start transaction;
-    
     select max(id) into id_stare_godine
     from fakultetska_godina;
     
-    insert into fakultetska_godina(fakultetska_godina)
-    values(fakultetska_godina_in);
+     select id_stare_godine as "stara_godina";
+     
+   insert into fakultetska_godina(fakultetska_godina)
+    values(godina);
     
     select max(id) into id_nove_godine
 	from fakultetska_godina;
     
+    
+    select id_nove_godine as'godina';
+         select id_nove_godine as "nova_godina";
+
     open c;
      l : loop
 		fetch c into student_indeks;
+         
+       select student_indeks as "tekuci student";
         
         select sum(p.espb) into broj_bodova
         from predmet as p, student_polozio_predmet as spp
         where spp.predmet_id = p.id and spp.student_broj_indeksa = student_indeks
 			  and spp.fakultetska_godina = id_stare_godine;
+          
+		if broj_bodova is null then
+			set broj_bodova = 0;
+        end if;
+	   select broj_bodova as "broj_bodova_studenta";
               
 		if broj_bodova >= potreban_broj_bodova then
-			set novi_status = 1;
-        end if;
+            select "ima potreban broj bodova" as "poruka";
+		set novi_status = 1;
+		else
+        set novi_status = 0;
+           select "nema potreban broj bodova" as "poruka";
+       end if;
         
         update student
         set status_studenta = novi_status, fakultetska_godina = id_nove_godine
         where broj_indeksa = student_indeks;
         
+        set broj_bodova = 0;
      end loop l;
     close c;
-    commit;
+    
 end\\
 delimiter ;

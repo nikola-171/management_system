@@ -4,7 +4,7 @@ delimiter \\
 create procedure daj_podatke_o_administrator(in admin_ime_in varchar(45))
 begin
 	select * from daj_podatke_o_administratoru
-    where administrator_ime = admin_ime;
+    where administrator_ime = admin_ime_in;
 end\\
 delimiter ;
 /*uzimanje podataka o studentu na osnovu broja indeksa*/
@@ -153,4 +153,22 @@ begin
 	select * from predmeti_koji_nisu_na_nekom_departmanu;
 end\\
 delimiter ;
+/*uzimanje tekuće fakultetske godine*/
+delimiter \\
+create procedure daj_tekucu_fakultetsku_godinu()
+begin
+	declare fakultetska_godina_priv varchar(45)default '';
+    declare max_id int unsigned default 0;
+    
+    start transaction;
+		select max(id) into max_id
+        from fakultetska_godina;
+        
+        select f.fakultetska_godina as 'fakultetska_godina'
+        from fakultetska_godina as f
+        where f.id = max_id;
+    commit;
+end\\
+delimiter ;
+
 

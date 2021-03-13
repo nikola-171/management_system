@@ -35,22 +35,24 @@ namespace sistem
 
             Sesija.dajSessiju().Logout_korisnika();
             MenadzerFormi.Zatvori();
-        }
+        }     
 
-        private void dugmeNazad_Click(object sender, EventArgs e)
+        private void dugmeZaNazad_Click(object sender, EventArgs e)
         {
             MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
         }
 
-        private void dugmeProsledi_Click(object sender, EventArgs e)
+        private void dugmeZaProsledi_Click(object sender, EventArgs e)
         {
             try
             {
                 Baza.daj_instancu().Dodavanje_univerziteta(nazivUnos.Text, drzavaUnos.Text, gradUnos.Text);
                 MessageBox.Show("Uspešno registrovan univerzitet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this,null,true);
-;            }catch(Exception excpetion)
+                MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
+                ;
+            }
+            catch (Exception excpetion)
             {
                 MessageBox.Show("greška", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

@@ -272,9 +272,10 @@ namespace sistem
             // brojUnos
             // 
             this.brojUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.brojUnos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.brojUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brojUnos.Location = new System.Drawing.Point(146, 111);
-            this.brojUnos.MaxLength = 5;
+            this.brojUnos.MaxLength = 10;
             this.brojUnos.Name = "brojUnos";
             this.brojUnos.Size = new System.Drawing.Size(124, 26);
             this.brojUnos.TabIndex = 7;
@@ -294,9 +295,10 @@ namespace sistem
             // ulicaUnos
             // 
             this.ulicaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ulicaUnos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.ulicaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ulicaUnos.Location = new System.Drawing.Point(146, 75);
-            this.ulicaUnos.MaxLength = 5;
+            this.ulicaUnos.MaxLength = 25;
             this.ulicaUnos.Name = "ulicaUnos";
             this.ulicaUnos.Size = new System.Drawing.Size(124, 26);
             this.ulicaUnos.TabIndex = 6;
@@ -304,9 +306,10 @@ namespace sistem
             // mestoBoravkaUnos
             // 
             this.mestoBoravkaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mestoBoravkaUnos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.mestoBoravkaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mestoBoravkaUnos.Location = new System.Drawing.Point(146, 38);
-            this.mestoBoravkaUnos.MaxLength = 5;
+            this.mestoBoravkaUnos.MaxLength = 25;
             this.mestoBoravkaUnos.Name = "mestoBoravkaUnos";
             this.mestoBoravkaUnos.Size = new System.Drawing.Size(124, 26);
             this.mestoBoravkaUnos.TabIndex = 5;
@@ -357,7 +360,7 @@ namespace sistem
             this.lozinkaPonovoUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaPonovoUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinkaPonovoUnos.Location = new System.Drawing.Point(146, 110);
-            this.lozinkaPonovoUnos.MaxLength = 5;
+            this.lozinkaPonovoUnos.MaxLength = 25;
             this.lozinkaPonovoUnos.Name = "lozinkaPonovoUnos";
             this.lozinkaPonovoUnos.Size = new System.Drawing.Size(161, 26);
             this.lozinkaPonovoUnos.TabIndex = 13;
@@ -367,7 +370,7 @@ namespace sistem
             this.lozinkaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinkaUnos.Location = new System.Drawing.Point(146, 70);
-            this.lozinkaUnos.MaxLength = 5;
+            this.lozinkaUnos.MaxLength = 25;
             this.lozinkaUnos.Name = "lozinkaUnos";
             this.lozinkaUnos.Size = new System.Drawing.Size(161, 26);
             this.lozinkaUnos.TabIndex = 12;
@@ -377,7 +380,7 @@ namespace sistem
             this.korisnickoImeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.korisnickoImeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.korisnickoImeUnos.Location = new System.Drawing.Point(146, 31);
-            this.korisnickoImeUnos.MaxLength = 5;
+            this.korisnickoImeUnos.MaxLength = 25;
             this.korisnickoImeUnos.Name = "korisnickoImeUnos";
             this.korisnickoImeUnos.Size = new System.Drawing.Size(161, 26);
             this.korisnickoImeUnos.TabIndex = 11;
@@ -442,7 +445,7 @@ namespace sistem
             this.telefonUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.telefonUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefonUnos.Location = new System.Drawing.Point(146, 128);
-            this.telefonUnos.MaxLength = 5;
+            this.telefonUnos.MaxLength = 15;
             this.telefonUnos.Name = "telefonUnos";
             this.telefonUnos.Size = new System.Drawing.Size(124, 26);
             this.telefonUnos.TabIndex = 4;
@@ -464,7 +467,7 @@ namespace sistem
             this.emailUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailUnos.Location = new System.Drawing.Point(146, 93);
-            this.emailUnos.MaxLength = 5;
+            this.emailUnos.MaxLength = 45;
             this.emailUnos.Name = "emailUnos";
             this.emailUnos.Size = new System.Drawing.Size(124, 26);
             this.emailUnos.TabIndex = 3;
@@ -472,9 +475,10 @@ namespace sistem
             // prezimeUnos
             // 
             this.prezimeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.prezimeUnos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.prezimeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prezimeUnos.Location = new System.Drawing.Point(146, 58);
-            this.prezimeUnos.MaxLength = 5;
+            this.prezimeUnos.MaxLength = 25;
             this.prezimeUnos.Name = "prezimeUnos";
             this.prezimeUnos.Size = new System.Drawing.Size(124, 26);
             this.prezimeUnos.TabIndex = 2;
@@ -482,9 +486,10 @@ namespace sistem
             // imeUnos
             // 
             this.imeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imeUnos.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.imeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imeUnos.Location = new System.Drawing.Point(146, 23);
-            this.imeUnos.MaxLength = 5;
+            this.imeUnos.MaxLength = 25;
             this.imeUnos.Name = "imeUnos";
             this.imeUnos.Size = new System.Drawing.Size(124, 26);
             this.imeUnos.TabIndex = 1;

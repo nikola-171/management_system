@@ -19,6 +19,16 @@ namespace sistem
             InitializeComponent();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            Sesija.dajSessiju().Logout_korisnika();
+            MenadzerFormi.Zatvori();
+        }
+
         public void Osvezi_sadrzaj()
         {
             throw new NotImplementedException();
@@ -31,21 +41,23 @@ namespace sistem
 
         private void dugmeBrisi_Click(object sender, EventArgs e)
         {
-            //brisanje fakulteta
-            try
-            {
-                Baza.daj_instancu().Izbrisi_fakultet(this.ID);
-                MessageBox.Show("Uspešno izbrisan fakultet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this, null, true);
-            }catch(Exception excpetion)
-            {
-                MessageBox.Show("došlo je do greške " + excpetion.ToString());
-            }
+           
 
         }
 
         private void dugmeIzmeni_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void dugmeZaNazad_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this, null, true);
+
+        }
+
+        private void dugmeZaIzmenu_Click(object sender, EventArgs e)
         {
             //izmena fakulteta
             try
@@ -58,7 +70,22 @@ namespace sistem
             {
                 MessageBox.Show("došlo je do greške " + excpetion.ToString());
             }
+        }
 
+        private void dugmeZaBrisanje_Click(object sender, EventArgs e)
+        {
+            //brisanje fakulteta
+            try
+            {
+                Baza.daj_instancu().Izbrisi_fakultet(this.ID);
+                MessageBox.Show("Uspešno izbrisan fakultet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this, null, true);
+            }
+            catch (Exception excpetion)
+            {
+                MessageBox.Show("došlo je do greške " + excpetion.ToString());
+            }
         }
 
         public void Postavi_parametre(List<Tuple<string, string>> parametri)

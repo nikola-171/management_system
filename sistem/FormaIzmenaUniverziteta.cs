@@ -48,23 +48,7 @@ namespace sistem
 
         private void dugmeIzmeni_Click(object sender, EventArgs e)
         {
-            // sacuvaj izmene na univerzitetu
-            try
-            {
-                
-
-                Baza.daj_instancu().Sacuvaj_izmene_na_univerzitetu(this.ID, nazivUnos.Text, drzavaUnos.Text, gradUnos.Text);
-               
-
-                MessageBox.Show("Izmene uspešno sačuvane", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Nismo uspeli da sačuvamo izmene, molimo pokušajte kasnije", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -79,6 +63,17 @@ namespace sistem
 
         private void dugmeBrisi_Click(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void dugmeZaNazad_Click(object sender, EventArgs e)
+        {
+            MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
+        }
+
+        private void dugmeZaBrisanje_Click(object sender, EventArgs e)
+        {
             //brisanje univerziteta
             try
             {
@@ -86,17 +81,37 @@ namespace sistem
                 MessageBox.Show("Univerzitet uspešno obrisan", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
 
-            }catch(Exception exception)
+            }
+            catch (Exception exception)
             {
                 MessageBox.Show("došlo je do greške prilikom brisanja univerziteta, molimo pokušajte kasnije", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        private void dugmeNazad_Click(object sender, EventArgs e)
+       
+
+        private void dugmeZaIzmenu_Click(object sender, EventArgs e)
         {
-            MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
+            // sacuvaj izmene na univerzitetu
+            try
+            {
+
+
+                Baza.daj_instancu().Sacuvaj_izmene_na_univerzitetu(this.ID, nazivUnos.Text, drzavaUnos.Text, gradUnos.Text);
+
+
+                MessageBox.Show("Izmene uspešno sačuvane", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Nismo uspeli da sačuvamo izmene, molimo pokušajte kasnije", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+      
 
         public void Osvezi_sadrzaj()
         {

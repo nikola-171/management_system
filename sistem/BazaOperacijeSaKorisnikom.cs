@@ -10,6 +10,8 @@ namespace sistem
 {
     public partial class Baza
     {
+        
+        #region uzimanje_informacija_o_administratoru
         public Dictionary<string, string> Daj_podatke_o_adminu(string admin_ime)
         {
             Dictionary<string, string> podaci = new Dictionary<string, string>();
@@ -39,6 +41,9 @@ namespace sistem
             
             return podaci;
         }
+        #endregion
+
+        #region validacija_korisnika
         public bool Validacija_korisnika(string admin_ime, string admin_lozinka)
         {
             bool status = false;
@@ -63,6 +68,38 @@ namespace sistem
             }
             return status;
         }
+        #endregion
+
+        #region uzimanje_tekuce_fakultetske_godine
+        public string daj_tekucu_fakultetsku_godinu()
+        {
+            string tekuca_godina = string.Empty;
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_tekucu_fakultetsku_godinu";
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+       
+                MySqlDataReader rdr = cmd.ExecuteReader();        
+
+                if (rdr.Read())
+                {
+                    tekuca_godina = rdr.GetString(rdr.GetOrdinal("fakultetska_godina"));
+                }
+            }
+
+            if (tekuca_godina.Equals(string.Empty))
+            {
+                throw new Exception("greška prilikom uzimanja tekuće fakultetske godine");
+            }
+
+            return tekuca_godina;
+        }
+        #endregion
+
+        #region registracija_korisnika
         public int Registracija_korisnika(string admin_ime, string admin_lozinka, string email, string telefon, string ime, string prezime)
         {
             int status = -1;
@@ -91,6 +128,29 @@ namespace sistem
             }
             return status;
         }
+        #endregion
+
+        #region azuriranje_fakultetske_godine
+        public void Azuriraj_fakultetsku_godinu(string naziv)
+        {
+            string s = string.Empty;
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "unos_nove_fakultetske_godine";
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@godina", naziv);
+   
+
+                MySqlDataReader rdr = cmd.ExecuteReader();    
+                
+            }    
+
+        }
+        #endregion
 
     }
 }

@@ -50,14 +50,22 @@ namespace sistem
             this.labelaEmailPrikaz = new System.Windows.Forms.Label();
             this.labelaImePrikaz = new System.Windows.Forms.Label();
             this.panelInformacije = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dugmeIzvestajUniverziteti = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labela = new System.Windows.Forms.Label();
+            this.fakultetskaGodinaPrikaz = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fakultetskaGodinaUnos = new System.Windows.Forms.TextBox();
+            this.dugmeAzurirajFakultetskuGodinu = new FontAwesome.Sharp.IconButton();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelNaslov.SuspendLayout();
             this.panelInformacije.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +85,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 659);
+            this.panelMeni.Size = new System.Drawing.Size(199, 670);
             this.panelMeni.TabIndex = 6;
             // 
             // dugmeUpravljanjeProfesorima
@@ -279,7 +287,7 @@ namespace sistem
             this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNaslov.Location = new System.Drawing.Point(199, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(630, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(933, 93);
             this.panelNaslov.TabIndex = 7;
             // 
             // dugmeInformacije
@@ -292,7 +300,7 @@ namespace sistem
             this.dugmeInformacije.IconColor = System.Drawing.Color.Black;
             this.dugmeInformacije.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeInformacije.IconSize = 50;
-            this.dugmeInformacije.Location = new System.Drawing.Point(546, 23);
+            this.dugmeInformacije.Location = new System.Drawing.Point(849, 23);
             this.dugmeInformacije.Name = "dugmeInformacije";
             this.dugmeInformacije.Size = new System.Drawing.Size(72, 49);
             this.dugmeInformacije.TabIndex = 16;
@@ -369,35 +377,104 @@ namespace sistem
             // panelInformacije
             // 
             this.panelInformacije.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInformacije.Controls.Add(this.groupBox3);
             this.panelInformacije.Controls.Add(this.groupBox2);
             this.panelInformacije.Controls.Add(this.groupBox1);
             this.panelInformacije.Location = new System.Drawing.Point(205, 99);
             this.panelInformacije.Name = "panelInformacije";
-            this.panelInformacije.Size = new System.Drawing.Size(612, 545);
+            this.panelInformacije.Size = new System.Drawing.Size(915, 559);
             this.panelInformacije.TabIndex = 15;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dugmeIzvestajUniverziteti);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(609, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(287, 524);
+            this.groupBox3.TabIndex = 17;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "generisanje izveštaja";
+            // 
+            // dugmeIzvestajUniverziteti
+            // 
+            this.dugmeIzvestajUniverziteti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajUniverziteti.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajUniverziteti.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajUniverziteti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajUniverziteti.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajUniverziteti.IconChar = FontAwesome.Sharp.IconChar.University;
+            this.dugmeIzvestajUniverziteti.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajUniverziteti.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajUniverziteti.IconSize = 50;
+            this.dugmeIzvestajUniverziteti.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeIzvestajUniverziteti.Location = new System.Drawing.Point(52, 40);
+            this.dugmeIzvestajUniverziteti.Name = "dugmeIzvestajUniverziteti";
+            this.dugmeIzvestajUniverziteti.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajUniverziteti.Size = new System.Drawing.Size(199, 55);
+            this.dugmeIzvestajUniverziteti.TabIndex = 10;
+            this.dugmeIzvestajUniverziteti.Text = "upravljanje univerzitetom";
+            this.dugmeIzvestajUniverziteti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeIzvestajUniverziteti.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajUniverziteti.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajUniverziteti.Click += new System.EventHandler(this.dugmeIzvestajUniverziteti_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.dugmeAzurirajFakultetskuGodinu);
+            this.groupBox2.Controls.Add(this.fakultetskaGodinaUnos);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.labela);
+            this.groupBox2.Controls.Add(this.fakultetskaGodinaPrikaz);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(17, 282);
+            this.groupBox2.Location = new System.Drawing.Point(17, 234);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(578, 212);
+            this.groupBox2.Size = new System.Drawing.Size(558, 306);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "generisanje izveštaja";
+            this.groupBox2.Text = "fakultetska godina";
             // 
-            // label4
+            // labela
             // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(69, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(446, 35);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "linkovi za generisanje izveštaja";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labela.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labela.AutoSize = true;
+            this.labela.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labela.ForeColor = System.Drawing.Color.White;
+            this.labela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labela.Location = new System.Drawing.Point(52, 106);
+            this.labela.MaximumSize = new System.Drawing.Size(300, 100);
+            this.labela.Name = "labela";
+            this.labela.Size = new System.Drawing.Size(284, 46);
+            this.labela.TabIndex = 14;
+            this.labela.Text = "Prilikom unosa nova fakultetske godine vrši se presek studenata.";
+            this.labela.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // fakultetskaGodinaPrikaz
+            // 
+            this.fakultetskaGodinaPrikaz.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fakultetskaGodinaPrikaz.ForeColor = System.Drawing.Color.White;
+            this.fakultetskaGodinaPrikaz.Location = new System.Drawing.Point(297, 50);
+            this.fakultetskaGodinaPrikaz.Name = "fakultetskaGodinaPrikaz";
+            this.fakultetskaGodinaPrikaz.Size = new System.Drawing.Size(193, 35);
+            this.fakultetskaGodinaPrikaz.TabIndex = 13;
+            this.fakultetskaGodinaPrikaz.Text = "nedefinisano";
+            this.fakultetskaGodinaPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(52, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 35);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Tekuća fakultetska godina:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
             // 
@@ -411,17 +488,62 @@ namespace sistem
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(17, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(578, 212);
+            this.groupBox1.Size = new System.Drawing.Size(558, 212);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "informacije o administratoru";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(52, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(292, 35);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Unesite novu fakultetsku godinu:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // fakultetskaGodinaUnos
+            // 
+            this.fakultetskaGodinaUnos.Location = new System.Drawing.Point(350, 172);
+            this.fakultetskaGodinaUnos.MaxLength = 7;
+            this.fakultetskaGodinaUnos.Name = "fakultetskaGodinaUnos";
+            this.fakultetskaGodinaUnos.Size = new System.Drawing.Size(140, 32);
+            this.fakultetskaGodinaUnos.TabIndex = 16;
+            // 
+            // dugmeAzurirajFakultetskuGodinu
+            // 
+            this.dugmeAzurirajFakultetskuGodinu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeAzurirajFakultetskuGodinu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeAzurirajFakultetskuGodinu.FlatAppearance.BorderSize = 0;
+            this.dugmeAzurirajFakultetskuGodinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeAzurirajFakultetskuGodinu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmeAzurirajFakultetskuGodinu.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeAzurirajFakultetskuGodinu.IconChar = FontAwesome.Sharp.IconChar.CalendarPlus;
+            this.dugmeAzurirajFakultetskuGodinu.IconColor = System.Drawing.Color.Black;
+            this.dugmeAzurirajFakultetskuGodinu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeAzurirajFakultetskuGodinu.IconSize = 50;
+            this.dugmeAzurirajFakultetskuGodinu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeAzurirajFakultetskuGodinu.Location = new System.Drawing.Point(350, 219);
+            this.dugmeAzurirajFakultetskuGodinu.Name = "dugmeAzurirajFakultetskuGodinu";
+            this.dugmeAzurirajFakultetskuGodinu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeAzurirajFakultetskuGodinu.Size = new System.Drawing.Size(140, 60);
+            this.dugmeAzurirajFakultetskuGodinu.TabIndex = 17;
+            this.dugmeAzurirajFakultetskuGodinu.Text = "ažuriraj";
+            this.dugmeAzurirajFakultetskuGodinu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeAzurirajFakultetskuGodinu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeAzurirajFakultetskuGodinu.UseVisualStyleBackColor = false;
+            this.dugmeAzurirajFakultetskuGodinu.Click += new System.EventHandler(this.dugmeAzurirajFakultetskuGodinu_Click);
             // 
             // FormaPocetnaStrana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(829, 659);
+            this.ClientSize = new System.Drawing.Size(1132, 670);
             this.Controls.Add(this.panelInformacije);
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panelMeni);
@@ -439,7 +561,9 @@ namespace sistem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelNaslov.ResumeLayout(false);
             this.panelInformacije.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -467,8 +591,15 @@ namespace sistem
         private System.Windows.Forms.Panel panelInformacije;
         private FontAwesome.Sharp.IconButton dugmeInformacije;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private FontAwesome.Sharp.IconButton dugmeIzvestajUniverziteti;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label fakultetskaGodinaPrikaz;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labela;
+        private System.Windows.Forms.TextBox fakultetskaGodinaUnos;
+        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton dugmeAzurirajFakultetskuGodinu;
     }
 }
 

@@ -47,6 +47,10 @@ namespace sistem
             this.predmetDepartmanUnos = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.datum = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listaOcena = new System.Windows.Forms.ComboBox();
+            this.datumUnos = new System.Windows.Forms.DateTimePicker();
             this.listaStudent = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.listaPredmet = new System.Windows.Forms.ComboBox();
@@ -58,10 +62,6 @@ namespace sistem
             this.dugmePretragaStudenta = new FontAwesome.Sharp.IconButton();
             this.dugmePretragaPredmet = new FontAwesome.Sharp.IconButton();
             this.dugmeDodajPredmet = new FontAwesome.Sharp.IconButton();
-            this.datumUnos = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listaOcena = new System.Windows.Forms.ComboBox();
-            this.datum = new System.Windows.Forms.Label();
             this.panelNaslov.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -271,6 +271,52 @@ namespace sistem
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "izaberite studentai predmet";
             // 
+            // datum
+            // 
+            this.datum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.datum.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datum.ForeColor = System.Drawing.Color.White;
+            this.datum.Location = new System.Drawing.Point(20, 261);
+            this.datum.Name = "datum";
+            this.datum.Size = new System.Drawing.Size(95, 35);
+            this.datum.TabIndex = 35;
+            this.datum.Text = "datum:";
+            this.datum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(20, 209);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 35);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "ocena:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // listaOcena
+            // 
+            this.listaOcena.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listaOcena.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listaOcena.FormattingEnabled = true;
+            this.listaOcena.Location = new System.Drawing.Point(108, 214);
+            this.listaOcena.Name = "listaOcena";
+            this.listaOcena.Size = new System.Drawing.Size(167, 29);
+            this.listaOcena.TabIndex = 33;
+            // 
+            // datumUnos
+            // 
+            this.datumUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.datumUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datumUnos.Location = new System.Drawing.Point(24, 304);
+            this.datumUnos.MaxDate = new System.DateTime(2023, 3, 11, 10, 49, 0, 0);
+            this.datumUnos.MinDate = new System.DateTime(2017, 3, 11, 0, 0, 0, 0);
+            this.datumUnos.Name = "datumUnos";
+            this.datumUnos.Size = new System.Drawing.Size(251, 26);
+            this.datumUnos.TabIndex = 32;
+            this.datumUnos.Value = new System.DateTime(2021, 3, 11, 0, 0, 0, 0);
+            // 
             // listaStudent
             // 
             this.listaStudent.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -324,7 +370,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 113);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(222, 496);
+            this.panelMeni.Size = new System.Drawing.Size(231, 496);
             this.panelMeni.TabIndex = 33;
             // 
             // panelLogo
@@ -332,7 +378,7 @@ namespace sistem
             this.panelLogo.Controls.Add(this.pictureBox2);
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(219, 232);
+            this.panelLogo.Size = new System.Drawing.Size(228, 232);
             this.panelLogo.TabIndex = 0;
             // 
             // dugmeNazad
@@ -359,11 +405,11 @@ namespace sistem
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::sistem.Properties.Resources.polozen_ispit;
+            this.pictureBox2.Image = global::sistem.Properties.Resources.ispit_polozen;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(219, 226);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.Size = new System.Drawing.Size(224, 226);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -434,52 +480,6 @@ namespace sistem
             this.dugmeDodajPredmet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dugmeDodajPredmet.UseVisualStyleBackColor = false;
             this.dugmeDodajPredmet.Click += new System.EventHandler(this.dugmeDodajPredmet_Click);
-            // 
-            // datumUnos
-            // 
-            this.datumUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.datumUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datumUnos.Location = new System.Drawing.Point(24, 304);
-            this.datumUnos.MaxDate = new System.DateTime(2023, 3, 11, 10, 49, 0, 0);
-            this.datumUnos.MinDate = new System.DateTime(2017, 3, 11, 0, 0, 0, 0);
-            this.datumUnos.Name = "datumUnos";
-            this.datumUnos.Size = new System.Drawing.Size(251, 26);
-            this.datumUnos.TabIndex = 32;
-            this.datumUnos.Value = new System.DateTime(2021, 3, 11, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 209);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 35);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "ocena:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // listaOcena
-            // 
-            this.listaOcena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listaOcena.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listaOcena.FormattingEnabled = true;
-            this.listaOcena.Location = new System.Drawing.Point(108, 214);
-            this.listaOcena.Name = "listaOcena";
-            this.listaOcena.Size = new System.Drawing.Size(167, 29);
-            this.listaOcena.TabIndex = 33;
-            // 
-            // datum
-            // 
-            this.datum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.datum.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datum.ForeColor = System.Drawing.Color.White;
-            this.datum.Location = new System.Drawing.Point(20, 261);
-            this.datum.Name = "datum";
-            this.datum.Size = new System.Drawing.Size(95, 35);
-            this.datum.TabIndex = 35;
-            this.datum.Text = "datum:";
-            this.datum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // formaDodavanjePolozenogIspitaStudentu
             // 

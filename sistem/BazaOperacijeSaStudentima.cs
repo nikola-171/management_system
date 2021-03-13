@@ -24,7 +24,7 @@ namespace sistem
         #endregion
 
         #region dodavanje_studenata
-        public void Dodaj_studenta(string ime, string prezime, string email, string telefon, int dan, int mesec,
+        public int Dodaj_studenta(string ime, string prezime, string email, string telefon, int dan, int mesec,
                                    int godina, string mesto_boravka, string ulica, string broj, string korisnicko_ime,
                                    string lozinka, int departman, int status)
         {
@@ -53,7 +53,23 @@ namespace sistem
                 cmd.Parameters.AddWithValue("@email_in", email);
 
 
-                MySqlDataReader rdr = cmd.ExecuteReader();         
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                int student_broj_indeksa = -1;
+
+                if (rdr.Read())
+                {
+                    student_broj_indeksa = rdr.GetInt32(rdr.GetOrdinal("broj_indeksa"));
+                }
+
+                /// ako baza ne vrati broj indeksa znaci da se desila greska u bazi i stoga bacamo exception
+
+                if (student_broj_indeksa.Equals(-1))
+                {
+                    throw new Exception(Baza.GRESKA);
+                }
+
+                return student_broj_indeksa;
 
             }
         }
@@ -146,10 +162,10 @@ namespace sistem
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-                if (rdr.Read())
+                /*if (rdr.Read())
                 {
                     int status = rdr.GetOrdinal("msg");           
-                }
+                }*/
             }
         }
         #endregion

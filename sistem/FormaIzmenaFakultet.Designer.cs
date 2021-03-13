@@ -29,87 +29,67 @@ namespace sistem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaIzmenaFakultet));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dugmeBrisi = new System.Windows.Forms.Button();
-            this.dugmeNazad = new System.Windows.Forms.Button();
-            this.dugmeIzmeni = new System.Windows.Forms.Button();
             this.mestoUnos = new System.Windows.Forms.TextBox();
             this.nazivUnos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.slikaUniverzitet = new System.Windows.Forms.PictureBox();
+            this.panelNaslov = new System.Windows.Forms.Panel();
+            this.labelaNaslov = new System.Windows.Forms.Label();
+            this.panelMeni = new System.Windows.Forms.Panel();
+            this.dugmeZaNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dugmeZaIzmenu = new FontAwesome.Sharp.IconButton();
+            this.dugmeZaBrisanje = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slikaUniverzitet)).BeginInit();
+            this.panelNaslov.SuspendLayout();
+            this.panelMeni.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dugmeBrisi);
-            this.groupBox1.Controls.Add(this.dugmeNazad);
-            this.groupBox1.Controls.Add(this.dugmeIzmeni);
+            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.groupBox1.Controls.Add(this.dugmeZaIzmenu);
+            this.groupBox1.Controls.Add(this.dugmeZaBrisanje);
             this.groupBox1.Controls.Add(this.mestoUnos);
             this.groupBox1.Controls.Add(this.nazivUnos);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 14);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(364, 175);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 287);
+            this.groupBox1.Size = new System.Drawing.Size(479, 334);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Izmeni fakultet";
             // 
-            // dugmeBrisi
-            // 
-            this.dugmeBrisi.Location = new System.Drawing.Point(28, 235);
-            this.dugmeBrisi.Name = "dugmeBrisi";
-            this.dugmeBrisi.Size = new System.Drawing.Size(95, 34);
-            this.dugmeBrisi.TabIndex = 8;
-            this.dugmeBrisi.Text = "izbriši";
-            this.dugmeBrisi.UseVisualStyleBackColor = true;
-            this.dugmeBrisi.Click += new System.EventHandler(this.dugmeBrisi_Click);
-            // 
-            // dugmeNazad
-            // 
-            this.dugmeNazad.Location = new System.Drawing.Point(223, 235);
-            this.dugmeNazad.Name = "dugmeNazad";
-            this.dugmeNazad.Size = new System.Drawing.Size(92, 34);
-            this.dugmeNazad.TabIndex = 7;
-            this.dugmeNazad.Text = "nazad";
-            this.dugmeNazad.UseVisualStyleBackColor = true;
-            this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
-            // 
-            // dugmeIzmeni
-            // 
-            this.dugmeIzmeni.Location = new System.Drawing.Point(129, 235);
-            this.dugmeIzmeni.Name = "dugmeIzmeni";
-            this.dugmeIzmeni.Size = new System.Drawing.Size(88, 34);
-            this.dugmeIzmeni.TabIndex = 6;
-            this.dugmeIzmeni.Text = "izmeni";
-            this.dugmeIzmeni.UseVisualStyleBackColor = true;
-            this.dugmeIzmeni.Click += new System.EventHandler(this.dugmeIzmeni_Click);
-            // 
             // mestoUnos
             // 
-            this.mestoUnos.Location = new System.Drawing.Point(129, 147);
+            this.mestoUnos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mestoUnos.Location = new System.Drawing.Point(162, 159);
             this.mestoUnos.Name = "mestoUnos";
-            this.mestoUnos.Size = new System.Drawing.Size(186, 25);
+            this.mestoUnos.Size = new System.Drawing.Size(248, 29);
             this.mestoUnos.TabIndex = 5;
             // 
             // nazivUnos
             // 
-            this.nazivUnos.Location = new System.Drawing.Point(129, 78);
+            this.nazivUnos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nazivUnos.Location = new System.Drawing.Point(162, 80);
             this.nazivUnos.Name = "nazivUnos";
-            this.nazivUnos.Size = new System.Drawing.Size(186, 25);
+            this.nazivUnos.Size = new System.Drawing.Size(248, 29);
             this.nazivUnos.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 149);
+            this.label3.Location = new System.Drawing.Point(52, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 23);
             this.label3.TabIndex = 2;
@@ -119,35 +99,152 @@ namespace sistem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 80);
+            this.label1.Location = new System.Drawing.Point(52, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "naziv: ";
             // 
-            // slikaUniverzitet
+            // panelNaslov
             // 
-            this.slikaUniverzitet.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.slikaUniverzitet.Image = global::sistem.Properties.Resources.univerzitet;
-            this.slikaUniverzitet.Location = new System.Drawing.Point(388, 15);
-            this.slikaUniverzitet.Name = "slikaUniverzitet";
-            this.slikaUniverzitet.Size = new System.Drawing.Size(242, 287);
-            this.slikaUniverzitet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.slikaUniverzitet.TabIndex = 2;
-            this.slikaUniverzitet.TabStop = false;
+            this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelNaslov.Controls.Add(this.labelaNaslov);
+            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNaslov.Location = new System.Drawing.Point(0, 0);
+            this.panelNaslov.Name = "panelNaslov";
+            this.panelNaslov.Size = new System.Drawing.Size(984, 125);
+            this.panelNaslov.TabIndex = 9;
+            // 
+            // labelaNaslov
+            // 
+            this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaNaslov.ForeColor = System.Drawing.Color.White;
+            this.labelaNaslov.Location = new System.Drawing.Point(198, 46);
+            this.labelaNaslov.Name = "labelaNaslov";
+            this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
+            this.labelaNaslov.TabIndex = 2;
+            this.labelaNaslov.Text = "Upravljanje fakultetom";
+            this.labelaNaslov.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelMeni
+            // 
+            this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMeni.Controls.Add(this.dugmeZaNazad);
+            this.panelMeni.Controls.Add(this.panelLogo);
+            this.panelMeni.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelMeni.Location = new System.Drawing.Point(0, 125);
+            this.panelMeni.Name = "panelMeni";
+            this.panelMeni.Size = new System.Drawing.Size(199, 443);
+            this.panelMeni.TabIndex = 10;
+            // 
+            // dugmeZaNazad
+            // 
+            this.dugmeZaNazad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeZaNazad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dugmeZaNazad.FlatAppearance.BorderSize = 0;
+            this.dugmeZaNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeZaNazad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeZaNazad.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.dugmeZaNazad.IconColor = System.Drawing.Color.Black;
+            this.dugmeZaNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeZaNazad.IconSize = 50;
+            this.dugmeZaNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaNazad.Location = new System.Drawing.Point(0, 215);
+            this.dugmeZaNazad.Name = "dugmeZaNazad";
+            this.dugmeZaNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeZaNazad.Size = new System.Drawing.Size(199, 68);
+            this.dugmeZaNazad.TabIndex = 1;
+            this.dugmeZaNazad.Text = "nazad";
+            this.dugmeZaNazad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaNazad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeZaNazad.UseVisualStyleBackColor = true;
+            this.dugmeZaNazad.Click += new System.EventHandler(this.dugmeZaNazad_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox2);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(199, 215);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::sistem.Properties.Resources.univerzitet1;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(193, 212);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // dugmeZaIzmenu
+            // 
+            this.dugmeZaIzmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeZaIzmenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeZaIzmenu.FlatAppearance.BorderSize = 0;
+            this.dugmeZaIzmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeZaIzmenu.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeZaIzmenu.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.dugmeZaIzmenu.IconColor = System.Drawing.Color.Black;
+            this.dugmeZaIzmenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeZaIzmenu.IconSize = 50;
+            this.dugmeZaIzmenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaIzmenu.Location = new System.Drawing.Point(236, 246);
+            this.dugmeZaIzmenu.Name = "dugmeZaIzmenu";
+            this.dugmeZaIzmenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeZaIzmenu.Size = new System.Drawing.Size(174, 51);
+            this.dugmeZaIzmenu.TabIndex = 12;
+            this.dugmeZaIzmenu.Text = "izmeni";
+            this.dugmeZaIzmenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaIzmenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeZaIzmenu.UseVisualStyleBackColor = false;
+            this.dugmeZaIzmenu.Click += new System.EventHandler(this.dugmeZaIzmenu_Click);
+            // 
+            // dugmeZaBrisanje
+            // 
+            this.dugmeZaBrisanje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeZaBrisanje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeZaBrisanje.FlatAppearance.BorderSize = 0;
+            this.dugmeZaBrisanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeZaBrisanje.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeZaBrisanje.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.dugmeZaBrisanje.IconColor = System.Drawing.Color.Black;
+            this.dugmeZaBrisanje.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeZaBrisanje.IconSize = 50;
+            this.dugmeZaBrisanje.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaBrisanje.Location = new System.Drawing.Point(56, 246);
+            this.dugmeZaBrisanje.Name = "dugmeZaBrisanje";
+            this.dugmeZaBrisanje.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeZaBrisanje.Size = new System.Drawing.Size(174, 51);
+            this.dugmeZaBrisanje.TabIndex = 11;
+            this.dugmeZaBrisanje.Text = "izbriši";
+            this.dugmeZaBrisanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaBrisanje.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeZaBrisanje.UseVisualStyleBackColor = false;
+            this.dugmeZaBrisanje.Click += new System.EventHandler(this.dugmeZaBrisanje_Click);
             // 
             // FormaIzmenaFakultet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 319);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(984, 568);
+            this.Controls.Add(this.panelMeni);
+            this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.slikaUniverzitet);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaIzmenaFakultet";
-            this.Text = "FormaIzmenaFakultet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Izmena fakulteta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slikaUniverzitet)).EndInit();
+            this.panelNaslov.ResumeLayout(false);
+            this.panelMeni.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,13 +252,17 @@ namespace sistem
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button dugmeBrisi;
-        private System.Windows.Forms.Button dugmeNazad;
-        private System.Windows.Forms.Button dugmeIzmeni;
         private System.Windows.Forms.TextBox mestoUnos;
         private System.Windows.Forms.TextBox nazivUnos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox slikaUniverzitet;
+        private System.Windows.Forms.Panel panelNaslov;
+        private System.Windows.Forms.Label labelaNaslov;
+        private System.Windows.Forms.Panel panelMeni;
+        private FontAwesome.Sharp.IconButton dugmeZaNazad;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private FontAwesome.Sharp.IconButton dugmeZaIzmenu;
+        private FontAwesome.Sharp.IconButton dugmeZaBrisanje;
     }
 }

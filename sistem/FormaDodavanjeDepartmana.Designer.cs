@@ -36,7 +36,6 @@ namespace sistem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelaNaslov = new System.Windows.Forms.Label();
             this.panelNaslov = new System.Windows.Forms.Panel();
-            this.panelForma = new System.Windows.Forms.Panel();
             this.groupBoxForma = new System.Windows.Forms.GroupBox();
             this.dugmeDodajDepartman = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@ namespace sistem
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelNaslov.SuspendLayout();
-            this.panelForma.SuspendLayout();
             this.groupBoxForma.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +64,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 450);
+            this.panelMeni.Size = new System.Drawing.Size(199, 538);
             this.panelMeni.TabIndex = 3;
             // 
             // dugmeNazad
@@ -127,17 +125,8 @@ namespace sistem
             this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNaslov.Location = new System.Drawing.Point(199, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(741, 102);
+            this.panelNaslov.Size = new System.Drawing.Size(801, 102);
             this.panelNaslov.TabIndex = 4;
-            // 
-            // panelForma
-            // 
-            this.panelForma.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panelForma.Controls.Add(this.groupBoxForma);
-            this.panelForma.Location = new System.Drawing.Point(199, 99);
-            this.panelForma.Name = "panelForma";
-            this.panelForma.Size = new System.Drawing.Size(741, 357);
-            this.panelForma.TabIndex = 5;
             // 
             // groupBoxForma
             // 
@@ -152,10 +141,10 @@ namespace sistem
             this.groupBoxForma.Controls.Add(this.naziv_departmana_unos);
             this.groupBoxForma.Controls.Add(this.espb_unos);
             this.groupBoxForma.Controls.Add(this.trajanje_unos);
-            this.groupBoxForma.Location = new System.Drawing.Point(90, 26);
+            this.groupBoxForma.Location = new System.Drawing.Point(345, 173);
             this.groupBoxForma.Name = "groupBoxForma";
             this.groupBoxForma.Size = new System.Drawing.Size(544, 296);
-            this.groupBoxForma.TabIndex = 12;
+            this.groupBoxForma.TabIndex = 13;
             this.groupBoxForma.TabStop = false;
             // 
             // dugmeDodajDepartman
@@ -176,7 +165,7 @@ namespace sistem
             this.dugmeDodajDepartman.Text = "dodaj departman";
             this.dugmeDodajDepartman.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dugmeDodajDepartman.UseVisualStyleBackColor = false;
-            this.dugmeDodajDepartman.Click += new System.EventHandler(this.dugmeDodajDepartman_Click);
+            this.dugmeDodajDepartman.Click += new System.EventHandler(this.dugmeDodajDepartman_Click_1);
             // 
             // label5
             // 
@@ -287,20 +276,19 @@ namespace sistem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 450);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(1000, 538);
+            this.Controls.Add(this.groupBoxForma);
             this.Controls.Add(this.panelNaslov);
-            this.Controls.Add(this.panelForma);
             this.Controls.Add(this.panelMeni);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "FormaDodavanjeDepartmana";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje departmana";
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelNaslov.ResumeLayout(false);
-            this.panelForma.ResumeLayout(false);
             this.groupBoxForma.ResumeLayout(false);
             this.groupBoxForma.PerformLayout();
             this.ResumeLayout(false);
@@ -315,7 +303,8 @@ namespace sistem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelaNaslov;
         private System.Windows.Forms.Panel panelNaslov;
-        private System.Windows.Forms.Panel panelForma;
+        private System.Windows.Forms.GroupBox groupBoxForma;
+        private FontAwesome.Sharp.IconButton dugmeDodajDepartman;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox listaNivoaStudija;
@@ -326,7 +315,5 @@ namespace sistem
         private System.Windows.Forms.TextBox naziv_departmana_unos;
         private System.Windows.Forms.TextBox espb_unos;
         private System.Windows.Forms.TextBox trajanje_unos;
-        private FontAwesome.Sharp.IconButton dugmeDodajDepartman;
-        private System.Windows.Forms.GroupBox groupBoxForma;
     }
 }

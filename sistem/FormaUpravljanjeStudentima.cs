@@ -13,6 +13,8 @@ namespace sistem
     public partial class FormaUpravljanjeStudentima : Form, DodavanjeParametara
     {
         private int id_studenta_za_brisanje = -1;
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         public FormaUpravljanjeStudentima()
         {
             InitializeComponent();
@@ -27,25 +29,29 @@ namespace sistem
             MenadzerFormi.Zatvori();
         }
 
+        private bool Validacija()
+        {
+            return int.TryParse(brojIndeksaUnos.Text, out _);
+        }
+
         public void Osvezi_sadrzaj()
         {
-            brojIndeksaUnos.Text = "";
+            brojIndeksaUnos.Clear();
             panelPrikazRezultata.Visible = false;
-            studentImePrikaz.Text = "";
-            brojIndeksaPrikaz.Text = "";
-            prosekPrikaz.Text = "";
-            espbPrikaz.Text = "";
-            fakultetPrikaz.Text = "";
-            smerPrikaz.Text = "";
-            diplomiraoPrikaz.Text = "";
-            statusPrikaz.Text = "";
+            studentImePrikaz.Text = string.Empty;
+            brojIndeksaPrikaz.Text = string.Empty;
+            prosekPrikaz.Text = string.Empty;
+            espbPrikaz.Text = string.Empty;
+            fakultetPrikaz.Text = string.Empty;
+            smerPrikaz.Text = string.Empty;
+            diplomiraoPrikaz.Text = string.Empty;
+            statusPrikaz.Text = string.Empty;
             dugmeUkloniProfesora.Enabled = false;
             this.id_studenta_za_brisanje = -1;
         }
 
         public void Postavi_parametre(List<Tuple<string, string>> parametri)
-        {
-            
+        {   
             throw new NotImplementedException();
         }
 
@@ -57,6 +63,14 @@ namespace sistem
         private void dugmePretraga_Click(object sender, EventArgs e)
         {
             //pretraga sudenta
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                
+                return;
+            }
+
             try
             {
                 panelPrikazRezultata.Visible = false;
@@ -65,7 +79,8 @@ namespace sistem
 
                 if (rezultat.Count.Equals(0))
                 {
-                    MessageBox.Show("student sa datim brojem indeksa nije pronađen", "nije pronađen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(MenadzerStatusnihKodova.STUDENT_NIJE_PRONADJEN, MenadzerStatusnihKodova.ZAPIS_NIJE_PRONADJEN,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -102,9 +117,16 @@ namespace sistem
 
 
             }
-            catch (Exception excpetion)
+            catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + excpetion.ToString());
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                brojIndeksaUnos.Clear();
             }
         }
 
@@ -114,12 +136,15 @@ namespace sistem
             try
             {
                 Baza.daj_instancu().Izbrisi_studenta(this.id_studenta_za_brisanje);
-                MessageBox.Show("student uspešno obrisan", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(MenadzerStatusnihKodova.STUDENT_OBRISAN, MenadzerStatusnihKodova.USPEH,
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + exception.ToString(), "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

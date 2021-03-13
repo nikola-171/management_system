@@ -10,6 +10,9 @@ namespace sistem
 {
     public partial class Baza
     {
+        private static readonly string GRESKA = "greška prilikom registrovanja profesora, baza nije vratila ID";
+
+        #region daj_sve_profesore
         public List<Dictionary<string, string>> Daj_sve_profesore()
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
@@ -47,9 +50,12 @@ namespace sistem
 
             return rezultat;
         }
-        public void Dodaj_profesora(string ime, string prezime, string email, string telefon, int dan, int mesec,
-                                   int godina, string korisnicko_ime,
-                                   string lozinka)
+        #endregion
+
+        #region dodaj_novog_profesora
+        public int Dodaj_profesora(string ime, string prezime, string email, string telefon, sbyte dan, sbyte mesec,
+                                    Int16 godina, string korisnicko_ime,
+                                    string lozinka)
         {
 
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -71,13 +77,29 @@ namespace sistem
                 cmd.Parameters.AddWithValue("@telefon_in", telefon);
                 cmd.Parameters.AddWithValue("@email_in", email);
 
-
                 MySqlDataReader rdr = cmd.ExecuteReader();
+                int id_profesora = -1;
+
+                if (rdr.Read())
+                {
+                    id_profesora = rdr.GetInt32(rdr.GetOrdinal("id_profesora"));
+                }
+
+                /// ako baza ne vrati ID znaci da se desila greska u bazi i stoga bacamo exception
+               
+                if (id_profesora.Equals(-1))
+                {
+                    throw new Exception(Baza.GRESKA);
+                }
+
+                return id_profesora;
 
             }
         }
+        #endregion
 
-        public Dictionary<string, string> Daj_informacije_o_profesoru(int id)
+        #region daj_informacije_o_profesoru_na_osnovu_njegovo-ID
+        public Dictionary<string, string> Daj_informacije_o_profesoru(UInt32 id)
         {
             Dictionary<string, string> rezultat = new Dictionary<string, string>();
 
@@ -111,6 +133,9 @@ namespace sistem
             }
             return rezultat;
         }
+        #endregion
+
+        #region izbriši_profesora_na_osnovu_njegovo_ID
         public void Izbrisi_profesora(int id)
         {
 
@@ -121,7 +146,9 @@ namespace sistem
             Izvrši_upit("izbrisi_profesora", ref parametri);
 
         }
+        #endregion
 
+        #region dodeli_predmet_profesoru
         public void Dodeli_predmet_profesoru(UInt32 profesor, UInt32 predmet, sbyte tip)
         {
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -138,14 +165,10 @@ namespace sistem
                 cmd.Parameters.AddWithValue("@tip_in", tip);
 
 
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-               // if (rdr.Read())
-               // {
-                    
-               // }
+                MySqlDataReader rdr = cmd.ExecuteReader();       
 
             }
         }
+        #endregion
     }
 }

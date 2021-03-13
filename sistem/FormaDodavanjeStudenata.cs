@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class FormaDodavanjeStudenata : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         private Dictionary<string, int> mapa_vrednosti = new Dictionary<string, int>();
         public FormaDodavanjeStudenata()
         {
@@ -28,15 +30,35 @@ namespace sistem
             MenadzerFormi.Zatvori();
         }
 
+        private bool ValidacijaLozinki()
+        {
+            return lozinkaUnos.Text.Equals(lozinkaPonovoUnos.Text);
+        }
         private bool Validacija()
         {
-            if(imeUnos.Text.Trim().Length == 0 || prezimeUnos.Text.Trim().Length == 0)
+            if (imeUnos.Text.Equals(String.Empty) ||
+                mestoBoravkaUnos.Text.Equals(String.Empty) ||
+                ulicaUnos.Text.Equals(String.Empty) ||
+                brojUnos.Text.Equals(String.Empty) ||
+                prezimeUnos.Text.Equals(String.Empty) ||
+                emailUnos.Text.Equals(String.Empty) ||
+                telefonUnos.Text.Equals(String.Empty) ||
+                !Int16.TryParse(godinaUnos.Text, out _) ||
+                !SByte.TryParse(mesecUnos.Text, out _) ||
+                !SByte.TryParse(danUnos.Text, out _) ||
+                korisnickoImeUnos.Text.Equals(String.Empty) ||
+                lozinkaUnos.Text.Equals(String.Empty) ||
+                lozinkaPonovoUnos.Text.Equals(String.Empty) ||
+                emailUnos.Text.Length < 8 ||
+                emailUnos.Text.IndexOf('@').Equals(-1) ||
+                emailUnos.Text.IndexOf('.').Equals(-1) ||
+                (emailUnos.Text.LastIndexOf('.') < emailUnos.Text.IndexOf('@')))
             {
-                MessageBox.Show("prazna polja nisu dozvoljena", "prazna polja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
         }
+
         public void Osvezi_sadrzaj()
         {
             try
@@ -57,19 +79,19 @@ namespace sistem
                 mapa_vrednosti.Add(MenadzerStatusnihKodova.STUDENT_SAMOFINANSIRANJE_PORUKA, MenadzerStatusnihKodova.STUDENT_STATUS_SAMOFINANSIRANJE);
                 listaStatus.Items.Add(MenadzerStatusnihKodova.STUDENT_SAMOFINANSIRANJE_PORUKA);
 
-                imeUnos.Text = "";
-                prezimeUnos.Text = "";
-                mestoBoravkaUnos.Text = "";
-                ulicaUnos.Text = "";
-                brojUnos.Text = "";
-                godinaUnos.Text = "";
-                mesecUnos.Text = "";
-                danUnos.Text = "";
-                korisnickoImeUnos.Text = "";
-                lozinkaUnos.Text = "";
-                lozinkaPonovoUnos.Text = "";
-                emailUnos.Text = "";
-                telefonUnos.Text = "";
+                imeUnos.Clear();
+                prezimeUnos.Clear();
+                mestoBoravkaUnos.Clear();
+                ulicaUnos.Clear();
+                brojUnos.Clear();
+                godinaUnos.Clear();
+                mesecUnos.Clear();
+                danUnos.Clear();
+                korisnickoImeUnos.Clear();
+                lozinkaUnos.Clear();
+                lozinkaPonovoUnos.Clear();
+                emailUnos.Clear();
+                telefonUnos.Clear();
 
 
             }
@@ -92,25 +114,41 @@ namespace sistem
         private void dugmeDodaj_Click(object sender, EventArgs e)
         {
             //dodavanje studenta
-            if (Validacija())
+            if (!ValidacijaLozinki())
             {
-                try
-                {
-                    Baza.daj_instancu().Dodaj_studenta(imeUnos.Text, prezimeUnos.Text, emailUnos.Text, telefonUnos.Text, Convert.ToInt32(danUnos.Text), Convert.ToInt32(mesecUnos.Text),
-                                                        Convert.ToInt32(godinaUnos.Text), mestoBoravkaUnos.Text, ulicaUnos.Text, brojUnos.Text, korisnickoImeUnos.Text,
-                                                        lozinkaUnos.Text, Convert.ToInt32(this.mapa_vrednosti[listaDepartmana.SelectedItem.ToString()]),
-                                                        Convert.ToInt32(this.mapa_vrednosti[listaStatus.SelectedItem.ToString()]));
-                    MessageBox.Show("uspešno registrovan student", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("došlo je do greške " + exception.ToString());
-                }
-                finally
-                {
-                    Osvezi_sadrzaj();
-                }
+                MessageBox.Show(MenadzerStatusnihKodova.NEPOKLAPANJE_LOZINKI_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
             }
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+          
+            try
+            {
+                int broj_indeksa = Baza.daj_instancu().Dodaj_studenta(imeUnos.Text, prezimeUnos.Text, emailUnos.Text, telefonUnos.Text, Convert.ToInt32(danUnos.Text), Convert.ToInt32(mesecUnos.Text),
+                                                    Convert.ToInt32(godinaUnos.Text), mestoBoravkaUnos.Text, ulicaUnos.Text, brojUnos.Text, korisnickoImeUnos.Text,
+                                                    lozinkaUnos.Text, Convert.ToInt32(this.mapa_vrednosti[listaDepartmana.SelectedItem.ToString()]),
+                                                    Convert.ToInt32(this.mapa_vrednosti[listaStatus.SelectedItem.ToString()]));
+  
+                MessageBox.Show(MenadzerStatusnihKodova.STUDENT_REGISTROVAN(broj_indeksa), MenadzerStatusnihKodova.USPEH,
+                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Osvezi_sadrzaj();
+            }
+            
         }
     }
 }

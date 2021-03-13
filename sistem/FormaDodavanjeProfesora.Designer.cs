@@ -29,6 +29,7 @@ namespace sistem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaDodavanjeProfesora));
             this.korisnickoImeUnos = new System.Windows.Forms.TextBox();
             this.labelaKorisnickoIme = new System.Windows.Forms.Label();
             this.godinaUnos = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@ namespace sistem
             this.labelaNaslov = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dugmeDodaj = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.telefonUnos = new System.Windows.Forms.TextBox();
             this.labelaTelefon = new System.Windows.Forms.Label();
@@ -56,10 +58,9 @@ namespace sistem
             this.labelaIme = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dugmeDodaj = new FontAwesome.Sharp.IconButton();
             this.panelNaslov.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,7 +76,7 @@ namespace sistem
             this.korisnickoImeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.korisnickoImeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.korisnickoImeUnos.Location = new System.Drawing.Point(164, 62);
-            this.korisnickoImeUnos.MaxLength = 5;
+            this.korisnickoImeUnos.MaxLength = 45;
             this.korisnickoImeUnos.Name = "korisnickoImeUnos";
             this.korisnickoImeUnos.Size = new System.Drawing.Size(161, 26);
             this.korisnickoImeUnos.TabIndex = 11;
@@ -107,7 +108,7 @@ namespace sistem
             this.lozinkaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinkaUnos.Location = new System.Drawing.Point(164, 101);
-            this.lozinkaUnos.MaxLength = 5;
+            this.lozinkaUnos.MaxLength = 45;
             this.lozinkaUnos.Name = "lozinkaUnos";
             this.lozinkaUnos.Size = new System.Drawing.Size(161, 26);
             this.lozinkaUnos.TabIndex = 12;
@@ -185,7 +186,7 @@ namespace sistem
             this.lozinkaPonovoUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaPonovoUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lozinkaPonovoUnos.Location = new System.Drawing.Point(164, 141);
-            this.lozinkaPonovoUnos.MaxLength = 5;
+            this.lozinkaPonovoUnos.MaxLength = 45;
             this.lozinkaPonovoUnos.Name = "lozinkaPonovoUnos";
             this.lozinkaPonovoUnos.Size = new System.Drawing.Size(161, 26);
             this.lozinkaPonovoUnos.TabIndex = 13;
@@ -251,6 +252,26 @@ namespace sistem
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "podaci za portal";
             // 
+            // dugmeDodaj
+            // 
+            this.dugmeDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeDodaj.FlatAppearance.BorderSize = 0;
+            this.dugmeDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeDodaj.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
+            this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeDodaj.Location = new System.Drawing.Point(73, 224);
+            this.dugmeDodaj.Name = "dugmeDodaj";
+            this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
+            this.dugmeDodaj.TabIndex = 16;
+            this.dugmeDodaj.Text = "dodaj profesora";
+            this.dugmeDodaj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeDodaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeDodaj.UseVisualStyleBackColor = false;
+            this.dugmeDodaj.Click += new System.EventHandler(this.dugmeDodaj_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.telefonUnos);
@@ -275,7 +296,7 @@ namespace sistem
             this.telefonUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.telefonUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefonUnos.Location = new System.Drawing.Point(146, 128);
-            this.telefonUnos.MaxLength = 5;
+            this.telefonUnos.MaxLength = 15;
             this.telefonUnos.Name = "telefonUnos";
             this.telefonUnos.Size = new System.Drawing.Size(124, 26);
             this.telefonUnos.TabIndex = 4;
@@ -297,7 +318,7 @@ namespace sistem
             this.emailUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailUnos.Location = new System.Drawing.Point(146, 93);
-            this.emailUnos.MaxLength = 5;
+            this.emailUnos.MaxLength = 45;
             this.emailUnos.Name = "emailUnos";
             this.emailUnos.Size = new System.Drawing.Size(124, 26);
             this.emailUnos.TabIndex = 3;
@@ -307,7 +328,7 @@ namespace sistem
             this.prezimeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.prezimeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prezimeUnos.Location = new System.Drawing.Point(146, 58);
-            this.prezimeUnos.MaxLength = 5;
+            this.prezimeUnos.MaxLength = 25;
             this.prezimeUnos.Name = "prezimeUnos";
             this.prezimeUnos.Size = new System.Drawing.Size(124, 26);
             this.prezimeUnos.TabIndex = 2;
@@ -317,7 +338,7 @@ namespace sistem
             this.imeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imeUnos.Location = new System.Drawing.Point(146, 23);
-            this.imeUnos.MaxLength = 5;
+            this.imeUnos.MaxLength = 25;
             this.imeUnos.Name = "imeUnos";
             this.imeUnos.Size = new System.Drawing.Size(124, 26);
             this.imeUnos.TabIndex = 1;
@@ -387,14 +408,6 @@ namespace sistem
             this.panelMeni.Size = new System.Drawing.Size(199, 525);
             this.panelMeni.TabIndex = 15;
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pictureBox2);
-            this.panelLogo.Location = new System.Drawing.Point(3, 99);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 174);
-            this.panelLogo.TabIndex = 0;
-            // 
             // dugmeNazad
             // 
             this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -417,6 +430,14 @@ namespace sistem
             this.dugmeNazad.UseVisualStyleBackColor = true;
             this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox2);
+            this.panelLogo.Location = new System.Drawing.Point(3, 99);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(199, 174);
+            this.panelLogo.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::sistem.Properties.Resources.student_ikonica;
@@ -427,25 +448,6 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // dugmeDodaj
-            // 
-            this.dugmeDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeDodaj.FlatAppearance.BorderSize = 0;
-            this.dugmeDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeDodaj.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
-            this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodaj.Location = new System.Drawing.Point(73, 224);
-            this.dugmeDodaj.Name = "dugmeDodaj";
-            this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
-            this.dugmeDodaj.TabIndex = 16;
-            this.dugmeDodaj.Text = "dodaj profesora";
-            this.dugmeDodaj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeDodaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeDodaj.UseVisualStyleBackColor = false;
-            // 
             // FormaDodavanjeProfesora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,8 +457,10 @@ namespace sistem
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMeni);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaDodavanjeProfesora";
-            this.Text = "FormaDodavanjeProfesora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrovanje profesora";
             this.panelNaslov.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
