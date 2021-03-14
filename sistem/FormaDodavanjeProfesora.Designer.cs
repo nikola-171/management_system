@@ -207,16 +207,17 @@ namespace sistem
             // 
             this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelNaslov.Controls.Add(this.labelaNaslov);
-            this.panelNaslov.Location = new System.Drawing.Point(0, 0);
+            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNaslov.Location = new System.Drawing.Point(199, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(1126, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(926, 93);
             this.panelNaslov.TabIndex = 14;
             // 
             // labelaNaslov
             // 
             this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaNaslov.ForeColor = System.Drawing.Color.White;
-            this.labelaNaslov.Location = new System.Drawing.Point(173, 29);
+            this.labelaNaslov.Location = new System.Drawing.Point(76, 30);
             this.labelaNaslov.Name = "labelaNaslov";
             this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
             this.labelaNaslov.TabIndex = 2;
@@ -225,6 +226,7 @@ namespace sistem
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
@@ -236,6 +238,7 @@ namespace sistem
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.dugmeDodaj);
             this.groupBox3.Controls.Add(this.lozinkaPonovoUnos);
             this.groupBox3.Controls.Add(this.lozinkaUnos);
@@ -274,6 +277,7 @@ namespace sistem
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.telefonUnos);
             this.groupBox2.Controls.Add(this.labelaTelefon);
             this.groupBox2.Controls.Add(this.emailUnos);
@@ -381,6 +385,7 @@ namespace sistem
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.godinaUnos);
             this.groupBox1.Controls.Add(this.mesecUnos);
             this.groupBox1.Controls.Add(this.danUnos);

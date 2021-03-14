@@ -1,4 +1,5 @@
 ﻿using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -130,26 +131,31 @@ namespace sistem
 
         private void dugmeIzvestajUniverziteti_Click(object sender, EventArgs e)
         {
-            //test
-            PdfDocument document = new PdfDocument();
-            document.Info.Title = "prvi izveštaj u .net -u ";
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+      
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
 
-            PdfPage strana = document.AddPage();
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }else if(rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+            
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_studenata(string.Format(@"{0}\{1}", lokacija, "studenti.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
-            XGraphics gfx = XGraphics.FromPdfPage(strana);
-
-            XFont font = new XFont("Verdana", 20, XFontStyle.Regular);
-
-            gfx.DrawString("hello world!", font, XBrushes.Black, new XRect(0, 0, 50 , 50), XStringFormats.TopLeft);
-            gfx.DrawString("hello world222!", font, XBrushes.Black, new XRect(0, 50, 50, 50), XStringFormats.TopLeft);
-            gfx.DrawString("hello world!333333", font, XBrushes.Black, new XRect(0, 100, 50, 50), XStringFormats.TopLeft);
-
-
-            const string filename = "test6.pdf";
-            document.Save(filename);
-
-            Process.Start(filename);
-
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dugmeAzurirajFakultetskuGodinu_Click(object sender, EventArgs e)
@@ -159,6 +165,15 @@ namespace sistem
             /// i utvrđuje se da li je će student biti na budžetu ili će biti samofinansirajući
             /// u novoj fakultetskoj godini
             /// potreban broj bodova za budžet je 48
+            
+            if(fakultetskaGodinaUnos.Text.Equals(string.Empty) || 
+               fakultetskaGodinaUnos.Text.Length < 7 ||
+               fakultetskaGodinaUnos.Text.IndexOf('/').Equals(-1))
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
 
             try
             {
@@ -172,6 +187,98 @@ namespace sistem
 
                  fakultetskaGodinaPrikaz.Text = fakultetskaGodinaUnos.Text;
                  fakultetskaGodinaUnos.Clear();
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void listaProfesoraIzvestaj_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_profesora(string.Format(@"{0}\{1}", lokacija, "profesori.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
+        private void listaPredmetaIzvestaj_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_predmeta(string.Format(@"{0}\{1}", lokacija, "predmeti.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dugmeIzvestajPredmetiSaProfesorima_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_predmeta_sa_profesorima(string.Format(@"{0}\{1}", lokacija, "predmeti_sa_profesorima.pdf"));
             }
             catch (Exception exception)
             {

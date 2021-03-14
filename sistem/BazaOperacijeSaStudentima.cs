@@ -13,13 +13,18 @@ namespace sistem
         #region brisanje_studenta_iz_baze
         public void Izbrisi_studenta(int id)
         {
-            
-            List<Tuple<string, Tuple<string, string>>> parametri = new List<Tuple<string, Tuple<string, string>>>();
-            parametri.Add(new Tuple<string, Tuple<string, string>>("int", new Tuple<string, string>("id_in", id.ToString())));
- 
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
 
-            Izvrši_upit("izbrisi_studenta", ref parametri);
-            
+                string rtn = "izbrisi_studenta";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_in", id);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+            }
         }
         #endregion
 
@@ -146,8 +151,9 @@ namespace sistem
         #endregion
 
         #region dodelivanje_studenta_predmetu
-        public void Dodeli_studenta_predmetu(UInt32 broj_indeksa, UInt32 predmet_id)
+        public string Dodeli_studenta_predmetu(UInt32 broj_indeksa, UInt32 predmet_id)
         {
+            string status = string.Empty;
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
             {
                 con.Open();
@@ -162,11 +168,16 @@ namespace sistem
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-                /*if (rdr.Read())
+                if (rdr.Read())
                 {
-                    int status = rdr.GetOrdinal("msg");           
-                }*/
+                     status = rdr.GetString(rdr.GetOrdinal("msg"));           
+                }
             }
+            if (status.Equals(string.Empty))
+            {
+                throw new Exception("greška prilikom dodelivanja predmeta studentu, baza nije vratila status");
+            }
+            return status;
         }
         #endregion
 

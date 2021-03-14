@@ -204,7 +204,7 @@ begin
     
      select id_stare_godine as "stara_godina";
      
-   insert into fakultetska_godina(fakultetska_godina)
+    insert into fakultetska_godina(fakultetska_godina)
     values(godina);
     
     select max(id) into id_nove_godine

@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class FormaDodavanjeStudentaPredmetu : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         private List<Dictionary<string, string>> studenti_iz_baze = new List<Dictionary<string, string>>();
         private List<Dictionary<string, string>> predmeti_iz_baze = new List<Dictionary<string, string>>();
         
@@ -161,15 +163,18 @@ namespace sistem
                                  where predmet["naziv"] == listaPredmet.SelectedItem.ToString()
                                  select predmet["id"];
                 
-                Baza.daj_instancu().Dodeli_studenta_predmetu(Convert.ToUInt32(broj_indeksa.ToList()[0]), Convert.ToUInt32(predmet_id.ToList()[0]));
+                string status = Baza.daj_instancu().Dodeli_studenta_predmetu(Convert.ToUInt32(broj_indeksa.ToList()[0]), Convert.ToUInt32(predmet_id.ToList()[0]));
 
-                MessageBox.Show("Studentu uspešno dodeljen predmet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(status, MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + exception.Message, "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

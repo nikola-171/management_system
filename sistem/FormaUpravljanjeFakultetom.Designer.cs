@@ -151,6 +151,9 @@ namespace sistem
             this.tabelaPrikazFakulteta.AllowUserToDeleteRows = false;
             this.tabelaPrikazFakulteta.AllowUserToResizeColumns = false;
             this.tabelaPrikazFakulteta.AllowUserToResizeRows = false;
+            this.tabelaPrikazFakulteta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabelaPrikazFakulteta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabelaPrikazFakulteta.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.tabelaPrikazFakulteta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -178,7 +181,6 @@ namespace sistem
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tabelaPrikazFakulteta.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tabelaPrikazFakulteta.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabelaPrikazFakulteta.EnableHeadersVisualStyles = false;
             this.tabelaPrikazFakulteta.Location = new System.Drawing.Point(199, 102);
             this.tabelaPrikazFakulteta.Name = "tabelaPrikazFakulteta";

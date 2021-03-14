@@ -135,6 +135,7 @@ namespace sistem
             //brisanje studenta
             try
             {
+                MessageBox.Show(this.id_studenta_za_brisanje.ToString());
                 Baza.daj_instancu().Izbrisi_studenta(this.id_studenta_za_brisanje);
                 MessageBox.Show(MenadzerStatusnihKodova.STUDENT_OBRISAN, MenadzerStatusnihKodova.USPEH,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);

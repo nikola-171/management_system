@@ -38,6 +38,7 @@ namespace sistem
             this.studentBrojIndeksaUnos = new System.Windows.Forms.TextBox();
             this.studentPrezimeUnos = new System.Windows.Forms.TextBox();
             this.studentImeUnos = new System.Windows.Forms.TextBox();
+            this.dugmePretragaStudenta = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@ namespace sistem
             this.predmetNazivUnos = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.predmetDepartmanUnos = new System.Windows.Forms.TextBox();
+            this.dugmePretragaPredmet = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.datum = new System.Windows.Forms.Label();
@@ -54,14 +56,12 @@ namespace sistem
             this.listaStudent = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.listaPredmet = new System.Windows.Forms.ComboBox();
+            this.dugmeDodajPredmet = new FontAwesome.Sharp.IconButton();
             this.BrojIndeksa = new System.Windows.Forms.Label();
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dugmePretragaStudenta = new FontAwesome.Sharp.IconButton();
-            this.dugmePretragaPredmet = new FontAwesome.Sharp.IconButton();
-            this.dugmeDodajPredmet = new FontAwesome.Sharp.IconButton();
             this.panelNaslov.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -157,6 +157,30 @@ namespace sistem
             this.studentImeUnos.Size = new System.Drawing.Size(227, 29);
             this.studentImeUnos.TabIndex = 3;
             // 
+            // dugmePretragaStudenta
+            // 
+            this.dugmePretragaStudenta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dugmePretragaStudenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmePretragaStudenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmePretragaStudenta.FlatAppearance.BorderSize = 0;
+            this.dugmePretragaStudenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmePretragaStudenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmePretragaStudenta.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmePretragaStudenta.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.dugmePretragaStudenta.IconColor = System.Drawing.Color.Black;
+            this.dugmePretragaStudenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmePretragaStudenta.Location = new System.Drawing.Point(16, 358);
+            this.dugmePretragaStudenta.Margin = new System.Windows.Forms.Padding(0);
+            this.dugmePretragaStudenta.Name = "dugmePretragaStudenta";
+            this.dugmePretragaStudenta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dugmePretragaStudenta.Size = new System.Drawing.Size(227, 47);
+            this.dugmePretragaStudenta.TabIndex = 11;
+            this.dugmePretragaStudenta.Text = "pretraga";
+            this.dugmePretragaStudenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmePretragaStudenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmePretragaStudenta.UseVisualStyleBackColor = false;
+            this.dugmePretragaStudenta.Click += new System.EventHandler(this.dugmePretragaStudenta_Click);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -205,7 +229,7 @@ namespace sistem
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(250, 146);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(257, 349);
+            this.groupBox2.Size = new System.Drawing.Size(257, 429);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "filtrirajte predmet";
@@ -213,7 +237,7 @@ namespace sistem
             // predmetNazivUnos
             // 
             this.predmetNazivUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.predmetNazivUnos.Location = new System.Drawing.Point(18, 189);
+            this.predmetNazivUnos.Location = new System.Drawing.Point(18, 229);
             this.predmetNazivUnos.Name = "predmetNazivUnos";
             this.predmetNazivUnos.Size = new System.Drawing.Size(224, 29);
             this.predmetNazivUnos.TabIndex = 2;
@@ -223,7 +247,7 @@ namespace sistem
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(14, 158);
+            this.label4.Location = new System.Drawing.Point(14, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 35);
             this.label4.TabIndex = 36;
@@ -233,17 +257,41 @@ namespace sistem
             // predmetDepartmanUnos
             // 
             this.predmetDepartmanUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.predmetDepartmanUnos.Location = new System.Drawing.Point(18, 91);
+            this.predmetDepartmanUnos.Location = new System.Drawing.Point(18, 131);
             this.predmetDepartmanUnos.Name = "predmetDepartmanUnos";
             this.predmetDepartmanUnos.Size = new System.Drawing.Size(224, 29);
             this.predmetDepartmanUnos.TabIndex = 1;
+            // 
+            // dugmePretragaPredmet
+            // 
+            this.dugmePretragaPredmet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dugmePretragaPredmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmePretragaPredmet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmePretragaPredmet.FlatAppearance.BorderSize = 0;
+            this.dugmePretragaPredmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmePretragaPredmet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmePretragaPredmet.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmePretragaPredmet.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.dugmePretragaPredmet.IconColor = System.Drawing.Color.Black;
+            this.dugmePretragaPredmet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmePretragaPredmet.Location = new System.Drawing.Point(18, 301);
+            this.dugmePretragaPredmet.Margin = new System.Windows.Forms.Padding(0);
+            this.dugmePretragaPredmet.Name = "dugmePretragaPredmet";
+            this.dugmePretragaPredmet.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dugmePretragaPredmet.Size = new System.Drawing.Size(214, 47);
+            this.dugmePretragaPredmet.TabIndex = 10;
+            this.dugmePretragaPredmet.Text = "pretraga";
+            this.dugmePretragaPredmet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmePretragaPredmet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmePretragaPredmet.UseVisualStyleBackColor = false;
+            this.dugmePretragaPredmet.Click += new System.EventHandler(this.dugmePretragaPredmet_Click);
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 53);
+            this.label6.Location = new System.Drawing.Point(14, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 35);
             this.label6.TabIndex = 29;
@@ -349,6 +397,26 @@ namespace sistem
             this.listaPredmet.Size = new System.Drawing.Size(251, 29);
             this.listaPredmet.TabIndex = 7;
             // 
+            // dugmeDodajPredmet
+            // 
+            this.dugmeDodajPredmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeDodajPredmet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeDodajPredmet.FlatAppearance.BorderSize = 0;
+            this.dugmeDodajPredmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeDodajPredmet.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmeDodajPredmet.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeDodajPredmet.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.dugmeDodajPredmet.IconColor = System.Drawing.Color.Black;
+            this.dugmeDodajPredmet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeDodajPredmet.Location = new System.Drawing.Point(24, 358);
+            this.dugmeDodajPredmet.Name = "dugmeDodajPredmet";
+            this.dugmeDodajPredmet.Size = new System.Drawing.Size(251, 47);
+            this.dugmeDodajPredmet.TabIndex = 12;
+            this.dugmeDodajPredmet.Text = "dodaj predmet";
+            this.dugmeDodajPredmet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeDodajPredmet.UseVisualStyleBackColor = false;
+            this.dugmeDodajPredmet.Click += new System.EventHandler(this.dugmeDodajPredmet_Click);
+            // 
             // BrojIndeksa
             // 
             this.BrojIndeksa.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -373,14 +441,6 @@ namespace sistem
             this.panelMeni.Size = new System.Drawing.Size(231, 496);
             this.panelMeni.TabIndex = 33;
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pictureBox2);
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(228, 232);
-            this.panelLogo.TabIndex = 0;
-            // 
             // dugmeNazad
             // 
             this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -403,6 +463,14 @@ namespace sistem
             this.dugmeNazad.UseVisualStyleBackColor = true;
             this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox2);
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(228, 232);
+            this.panelLogo.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::sistem.Properties.Resources.ispit_polozen;
@@ -412,74 +480,6 @@ namespace sistem
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // dugmePretragaStudenta
-            // 
-            this.dugmePretragaStudenta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dugmePretragaStudenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmePretragaStudenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmePretragaStudenta.FlatAppearance.BorderSize = 0;
-            this.dugmePretragaStudenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmePretragaStudenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmePretragaStudenta.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmePretragaStudenta.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.dugmePretragaStudenta.IconColor = System.Drawing.Color.Black;
-            this.dugmePretragaStudenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmePretragaStudenta.Location = new System.Drawing.Point(16, 358);
-            this.dugmePretragaStudenta.Margin = new System.Windows.Forms.Padding(0);
-            this.dugmePretragaStudenta.Name = "dugmePretragaStudenta";
-            this.dugmePretragaStudenta.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dugmePretragaStudenta.Size = new System.Drawing.Size(227, 47);
-            this.dugmePretragaStudenta.TabIndex = 11;
-            this.dugmePretragaStudenta.Text = "pretraga";
-            this.dugmePretragaStudenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmePretragaStudenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmePretragaStudenta.UseVisualStyleBackColor = false;
-            this.dugmePretragaStudenta.Click += new System.EventHandler(this.dugmePretragaStudenta_Click);
-            // 
-            // dugmePretragaPredmet
-            // 
-            this.dugmePretragaPredmet.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dugmePretragaPredmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmePretragaPredmet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmePretragaPredmet.FlatAppearance.BorderSize = 0;
-            this.dugmePretragaPredmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmePretragaPredmet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmePretragaPredmet.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmePretragaPredmet.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.dugmePretragaPredmet.IconColor = System.Drawing.Color.Black;
-            this.dugmePretragaPredmet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmePretragaPredmet.Location = new System.Drawing.Point(18, 261);
-            this.dugmePretragaPredmet.Margin = new System.Windows.Forms.Padding(0);
-            this.dugmePretragaPredmet.Name = "dugmePretragaPredmet";
-            this.dugmePretragaPredmet.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dugmePretragaPredmet.Size = new System.Drawing.Size(214, 47);
-            this.dugmePretragaPredmet.TabIndex = 10;
-            this.dugmePretragaPredmet.Text = "pretraga";
-            this.dugmePretragaPredmet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmePretragaPredmet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmePretragaPredmet.UseVisualStyleBackColor = false;
-            this.dugmePretragaPredmet.Click += new System.EventHandler(this.dugmePretragaPredmet_Click);
-            // 
-            // dugmeDodajPredmet
-            // 
-            this.dugmeDodajPredmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeDodajPredmet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeDodajPredmet.FlatAppearance.BorderSize = 0;
-            this.dugmeDodajPredmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeDodajPredmet.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmeDodajPredmet.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmeDodajPredmet.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.dugmeDodajPredmet.IconColor = System.Drawing.Color.Black;
-            this.dugmeDodajPredmet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodajPredmet.Location = new System.Drawing.Point(24, 358);
-            this.dugmeDodajPredmet.Name = "dugmeDodajPredmet";
-            this.dugmeDodajPredmet.Size = new System.Drawing.Size(251, 47);
-            this.dugmeDodajPredmet.TabIndex = 12;
-            this.dugmeDodajPredmet.Text = "dodaj predmet";
-            this.dugmeDodajPredmet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeDodajPredmet.UseVisualStyleBackColor = false;
-            this.dugmeDodajPredmet.Click += new System.EventHandler(this.dugmeDodajPredmet_Click);
             // 
             // formaDodavanjePolozenogIspitaStudentu
             // 

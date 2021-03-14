@@ -4,7 +4,6 @@ delimiter \\
 create procedure dodaj_predmet_smer_par(in predmet_in int unsigned, in smer_in int unsigned)
 begin
 	declare zapis_vec_postoji tinyint unsigned default 0;
-    
     declare exit handler for sqlexception
     begin
 		rollback;
@@ -35,7 +34,7 @@ create procedure dodaj_profesor_predmet_par(in profesor_in int unsigned, in pred
 											 in tip_in TINYINT)
 begin
 	declare zapis_vec_postoji tinyint unsigned default 0;
-      declare exit handler for sqlexception
+	declare exit handler for sqlexception
     begin
 		rollback;
         GET DIAGNOSTICS CONDITION 1
@@ -53,9 +52,9 @@ begin
 		insert into profesor_na_predmetu(profesor_id, predmet_id, tip)
         values(profesor_in, predmet_in, tip_in);
         
-        select 'dodato' as 'msg';
+        select true as 'msg';
 	else
-		select 'vec postoji' as 'msg';
+		select false as 'msg';
     end if;
     
     commit;
@@ -74,45 +73,54 @@ begin
     declare dozvoljen_predmet boolean default false;
     declare prom tinyint unsigned default 0;
     
+    declare zapis_vec_postoji tinyint unsigned default 0;
+    
 	declare exit handler for sqlexception
     begin
 		GET DIAGNOSTICS CONDITION 1
 		@p2 = MESSAGE_TEXT;
-        
         select @p2 as 'msg';
 		rollback;
     end;
 	start transaction;
+   
+    select count(*) into zapis_vec_postoji
+    from student_polozio_predmet
+    where predmet_id = predmet_in and student_broj_indeksa = student_in;
     
-	select count(*) into prom
-    from predmet as p, predmet_na_smeru as pns, smer as s, student as stud
-    where p.id = predmet_in and p.id = pns.predmet and pns.smer = s.id and s.id = stud.smer and stud.broj_indeksa = student_in;
+    if zapis_vec_postoji = 0 then
+		select count(*) into prom
+		from predmet as p, predmet_na_smeru as pns, smer as s, student as stud
+		where p.id = predmet_in and p.id = pns.predmet and pns.smer = s.id and s.id = stud.smer and stud.broj_indeksa = student_in;
     
-	if prom = 1 then
-		select count(*) into student_slusa_predmet
-		from student_slusa_predmet
-		where student = student_in and predmet = predmet_in;
-    
-		select count(*) into profesor_na_predmetu
-		from profesor_na_predmetu
-		where predmet_id = predmet_in;
-    
-		if student_slusa_predmet != 0 and profesor_na_predmetu != 0 then
-		
-			select fakultetska_godina into priv_fakultetska_godina
+		if prom = 1 then
+			select count(*) into student_slusa_predmet
 			from student_slusa_predmet
 			where student = student_in and predmet = predmet_in;
-        
-			insert into student_polozio_predmet(predmet_id, student_broj_indeksa,ocena,datum, fakultetska_godina)
-			values(predmet_in, student_in, ocena_in, datum_in, trim(replace(priv_fakultetska_godina, '  ', '')));
     
-			delete from student_slusa_predmet
-			where student = student_in and predmet = predmet_in;
+			select count(*) into profesor_na_predmetu
+			from profesor_na_predmetu
+			where predmet_id = predmet_in;
+    
+			if student_slusa_predmet != 0 and profesor_na_predmetu != 0 then
+		
+				select fakultetska_godina into priv_fakultetska_godina
+				from student_slusa_predmet
+				where student = student_in and predmet = predmet_in;
+        
+				insert into student_polozio_predmet(predmet_id, student_broj_indeksa,ocena,datum, fakultetska_godina)
+				values(predmet_in, student_in, ocena_in, datum_in, trim(replace(priv_fakultetska_godina, '  ', '')));
+    
+				delete from student_slusa_predmet
+				where student = student_in and predmet = predmet_in;
+			else
+				select 'nije moguće polaganje ispita, na predmetu nije registrovan profesor ili student ne sluša predmet' as 'msg';
+			end if;
 		else
-            select 'nije moguće polaganje ispita, na predmetu nije registrovan profesor ili student ne sluša predmet' as 'msg';
+			select 'nije moguće polaganje ispita, ispit nije na odgovarajućem departmanu' as 'msg';
 		end if;
-	else
-		select 'nije moguće polaganje ispita, ispit nije na odgovarajućem departmanu' as 'msg';
+    else
+		select 'nije moguće polaganje ispita, student je položio predmet' as 'msg';
     end if;
     
     commit;
@@ -125,6 +133,9 @@ begin
 	declare zapis_vec_postoji tinyint unsigned default 0;
     declare diplomirao tinyint default 0;
     declare fak_godina_in tinyint unsigned default 0;
+    
+    /*dodato*/
+    declare fak_godina_test_duplikat tinyint unsigned default 0;
   
 	declare exit handler for sqlexception
     begin
@@ -153,16 +164,25 @@ begin
 			insert into student_slusa_predmet(student, predmet, fakultetska_godina)
 			values(student_in, predmet_in, fak_godina_in);
         
-			select true as 'msg';
+			select 'uspešno dodeljen predmet studentu, student prvi put sluša predmet' as 'msg';
 		else
-			update student_slusa_predmet
-			set fakultetska_godina = fak_godina_in, broj_slusanja = broj_slusanja + 1
-			where student = student_in and predmet = predmet_in;
+            /*test za duplikat*/
+            select fakultetska_godina into fak_godina_test_duplikat
+            from student_slusa_predmet
+            where student = student_in and predmet = predmet_in;
+            
+            if fak_godina_test_duplikat = fak_godina_in then
+				select 'nije moguće dodavanje predmeta, student već sluša predmet u tekućoj fakultetskoj godini' as 'msg';
+            else
+				update student_slusa_predmet
+				set fakultetska_godina = fak_godina_in, broj_slusanja = broj_slusanja + 1
+				where student = student_in and predmet = predmet_in;
         
-			select false as 'msg';
+				select 'student ponovo sluša predmet' as 'msg';
+            end if;
 		end if;
     else
-		select false as 'msg', 'student je diplomirao' as 'info';
+		select 'student je diplomirao' as 'msg';
     end if;
     
     commit;

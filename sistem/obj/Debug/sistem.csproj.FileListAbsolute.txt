@@ -160,3 +160,11 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\log4net.dll
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\log4net.xml
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.Core.dll
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.dll
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\itextsharp.dll
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.pdb
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.xml
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.Core.pdb
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.Core.xml
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\itextsharp.xml

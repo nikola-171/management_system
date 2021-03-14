@@ -206,6 +206,7 @@ namespace sistem
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -216,6 +217,7 @@ namespace sistem
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.departmanUnos);
             this.groupBox2.Controls.Add(this.fakultetUnos);
             this.groupBox2.Controls.Add(this.univerzitetUnos);
@@ -315,6 +317,7 @@ namespace sistem
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.listaDepartmana);
             this.groupBox1.Controls.Add(this.dugmeDodajPredmet);

@@ -162,6 +162,7 @@ namespace sistem
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox5);
             this.panel1.Controls.Add(this.groupBox4);
@@ -175,6 +176,7 @@ namespace sistem
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox5.Controls.Add(this.dugmeDodaj);
             this.groupBox5.Controls.Add(this.listaStatus);
             this.groupBox5.Controls.Add(this.listaDepartmana);
@@ -254,6 +256,7 @@ namespace sistem
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox4.Controls.Add(this.brojUnos);
             this.groupBox4.Controls.Add(this.labelaBroj);
             this.groupBox4.Controls.Add(this.ulicaUnos);
@@ -340,6 +343,7 @@ namespace sistem
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.lozinkaPonovoUnos);
             this.groupBox3.Controls.Add(this.lozinkaUnos);
             this.groupBox3.Controls.Add(this.korisnickoImeUnos);
@@ -423,6 +427,7 @@ namespace sistem
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.telefonUnos);
             this.groupBox2.Controls.Add(this.labelaTelefon);
             this.groupBox2.Controls.Add(this.emailUnos);
@@ -532,6 +537,7 @@ namespace sistem
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.godinaUnos);
             this.groupBox1.Controls.Add(this.mesecUnos);
             this.groupBox1.Controls.Add(this.danUnos);
@@ -627,7 +633,7 @@ namespace sistem
             this.MinimizeBox = false;
             this.Name = "FormaDodavanjeStudenata";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormaDodavanjeStudenata";
+            this.Text = "Dodavanje studenata";
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

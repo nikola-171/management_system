@@ -58,6 +58,9 @@ namespace sistem
             this.tabelaPrikazUniverziteta.AllowUserToDeleteRows = false;
             this.tabelaPrikazUniverziteta.AllowUserToResizeColumns = false;
             this.tabelaPrikazUniverziteta.AllowUserToResizeRows = false;
+            this.tabelaPrikazUniverziteta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabelaPrikazUniverziteta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabelaPrikazUniverziteta.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.tabelaPrikazUniverziteta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -223,7 +226,6 @@ namespace sistem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
             this.Name = "FormaUpravljanjeUniverzitetom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prikaz univerziteta";

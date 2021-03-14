@@ -63,7 +63,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 450);
+            this.panelMeni.Size = new System.Drawing.Size(199, 496);
             this.panelMeni.TabIndex = 1;
             // 
             // dugmeDodaj
@@ -75,7 +75,7 @@ namespace sistem
             this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
             this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodaj.Location = new System.Drawing.Point(0, 350);
+            this.dugmeDodaj.Location = new System.Drawing.Point(0, 391);
             this.dugmeDodaj.Name = "dugmeDodaj";
             this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
             this.dugmeDodaj.TabIndex = 2;
@@ -95,7 +95,7 @@ namespace sistem
             this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeNazad.IconSize = 50;
             this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeNazad.Location = new System.Drawing.Point(0, 282);
+            this.dugmeNazad.Location = new System.Drawing.Point(0, 317);
             this.dugmeNazad.Name = "dugmeNazad";
             this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeNazad.Size = new System.Drawing.Size(199, 68);
@@ -111,7 +111,7 @@ namespace sistem
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Location = new System.Drawing.Point(0, 93);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 186);
+            this.panelLogo.Size = new System.Drawing.Size(199, 223);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
@@ -119,7 +119,7 @@ namespace sistem
             this.pictureBox1.Image = global::sistem.Properties.Resources.univerzitet1;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(193, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -128,16 +128,17 @@ namespace sistem
             // 
             this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelNaslov.Controls.Add(this.labelaNaslov);
-            this.panelNaslov.Location = new System.Drawing.Point(0, 0);
+            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNaslov.Location = new System.Drawing.Point(199, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(1008, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(809, 93);
             this.panelNaslov.TabIndex = 2;
             // 
             // labelaNaslov
             // 
             this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaNaslov.ForeColor = System.Drawing.Color.White;
-            this.labelaNaslov.Location = new System.Drawing.Point(193, 24);
+            this.labelaNaslov.Location = new System.Drawing.Point(31, 27);
             this.labelaNaslov.Name = "labelaNaslov";
             this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
             this.labelaNaslov.TabIndex = 2;
@@ -150,6 +151,9 @@ namespace sistem
             this.tabelaPrikazDepartmana.AllowUserToDeleteRows = false;
             this.tabelaPrikazDepartmana.AllowUserToResizeColumns = false;
             this.tabelaPrikazDepartmana.AllowUserToResizeRows = false;
+            this.tabelaPrikazDepartmana.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabelaPrikazDepartmana.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabelaPrikazDepartmana.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.tabelaPrikazDepartmana.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -182,7 +186,8 @@ namespace sistem
             this.tabelaPrikazDepartmana.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.tabelaPrikazDepartmana.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.tabelaPrikazDepartmana.Size = new System.Drawing.Size(809, 357);
+            this.tabelaPrikazDepartmana.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabelaPrikazDepartmana.Size = new System.Drawing.Size(809, 403);
             this.tabelaPrikazDepartmana.TabIndex = 3;
             // 
             // id
@@ -222,13 +227,12 @@ namespace sistem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1008, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 496);
             this.Controls.Add(this.tabelaPrikazDepartmana);
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panelMeni);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "FormaUpravljanjeDepartmana";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upravljanje departmanima";

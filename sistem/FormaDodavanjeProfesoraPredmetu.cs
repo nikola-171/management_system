@@ -204,8 +204,9 @@ namespace sistem
 
 
 
-                Baza.daj_instancu().Dodeli_predmet_profesoru(id_profesora, id_predmeta, tip);
-                MessageBox.Show("uspešno dodeljen predmet profesoru ", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = Baza.daj_instancu().Dodeli_predmet_profesoru(id_profesora, id_predmeta, tip);
+                MessageBox.Show(string.Format("{0}", status), MenadzerStatusnihKodova.USPEH,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception exception)

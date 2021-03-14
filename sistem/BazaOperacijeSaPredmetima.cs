@@ -36,7 +36,7 @@ namespace sistem
                 }       
         }
 
-        //nije testirano!!!!!!!!!!!!
+   
         public List<Dictionary<string, string>> Daj_sve_predmete()
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();

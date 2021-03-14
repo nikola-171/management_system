@@ -130,6 +130,7 @@ namespace sistem
             // 
             // groupBoxForma
             // 
+            this.groupBoxForma.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBoxForma.Controls.Add(this.dugmeDodajDepartman);
             this.groupBoxForma.Controls.Add(this.label5);
             this.groupBoxForma.Controls.Add(this.label4);

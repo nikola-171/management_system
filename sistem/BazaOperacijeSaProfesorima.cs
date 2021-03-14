@@ -149,8 +149,9 @@ namespace sistem
         #endregion
 
         #region dodeli_predmet_profesoru
-        public void Dodeli_predmet_profesoru(UInt32 profesor, UInt32 predmet, sbyte tip)
+        public string Dodeli_predmet_profesoru(UInt32 profesor, UInt32 predmet, sbyte tip)
         {
+            bool? status = null;
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
             {
                 con.Open();
@@ -165,9 +166,59 @@ namespace sistem
                 cmd.Parameters.AddWithValue("@tip_in", tip);
 
 
-                MySqlDataReader rdr = cmd.ExecuteReader();       
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    status = rdr.GetBoolean(rdr.GetOrdinal("msg"));
+                }
 
             }
+            if (status.Equals(null))
+            {
+                throw new Exception("greška prilikom dodavanja profesora predmetu, baza nije vratila odgovor");
+            }
+            else if ((bool)!status)
+            {
+                return "Profesor je već dodeljen datom predmetu.";
+            }
+            return "Profesoru uspešno dodeljen predmet.";
+        }
+        #endregion
+
+        #region daj_profesore_sa_predmetima_na_kojima_predaju
+        public List<Dictionary<string, string>> Daj_sve_profesore_sa_predmetima_na_kojima_predaju()
+        {
+            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
+
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_profesore_po_predmetima";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+
+                    red.Add("profesor_id", rdr.GetString(rdr.GetOrdinal("profesor_id")));
+                    red.Add("predmet_id", rdr.GetString(rdr.GetOrdinal("predmet_id")));
+                    red.Add("profesor_ime", rdr.GetString(rdr.GetOrdinal("profesor_ime")));
+                    red.Add("profesor_prezime", rdr.GetString(rdr.GetOrdinal("profesor_prezime")));
+                    red.Add("predmet_naziv", rdr.GetString(rdr.GetOrdinal("predmet_naziv")));
+               
+                    rezultat.Add(red);
+                }
+
+            }
+
+            return rezultat;
         }
         #endregion
     }
