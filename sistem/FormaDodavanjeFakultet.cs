@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class FormaDodavanjeFakultet : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         private Dictionary<string, int> mapa_id_naziv = new Dictionary<string, int>();
         public FormaDodavanjeFakultet()
         {
@@ -26,6 +28,11 @@ namespace sistem
 
             Sesija.dajSessiju().Logout_korisnika();
             MenadzerFormi.Zatvori();
+        }
+
+        private bool Validacija()
+        {
+            return (!nazivUnos.Text.Equals(string.Empty) && !gradUnos.Text.Equals(string.Empty) && !comboUniverziteti.SelectedIndex.Equals(-1));
         }
 
         public void Osvezi_sadrzaj()
@@ -47,9 +54,12 @@ namespace sistem
 
 
             }
-            catch (Exception ee)
+            catch (Exception exception)
             {
-                MessageBox.Show("doslo je do greske " + ee.ToString());
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -59,8 +69,7 @@ namespace sistem
         }
 
         private void FormaDodavanjeFakultet_Load(object sender, EventArgs e)
-        {
-            Osvezi_sadrzaj();
+        {        
         }
 
 
@@ -72,7 +81,12 @@ namespace sistem
         private void dugmeZaProsledi_Click(object sender, EventArgs e)
         {
             //dodavanje fakulteta
-
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
                 Baza.daj_instancu().Dodavanje_fakulteta(nazivUnos.Text, gradUnos.Text, mapa_id_naziv[Convert.ToString(comboUniverziteti.SelectedItem)]);
@@ -81,9 +95,11 @@ namespace sistem
             }
             catch (Exception exception)
             {
-                MessageBox.Show("greška " + exception.ToString());
-            }
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

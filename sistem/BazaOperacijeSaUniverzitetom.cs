@@ -109,6 +109,38 @@ namespace sistem
             return rez;
         }
 
+        public List<Dictionary<string, string>> Daj_sve_promene_na_univerzitetu()
+        {
+            List<Dictionary<string, string>> rez = null;
+
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_listu_svih_promena_na_univerzitetu";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rez = new List<Dictionary<string, string>>();
+                while (rdr.Read())
+                {
+                    var d = new Dictionary<string, string>();
+                    d.Add("naziv", rdr.GetString(rdr.GetOrdinal("naziv")));
+                    d.Add("korisnik", rdr.GetString(rdr.GetOrdinal("korisnik")));
+                    d.Add("vreme", rdr.GetString(rdr.GetOrdinal("vreme")));
+                    d.Add("poruka", rdr.GetString(rdr.GetOrdinal("poruka")));
+
+                    rez.Add(d);
+                }
+
+            }
+            return rez;
+        }
+
+
 
     }
 }

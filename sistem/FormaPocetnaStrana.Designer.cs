@@ -51,6 +51,14 @@ namespace sistem
             this.labelaImePrikaz = new System.Windows.Forms.Label();
             this.panelInformacije = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dugmeIzvestajPredmetiSaProfesorima = new FontAwesome.Sharp.IconButton();
+            this.dugmeIzvestajDiplomiraniStudenti = new FontAwesome.Sharp.IconButton();
+            this.dugmeIzvestajArhivaProfesor = new FontAwesome.Sharp.IconButton();
+            this.dugmeIzvestajStudentiArhiva = new FontAwesome.Sharp.IconButton();
+            this.dugmeIzvestajPromeneFakultet = new FontAwesome.Sharp.IconButton();
+            this.dugmeIzvestajPromeneUniverzitet = new FontAwesome.Sharp.IconButton();
+            this.listaPredmetaIzvestaj = new FontAwesome.Sharp.IconButton();
+            this.listaProfesoraIzvestaj = new FontAwesome.Sharp.IconButton();
             this.dugmeIzvestajUniverziteti = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dugmeAzurirajFakultetskuGodinu = new FontAwesome.Sharp.IconButton();
@@ -60,14 +68,6 @@ namespace sistem
             this.fakultetskaGodinaPrikaz = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listaProfesoraIzvestaj = new FontAwesome.Sharp.IconButton();
-            this.listaPredmetaIzvestaj = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.dugmeIzvestajPredmetiSaProfesorima = new FontAwesome.Sharp.IconButton();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -399,11 +399,11 @@ namespace sistem
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.dugmeIzvestajPredmetiSaProfesorima);
-            this.groupBox3.Controls.Add(this.iconButton7);
-            this.groupBox3.Controls.Add(this.iconButton5);
-            this.groupBox3.Controls.Add(this.iconButton6);
-            this.groupBox3.Controls.Add(this.iconButton4);
-            this.groupBox3.Controls.Add(this.iconButton3);
+            this.groupBox3.Controls.Add(this.dugmeIzvestajDiplomiraniStudenti);
+            this.groupBox3.Controls.Add(this.dugmeIzvestajArhivaProfesor);
+            this.groupBox3.Controls.Add(this.dugmeIzvestajStudentiArhiva);
+            this.groupBox3.Controls.Add(this.dugmeIzvestajPromeneFakultet);
+            this.groupBox3.Controls.Add(this.dugmeIzvestajPromeneUniverzitet);
             this.groupBox3.Controls.Add(this.listaPredmetaIzvestaj);
             this.groupBox3.Controls.Add(this.listaProfesoraIzvestaj);
             this.groupBox3.Controls.Add(this.dugmeIzvestajUniverziteti);
@@ -415,6 +415,182 @@ namespace sistem
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "generisanje izveštaja";
+            // 
+            // dugmeIzvestajPredmetiSaProfesorima
+            // 
+            this.dugmeIzvestajPredmetiSaProfesorima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajPredmetiSaProfesorima.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajPredmetiSaProfesorima.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajPredmetiSaProfesorima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajPredmetiSaProfesorima.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajPredmetiSaProfesorima.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
+            this.dugmeIzvestajPredmetiSaProfesorima.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajPredmetiSaProfesorima.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajPredmetiSaProfesorima.IconSize = 40;
+            this.dugmeIzvestajPredmetiSaProfesorima.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajPredmetiSaProfesorima.Location = new System.Drawing.Point(6, 455);
+            this.dugmeIzvestajPredmetiSaProfesorima.Name = "dugmeIzvestajPredmetiSaProfesorima";
+            this.dugmeIzvestajPredmetiSaProfesorima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajPredmetiSaProfesorima.Size = new System.Drawing.Size(275, 47);
+            this.dugmeIzvestajPredmetiSaProfesorima.TabIndex = 18;
+            this.dugmeIzvestajPredmetiSaProfesorima.Text = "predmeti sa profesorima";
+            this.dugmeIzvestajPredmetiSaProfesorima.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajPredmetiSaProfesorima.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajPredmetiSaProfesorima.Click += new System.EventHandler(this.dugmeIzvestajPredmetiSaProfesorima_Click);
+            // 
+            // dugmeIzvestajDiplomiraniStudenti
+            // 
+            this.dugmeIzvestajDiplomiraniStudenti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajDiplomiraniStudenti.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajDiplomiraniStudenti.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajDiplomiraniStudenti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajDiplomiraniStudenti.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajDiplomiraniStudenti.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
+            this.dugmeIzvestajDiplomiraniStudenti.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajDiplomiraniStudenti.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajDiplomiraniStudenti.IconSize = 40;
+            this.dugmeIzvestajDiplomiraniStudenti.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajDiplomiraniStudenti.Location = new System.Drawing.Point(6, 402);
+            this.dugmeIzvestajDiplomiraniStudenti.Name = "dugmeIzvestajDiplomiraniStudenti";
+            this.dugmeIzvestajDiplomiraniStudenti.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajDiplomiraniStudenti.Size = new System.Drawing.Size(275, 47);
+            this.dugmeIzvestajDiplomiraniStudenti.TabIndex = 17;
+            this.dugmeIzvestajDiplomiraniStudenti.Text = "diplomirani studenati";
+            this.dugmeIzvestajDiplomiraniStudenti.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajDiplomiraniStudenti.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajDiplomiraniStudenti.Click += new System.EventHandler(this.dugmeIzvestajDiplomiraniStudenti_Click);
+            // 
+            // dugmeIzvestajArhivaProfesor
+            // 
+            this.dugmeIzvestajArhivaProfesor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajArhivaProfesor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajArhivaProfesor.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajArhivaProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajArhivaProfesor.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajArhivaProfesor.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
+            this.dugmeIzvestajArhivaProfesor.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajArhivaProfesor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajArhivaProfesor.IconSize = 40;
+            this.dugmeIzvestajArhivaProfesor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajArhivaProfesor.Location = new System.Drawing.Point(6, 349);
+            this.dugmeIzvestajArhivaProfesor.Name = "dugmeIzvestajArhivaProfesor";
+            this.dugmeIzvestajArhivaProfesor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajArhivaProfesor.Size = new System.Drawing.Size(275, 47);
+            this.dugmeIzvestajArhivaProfesor.TabIndex = 16;
+            this.dugmeIzvestajArhivaProfesor.Text = "arhiva profesora";
+            this.dugmeIzvestajArhivaProfesor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajArhivaProfesor.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajArhivaProfesor.Click += new System.EventHandler(this.dugmeIzvestajArhivaProfesor_Click);
+            // 
+            // dugmeIzvestajStudentiArhiva
+            // 
+            this.dugmeIzvestajStudentiArhiva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajStudentiArhiva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajStudentiArhiva.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajStudentiArhiva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajStudentiArhiva.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajStudentiArhiva.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.dugmeIzvestajStudentiArhiva.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajStudentiArhiva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajStudentiArhiva.IconSize = 40;
+            this.dugmeIzvestajStudentiArhiva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajStudentiArhiva.Location = new System.Drawing.Point(6, 296);
+            this.dugmeIzvestajStudentiArhiva.Name = "dugmeIzvestajStudentiArhiva";
+            this.dugmeIzvestajStudentiArhiva.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajStudentiArhiva.Size = new System.Drawing.Size(275, 47);
+            this.dugmeIzvestajStudentiArhiva.TabIndex = 15;
+            this.dugmeIzvestajStudentiArhiva.Text = "arhiva studenata";
+            this.dugmeIzvestajStudentiArhiva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajStudentiArhiva.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajStudentiArhiva.Click += new System.EventHandler(this.dugmeIzvestajStudentiArhiva_Click);
+            // 
+            // dugmeIzvestajPromeneFakultet
+            // 
+            this.dugmeIzvestajPromeneFakultet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajPromeneFakultet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajPromeneFakultet.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajPromeneFakultet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajPromeneFakultet.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajPromeneFakultet.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.dugmeIzvestajPromeneFakultet.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajPromeneFakultet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajPromeneFakultet.IconSize = 40;
+            this.dugmeIzvestajPromeneFakultet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajPromeneFakultet.Location = new System.Drawing.Point(6, 243);
+            this.dugmeIzvestajPromeneFakultet.Name = "dugmeIzvestajPromeneFakultet";
+            this.dugmeIzvestajPromeneFakultet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajPromeneFakultet.Size = new System.Drawing.Size(275, 47);
+            this.dugmeIzvestajPromeneFakultet.TabIndex = 14;
+            this.dugmeIzvestajPromeneFakultet.Text = "promene na fakultetu";
+            this.dugmeIzvestajPromeneFakultet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajPromeneFakultet.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajPromeneFakultet.Click += new System.EventHandler(this.dugmeIzvestajPromeneFakultet_Click);
+            // 
+            // dugmeIzvestajPromeneUniverzitet
+            // 
+            this.dugmeIzvestajPromeneUniverzitet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajPromeneUniverzitet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajPromeneUniverzitet.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajPromeneUniverzitet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajPromeneUniverzitet.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajPromeneUniverzitet.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.dugmeIzvestajPromeneUniverzitet.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajPromeneUniverzitet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajPromeneUniverzitet.IconSize = 40;
+            this.dugmeIzvestajPromeneUniverzitet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajPromeneUniverzitet.Location = new System.Drawing.Point(6, 190);
+            this.dugmeIzvestajPromeneUniverzitet.Name = "dugmeIzvestajPromeneUniverzitet";
+            this.dugmeIzvestajPromeneUniverzitet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajPromeneUniverzitet.Size = new System.Drawing.Size(275, 47);
+            this.dugmeIzvestajPromeneUniverzitet.TabIndex = 13;
+            this.dugmeIzvestajPromeneUniverzitet.Text = "promene na univerzitetu";
+            this.dugmeIzvestajPromeneUniverzitet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajPromeneUniverzitet.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajPromeneUniverzitet.Click += new System.EventHandler(this.dugmeIzvestajPromeneUniverzitet_Click);
+            // 
+            // listaPredmetaIzvestaj
+            // 
+            this.listaPredmetaIzvestaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.listaPredmetaIzvestaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listaPredmetaIzvestaj.FlatAppearance.BorderSize = 0;
+            this.listaPredmetaIzvestaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.listaPredmetaIzvestaj.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.listaPredmetaIzvestaj.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.listaPredmetaIzvestaj.IconColor = System.Drawing.Color.Black;
+            this.listaPredmetaIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.listaPredmetaIzvestaj.IconSize = 40;
+            this.listaPredmetaIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.listaPredmetaIzvestaj.Location = new System.Drawing.Point(6, 137);
+            this.listaPredmetaIzvestaj.Name = "listaPredmetaIzvestaj";
+            this.listaPredmetaIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.listaPredmetaIzvestaj.Size = new System.Drawing.Size(275, 47);
+            this.listaPredmetaIzvestaj.TabIndex = 12;
+            this.listaPredmetaIzvestaj.Text = "lista predmeta";
+            this.listaPredmetaIzvestaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.listaPredmetaIzvestaj.UseVisualStyleBackColor = false;
+            this.listaPredmetaIzvestaj.Click += new System.EventHandler(this.listaPredmetaIzvestaj_Click);
+            // 
+            // listaProfesoraIzvestaj
+            // 
+            this.listaProfesoraIzvestaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.listaProfesoraIzvestaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listaProfesoraIzvestaj.FlatAppearance.BorderSize = 0;
+            this.listaProfesoraIzvestaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.listaProfesoraIzvestaj.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.listaProfesoraIzvestaj.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
+            this.listaProfesoraIzvestaj.IconColor = System.Drawing.Color.Black;
+            this.listaProfesoraIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.listaProfesoraIzvestaj.IconSize = 40;
+            this.listaProfesoraIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.listaProfesoraIzvestaj.Location = new System.Drawing.Point(6, 84);
+            this.listaProfesoraIzvestaj.Name = "listaProfesoraIzvestaj";
+            this.listaProfesoraIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.listaProfesoraIzvestaj.Size = new System.Drawing.Size(275, 47);
+            this.listaProfesoraIzvestaj.TabIndex = 11;
+            this.listaProfesoraIzvestaj.Text = "lista profesora";
+            this.listaProfesoraIzvestaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.listaProfesoraIzvestaj.UseVisualStyleBackColor = false;
+            this.listaProfesoraIzvestaj.Click += new System.EventHandler(this.listaProfesoraIzvestaj_Click);
             // 
             // dugmeIzvestajUniverziteti
             // 
@@ -558,177 +734,6 @@ namespace sistem
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "informacije o administratoru";
             // 
-            // listaProfesoraIzvestaj
-            // 
-            this.listaProfesoraIzvestaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.listaProfesoraIzvestaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listaProfesoraIzvestaj.FlatAppearance.BorderSize = 0;
-            this.listaProfesoraIzvestaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.listaProfesoraIzvestaj.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.listaProfesoraIzvestaj.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.listaProfesoraIzvestaj.IconColor = System.Drawing.Color.Black;
-            this.listaProfesoraIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.listaProfesoraIzvestaj.IconSize = 40;
-            this.listaProfesoraIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.listaProfesoraIzvestaj.Location = new System.Drawing.Point(6, 84);
-            this.listaProfesoraIzvestaj.Name = "listaProfesoraIzvestaj";
-            this.listaProfesoraIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.listaProfesoraIzvestaj.Size = new System.Drawing.Size(275, 47);
-            this.listaProfesoraIzvestaj.TabIndex = 11;
-            this.listaProfesoraIzvestaj.Text = "lista profesora";
-            this.listaProfesoraIzvestaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.listaProfesoraIzvestaj.UseVisualStyleBackColor = false;
-            this.listaProfesoraIzvestaj.Click += new System.EventHandler(this.listaProfesoraIzvestaj_Click);
-            // 
-            // listaPredmetaIzvestaj
-            // 
-            this.listaPredmetaIzvestaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.listaPredmetaIzvestaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listaPredmetaIzvestaj.FlatAppearance.BorderSize = 0;
-            this.listaPredmetaIzvestaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.listaPredmetaIzvestaj.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.listaPredmetaIzvestaj.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.listaPredmetaIzvestaj.IconColor = System.Drawing.Color.Black;
-            this.listaPredmetaIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.listaPredmetaIzvestaj.IconSize = 40;
-            this.listaPredmetaIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.listaPredmetaIzvestaj.Location = new System.Drawing.Point(6, 137);
-            this.listaPredmetaIzvestaj.Name = "listaPredmetaIzvestaj";
-            this.listaPredmetaIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.listaPredmetaIzvestaj.Size = new System.Drawing.Size(275, 47);
-            this.listaPredmetaIzvestaj.TabIndex = 12;
-            this.listaPredmetaIzvestaj.Text = "lista predmeta";
-            this.listaPredmetaIzvestaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.listaPredmetaIzvestaj.UseVisualStyleBackColor = false;
-            this.listaPredmetaIzvestaj.Click += new System.EventHandler(this.listaPredmetaIzvestaj_Click);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 40;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton3.Location = new System.Drawing.Point(6, 190);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(275, 47);
-            this.iconButton3.TabIndex = 13;
-            this.iconButton3.Text = "promene na univerzitetu";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = false;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 40;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton4.Location = new System.Drawing.Point(6, 243);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton4.Size = new System.Drawing.Size(275, 47);
-            this.iconButton4.TabIndex = 14;
-            this.iconButton4.Text = "promene na fakultetu";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = false;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 40;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.Location = new System.Drawing.Point(6, 349);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton5.Size = new System.Drawing.Size(275, 47);
-            this.iconButton5.TabIndex = 16;
-            this.iconButton5.Text = "arhiva profesora";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = false;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 40;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.Location = new System.Drawing.Point(6, 296);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton6.Size = new System.Drawing.Size(275, 47);
-            this.iconButton6.TabIndex = 15;
-            this.iconButton6.Text = "arhiva studenata";
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = false;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 40;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton7.Location = new System.Drawing.Point(6, 402);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton7.Size = new System.Drawing.Size(275, 47);
-            this.iconButton7.TabIndex = 17;
-            this.iconButton7.Text = "diplomirani studenati";
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = false;
-            // 
-            // dugmeIzvestajPredmetiSaProfesorima
-            // 
-            this.dugmeIzvestajPredmetiSaProfesorima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeIzvestajPredmetiSaProfesorima.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeIzvestajPredmetiSaProfesorima.FlatAppearance.BorderSize = 0;
-            this.dugmeIzvestajPredmetiSaProfesorima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeIzvestajPredmetiSaProfesorima.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeIzvestajPredmetiSaProfesorima.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
-            this.dugmeIzvestajPredmetiSaProfesorima.IconColor = System.Drawing.Color.Black;
-            this.dugmeIzvestajPredmetiSaProfesorima.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeIzvestajPredmetiSaProfesorima.IconSize = 40;
-            this.dugmeIzvestajPredmetiSaProfesorima.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeIzvestajPredmetiSaProfesorima.Location = new System.Drawing.Point(6, 455);
-            this.dugmeIzvestajPredmetiSaProfesorima.Name = "dugmeIzvestajPredmetiSaProfesorima";
-            this.dugmeIzvestajPredmetiSaProfesorima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeIzvestajPredmetiSaProfesorima.Size = new System.Drawing.Size(275, 47);
-            this.dugmeIzvestajPredmetiSaProfesorima.TabIndex = 18;
-            this.dugmeIzvestajPredmetiSaProfesorima.Text = "predmeti sa profesorima";
-            this.dugmeIzvestajPredmetiSaProfesorima.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeIzvestajPredmetiSaProfesorima.UseVisualStyleBackColor = false;
-            this.dugmeIzvestajPredmetiSaProfesorima.Click += new System.EventHandler(this.dugmeIzvestajPredmetiSaProfesorima_Click);
-            // 
             // FormaPocetnaStrana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -792,11 +797,11 @@ namespace sistem
         private FontAwesome.Sharp.IconButton dugmeAzurirajFakultetskuGodinu;
         private FontAwesome.Sharp.IconButton listaPredmetaIzvestaj;
         private FontAwesome.Sharp.IconButton listaProfesoraIzvestaj;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton dugmeIzvestajDiplomiraniStudenti;
+        private FontAwesome.Sharp.IconButton dugmeIzvestajArhivaProfesor;
+        private FontAwesome.Sharp.IconButton dugmeIzvestajStudentiArhiva;
+        private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneFakultet;
+        private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneUniverzitet;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPredmetiSaProfesorima;
     }
 }

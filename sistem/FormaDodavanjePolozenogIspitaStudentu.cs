@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class formaDodavanjePolozenogIspitaStudentu : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         private List<Dictionary<string, string>> studenti_iz_baze = new List<Dictionary<string, string>>();
         private List<Dictionary<string, string>> predmeti_iz_baze = new List<Dictionary<string, string>>();
         public formaDodavanjePolozenogIspitaStudentu()
@@ -72,7 +74,10 @@ namespace sistem
             }
             catch (Exception exception)
             {
-                MessageBox.Show("doslo je do greske " + exception.Message);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -118,14 +123,12 @@ namespace sistem
                         MessageBox.Show("Uspešno evidentiran položen ispit studentu", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (MySql.Data.MySqlClient.MySqlException exception_sql)
-                {
-                    MessageBox.Show("došlo je do greške, molimo pokušajte kasnije ponovo" + exception_sql.Message, "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("došlo je do greške " + exception.ToString(), "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                    MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

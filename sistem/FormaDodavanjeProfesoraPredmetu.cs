@@ -12,7 +12,8 @@ namespace sistem
 {
     public partial class FormaDodavanjeProfesoraPredmetu : Form, DodavanjeParametara
     {
-        //fali rukovanje greskama !!!!!!!!!!! sredi kod
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         private List<Dictionary<string, string>> predmeti_iz_baze = new List<Dictionary<string, string>>();
         private List<Dictionary<string, string>> profesori_iz_baze = new List<Dictionary<string, string>>();
         private Dictionary<string, int> tip_zaposlenja = new Dictionary<string, int>();
@@ -86,9 +87,12 @@ namespace sistem
 
 
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + exception.Message);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -115,8 +119,12 @@ namespace sistem
         }
 
         private void FormaDodavanjeProfesoraPredmetu_Load(object sender, EventArgs e)
+        {     
+        }
+
+        private bool Validacija()
         {
-            //Osvezi_sadrzaj();
+            return (!listaProfesor.SelectedIndex.Equals(-1) && !listaPredmet.SelectedIndex.Equals(-1) && !listaTip.SelectedIndex.Equals(-1));
         }
 
         private void dugmePretragaPredmet_Click(object sender, EventArgs e)
@@ -124,61 +132,53 @@ namespace sistem
             
             listaPredmet.Items.Clear();
             Ocisti_unos_predmet();
-            foreach(var elem in this.predmeti_iz_baze)
+            var rezultat = from predmet in this.predmeti_iz_baze
+                           where predmet["naziv"].Contains(predmetNazivUnos.Text) &&
+                                 predmet["departman"].Contains(predmetDepartmanUnos.Text)
+                           select predmet;
+            foreach (var elem in rezultat)
             {
-                bool ispunjava_uslov = true;
-
-                
-                if (!elem["departman"].Contains(predmetDepartmanUnos.Text))
-                {
-                    ispunjava_uslov = false;
-                }
-
-                if (!elem["naziv"].Contains(predmetNazivUnos.Text))
-                {
-                    ispunjava_uslov = false;
-                }
-                
-                if (ispunjava_uslov)
-                {
-                    listaPredmet.Items.Add(elem["naziv"]);
-                }
-            }
-           
+                listaPredmet.Items.Add(elem["naziv"]);
+            }            
         }
 
         private void dugmePretragaProfesor_Click(object sender, EventArgs e)
         {
             listaProfesor.Items.Clear();
             Ocisti_unos_profesor();
-            foreach(var elem in this.profesori_iz_baze)
+
+            IEnumerable<Dictionary<string, string>> rezultat = null;
+
+            if (profesorIdUnos.Text != "")
             {
-                bool ispunjava_uslov = true;
-
-                if(elem["id"] != profesorIdUnos.Text)
-                {
-                    ispunjava_uslov = false;
-                }
-
-                if (!elem["ime"].Contains(profesorImeUnos.Text))
-                {
-                    ispunjava_uslov = false;
-                }
-
-                if (!elem["prezime"].Contains(profesorPrezimeUnos.Text))
-                {
-                    ispunjava_uslov = false;
-                }
-
-                if (ispunjava_uslov)
-                {
-                    listaProfesor.Items.Add(elem["ime"] + " " + elem["prezime"]);
-                }
+                rezultat = from profesor in this.profesori_iz_baze
+                           where profesor["id"] == profesorIdUnos.Text &&
+                                 profesor["ime"].Contains(profesorImeUnos.Text) &&
+                                 profesor["prezime"].Contains(profesorPrezimeUnos.Text)
+                           select profesor;
             }
+            else
+            {
+                rezultat = from profesor in this.profesori_iz_baze
+                           where profesor["ime"].Contains(profesorImeUnos.Text) &&
+                                 profesor["prezime"].Contains(profesorPrezimeUnos.Text)
+                           select profesor;
+            }
+
+            foreach (var elem in rezultat)
+            {
+                listaProfesor.Items.Add(elem["ime"] + " " + elem["prezime"]);
+            }     
         }
 
         private void dugmeDodajPredmet_Click(object sender, EventArgs e)
         {
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
                 UInt32 id_profesora = 0;
@@ -211,7 +211,10 @@ namespace sistem
             }
             catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + exception.ToString(), "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

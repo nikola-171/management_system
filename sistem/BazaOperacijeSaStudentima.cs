@@ -116,6 +116,41 @@ namespace sistem
         }
         #endregion
 
+        #region uzimanje_liste_studenata_koji_su_diplomirali
+        public List<Dictionary<string, string>> Daj_sve_diplomirane_studente()
+        {
+            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_sve_diplomirane_studente";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+                    red.Add("broj_indeksa", rdr.GetString(rdr.GetOrdinal("broj_indeksa")));
+                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
+                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));                          
+                    red.Add("espb", rdr.GetString(rdr.GetOrdinal("espb")));
+                    red.Add("prosek", rdr.GetString(rdr.GetOrdinal("prosek")));
+                    red.Add("status", rdr.GetString(rdr.GetOrdinal("status_studenta")));
+                    red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
+                    red.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
+
+                    rezultat.Add(red);
+
+                }
+            }
+            return rezultat;
+        }
+        #endregion
+
         #region uzimanje_podataka_o_studentu_na_osnovu_broja_indeksa
         public Dictionary<string, string> Daj_informacije_o_studentu(int broj_indeksa)
         {
@@ -209,6 +244,41 @@ namespace sistem
 
                 return status;
             }
+        }
+        #endregion
+
+        #region uzimanje_liste_studenata_iz_arhive
+        public List<Dictionary<string, string>> Daj_sve_studente_iz_arhive()
+        {
+            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_listu_studenata_iz_arhive";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+                    red.Add("broj_indeksa", rdr.GetString(rdr.GetOrdinal("broj_indeksa")));
+                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
+                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
+                    red.Add("diplomirao", rdr.GetString(rdr.GetOrdinal("diplomirao")));
+                    red.Add("espb", rdr.GetString(rdr.GetOrdinal("espb")));
+                    red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
+                    red.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
+
+
+                    rezultat.Add(red);
+
+                }
+            }
+            return rezultat;
         }
         #endregion
     }

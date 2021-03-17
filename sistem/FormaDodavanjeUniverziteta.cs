@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class FormaDodavanjeUniverziteta : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         public FormaDodavanjeUniverziteta()
         {
             InitializeComponent();
@@ -42,20 +44,33 @@ namespace sistem
             MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
         }
 
+        private bool Validacija()
+        {
+            return (!nazivUnos.Text.Equals(string.Empty) && !gradUnos.Text.Equals(string.Empty) && !drzavaUnos.Text.Equals(string.Empty));
+        }
+
         private void dugmeZaProsledi_Click(object sender, EventArgs e)
         {
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
                 Baza.daj_instancu().Dodavanje_univerziteta(nazivUnos.Text, drzavaUnos.Text, gradUnos.Text);
-                MessageBox.Show("Uspešno registrovan univerzitet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Uspešno registrovan univerzitet", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
-                ;
+                
             }
-            catch (Exception excpetion)
+            catch (Exception exception)
             {
-                MessageBox.Show("greška", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -12,6 +12,7 @@ namespace sistem
 {
     public partial class FormaDodavanjeDepartmana : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
         // mapa naziv - id svih fakulteta
         private Dictionary<string, int> mapa_fakulteta = new Dictionary<string, int>();
 
@@ -48,10 +49,13 @@ namespace sistem
 
 
             }
-            catch (Exception ee)
+            catch (Exception exception)
             {
-                MessageBox.Show("doslo je do greske " + ee.ToString());
-            }   
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -65,21 +69,37 @@ namespace sistem
             MenadzerFormi.dajFormu<FormaUpravljanjeDepartmana>(this, null, true);
         }
 
+        private bool Validacija()
+        {
+            return (!naziv_departmana_unos.Text.Equals(string.Empty) && !trajanje_unos.Text.Equals(string.Empty) && 
+                    !espb_unos.Text.Equals(string.Empty) && !listaNivoaStudija.SelectedIndex.Equals(-1) &&
+                    !listaFakulteta.SelectedIndex.Equals(-1) && int.TryParse(espb_unos.Text, out _) &&
+                    int.TryParse(trajanje_unos.Text, out _));
+        }
         
-
         private void dugmeDodajDepartman_Click_1(object sender, EventArgs e)
         {
             // upisivanje departmana 
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
                 Baza.daj_instancu().Dodaj_departman(this.mapa_fakulteta[Convert.ToString(listaFakulteta.SelectedItem)], naziv_departmana_unos.Text,
                                                     trajanje_unos.Text, espb_unos.Text, Convert.ToString(listaNivoaStudija.SelectedItem));
-                MessageBox.Show("uspešno registrovan departman", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("uspešno registrovan departman", MenadzerStatusnihKodova.USPEH,
+                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            catch (Exception excpetion)
+            catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + excpetion.ToString(), "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

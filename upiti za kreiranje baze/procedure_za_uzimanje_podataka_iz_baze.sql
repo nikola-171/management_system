@@ -170,5 +170,52 @@ begin
     commit;
 end\\
 delimiter ;
+/*uzimanje liste svih diplomiranih studenata*/
+delimiter \\
+create procedure daj_sve_diplomirane_studente()
+begin
+   select * from student
+   where diplomirao = 1;
+end\\
+delimiter ;
+/*uzimanje liste svih promena na univerzitetima*/
+delimiter \\
+create procedure daj_listu_svih_promena_na_univerzitetu()
+begin
+   select u.naziv, up.korisnik, up.vreme, up.poruka
+   from univerzitet_promena as up, univerzitet as u
+   where up.univerzitet = u.id;
+end\\
+delimiter ;
+/*uzimanje liste svih promena na fakultetima*/
+delimiter \\
+create procedure daj_listu_svih_promena_na_fakultetu()
+begin
+   select f.naziv, fp.korisnik, fp.vreme, fp.poruka
+   from fakultet_promena as fp, fakultet as f
+   where fp.fakultet = f.id;
+end\\
+delimiter ;
+/*daj studente iz arhive*/
+delimiter \\
+create procedure daj_listu_studenata_iz_arhive()
+begin
+   select * from student_arhiva;
+end\\
+delimiter ;
+/*daj profesore iz arhive*/
+delimiter \\
+create procedure daj_listu_profesora_iz_arhive()
+begin
+   select * from profesor_arhiva;
+end\\
+delimiter ;
+
+
+
+
+
+
+
 
 

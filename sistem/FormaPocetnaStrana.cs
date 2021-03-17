@@ -288,5 +288,155 @@ namespace sistem
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dugmeIzvestajPromeneUniverzitet_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_promena_na_univerzitetima(string.Format(@"{0}\{1}", lokacija, "promene_na_univerzitetima.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dugmeIzvestajPromeneFakultet_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_promena_na_fakultetima(string.Format(@"{0}\{1}", lokacija, "promene_na_fakultetima.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dugmeIzvestajStudentiArhiva_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_studenata_iz_arhive(string.Format(@"{0}\{1}", lokacija, "studenti_iz_arhive.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dugmeIzvestajArhivaProfesor_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_profesora_iz_arhive(string.Format(@"{0}\{1}", lokacija, "profesori_iz_arhive.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dugmeIzvestajDiplomiraniStudenti_Click(object sender, EventArgs e)
+        {
+            string lokacija = @"D:\";
+            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
+
+            DialogResult rezultat = dijalog_lokacija.ShowDialog();
+
+            if (rezultat.Equals(DialogResult.OK))
+            {
+                lokacija = dijalog_lokacija.SelectedPath;
+            }
+            else if (rezultat.Equals(DialogResult.Cancel))
+            {
+                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
+            try
+            {
+                GeneratorIzvestaja.Kreiraj_izvestaj_svih_diplomiranih_studenata(string.Format(@"{0}\{1}", lokacija, "diplomirani_studenti.pdf"));
+            }
+            catch (Exception exception)
+            {
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
