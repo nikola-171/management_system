@@ -11,8 +11,11 @@ delimiter ;
 delimiter \\
 create procedure daj_podatke_o_studentu(in broj_indeksa_in int unsigned)
 begin
-	select * from prikaz_studenata
-    where broj_indeksa = broj_indeksa_in;
+select s.broj_indeksa, s.JMBG, s.ime, s.prezime, sm.naziv, f.naziv as 'fakultet', s.diplomirao, s.espb, s.prosek, s.status_studenta as 'status_studenta'
+    from student as s, smer as sm, fakultet as f
+    where s.smer = sm.id and sm.fakultet = f.id and broj_indeksa = broj_indeksa_in
+    order by sm.naziv asc;
+
 end\\
 delimiter ;
 /*uzimanje podataka o administratoru*/
@@ -79,15 +82,18 @@ delimiter ;
 delimiter \\
 create procedure daj_profesora_na_osnovu_id(in id_in int unsigned)
 begin
-	select * from prikaz_profesora
-    where id = id_in;
+	select * 
+    from radnik as r, profesor as p
+    where r.id = p.radnik_id and p.radnik_id = id_in;
 end\\
 delimiter ;
 /*uzimanje liste svih registrovanih profesora*/
 delimiter \\
 create procedure daj_sve_profesore()
 begin
-	select * from prikaz_profesora;
+	select * 
+    from radnik as r, profesor as p
+    where r.id = p.radnik_id;
 end\\
 delimiter ;
 /*uzimanje liste svih predmeta po smerovima*/

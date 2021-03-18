@@ -36,9 +36,7 @@ namespace sistem
             prezimeUnos.Clear();
             emailUnos.Clear();
             telefonUnos.Clear();
-            danUnos.Clear();
-            mesecUnos.Clear();
-            godinaUnos.Clear();
+      
             korisnickoImeUnos.Clear();
             lozinkaUnos.Clear();
             lozinkaPonovoUnos.Clear();
@@ -55,9 +53,6 @@ namespace sistem
                 prezimeUnos.Text.Equals(String.Empty) ||
                 emailUnos.Text.Equals(String.Empty) ||
                 telefonUnos.Text.Equals(String.Empty) ||
-                !Int16.TryParse(godinaUnos.Text, out _) ||
-                !SByte.TryParse(mesecUnos.Text, out _) ||
-                !SByte.TryParse(danUnos.Text, out _) ||
                 korisnickoImeUnos.Text.Equals(String.Empty) ||
                 lozinkaUnos.Text.Equals(String.Empty) ||
                 lozinkaPonovoUnos.Text.Equals(String.Empty) ||
@@ -99,9 +94,8 @@ namespace sistem
             try
             {
                 int id_profesora = Baza.daj_instancu().Dodaj_profesora(imeUnos.Text, prezimeUnos.Text, emailUnos.Text, telefonUnos.Text,
-                                                    Convert.ToSByte(danUnos.Text), Convert.ToSByte(mesecUnos.Text),
-                                                    Convert.ToInt16(godinaUnos.Text),
-                                                    korisnickoImeUnos.Text, lozinkaUnos.Text);
+                                                    datumRodjenja.Value.ToString("yyyy-MM-dd").ToString(), 
+                                                    korisnickoImeUnos.Text, lozinkaUnos.Text, jmbgUnos.Text, zvanjeUnos.Text);
                 
 
                 MessageBox.Show(MenadzerStatusnihKodova.PROFESOR_REGISTROVAN(id_profesora), MenadzerStatusnihKodova.USPEH,

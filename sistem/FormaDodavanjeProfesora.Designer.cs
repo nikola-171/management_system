@@ -32,14 +32,8 @@ namespace sistem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaDodavanjeProfesora));
             this.korisnickoImeUnos = new System.Windows.Forms.TextBox();
             this.labelaKorisnickoIme = new System.Windows.Forms.Label();
-            this.godinaUnos = new System.Windows.Forms.TextBox();
             this.lozinkaUnos = new System.Windows.Forms.TextBox();
             this.labelaLozinkaPonovo = new System.Windows.Forms.Label();
-            this.mesecUnos = new System.Windows.Forms.TextBox();
-            this.danUnos = new System.Windows.Forms.TextBox();
-            this.labelaMesec = new System.Windows.Forms.Label();
-            this.labelaGodina = new System.Windows.Forms.Label();
-            this.labelaDan = new System.Windows.Forms.Label();
             this.lozinkaPonovoUnos = new System.Windows.Forms.TextBox();
             this.labelaLozinka = new System.Windows.Forms.Label();
             this.panelNaslov = new System.Windows.Forms.Panel();
@@ -61,6 +55,11 @@ namespace sistem
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.datumRodjenja = new System.Windows.Forms.DateTimePicker();
+            this.jmbgUnos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.zvanjeUnos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelNaslov.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,7 +74,7 @@ namespace sistem
             // 
             this.korisnickoImeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.korisnickoImeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.korisnickoImeUnos.Location = new System.Drawing.Point(164, 62);
+            this.korisnickoImeUnos.Location = new System.Drawing.Point(161, 39);
             this.korisnickoImeUnos.MaxLength = 45;
             this.korisnickoImeUnos.Name = "korisnickoImeUnos";
             this.korisnickoImeUnos.Size = new System.Drawing.Size(161, 26);
@@ -86,28 +85,18 @@ namespace sistem
             this.labelaKorisnickoIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaKorisnickoIme.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaKorisnickoIme.ForeColor = System.Drawing.Color.White;
-            this.labelaKorisnickoIme.Location = new System.Drawing.Point(24, 57);
+            this.labelaKorisnickoIme.Location = new System.Drawing.Point(21, 34);
             this.labelaKorisnickoIme.Name = "labelaKorisnickoIme";
             this.labelaKorisnickoIme.Size = new System.Drawing.Size(137, 35);
             this.labelaKorisnickoIme.TabIndex = 11;
             this.labelaKorisnickoIme.Text = "korisničko ime:";
             this.labelaKorisnickoIme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // godinaUnos
-            // 
-            this.godinaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.godinaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.godinaUnos.Location = new System.Drawing.Point(146, 118);
-            this.godinaUnos.MaxLength = 5;
-            this.godinaUnos.Name = "godinaUnos";
-            this.godinaUnos.Size = new System.Drawing.Size(107, 26);
-            this.godinaUnos.TabIndex = 10;
-            // 
             // lozinkaUnos
             // 
             this.lozinkaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lozinkaUnos.Location = new System.Drawing.Point(164, 101);
+            this.lozinkaUnos.Location = new System.Drawing.Point(154, 89);
             this.lozinkaUnos.MaxLength = 45;
             this.lozinkaUnos.Name = "lozinkaUnos";
             this.lozinkaUnos.Size = new System.Drawing.Size(161, 26);
@@ -125,62 +114,6 @@ namespace sistem
             this.labelaLozinkaPonovo.Text = "lozinka ponovo:";
             this.labelaLozinkaPonovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // mesecUnos
-            // 
-            this.mesecUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mesecUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mesecUnos.Location = new System.Drawing.Point(146, 80);
-            this.mesecUnos.MaxLength = 5;
-            this.mesecUnos.Name = "mesecUnos";
-            this.mesecUnos.Size = new System.Drawing.Size(107, 26);
-            this.mesecUnos.TabIndex = 9;
-            // 
-            // danUnos
-            // 
-            this.danUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.danUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.danUnos.Location = new System.Drawing.Point(146, 41);
-            this.danUnos.MaxLength = 5;
-            this.danUnos.Name = "danUnos";
-            this.danUnos.Size = new System.Drawing.Size(107, 26);
-            this.danUnos.TabIndex = 8;
-            // 
-            // labelaMesec
-            // 
-            this.labelaMesec.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelaMesec.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaMesec.ForeColor = System.Drawing.Color.White;
-            this.labelaMesec.Location = new System.Drawing.Point(51, 75);
-            this.labelaMesec.Name = "labelaMesec";
-            this.labelaMesec.Size = new System.Drawing.Size(67, 35);
-            this.labelaMesec.TabIndex = 13;
-            this.labelaMesec.Text = "mesec:";
-            this.labelaMesec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelaGodina
-            // 
-            this.labelaGodina.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelaGodina.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaGodina.ForeColor = System.Drawing.Color.White;
-            this.labelaGodina.Location = new System.Drawing.Point(51, 113);
-            this.labelaGodina.Name = "labelaGodina";
-            this.labelaGodina.Size = new System.Drawing.Size(67, 35);
-            this.labelaGodina.TabIndex = 12;
-            this.labelaGodina.Text = "godina:";
-            this.labelaGodina.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelaDan
-            // 
-            this.labelaDan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelaDan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaDan.ForeColor = System.Drawing.Color.White;
-            this.labelaDan.Location = new System.Drawing.Point(68, 36);
-            this.labelaDan.Name = "labelaDan";
-            this.labelaDan.Size = new System.Drawing.Size(41, 35);
-            this.labelaDan.TabIndex = 11;
-            this.labelaDan.Text = "dan:";
-            this.labelaDan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lozinkaPonovoUnos
             // 
             this.lozinkaPonovoUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -196,7 +129,7 @@ namespace sistem
             this.labelaLozinka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaLozinka.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaLozinka.ForeColor = System.Drawing.Color.White;
-            this.labelaLozinka.Location = new System.Drawing.Point(69, 96);
+            this.labelaLozinka.Location = new System.Drawing.Point(59, 84);
             this.labelaLozinka.Name = "labelaLozinka";
             this.labelaLozinka.Size = new System.Drawing.Size(67, 35);
             this.labelaLozinka.TabIndex = 13;
@@ -239,6 +172,10 @@ namespace sistem
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.Controls.Add(this.zvanjeUnos);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.jmbgUnos);
+            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.dugmeDodaj);
             this.groupBox3.Controls.Add(this.lozinkaPonovoUnos);
             this.groupBox3.Controls.Add(this.lozinkaUnos);
@@ -265,7 +202,7 @@ namespace sistem
             this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
             this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodaj.Location = new System.Drawing.Point(73, 224);
+            this.dugmeDodaj.Location = new System.Drawing.Point(73, 266);
             this.dugmeDodaj.Name = "dugmeDodaj";
             this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
             this.dugmeDodaj.TabIndex = 16;
@@ -386,12 +323,7 @@ namespace sistem
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.godinaUnos);
-            this.groupBox1.Controls.Add(this.mesecUnos);
-            this.groupBox1.Controls.Add(this.danUnos);
-            this.groupBox1.Controls.Add(this.labelaMesec);
-            this.groupBox1.Controls.Add(this.labelaGodina);
-            this.groupBox1.Controls.Add(this.labelaDan);
+            this.groupBox1.Controls.Add(this.datumRodjenja);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(21, 197);
@@ -453,6 +385,57 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // datumRodjenja
+            // 
+            this.datumRodjenja.Location = new System.Drawing.Point(39, 84);
+            this.datumRodjenja.Name = "datumRodjenja";
+            this.datumRodjenja.Size = new System.Drawing.Size(237, 25);
+            this.datumRodjenja.TabIndex = 0;
+            // 
+            // jmbgUnos
+            // 
+            this.jmbgUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jmbgUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jmbgUnos.Location = new System.Drawing.Point(164, 176);
+            this.jmbgUnos.MaxLength = 45;
+            this.jmbgUnos.Name = "jmbgUnos";
+            this.jmbgUnos.Size = new System.Drawing.Size(161, 26);
+            this.jmbgUnos.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(28, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 35);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "JMBG:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // zvanjeUnos
+            // 
+            this.zvanjeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.zvanjeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zvanjeUnos.Location = new System.Drawing.Point(164, 228);
+            this.zvanjeUnos.MaxLength = 45;
+            this.zvanjeUnos.Name = "zvanjeUnos";
+            this.zvanjeUnos.Size = new System.Drawing.Size(161, 26);
+            this.zvanjeUnos.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(28, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 35);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "zvanje:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormaDodavanjeProfesora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +456,6 @@ namespace sistem
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -484,14 +466,8 @@ namespace sistem
         #endregion
         private System.Windows.Forms.TextBox korisnickoImeUnos;
         private System.Windows.Forms.Label labelaKorisnickoIme;
-        private System.Windows.Forms.TextBox godinaUnos;
         private System.Windows.Forms.TextBox lozinkaUnos;
         private System.Windows.Forms.Label labelaLozinkaPonovo;
-        private System.Windows.Forms.TextBox mesecUnos;
-        private System.Windows.Forms.TextBox danUnos;
-        private System.Windows.Forms.Label labelaMesec;
-        private System.Windows.Forms.Label labelaGodina;
-        private System.Windows.Forms.Label labelaDan;
         private System.Windows.Forms.TextBox lozinkaPonovoUnos;
         private System.Windows.Forms.Label labelaLozinka;
         private System.Windows.Forms.Panel panelNaslov;
@@ -513,5 +489,10 @@ namespace sistem
         private System.Windows.Forms.Panel panelMeni;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton dugmeDodaj;
+        private System.Windows.Forms.TextBox zvanjeUnos;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox jmbgUnos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker datumRodjenja;
     }
 }

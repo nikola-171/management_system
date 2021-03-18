@@ -57,7 +57,7 @@ begin
     end;
     
 	delete from profesor
-    where id = id_in;
+    where radnik_id = id_in;
 end\\
 delimiter ;
 /*brisanje studenta na osnovu ID-a, tj. broja indeksa*/

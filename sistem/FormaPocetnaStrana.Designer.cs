@@ -68,6 +68,7 @@ namespace sistem
             this.fakultetskaGodinaPrikaz = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dugmeUpravljanjeZaposlenima = new FontAwesome.Sharp.IconButton();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,6 +82,7 @@ namespace sistem
             // panelMeni
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMeni.Controls.Add(this.dugmeUpravljanjeZaposlenima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeProfesorima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeStudentima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjePredmetima);
@@ -93,7 +95,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 670);
+            this.panelMeni.Size = new System.Drawing.Size(199, 719);
             this.panelMeni.TabIndex = 6;
             // 
             // dugmeUpravljanjeProfesorima
@@ -390,7 +392,7 @@ namespace sistem
             this.panelInformacije.Controls.Add(this.groupBox3);
             this.panelInformacije.Controls.Add(this.groupBox2);
             this.panelInformacije.Controls.Add(this.groupBox1);
-            this.panelInformacije.Location = new System.Drawing.Point(205, 99);
+            this.panelInformacije.Location = new System.Drawing.Point(205, 123);
             this.panelInformacije.Name = "panelInformacije";
             this.panelInformacije.Size = new System.Drawing.Size(915, 559);
             this.panelInformacije.TabIndex = 15;
@@ -734,12 +736,34 @@ namespace sistem
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "informacije o administratoru";
             // 
+            // dugmeUpravljanjeZaposlenima
+            // 
+            this.dugmeUpravljanjeZaposlenima.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeUpravljanjeZaposlenima.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dugmeUpravljanjeZaposlenima.FlatAppearance.BorderSize = 0;
+            this.dugmeUpravljanjeZaposlenima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeUpravljanjeZaposlenima.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeUpravljanjeZaposlenima.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            this.dugmeUpravljanjeZaposlenima.IconColor = System.Drawing.Color.Black;
+            this.dugmeUpravljanjeZaposlenima.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeUpravljanjeZaposlenima.IconSize = 50;
+            this.dugmeUpravljanjeZaposlenima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeUpravljanjeZaposlenima.Location = new System.Drawing.Point(0, 644);
+            this.dugmeUpravljanjeZaposlenima.Name = "dugmeUpravljanjeZaposlenima";
+            this.dugmeUpravljanjeZaposlenima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeUpravljanjeZaposlenima.Size = new System.Drawing.Size(199, 68);
+            this.dugmeUpravljanjeZaposlenima.TabIndex = 8;
+            this.dugmeUpravljanjeZaposlenima.Text = "upravljanje zaposlenima";
+            this.dugmeUpravljanjeZaposlenima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeUpravljanjeZaposlenima.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeUpravljanjeZaposlenima.UseVisualStyleBackColor = true;
+            // 
             // FormaPocetnaStrana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(1132, 670);
+            this.ClientSize = new System.Drawing.Size(1132, 719);
             this.Controls.Add(this.panelInformacije);
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panelMeni);
@@ -803,6 +827,7 @@ namespace sistem
         private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneFakultet;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneUniverzitet;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPredmetiSaProfesorima;
+        private FontAwesome.Sharp.IconButton dugmeUpravljanjeZaposlenima;
     }
 }
 

@@ -38,10 +38,10 @@ namespace sistem
                     red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
                     red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
                     red.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
-                    red.Add("godina_rodjenja", rdr.GetString(rdr.GetOrdinal("godina_rodjenja")));
-                    red.Add("mesec_rodjenja", rdr.GetString(rdr.GetOrdinal("mesec_rodjenja")));
-                    red.Add("dan_rodjenja", rdr.GetString(rdr.GetOrdinal("dan_rodjenja")));
                     red.Add("korisnicko_ime", rdr.GetString(rdr.GetOrdinal("korisnicko_ime")));
+                    red.Add("datum_rodjenja", rdr.GetString(rdr.GetOrdinal("datum_rodjenja")));
+                    red.Add("jmbg", rdr.GetString(rdr.GetOrdinal("JMBG")));
+                    red.Add("zvanje", rdr.GetString(rdr.GetOrdinal("zvanje")));
 
                     rezultat.Add(red);
                 }
@@ -53,9 +53,9 @@ namespace sistem
         #endregion
 
         #region dodaj_novog_profesora
-        public int Dodaj_profesora(string ime, string prezime, string email, string telefon, sbyte dan, sbyte mesec,
-                                    Int16 godina, string korisnicko_ime,
-                                    string lozinka)
+        public int Dodaj_profesora(string ime, string prezime, string email, string telefon, string datum_rodjenja,
+                                   string korisnicko_ime,
+                                   string lozinka, string jmbg, string zvanje)
         {
 
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -69,9 +69,9 @@ namespace sistem
 
                 cmd.Parameters.AddWithValue("@ime_in", ime);
                 cmd.Parameters.AddWithValue("@prezime_in", prezime);
-                cmd.Parameters.AddWithValue("@godina_rodjenja_in", godina);
-                cmd.Parameters.AddWithValue("@mesec_rodjenja_in", mesec);
-                cmd.Parameters.AddWithValue("@dan_rodjenja_in", dan);
+                cmd.Parameters.AddWithValue("@JMBG_in", jmbg);
+                cmd.Parameters.AddWithValue("@zvanje_in", zvanje);
+                cmd.Parameters.AddWithValue("@datum_rodjenja_in", datum_rodjenja);
                 cmd.Parameters.AddWithValue("@korisnicko_ime_in", korisnicko_ime);
                 cmd.Parameters.AddWithValue("@lozinka_in", lozinka);
                 cmd.Parameters.AddWithValue("@telefon_in", telefon);
@@ -121,15 +121,15 @@ namespace sistem
                     rezultat.Add("id", rdr.GetString(rdr.GetOrdinal("id")));
                     rezultat.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
                     rezultat.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));                  
-                    rezultat.Add("godina_rodjenja", rdr.GetString(rdr.GetOrdinal("godina_rodjenja")));
-                    rezultat.Add("mesec_rodjenja", rdr.GetString(rdr.GetOrdinal("mesec_rodjenja")));
-                    rezultat.Add("dan_rodjenja", rdr.GetString(rdr.GetOrdinal("dan_rodjenja")));
                     rezultat.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
                     rezultat.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
                     rezultat.Add("korisnicko_ime", rdr.GetString(rdr.GetOrdinal("korisnicko_ime")));
+                    rezultat.Add("datum_rodjenja", rdr.GetString(rdr.GetOrdinal("datum_rodjenja")));
+                    rezultat.Add("jmbg", rdr.GetString(rdr.GetOrdinal("JMBG")));
+                    rezultat.Add("zvanje", rdr.GetString(rdr.GetOrdinal("zvanje")));
 
                 }
-                
+
             }
             return rezultat;
         }

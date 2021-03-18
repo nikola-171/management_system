@@ -1,8 +1,8 @@
 use fakultet;
 /*svake godine prazni arhive*/
-SET GLOBAL event_scheduler = ON;
+/*SET GLOBAL event_scheduler = ON;*/
 
-delimiter \\
+/*delimiter \\
 create event prazni_arhive
 on schedule every 1 year
 enable
@@ -59,7 +59,7 @@ begin
 		end loop l;
     close c_prof;
 end\\
-delimiter ;
+delimiter ;*/
 /*kada brišemo univerzitet prebacujemo ga u arhivu*/
 delimiter \\
 create trigger tr_brisanje_univerziteta
@@ -81,7 +81,7 @@ create trigger tr_brisanje_fakulteta
     end\\
 delimiter ;
 /*kada brišemo studenta prebacujemo ga u arhivu*/
-delimiter \\
+/*delimiter \\
 create trigger tr_brisanje_studenata
 	after delete on student
     for each row
@@ -92,7 +92,7 @@ create trigger tr_brisanje_studenata
 			   old.dan_rodjenja, old.mesto_boravka, old.ulica, old.broj, old.telefon, old.email,
                old.espb, old.diplomirao);
     end\\
-delimiter ;
+delimiter ;*/
 /*čuvamo promene izvršene nad nekim fakultetom*/
 delimiter \\
 create trigger tr_fakultet_promena
@@ -211,17 +211,24 @@ begin
 end\\
 delimiter ;
 /*brisanje profesora - prebacujemo ga u arhivu*/
-delimiter \\
+/*delimiter \\
 create trigger tr_brisanje_profesora
 	after delete on profesor
     for each row
     begin
-		insert into profesor_arhiva(id, ime, prezime, godina_rodjenja, mesec_rodjenja, dan_rodjenja,
-									email, telefon)
-		values(old.id, old.ime, old.prezime, old.godina_rodjenja, old.mesec_rodjenja, 
-			   old.dan_rodjenja, old.email, old.telefon);
+        declare ime varchar(45) default '';
+        declare prezime varchar(45) default '';
+        declare godina_rodjenja date;
+        declare email varchar(45) default '';
+        declare telefon varchar(45) default '';
+        declare JMBG char(13);
+        declare zvanje varchar(45) default '';
+	
+        
+		insert into profesor_arhiva(id, ime, prezime, datum_rodjenja, email, telefon, JMBG)
+		values(old.id, old.ime, old.prezime, old.datum_rodjenja, old.email, old.telefon, old.JMBG);
     end\\
-delimiter ;
+delimiter ;*/
 /*kada studentu obrišemo neki položen ispit moramo ponovo da mu ažuriramo prosek i broj espb bodova*/
 delimiter \\
 create trigger tr_brisanje_polozenog_predmeta

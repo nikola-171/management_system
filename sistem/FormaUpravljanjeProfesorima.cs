@@ -74,9 +74,14 @@ namespace sistem
                     korisnickoImePrikaz.Text = rezultat["korisnicko_ime"];
                     telefonPrikaz.Text = rezultat["telefon"];
                     emailPrikaz.Text = rezultat["email"];
+
+                    jmbgPrikaz.Text = rezultat["jmbg"]; 
+                    zvanjePrikaz.Text = rezultat["zvanje"];
+
                     idPrikaz.Text = rezultat["id"];
                     this.id_profesora_za_brisanje = Convert.ToInt32(rezultat["id"]);
-                    datumRodjenjaPrikaz.Text = rezultat["dan_rodjenja"] + "." + rezultat["mesec_rodjenja"] + "." + rezultat["godina_rodjenja"];
+                    datumRodjenjaPrikaz.Text = rezultat["datum_rodjenja"];
+
                     dugmeUkloniProfesora.Enabled = true;
                     panelPrikazRezultata.Visible = true;
                 }

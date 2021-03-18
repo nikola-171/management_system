@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class FormaIzmenaUniverziteta : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         private string naziv = "", drzava = "", grad = "";
         private int ID = -1;
         
@@ -78,13 +80,15 @@ namespace sistem
             try
             {
                 Baza.daj_instancu().Izbrisi_univerzitet(this.ID);
-                MessageBox.Show("Univerzitet uspešno obrisan", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Univerzitet uspešno obrisan", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške prilikom brisanja univerziteta, molimo pokušajte kasnije", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,18 +100,15 @@ namespace sistem
             try
             {
 
-
                 Baza.daj_instancu().Sacuvaj_izmene_na_univerzitetu(this.ID, nazivUnos.Text, drzavaUnos.Text, gradUnos.Text);
 
-
-                MessageBox.Show("Izmene uspešno sačuvane", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                MessageBox.Show("Izmene uspešno sačuvane", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Nismo uspeli da sačuvamo izmene, molimo pokušajte kasnije", "greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

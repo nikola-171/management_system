@@ -43,9 +43,7 @@ namespace sistem
                 prezimeUnos.Text.Equals(String.Empty) ||
                 emailUnos.Text.Equals(String.Empty) ||
                 telefonUnos.Text.Equals(String.Empty) ||
-                !Int16.TryParse(godinaUnos.Text, out _) ||
-                !SByte.TryParse(mesecUnos.Text, out _) ||
-                !SByte.TryParse(danUnos.Text, out _) ||
+             
                 korisnickoImeUnos.Text.Equals(String.Empty) ||
                 lozinkaUnos.Text.Equals(String.Empty) ||
                 lozinkaPonovoUnos.Text.Equals(String.Empty) ||
@@ -84,9 +82,7 @@ namespace sistem
                 mestoBoravkaUnos.Clear();
                 ulicaUnos.Clear();
                 brojUnos.Clear();
-                godinaUnos.Clear();
-                mesecUnos.Clear();
-                danUnos.Clear();
+                jmbgUnos.Clear();
                 korisnickoImeUnos.Clear();
                 lozinkaUnos.Clear();
                 lozinkaPonovoUnos.Clear();
@@ -129,10 +125,9 @@ namespace sistem
           
             try
             {
-                int broj_indeksa = Baza.daj_instancu().Dodaj_studenta(imeUnos.Text, prezimeUnos.Text, emailUnos.Text, telefonUnos.Text, Convert.ToInt32(danUnos.Text), Convert.ToInt32(mesecUnos.Text),
-                                                    Convert.ToInt32(godinaUnos.Text), mestoBoravkaUnos.Text, ulicaUnos.Text, brojUnos.Text, korisnickoImeUnos.Text,
+                int broj_indeksa = Baza.daj_instancu().Dodaj_studenta(imeUnos.Text, prezimeUnos.Text, emailUnos.Text, telefonUnos.Text, datumRodjenjaUnos.Value.ToString("yyyy-MM-dd").ToString(), mestoBoravkaUnos.Text, ulicaUnos.Text, brojUnos.Text, korisnickoImeUnos.Text,
                                                     lozinkaUnos.Text, Convert.ToInt32(this.mapa_vrednosti[listaDepartmana.SelectedItem.ToString()]),
-                                                    Convert.ToInt32(this.mapa_vrednosti[listaStatus.SelectedItem.ToString()]));
+                                                    Convert.ToInt32(this.mapa_vrednosti[listaStatus.SelectedItem.ToString()]), jmbgUnos.Text);
   
                 MessageBox.Show(MenadzerStatusnihKodova.STUDENT_REGISTROVAN(broj_indeksa), MenadzerStatusnihKodova.USPEH,
                              MessageBoxButtons.OK, MessageBoxIcon.Information);

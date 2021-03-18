@@ -91,6 +91,7 @@ namespace sistem
                     espbPrikaz.Text = rezultat["espb"];
                     fakultetPrikaz.Text = rezultat["fakultet"];
                     smerPrikaz.Text = rezultat["smer"];
+                    jmbgPrikaz.Text = rezultat["jmbg"];
 
                     if (Convert.ToInt32(rezultat["diplomirao"]).Equals(MenadzerStatusnihKodova.STUDENT_NIJE_DIPLOMIRAO))
                     {

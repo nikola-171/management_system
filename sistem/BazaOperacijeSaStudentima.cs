@@ -29,9 +29,8 @@ namespace sistem
         #endregion
 
         #region dodavanje_studenata
-        public int Dodaj_studenta(string ime, string prezime, string email, string telefon, int dan, int mesec,
-                                   int godina, string mesto_boravka, string ulica, string broj, string korisnicko_ime,
-                                   string lozinka, int departman, int status)
+        public int Dodaj_studenta(string ime, string prezime, string email, string telefon, string datum_rodjenja, string mesto_boravka, string ulica, string broj, string korisnicko_ime,
+                                   string lozinka, int departman, int status, string jmbg)
         {
             
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -45,9 +44,9 @@ namespace sistem
                 cmd.Parameters.AddWithValue("@smer_in", departman);
                 cmd.Parameters.AddWithValue("@ime_in", ime);
                 cmd.Parameters.AddWithValue("@prezime_in", prezime);
-                cmd.Parameters.AddWithValue("@godina_rodjenja_in", godina);
-                cmd.Parameters.AddWithValue("@mesec_rodjenja_in", mesec);
-                cmd.Parameters.AddWithValue("@dan_rodjenja_in", dan);
+                cmd.Parameters.AddWithValue("@datum_rodjenja_in", datum_rodjenja);
+                cmd.Parameters.AddWithValue("@jmbg_in", jmbg);
+
                 cmd.Parameters.AddWithValue("@ulica_in", ulica);
                 cmd.Parameters.AddWithValue("@broj_in", broj);
                 cmd.Parameters.AddWithValue("@mesto_boravka_in", mesto_boravka);
@@ -179,6 +178,7 @@ namespace sistem
                     rezultat.Add("espb", rdr.GetString(rdr.GetOrdinal("espb")));
                     rezultat.Add("prosek", rdr.GetString(rdr.GetOrdinal("prosek")));
                     rezultat.Add("status_studenta", rdr.GetString(rdr.GetOrdinal("status_studenta")));
+                    rezultat.Add("jmbg", rdr.GetString(rdr.GetOrdinal("JMBG")));
                 }
             }
             return rezultat;

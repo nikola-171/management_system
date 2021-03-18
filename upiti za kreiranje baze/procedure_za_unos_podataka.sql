@@ -1,6 +1,9 @@
 use fakultet;
 /*upis administratora u bazi, samo jednom će se izvršiti ova procedure
   i tom prilikom će se uneti i podaci*/
+  /*select * from administrator;
+  drop procedure upis_administratora;
+  call upis_administratora('','d','','','','');*/
 delimiter \\
 create procedure upis_administratora(in admin_ime varchar(45), in admin_lozinka varchar(255),
                                      in email_in varchar(45), in telefon_in varchar(45), 
@@ -31,7 +34,18 @@ begin
     
 		insert into fakultetska_godina(fakultetska_godina)
 		values('2017/18');
+        
+        /*unos odeljenja*/
+        insert into odeljenje_sekretarijat(naziv)
+        values('služba za opšte i pravne poslove'),
+			  ('služba za materijalno i finansijsko poslovanje'),
+              ('služba za nastavu i studentska pitanja'),
+              ('služba za tehničke poslove i obezbeđenje zgrade');
 		
+        insert into odeljenje_nastava_i_nauka(naziv)
+        values('biblioteka'),
+			  ('računarski centar'),
+              ('izdavačka delatnost');
     end if;
     
     select admin_vec_registrovan as 'status';
@@ -65,13 +79,15 @@ begin
 end\\
 delimiter ;
 /*upis novog studenta u bazi*/
+/*select * from student;*/
+/*call dodaj_novog_studenta(1,'dd','d','1998-5-9','d','d','d','d','d',1,'d','d');*/
 delimiter \\
 create procedure dodaj_novog_studenta(in smer_in int, in ime_in varchar(45), in prezime_in varchar(45),
-									  in godina_rodjenja_in int, in mesec_rodjenja_in int,
-                                      in dan_rodjenja_in int, in mesto_boravka_in varchar(45),
+									  in datum_rodjenja_in varchar(45), 
+									  in mesto_boravka_in varchar(45),
                                       in ulica_in varchar(45), in broj_in varchar(45),
                                       in telefon_in varchar(45), in email_in varchar(45), in status_in int,
-                                      in korisnicko_ime_in varchar(45), in lozinka_in varchar(200))
+                                      in korisnicko_ime_in varchar(45), in lozinka_in varchar(200), in jmbg_in char(13))
 begin
 	declare hesirana_lozinka varchar(200) default '';
     declare id_prim int unsigned default 0;
@@ -80,21 +96,24 @@ begin
     declare exit handler for sqlexception
     begin
 		rollback;
-        select 'doslo je do greske' as 'msg';
+        GET DIAGNOSTICS CONDITION 1
+		@p2 = MESSAGE_TEXT;
+        
+        select @p2 as 'msg';
     end;
     
     start transaction;
     select max(id) into id_prim
 		from fakultetska_godina;   
-    set hesirana_lozinka = sha1(trim(replace(lozinka_in, '  ', '')));
+    set hesirana_lozinka = sha(trim(replace(lozinka_in, '  ', '')));
     
-    insert into student(smer,ime, prezime, godina_rodjenja, mesec_rodjenja,
-						dan_rodjenja, mesto_boravka, ulica, broj, telefon, email, 
-                        status_studenta, korisnicko_ime, lozinka, fakultetska_godina)
-    values(smer_in,trim(replace(ime_in, '  ', '')), trim(replace(prezime_in, '  ', '')), godina_rodjenja_in, mesec_rodjenja_in,
-		   dan_rodjenja_in, trim(replace(mesto_boravka_in, '  ', '')), trim(replace(ulica_in, '  ', '')), 
+    insert into student(smer,ime, prezime, 
+						datum_rodjenja, mesto_boravka, ulica, broj, telefon, email, 
+                        status_studenta, korisnicko_ime, lozinka, fakultetska_godina, jmbg)
+    values(smer_in,trim(replace(ime_in, '  ', '')), trim(replace(prezime_in, '  ', '')), 
+		   datum_rodjenja_in, trim(replace(mesto_boravka_in, '  ', '')), trim(replace(ulica_in, '  ', '')), 
 			trim(replace(broj_in, '  ', '')), trim(replace(telefon_in, '  ', '')), trim(replace(email_in, '  ', '')),
-           status_in, trim(replace(korisnicko_ime_in, '  ', '')), hesirana_lozinka, id_prim);
+           status_in, trim(replace(korisnicko_ime_in, '  ', '')), hesirana_lozinka, id_prim, jmbg_in);
            
 	select max(broj_indeksa) into student_broj_indeksa
     from student;
@@ -137,10 +156,9 @@ delimiter ;
 /*upis novog profesora u bazi, vraca njegov ID*/
 delimiter \\
 create procedure dodaj_novog_profesora(in ime_in varchar(45), in prezime_in varchar(45),
-									  in godina_rodjenja_in SMALLINT, in mesec_rodjenja_in TINYINT,
-                                      in dan_rodjenja_in TINYINT, in telefon_in varchar(45),
-                                      in email_in varchar(45),
-                                      in korisnicko_ime_in varchar(45), in lozinka_in varchar(45))
+									   in datum_rodjenja_in varchar(45), in telefon_in varchar(45),
+                                       in email_in varchar(45), in JMBG_in char(13),
+                                       in korisnicko_ime_in varchar(45), in lozinka_in varchar(45), in zvanje_in varchar(45))
 begin
 	declare hesirana_lozinka varchar(200) default '';
     declare id_profesora int default 0;
@@ -153,13 +171,14 @@ begin
     start transaction;
     set hesirana_lozinka = sha1(trim(replace(lozinka_in, '  ', '')));
     
-    insert into profesor(ime, prezime, godina_rodjenja, mesec_rodjenja, dan_rodjenja,
-						  telefon, email, korisnicko_ime, lozinka)
-	values(trim(replace(ime_in, '  ', '')), trim(replace(prezime_in, '  ', '')), godina_rodjenja_in,
-           mesec_rodjenja_in, dan_rodjenja_in, trim(replace(telefon_in, '  ', '')),
-           trim(replace(email_in, '  ', '')), trim(replace(korisnicko_ime_in, '  ', '')), hesirana_lozinka);
+    insert into radnik(ime, prezime, datum_rodjenja, email, telefon, korisnicko_ime, lozinka, JMBG)
+    values(ime_in, prezime_in, datum_rodjenja_in, email_in, telefon_in, korisnicko_ime_in, hesirana_lozinka, JMBG_in);
+  
 	select max(id) into id_profesora
-    from profesor;
+    from radnik;
+    
+    insert into profesor(radnik_id, zvanje)
+    values(id_profesora, zvanje_in);
     
     select id_profesora as 'id_profesora';
 	commit;
@@ -168,7 +187,6 @@ delimiter ;
 /*Unos nove fakultetske godine. Pre nego što se unese u bazi vrši se presek studenata.
   Na osnovu ostvarenih espb bodova u prethodnoj fakultetskoj godini će se utvrditi da li
   će student u novog fakultetskoj godini biti na budžetu ili ne */  
-  drop procedure unos_nove_fakultetske_godine;
 delimiter \\
 create procedure unos_nove_fakultetske_godine(in godina varchar(45))
 begin

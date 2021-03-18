@@ -168,3 +168,4 @@ C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.xml
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.Core.pdb
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\Common.Logging.Core.xml
 C:\Users\Nikola\Desktop\tpj-projekat\sistem\bin\Debug\itextsharp.xml
+C:\Users\Nikola\Desktop\tpj-projekat\sistem\obj\Debug\sistem.FormaUpravljanjeZaposlenima.resources

@@ -61,6 +61,10 @@ namespace sistem
             this.dugmePretraga = new FontAwesome.Sharp.IconButton();
             this.brojIndeksaUnos = new System.Windows.Forms.TextBox();
             this.BrojIndeksa = new System.Windows.Forms.Label();
+            this.jmbgPrikaz = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelNaslov.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -77,7 +81,7 @@ namespace sistem
             this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNaslov.Location = new System.Drawing.Point(0, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(914, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(981, 93);
             this.panelNaslov.TabIndex = 9;
             // 
             // labelaNaslov
@@ -167,13 +171,12 @@ namespace sistem
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelaPretraga);
             this.panel1.Location = new System.Drawing.Point(221, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 85);
+            this.panel1.Size = new System.Drawing.Size(748, 85);
             this.panel1.TabIndex = 11;
             // 
             // labelaPretraga
@@ -185,16 +188,14 @@ namespace sistem
             this.labelaPretraga.ForeColor = System.Drawing.Color.White;
             this.labelaPretraga.Location = new System.Drawing.Point(39, 25);
             this.labelaPretraga.Name = "labelaPretraga";
-            this.labelaPretraga.Size = new System.Drawing.Size(595, 35);
+            this.labelaPretraga.Size = new System.Drawing.Size(662, 35);
             this.labelaPretraga.TabIndex = 3;
-            this.labelaPretraga.Text = "Pretraga studenta na osnovu broja indeksa";
+            this.labelaPretraga.Text = "Pretraga studenata na osnovu broja indeksa";
             this.labelaPretraga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panelPrikazRezultata);
             this.panel2.Controls.Add(this.dugmePretraga);
@@ -202,11 +203,16 @@ namespace sistem
             this.panel2.Controls.Add(this.BrojIndeksa);
             this.panel2.Location = new System.Drawing.Point(221, 195);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 358);
+            this.panel2.Size = new System.Drawing.Size(748, 358);
             this.panel2.TabIndex = 12;
             // 
             // panelPrikazRezultata
             // 
+            this.panelPrikazRezultata.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelPrikazRezultata.Controls.Add(this.iconButton2);
+            this.panelPrikazRezultata.Controls.Add(this.iconButton1);
+            this.panelPrikazRezultata.Controls.Add(this.jmbgPrikaz);
+            this.panelPrikazRezultata.Controls.Add(this.label2);
             this.panelPrikazRezultata.Controls.Add(this.dugmeUkloniProfesora);
             this.panelPrikazRezultata.Controls.Add(this.labelaStatus);
             this.panelPrikazRezultata.Controls.Add(this.prosekPrikaz);
@@ -226,7 +232,7 @@ namespace sistem
             this.panelPrikazRezultata.Controls.Add(this.labelaBrojIndeksa);
             this.panelPrikazRezultata.Location = new System.Drawing.Point(3, 112);
             this.panelPrikazRezultata.Name = "panelPrikazRezultata";
-            this.panelPrikazRezultata.Size = new System.Drawing.Size(673, 245);
+            this.panelPrikazRezultata.Size = new System.Drawing.Size(740, 245);
             this.panelPrikazRezultata.TabIndex = 23;
             this.panelPrikazRezultata.Visible = false;
             // 
@@ -242,9 +248,9 @@ namespace sistem
             this.dugmeUkloniProfesora.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
             this.dugmeUkloniProfesora.IconColor = System.Drawing.Color.Black;
             this.dugmeUkloniProfesora.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeUkloniProfesora.Location = new System.Drawing.Point(306, 161);
+            this.dugmeUkloniProfesora.Location = new System.Drawing.Point(303, 170);
             this.dugmeUkloniProfesora.Name = "dugmeUkloniProfesora";
-            this.dugmeUkloniProfesora.Size = new System.Drawing.Size(188, 49);
+            this.dugmeUkloniProfesora.Size = new System.Drawing.Size(138, 49);
             this.dugmeUkloniProfesora.TabIndex = 23;
             this.dugmeUkloniProfesora.Text = "ukloni studenta";
             this.dugmeUkloniProfesora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -256,7 +262,7 @@ namespace sistem
             this.labelaStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaStatus.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaStatus.ForeColor = System.Drawing.Color.White;
-            this.labelaStatus.Location = new System.Drawing.Point(302, 54);
+            this.labelaStatus.Location = new System.Drawing.Point(336, 54);
             this.labelaStatus.Name = "labelaStatus";
             this.labelaStatus.Size = new System.Drawing.Size(66, 35);
             this.labelaStatus.TabIndex = 17;
@@ -268,7 +274,7 @@ namespace sistem
             this.prosekPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.prosekPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prosekPrikaz.ForeColor = System.Drawing.Color.White;
-            this.prosekPrikaz.Location = new System.Drawing.Point(151, 105);
+            this.prosekPrikaz.Location = new System.Drawing.Point(153, 100);
             this.prosekPrikaz.Name = "prosekPrikaz";
             this.prosekPrikaz.Size = new System.Drawing.Size(117, 35);
             this.prosekPrikaz.TabIndex = 22;
@@ -280,7 +286,7 @@ namespace sistem
             this.labelaSmer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaSmer.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaSmer.ForeColor = System.Drawing.Color.White;
-            this.labelaSmer.Location = new System.Drawing.Point(308, 123);
+            this.labelaSmer.Location = new System.Drawing.Point(342, 123);
             this.labelaSmer.Name = "labelaSmer";
             this.labelaSmer.Size = new System.Drawing.Size(60, 35);
             this.labelaSmer.TabIndex = 11;
@@ -292,7 +298,7 @@ namespace sistem
             this.labelaProsek.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaProsek.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaProsek.ForeColor = System.Drawing.Color.White;
-            this.labelaProsek.Location = new System.Drawing.Point(59, 105);
+            this.labelaProsek.Location = new System.Drawing.Point(61, 100);
             this.labelaProsek.Name = "labelaProsek";
             this.labelaProsek.Size = new System.Drawing.Size(86, 35);
             this.labelaProsek.TabIndex = 21;
@@ -304,7 +310,7 @@ namespace sistem
             this.smerPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.smerPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smerPrikaz.ForeColor = System.Drawing.Color.White;
-            this.smerPrikaz.Location = new System.Drawing.Point(374, 123);
+            this.smerPrikaz.Location = new System.Drawing.Point(408, 123);
             this.smerPrikaz.Name = "smerPrikaz";
             this.smerPrikaz.Size = new System.Drawing.Size(293, 35);
             this.smerPrikaz.TabIndex = 12;
@@ -316,7 +322,7 @@ namespace sistem
             this.diplomiraoPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.diplomiraoPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.diplomiraoPrikaz.ForeColor = System.Drawing.Color.White;
-            this.diplomiraoPrikaz.Location = new System.Drawing.Point(149, 175);
+            this.diplomiraoPrikaz.Location = new System.Drawing.Point(156, 170);
             this.diplomiraoPrikaz.Name = "diplomiraoPrikaz";
             this.diplomiraoPrikaz.Size = new System.Drawing.Size(119, 35);
             this.diplomiraoPrikaz.TabIndex = 16;
@@ -328,7 +334,7 @@ namespace sistem
             this.fakultetPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fakultetPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fakultetPrikaz.ForeColor = System.Drawing.Color.White;
-            this.fakultetPrikaz.Location = new System.Drawing.Point(374, 89);
+            this.fakultetPrikaz.Location = new System.Drawing.Point(408, 89);
             this.fakultetPrikaz.Name = "fakultetPrikaz";
             this.fakultetPrikaz.Size = new System.Drawing.Size(293, 35);
             this.fakultetPrikaz.TabIndex = 20;
@@ -340,9 +346,9 @@ namespace sistem
             this.labelaDiplomirao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaDiplomirao.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaDiplomirao.ForeColor = System.Drawing.Color.White;
-            this.labelaDiplomirao.Location = new System.Drawing.Point(21, 175);
+            this.labelaDiplomirao.Location = new System.Drawing.Point(24, 170);
             this.labelaDiplomirao.Name = "labelaDiplomirao";
-            this.labelaDiplomirao.Size = new System.Drawing.Size(124, 35);
+            this.labelaDiplomirao.Size = new System.Drawing.Size(126, 35);
             this.labelaDiplomirao.TabIndex = 15;
             this.labelaDiplomirao.Text = "Diplomirao:";
             this.labelaDiplomirao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,9 +358,9 @@ namespace sistem
             this.statusPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statusPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusPrikaz.ForeColor = System.Drawing.Color.White;
-            this.statusPrikaz.Location = new System.Drawing.Point(374, 54);
+            this.statusPrikaz.Location = new System.Drawing.Point(408, 54);
             this.statusPrikaz.Name = "statusPrikaz";
-            this.statusPrikaz.Size = new System.Drawing.Size(293, 35);
+            this.statusPrikaz.Size = new System.Drawing.Size(223, 35);
             this.statusPrikaz.TabIndex = 18;
             this.statusPrikaz.Text = "nedefinisano";
             this.statusPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -364,7 +370,7 @@ namespace sistem
             this.espbPrikaz.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.espbPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.espbPrikaz.ForeColor = System.Drawing.Color.White;
-            this.espbPrikaz.Location = new System.Drawing.Point(151, 140);
+            this.espbPrikaz.Location = new System.Drawing.Point(153, 135);
             this.espbPrikaz.Name = "espbPrikaz";
             this.espbPrikaz.Size = new System.Drawing.Size(122, 35);
             this.espbPrikaz.TabIndex = 14;
@@ -376,7 +382,7 @@ namespace sistem
             this.labelaFakultet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaFakultet.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaFakultet.ForeColor = System.Drawing.Color.White;
-            this.labelaFakultet.Location = new System.Drawing.Point(286, 89);
+            this.labelaFakultet.Location = new System.Drawing.Point(320, 89);
             this.labelaFakultet.Name = "labelaFakultet";
             this.labelaFakultet.Size = new System.Drawing.Size(82, 35);
             this.labelaFakultet.TabIndex = 19;
@@ -388,7 +394,7 @@ namespace sistem
             this.labelaEspb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaEspb.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaEspb.ForeColor = System.Drawing.Color.White;
-            this.labelaEspb.Location = new System.Drawing.Point(81, 140);
+            this.labelaEspb.Location = new System.Drawing.Point(77, 135);
             this.labelaEspb.Name = "labelaEspb";
             this.labelaEspb.Size = new System.Drawing.Size(53, 35);
             this.labelaEspb.TabIndex = 13;
@@ -400,7 +406,7 @@ namespace sistem
             this.labelaStudent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelaStudent.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaStudent.ForeColor = System.Drawing.Color.White;
-            this.labelaStudent.Location = new System.Drawing.Point(41, 22);
+            this.labelaStudent.Location = new System.Drawing.Point(37, 22);
             this.labelaStudent.Name = "labelaStudent";
             this.labelaStudent.Size = new System.Drawing.Size(93, 35);
             this.labelaStudent.TabIndex = 8;
@@ -412,7 +418,7 @@ namespace sistem
             this.brojIndeksaPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.brojIndeksaPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brojIndeksaPrikaz.ForeColor = System.Drawing.Color.White;
-            this.brojIndeksaPrikaz.Location = new System.Drawing.Point(151, 65);
+            this.brojIndeksaPrikaz.Location = new System.Drawing.Point(153, 65);
             this.brojIndeksaPrikaz.Name = "brojIndeksaPrikaz";
             this.brojIndeksaPrikaz.Size = new System.Drawing.Size(132, 35);
             this.brojIndeksaPrikaz.TabIndex = 10;
@@ -424,7 +430,7 @@ namespace sistem
             this.studentImePrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.studentImePrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentImePrikaz.ForeColor = System.Drawing.Color.White;
-            this.studentImePrikaz.Location = new System.Drawing.Point(151, 22);
+            this.studentImePrikaz.Location = new System.Drawing.Point(136, 23);
             this.studentImePrikaz.Name = "studentImePrikaz";
             this.studentImePrikaz.Size = new System.Drawing.Size(152, 35);
             this.studentImePrikaz.TabIndex = 7;
@@ -436,7 +442,7 @@ namespace sistem
             this.labelaBrojIndeksa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaBrojIndeksa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaBrojIndeksa.ForeColor = System.Drawing.Color.White;
-            this.labelaBrojIndeksa.Location = new System.Drawing.Point(19, 65);
+            this.labelaBrojIndeksa.Location = new System.Drawing.Point(21, 65);
             this.labelaBrojIndeksa.Name = "labelaBrojIndeksa";
             this.labelaBrojIndeksa.Size = new System.Drawing.Size(126, 35);
             this.labelaBrojIndeksa.TabIndex = 9;
@@ -455,7 +461,7 @@ namespace sistem
             this.dugmePretraga.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.dugmePretraga.IconColor = System.Drawing.Color.Black;
             this.dugmePretraga.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmePretraga.Location = new System.Drawing.Point(169, 58);
+            this.dugmePretraga.Location = new System.Drawing.Point(203, 58);
             this.dugmePretraga.Margin = new System.Windows.Forms.Padding(0);
             this.dugmePretraga.Name = "dugmePretraga";
             this.dugmePretraga.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -471,7 +477,7 @@ namespace sistem
             // 
             this.brojIndeksaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.brojIndeksaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brojIndeksaUnos.Location = new System.Drawing.Point(299, 26);
+            this.brojIndeksaUnos.Location = new System.Drawing.Point(333, 26);
             this.brojIndeksaUnos.MaxLength = 5;
             this.brojIndeksaUnos.Name = "brojIndeksaUnos";
             this.brojIndeksaUnos.Size = new System.Drawing.Size(186, 26);
@@ -482,29 +488,90 @@ namespace sistem
             this.BrojIndeksa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BrojIndeksa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrojIndeksa.ForeColor = System.Drawing.Color.White;
-            this.BrojIndeksa.Location = new System.Drawing.Point(165, 20);
+            this.BrojIndeksa.Location = new System.Drawing.Point(199, 20);
             this.BrojIndeksa.Name = "BrojIndeksa";
             this.BrojIndeksa.Size = new System.Drawing.Size(128, 35);
             this.BrojIndeksa.TabIndex = 4;
             this.BrojIndeksa.Text = "broj indeksa:";
             this.BrojIndeksa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // jmbgPrikaz
+            // 
+            this.jmbgPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jmbgPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jmbgPrikaz.ForeColor = System.Drawing.Color.White;
+            this.jmbgPrikaz.Location = new System.Drawing.Point(408, 23);
+            this.jmbgPrikaz.Name = "jmbgPrikaz";
+            this.jmbgPrikaz.Size = new System.Drawing.Size(199, 35);
+            this.jmbgPrikaz.TabIndex = 25;
+            this.jmbgPrikaz.Text = "nedefinisano";
+            this.jmbgPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(336, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 35);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "JMBG:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ListOl;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(446, 170);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(139, 49);
+            this.iconButton1.TabIndex = 26;
+            this.iconButton1.Text = "položeni predmeti";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(591, 170);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(139, 49);
+            this.iconButton2.TabIndex = 27;
+            this.iconButton2.Text = "predmeti koje sluša";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
             // FormaUpravljanjeStudentima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(914, 578);
+            this.ClientSize = new System.Drawing.Size(981, 578);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMeni);
             this.Controls.Add(this.panelNaslov);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "FormaUpravljanjeStudentima";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormaUpravljanjeStudentima";
+            this.Text = "Upravljanje studentima";
             this.panelNaslov.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -550,5 +617,9 @@ namespace sistem
         private System.Windows.Forms.Label studentImePrikaz;
         private System.Windows.Forms.Panel panelPrikazRezultata;
         private FontAwesome.Sharp.IconButton dugmeUkloniProfesora;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label jmbgPrikaz;
+        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
