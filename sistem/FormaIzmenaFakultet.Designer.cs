@@ -31,6 +31,8 @@ namespace sistem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaIzmenaFakultet));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dugmeZaIzmenu = new FontAwesome.Sharp.IconButton();
+            this.dugmeZaBrisanje = new FontAwesome.Sharp.IconButton();
             this.mestoUnos = new System.Windows.Forms.TextBox();
             this.nazivUnos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@ namespace sistem
             this.dugmeZaNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dugmeZaIzmenu = new FontAwesome.Sharp.IconButton();
-            this.dugmeZaBrisanje = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.panelNaslov.SuspendLayout();
             this.panelMeni.SuspendLayout();
@@ -68,6 +68,52 @@ namespace sistem
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Izmeni fakultet";
+            // 
+            // dugmeZaIzmenu
+            // 
+            this.dugmeZaIzmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeZaIzmenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeZaIzmenu.FlatAppearance.BorderSize = 0;
+            this.dugmeZaIzmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeZaIzmenu.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeZaIzmenu.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.dugmeZaIzmenu.IconColor = System.Drawing.Color.Black;
+            this.dugmeZaIzmenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeZaIzmenu.IconSize = 50;
+            this.dugmeZaIzmenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaIzmenu.Location = new System.Drawing.Point(236, 246);
+            this.dugmeZaIzmenu.Name = "dugmeZaIzmenu";
+            this.dugmeZaIzmenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeZaIzmenu.Size = new System.Drawing.Size(174, 51);
+            this.dugmeZaIzmenu.TabIndex = 12;
+            this.dugmeZaIzmenu.Text = "izmeni";
+            this.dugmeZaIzmenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaIzmenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeZaIzmenu.UseVisualStyleBackColor = false;
+            this.dugmeZaIzmenu.Click += new System.EventHandler(this.dugmeZaIzmenu_Click);
+            // 
+            // dugmeZaBrisanje
+            // 
+            this.dugmeZaBrisanje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeZaBrisanje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeZaBrisanje.FlatAppearance.BorderSize = 0;
+            this.dugmeZaBrisanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeZaBrisanje.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeZaBrisanje.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.dugmeZaBrisanje.IconColor = System.Drawing.Color.Black;
+            this.dugmeZaBrisanje.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeZaBrisanje.IconSize = 50;
+            this.dugmeZaBrisanje.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaBrisanje.Location = new System.Drawing.Point(56, 246);
+            this.dugmeZaBrisanje.Name = "dugmeZaBrisanje";
+            this.dugmeZaBrisanje.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeZaBrisanje.Size = new System.Drawing.Size(174, 51);
+            this.dugmeZaBrisanje.TabIndex = 11;
+            this.dugmeZaBrisanje.Text = "izbriši";
+            this.dugmeZaBrisanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeZaBrisanje.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeZaBrisanje.UseVisualStyleBackColor = false;
+            this.dugmeZaBrisanje.Click += new System.EventHandler(this.dugmeZaBrisanje_Click);
             // 
             // mestoUnos
             // 
@@ -180,52 +226,6 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // dugmeZaIzmenu
-            // 
-            this.dugmeZaIzmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeZaIzmenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeZaIzmenu.FlatAppearance.BorderSize = 0;
-            this.dugmeZaIzmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeZaIzmenu.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeZaIzmenu.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.dugmeZaIzmenu.IconColor = System.Drawing.Color.Black;
-            this.dugmeZaIzmenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeZaIzmenu.IconSize = 50;
-            this.dugmeZaIzmenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeZaIzmenu.Location = new System.Drawing.Point(236, 246);
-            this.dugmeZaIzmenu.Name = "dugmeZaIzmenu";
-            this.dugmeZaIzmenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeZaIzmenu.Size = new System.Drawing.Size(174, 51);
-            this.dugmeZaIzmenu.TabIndex = 12;
-            this.dugmeZaIzmenu.Text = "izmeni";
-            this.dugmeZaIzmenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeZaIzmenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeZaIzmenu.UseVisualStyleBackColor = false;
-            this.dugmeZaIzmenu.Click += new System.EventHandler(this.dugmeZaIzmenu_Click);
-            // 
-            // dugmeZaBrisanje
-            // 
-            this.dugmeZaBrisanje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeZaBrisanje.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeZaBrisanje.FlatAppearance.BorderSize = 0;
-            this.dugmeZaBrisanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeZaBrisanje.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeZaBrisanje.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.dugmeZaBrisanje.IconColor = System.Drawing.Color.Black;
-            this.dugmeZaBrisanje.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeZaBrisanje.IconSize = 50;
-            this.dugmeZaBrisanje.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeZaBrisanje.Location = new System.Drawing.Point(56, 246);
-            this.dugmeZaBrisanje.Name = "dugmeZaBrisanje";
-            this.dugmeZaBrisanje.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeZaBrisanje.Size = new System.Drawing.Size(174, 51);
-            this.dugmeZaBrisanje.TabIndex = 11;
-            this.dugmeZaBrisanje.Text = "izbriši";
-            this.dugmeZaBrisanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeZaBrisanje.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeZaBrisanje.UseVisualStyleBackColor = false;
-            this.dugmeZaBrisanje.Click += new System.EventHandler(this.dugmeZaBrisanje_Click);
-            // 
             // FormaIzmenaFakultet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +239,7 @@ namespace sistem
             this.Name = "FormaIzmenaFakultet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izmena fakulteta";
+            this.Load += new System.EventHandler(this.FormaIzmenaFakultet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelNaslov.ResumeLayout(false);

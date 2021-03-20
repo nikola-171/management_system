@@ -88,6 +88,12 @@ namespace sistem
             }
         }
 
+        private void FormaIzmenaFakultet_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
         public void Postavi_parametre(List<Tuple<string, string>> parametri)
         {
             foreach (var parametar in parametri)

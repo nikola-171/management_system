@@ -116,9 +116,7 @@ namespace sistem
 
         private void FormaUpravljanjePredmetima_Load(object sender, EventArgs e)
         {
-            //uzmem sve departmane pa posle
-            //Osvezi_sadrzaj();
-
+            this.WindowState = FormWindowState.Maximized;
 
         }
 

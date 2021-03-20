@@ -144,6 +144,7 @@ namespace sistem
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormaUpravljanjeZaposlenima";
             this.Text = "FormaUpravljanjeZaposlenima";
+            this.Load += new System.EventHandler(this.FormaUpravljanjeZaposlenima_Load);
             this.panelNaslov.ResumeLayout(false);
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

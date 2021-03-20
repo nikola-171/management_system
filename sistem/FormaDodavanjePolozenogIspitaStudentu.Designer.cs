@@ -357,6 +357,7 @@ namespace sistem
             // 
             this.datumUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.datumUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datumUnos.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datumUnos.Location = new System.Drawing.Point(24, 304);
             this.datumUnos.MaxDate = new System.DateTime(2023, 3, 11, 10, 49, 0, 0);
             this.datumUnos.MinDate = new System.DateTime(2017, 3, 11, 0, 0, 0, 0);

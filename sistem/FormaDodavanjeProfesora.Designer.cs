@@ -40,6 +40,10 @@ namespace sistem
             this.labelaNaslov = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.zvanjeUnos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.jmbgUnos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dugmeDodaj = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.telefonUnos = new System.Windows.Forms.TextBox();
@@ -51,15 +55,11 @@ namespace sistem
             this.labelaEmail = new System.Windows.Forms.Label();
             this.labelaIme = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.datumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.panelMeni = new System.Windows.Forms.Panel();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.datumRodjenja = new System.Windows.Forms.DateTimePicker();
-            this.jmbgUnos = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.zvanjeUnos = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelNaslov.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -191,6 +191,50 @@ namespace sistem
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "podaci za portal";
+            // 
+            // zvanjeUnos
+            // 
+            this.zvanjeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.zvanjeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zvanjeUnos.Location = new System.Drawing.Point(164, 228);
+            this.zvanjeUnos.MaxLength = 45;
+            this.zvanjeUnos.Name = "zvanjeUnos";
+            this.zvanjeUnos.Size = new System.Drawing.Size(161, 26);
+            this.zvanjeUnos.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(28, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 35);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "zvanje:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // jmbgUnos
+            // 
+            this.jmbgUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jmbgUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jmbgUnos.Location = new System.Drawing.Point(164, 176);
+            this.jmbgUnos.MaxLength = 45;
+            this.jmbgUnos.Name = "jmbgUnos";
+            this.jmbgUnos.Size = new System.Drawing.Size(161, 26);
+            this.jmbgUnos.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(28, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 35);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "JMBG:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dugmeDodaj
             // 
@@ -333,6 +377,13 @@ namespace sistem
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "datum rođenja";
             // 
+            // datumRodjenja
+            // 
+            this.datumRodjenja.Location = new System.Drawing.Point(39, 84);
+            this.datumRodjenja.Name = "datumRodjenja";
+            this.datumRodjenja.Size = new System.Drawing.Size(237, 25);
+            this.datumRodjenja.TabIndex = 0;
+            // 
             // panelMeni
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -385,57 +436,6 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // datumRodjenja
-            // 
-            this.datumRodjenja.Location = new System.Drawing.Point(39, 84);
-            this.datumRodjenja.Name = "datumRodjenja";
-            this.datumRodjenja.Size = new System.Drawing.Size(237, 25);
-            this.datumRodjenja.TabIndex = 0;
-            // 
-            // jmbgUnos
-            // 
-            this.jmbgUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.jmbgUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jmbgUnos.Location = new System.Drawing.Point(164, 176);
-            this.jmbgUnos.MaxLength = 45;
-            this.jmbgUnos.Name = "jmbgUnos";
-            this.jmbgUnos.Size = new System.Drawing.Size(161, 26);
-            this.jmbgUnos.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, 171);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 35);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "JMBG:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // zvanjeUnos
-            // 
-            this.zvanjeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.zvanjeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zvanjeUnos.Location = new System.Drawing.Point(164, 228);
-            this.zvanjeUnos.MaxLength = 45;
-            this.zvanjeUnos.Name = "zvanjeUnos";
-            this.zvanjeUnos.Size = new System.Drawing.Size(161, 26);
-            this.zvanjeUnos.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(28, 223);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 35);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "zvanje:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // FormaDodavanjeProfesora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,6 +449,7 @@ namespace sistem
             this.Name = "FormaDodavanjeProfesora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrovanje profesora";
+            this.Load += new System.EventHandler(this.FormaDodavanjeProfesora_Load);
             this.panelNaslov.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

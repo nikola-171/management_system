@@ -31,6 +31,7 @@ namespace sistem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaDodavanjeUniverziteta));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dugmeZaProsledi = new FontAwesome.Sharp.IconButton();
             this.gradUnos = new System.Windows.Forms.TextBox();
             this.drzavaUnos = new System.Windows.Forms.TextBox();
             this.nazivUnos = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@ namespace sistem
             this.dugmeZaNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dugmeZaProsledi = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.panelNaslov.SuspendLayout();
             this.panelMeni.SuspendLayout();
@@ -71,6 +71,28 @@ namespace sistem
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodaj univerzitet";
+            // 
+            // dugmeZaProsledi
+            // 
+            this.dugmeZaProsledi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeZaProsledi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeZaProsledi.FlatAppearance.BorderSize = 0;
+            this.dugmeZaProsledi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeZaProsledi.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeZaProsledi.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.dugmeZaProsledi.IconColor = System.Drawing.Color.Black;
+            this.dugmeZaProsledi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeZaProsledi.IconSize = 50;
+            this.dugmeZaProsledi.Location = new System.Drawing.Point(55, 234);
+            this.dugmeZaProsledi.Name = "dugmeZaProsledi";
+            this.dugmeZaProsledi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeZaProsledi.Size = new System.Drawing.Size(287, 55);
+            this.dugmeZaProsledi.TabIndex = 7;
+            this.dugmeZaProsledi.Text = "dodaj";
+            this.dugmeZaProsledi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeZaProsledi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeZaProsledi.UseVisualStyleBackColor = false;
+            this.dugmeZaProsledi.Click += new System.EventHandler(this.dugmeZaProsledi_Click);
             // 
             // gradUnos
             // 
@@ -222,28 +244,6 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // dugmeZaProsledi
-            // 
-            this.dugmeZaProsledi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeZaProsledi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeZaProsledi.FlatAppearance.BorderSize = 0;
-            this.dugmeZaProsledi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeZaProsledi.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeZaProsledi.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.dugmeZaProsledi.IconColor = System.Drawing.Color.Black;
-            this.dugmeZaProsledi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeZaProsledi.IconSize = 50;
-            this.dugmeZaProsledi.Location = new System.Drawing.Point(55, 234);
-            this.dugmeZaProsledi.Name = "dugmeZaProsledi";
-            this.dugmeZaProsledi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeZaProsledi.Size = new System.Drawing.Size(287, 55);
-            this.dugmeZaProsledi.TabIndex = 7;
-            this.dugmeZaProsledi.Text = "dodaj";
-            this.dugmeZaProsledi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeZaProsledi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeZaProsledi.UseVisualStyleBackColor = false;
-            this.dugmeZaProsledi.Click += new System.EventHandler(this.dugmeZaProsledi_Click);
-            // 
             // FormaDodavanjeUniverziteta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +258,7 @@ namespace sistem
             this.Name = "FormaDodavanjeUniverziteta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje univerziteta";
+            this.Load += new System.EventHandler(this.FormaDodavanjeUniverziteta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelNaslov.ResumeLayout(false);

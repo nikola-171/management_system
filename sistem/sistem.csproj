@@ -192,6 +192,18 @@
     <Compile Include="FormaDodavanjeStudentaPredmetu.Designer.cs">
       <DependentUpon>FormaDodavanjeStudentaPredmetu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaPolozeniPredmetiStudenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPolozeniPredmetiStudenta.Designer.cs">
+      <DependentUpon>FormaPolozeniPredmetiStudenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaPrikazPredmetaStudenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPrikazPredmetaStudenta.Designer.cs">
+      <DependentUpon>FormaPrikazPredmetaStudenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaUpravljanjeDepartmana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +317,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaDodavanjeStudentaPredmetu.resx">
       <DependentUpon>FormaDodavanjeStudentaPredmetu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaPolozeniPredmetiStudenta.resx">
+      <DependentUpon>FormaPolozeniPredmetiStudenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaPrikazPredmetaStudenta.resx">
+      <DependentUpon>FormaPrikazPredmetaStudenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaUpravljanjeDepartmana.resx">
       <DependentUpon>FormaUpravljanjeDepartmana.cs</DependentUpon>

@@ -158,5 +158,28 @@ namespace sistem
         {
             MenadzerFormi.dajFormu<FormaDodavanjeStudenata>(this, null, true);
         }
+
+        private void FormaUpravljanjeStudentima_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void dugmePredmetiKojeSlusa_Click(object sender, EventArgs e)
+        {
+            List<Tuple<string, string>> parametri = new List<Tuple<string, string>>();
+            parametri.Add(new Tuple<string, string>("broj_indeksa", brojIndeksaPrikaz.Text));
+            parametri.Add(new Tuple<string, string>("ime", studentImePrikaz.Text));
+
+            MenadzerFormi.dajFormu<FormaPrikazPredmetaStudenta>(this, parametri, true);
+        }
+
+        private void dugmePolozeniPredmeti_Click(object sender, EventArgs e)
+        {
+            List<Tuple<string, string>> parametri = new List<Tuple<string, string>>();
+            parametri.Add(new Tuple<string, string>("broj_indeksa", brojIndeksaPrikaz.Text));
+            parametri.Add(new Tuple<string, string>("ime", studentImePrikaz.Text));
+
+            MenadzerFormi.dajFormu<FormaPolozeniPredmetiStudenta>(this, parametri, true);
+        }
     }
 }

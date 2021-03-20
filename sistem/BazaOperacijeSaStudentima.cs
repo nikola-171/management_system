@@ -281,5 +281,78 @@ namespace sistem
             return rezultat;
         }
         #endregion
+
+        #region lista_predmeta_koje_student_slusa
+        public List<Dictionary<string, string>> Daj_slistu_predmeta_koje_student_slusa(UInt32 indeks)
+        {
+            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_studente_sa_predmetima_koje_slusaju";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@broj_indeksa_in", indeks);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+                    red.Add("broj_indeksa", rdr.GetString(rdr.GetOrdinal("indeks")));
+                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
+                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
+                    red.Add("smer", rdr.GetString(rdr.GetOrdinal("smer")));
+                    red.Add("predmet", rdr.GetString(rdr.GetOrdinal("predmet")));
+                    red.Add("id", rdr.GetString(rdr.GetOrdinal("id")));
+                    red.Add("fakultetska_godina", rdr.GetString(rdr.GetOrdinal("fakultetska_godina")));
+
+
+                    rezultat.Add(red);
+
+                }
+            }
+            return rezultat;
+        }
+        #endregion
+
+        #region lista_polozenih_ispita_studenta
+        public List<Dictionary<string, string>> Daj_listu_polozenih_ispita(UInt32 indeks)
+        {
+            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "daj_student_polozeni_predmeti";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@broj_indeksa_in", indeks);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Dictionary<string, string> red = new Dictionary<string, string>();
+                    red.Add("broj_indeksa", rdr.GetString(rdr.GetOrdinal("broj_indeksa")));
+                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
+                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
+                    red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
+                    red.Add("predmet", rdr.GetString(rdr.GetOrdinal("predmet_naziv")));
+                    red.Add("ocena", rdr.GetString(rdr.GetOrdinal("ocena")));
+                    red.Add("datum", rdr.GetString(rdr.GetOrdinal("datum")));
+                    red.Add("fakultetska_godina", rdr.GetString(rdr.GetOrdinal("fakultetska_godina")));
+
+
+                    rezultat.Add(red);
+
+                }
+            }
+            return rezultat;
+        }
+        #endregion
     }
 }

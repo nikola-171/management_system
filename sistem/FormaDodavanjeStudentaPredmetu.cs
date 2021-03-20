@@ -177,5 +177,11 @@ namespace sistem
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FormaDodavanjeStudentaPredmetu_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
     }
 }

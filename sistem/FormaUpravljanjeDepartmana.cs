@@ -68,6 +68,8 @@ namespace sistem
 
         private void FormaUpravljanjeDepartmana_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             Osvezi_sadrzaj();
         }
 

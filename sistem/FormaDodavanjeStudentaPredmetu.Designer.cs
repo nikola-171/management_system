@@ -37,6 +37,8 @@ namespace sistem
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.studentDepartmanUnos = new System.Windows.Forms.TextBox();
+            this.studentDepartman = new System.Windows.Forms.Label();
             this.studentBrojIndeksaUnos = new System.Windows.Forms.TextBox();
             this.studentPrezimeUnos = new System.Windows.Forms.TextBox();
             this.studentImeUnos = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@ namespace sistem
             this.listaPredmet = new System.Windows.Forms.ComboBox();
             this.dugmeDodajPredmet = new FontAwesome.Sharp.IconButton();
             this.BrojIndeksa = new System.Windows.Forms.Label();
-            this.studentDepartmanUnos = new System.Windows.Forms.TextBox();
-            this.studentDepartman = new System.Windows.Forms.Label();
             this.panelNaslov.SuspendLayout();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -160,6 +160,26 @@ namespace sistem
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "filtrirajte studenta";
+            // 
+            // studentDepartmanUnos
+            // 
+            this.studentDepartmanUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.studentDepartmanUnos.Location = new System.Drawing.Point(16, 301);
+            this.studentDepartmanUnos.Name = "studentDepartmanUnos";
+            this.studentDepartmanUnos.Size = new System.Drawing.Size(227, 29);
+            this.studentDepartmanUnos.TabIndex = 30;
+            // 
+            // studentDepartman
+            // 
+            this.studentDepartman.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.studentDepartman.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentDepartman.ForeColor = System.Drawing.Color.White;
+            this.studentDepartman.Location = new System.Drawing.Point(12, 263);
+            this.studentDepartman.Name = "studentDepartman";
+            this.studentDepartman.Size = new System.Drawing.Size(231, 35);
+            this.studentDepartman.TabIndex = 31;
+            this.studentDepartman.Text = "departman:";
+            this.studentDepartman.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // studentBrojIndeksaUnos
             // 
@@ -407,26 +427,6 @@ namespace sistem
             this.BrojIndeksa.Text = "student:";
             this.BrojIndeksa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // studentDepartmanUnos
-            // 
-            this.studentDepartmanUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.studentDepartmanUnos.Location = new System.Drawing.Point(16, 301);
-            this.studentDepartmanUnos.Name = "studentDepartmanUnos";
-            this.studentDepartmanUnos.Size = new System.Drawing.Size(227, 29);
-            this.studentDepartmanUnos.TabIndex = 30;
-            // 
-            // studentDepartman
-            // 
-            this.studentDepartman.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.studentDepartman.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentDepartman.ForeColor = System.Drawing.Color.White;
-            this.studentDepartman.Location = new System.Drawing.Point(12, 263);
-            this.studentDepartman.Name = "studentDepartman";
-            this.studentDepartman.Size = new System.Drawing.Size(231, 35);
-            this.studentDepartman.TabIndex = 31;
-            this.studentDepartman.Text = "departman:";
-            this.studentDepartman.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // FormaDodavanjeStudentaPredmetu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +443,7 @@ namespace sistem
             this.Name = "FormaDodavanjeStudentaPredmetu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje predmeta studentu";
+            this.Load += new System.EventHandler(this.FormaDodavanjeStudentaPredmetu_Load);
             this.panelNaslov.ResumeLayout(false);
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

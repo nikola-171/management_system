@@ -60,6 +60,8 @@ namespace sistem
 
         private void FormaUpravljanjeFakultetom_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             tabelaPrikazFakulteta.Columns[0].Width = 60;
             tabelaPrikazFakulteta.Columns[4].Width = 100;   
         }

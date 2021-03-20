@@ -67,7 +67,7 @@ namespace sistem
 
         private void FormaUpravljanjeUniverzitetom_Load(object sender, EventArgs e)
         {
-            // Osvezi_sadrzaj();
+            this.WindowState = FormWindowState.Maximized;
             Stilizovanje_tabele();
         }
 

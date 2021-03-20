@@ -119,7 +119,8 @@ namespace sistem
         }
 
         private void FormaDodavanjeProfesoraPredmetu_Load(object sender, EventArgs e)
-        {     
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private bool Validacija()

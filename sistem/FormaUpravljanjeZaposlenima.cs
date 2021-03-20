@@ -16,5 +16,10 @@ namespace sistem
         {
             InitializeComponent();
         }
+
+        private void FormaUpravljanjeZaposlenima_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

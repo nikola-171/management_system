@@ -114,5 +114,11 @@ namespace sistem
                 Osvezi_sadrzaj();
             }
         }
+
+        private void FormaDodavanjeProfesora_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
     }
 }

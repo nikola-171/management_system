@@ -135,6 +135,8 @@ namespace sistem
 
         private void formaDodavanjePolozenogIspitaStudentu_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             listaOcena.Items.Add(6);
             listaOcena.Items.Add(7);
             listaOcena.Items.Add(8);

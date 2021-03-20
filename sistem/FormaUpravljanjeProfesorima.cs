@@ -103,7 +103,7 @@ namespace sistem
 
         private void FormaUpravljanjeProfesorima_Load(object sender, EventArgs e)
         {
-          
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void dugmeNazad_Click(object sender, EventArgs e)

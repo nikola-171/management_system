@@ -102,5 +102,10 @@ namespace sistem
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FormaDodavanjeDepartmana_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

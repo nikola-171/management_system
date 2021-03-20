@@ -1,4 +1,6 @@
 use fakultet;
+select * from student_slusa_predmet;
+delete from 
 /*svake godine prazni arhive*/
 /*SET GLOBAL event_scheduler = ON;*/
 

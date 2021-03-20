@@ -41,6 +41,10 @@ namespace sistem
             this.labelaPretraga = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelPrikazRezultata = new System.Windows.Forms.Panel();
+            this.dugmePredmetiKojeSlusa = new FontAwesome.Sharp.IconButton();
+            this.dugmePolozeniPredmeti = new FontAwesome.Sharp.IconButton();
+            this.jmbgPrikaz = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dugmeUkloniProfesora = new FontAwesome.Sharp.IconButton();
             this.labelaStatus = new System.Windows.Forms.Label();
             this.prosekPrikaz = new System.Windows.Forms.Label();
@@ -61,10 +65,6 @@ namespace sistem
             this.dugmePretraga = new FontAwesome.Sharp.IconButton();
             this.brojIndeksaUnos = new System.Windows.Forms.TextBox();
             this.BrojIndeksa = new System.Windows.Forms.Label();
-            this.jmbgPrikaz = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelNaslov.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -209,8 +209,8 @@ namespace sistem
             // panelPrikazRezultata
             // 
             this.panelPrikazRezultata.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelPrikazRezultata.Controls.Add(this.iconButton2);
-            this.panelPrikazRezultata.Controls.Add(this.iconButton1);
+            this.panelPrikazRezultata.Controls.Add(this.dugmePredmetiKojeSlusa);
+            this.panelPrikazRezultata.Controls.Add(this.dugmePolozeniPredmeti);
             this.panelPrikazRezultata.Controls.Add(this.jmbgPrikaz);
             this.panelPrikazRezultata.Controls.Add(this.label2);
             this.panelPrikazRezultata.Controls.Add(this.dugmeUkloniProfesora);
@@ -235,6 +235,70 @@ namespace sistem
             this.panelPrikazRezultata.Size = new System.Drawing.Size(740, 245);
             this.panelPrikazRezultata.TabIndex = 23;
             this.panelPrikazRezultata.Visible = false;
+            // 
+            // dugmePredmetiKojeSlusa
+            // 
+            this.dugmePredmetiKojeSlusa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmePredmetiKojeSlusa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmePredmetiKojeSlusa.FlatAppearance.BorderSize = 0;
+            this.dugmePredmetiKojeSlusa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmePredmetiKojeSlusa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmePredmetiKojeSlusa.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmePredmetiKojeSlusa.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.dugmePredmetiKojeSlusa.IconColor = System.Drawing.Color.Black;
+            this.dugmePredmetiKojeSlusa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmePredmetiKojeSlusa.Location = new System.Drawing.Point(591, 170);
+            this.dugmePredmetiKojeSlusa.Name = "dugmePredmetiKojeSlusa";
+            this.dugmePredmetiKojeSlusa.Size = new System.Drawing.Size(139, 49);
+            this.dugmePredmetiKojeSlusa.TabIndex = 27;
+            this.dugmePredmetiKojeSlusa.Text = "predmeti koje sluša";
+            this.dugmePredmetiKojeSlusa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmePredmetiKojeSlusa.UseVisualStyleBackColor = false;
+            this.dugmePredmetiKojeSlusa.Click += new System.EventHandler(this.dugmePredmetiKojeSlusa_Click);
+            // 
+            // dugmePolozeniPredmeti
+            // 
+            this.dugmePolozeniPredmeti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmePolozeniPredmeti.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmePolozeniPredmeti.FlatAppearance.BorderSize = 0;
+            this.dugmePolozeniPredmeti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmePolozeniPredmeti.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmePolozeniPredmeti.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmePolozeniPredmeti.IconChar = FontAwesome.Sharp.IconChar.ListOl;
+            this.dugmePolozeniPredmeti.IconColor = System.Drawing.Color.Black;
+            this.dugmePolozeniPredmeti.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmePolozeniPredmeti.Location = new System.Drawing.Point(446, 170);
+            this.dugmePolozeniPredmeti.Name = "dugmePolozeniPredmeti";
+            this.dugmePolozeniPredmeti.Size = new System.Drawing.Size(139, 49);
+            this.dugmePolozeniPredmeti.TabIndex = 26;
+            this.dugmePolozeniPredmeti.Text = "položeni predmeti";
+            this.dugmePolozeniPredmeti.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmePolozeniPredmeti.UseVisualStyleBackColor = false;
+            this.dugmePolozeniPredmeti.Click += new System.EventHandler(this.dugmePolozeniPredmeti_Click);
+            // 
+            // jmbgPrikaz
+            // 
+            this.jmbgPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jmbgPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jmbgPrikaz.ForeColor = System.Drawing.Color.White;
+            this.jmbgPrikaz.Location = new System.Drawing.Point(408, 23);
+            this.jmbgPrikaz.Name = "jmbgPrikaz";
+            this.jmbgPrikaz.Size = new System.Drawing.Size(199, 35);
+            this.jmbgPrikaz.TabIndex = 25;
+            this.jmbgPrikaz.Text = "nedefinisano";
+            this.jmbgPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(336, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 35);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "JMBG:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dugmeUkloniProfesora
             // 
@@ -495,68 +559,6 @@ namespace sistem
             this.BrojIndeksa.Text = "broj indeksa:";
             this.BrojIndeksa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // jmbgPrikaz
-            // 
-            this.jmbgPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.jmbgPrikaz.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jmbgPrikaz.ForeColor = System.Drawing.Color.White;
-            this.jmbgPrikaz.Location = new System.Drawing.Point(408, 23);
-            this.jmbgPrikaz.Name = "jmbgPrikaz";
-            this.jmbgPrikaz.Size = new System.Drawing.Size(199, 35);
-            this.jmbgPrikaz.TabIndex = 25;
-            this.jmbgPrikaz.Text = "nedefinisano";
-            this.jmbgPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(336, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 35);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "JMBG:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ListOl;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(446, 170);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(139, 49);
-            this.iconButton1.TabIndex = 26;
-            this.iconButton1.Text = "položeni predmeti";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(591, 170);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(139, 49);
-            this.iconButton2.TabIndex = 27;
-            this.iconButton2.Text = "predmeti koje sluša";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            // 
             // FormaUpravljanjeStudentima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,6 +574,7 @@ namespace sistem
             this.Name = "FormaUpravljanjeStudentima";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upravljanje studentima";
+            this.Load += new System.EventHandler(this.FormaUpravljanjeStudentima_Load);
             this.panelNaslov.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -617,9 +620,9 @@ namespace sistem
         private System.Windows.Forms.Label studentImePrikaz;
         private System.Windows.Forms.Panel panelPrikazRezultata;
         private FontAwesome.Sharp.IconButton dugmeUkloniProfesora;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton dugmePolozeniPredmeti;
         private System.Windows.Forms.Label jmbgPrikaz;
         private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton dugmePredmetiKojeSlusa;
     }
 }

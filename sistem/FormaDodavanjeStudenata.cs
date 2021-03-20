@@ -145,5 +145,11 @@ namespace sistem
             }
             
         }
+
+        private void FormaDodavanjeStudenata_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
     }
 }

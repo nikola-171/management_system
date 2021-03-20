@@ -263,6 +263,7 @@ namespace sistem
             this.Name = "FormaIzmenaUniverziteta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izmena univerziteta";
+            this.Load += new System.EventHandler(this.FormaIzmenaUniverziteta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelNaslov.ResumeLayout(false);

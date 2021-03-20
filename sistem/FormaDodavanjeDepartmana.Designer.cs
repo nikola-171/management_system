@@ -286,6 +286,7 @@ namespace sistem
             this.Name = "FormaDodavanjeDepartmana";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje departmana";
+            this.Load += new System.EventHandler(this.FormaDodavanjeDepartmana_Load);
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

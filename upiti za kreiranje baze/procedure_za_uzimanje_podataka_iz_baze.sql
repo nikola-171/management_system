@@ -1,4 +1,5 @@
 use fakultet;
+call daj_student_polozeni_predmeti(1);
 /*uzimanje podataka o administratoru*/
 delimiter \\
 create procedure daj_podatke_o_administrator(in admin_ime_in varchar(45))
@@ -126,9 +127,10 @@ end\\
 delimiter ;
 /*uzimanje liste studenata sa predmetima koje su položili*/
 delimiter \\
-create procedure daj_student_polozeni_predmeti()
+create procedure daj_student_polozeni_predmeti(in broj_indeksa_in int unsigned)
 begin
-	select * from studenti_sa_predmetima_koje_su_polozili;
+	select * from studenti_sa_predmetima_koje_su_polozili
+    where broj_indeksa = broj_indeksa_in;
 end\\
 delimiter ;
 /*uzimanje liste predmeta koji su dodeljeni nekom smeru*/
@@ -139,10 +141,12 @@ begin
 end\\
 delimiter ;
 /*uzimanje liste studenata sa predmetima koje slušaju testiraj*/
+
 delimiter \\
-create procedure daj_studente_sa_predmetima_koje_slusaju()
+create procedure daj_studente_sa_predmetima_koje_slusaju(in broj_indeksa_in int unsigned)
 begin
-	select * from studenti_sa_predmetima_koje_slusaju;
+	select * from studenti_sa_predmetima_koje_slusaju
+    where indeks = broj_indeksa_in;
 end\\
 delimiter ;
 /*studenti koji nisu diplomirali*/

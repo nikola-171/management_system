@@ -67,9 +67,9 @@ namespace sistem
             this.labelaEmail = new System.Windows.Forms.Label();
             this.labelaIme = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.datumRodjenjaUnos = new System.Windows.Forms.DateTimePicker();
             this.jmbgUnos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.datumRodjenjaUnos = new System.Windows.Forms.DateTimePicker();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -547,17 +547,6 @@ namespace sistem
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "datum rođenja";
             // 
-            // datumRodjenjaUnos
-            // 
-            this.datumRodjenjaUnos.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datumRodjenjaUnos.Location = new System.Drawing.Point(138, 53);
-            this.datumRodjenjaUnos.MaxDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
-            this.datumRodjenjaUnos.MinDate = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
-            this.datumRodjenjaUnos.Name = "datumRodjenjaUnos";
-            this.datumRodjenjaUnos.Size = new System.Drawing.Size(152, 29);
-            this.datumRodjenjaUnos.TabIndex = 0;
-            this.datumRodjenjaUnos.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
-            // 
             // jmbgUnos
             // 
             this.jmbgUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -580,6 +569,17 @@ namespace sistem
             this.label1.Text = "JMBG:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // datumRodjenjaUnos
+            // 
+            this.datumRodjenjaUnos.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datumRodjenjaUnos.Location = new System.Drawing.Point(138, 53);
+            this.datumRodjenjaUnos.MaxDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
+            this.datumRodjenjaUnos.MinDate = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            this.datumRodjenjaUnos.Name = "datumRodjenjaUnos";
+            this.datumRodjenjaUnos.Size = new System.Drawing.Size(152, 29);
+            this.datumRodjenjaUnos.TabIndex = 0;
+            this.datumRodjenjaUnos.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
+            // 
             // FormaDodavanjeStudenata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +595,7 @@ namespace sistem
             this.Name = "FormaDodavanjeStudenata";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje studenata";
+            this.Load += new System.EventHandler(this.FormaDodavanjeStudenata_Load);
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

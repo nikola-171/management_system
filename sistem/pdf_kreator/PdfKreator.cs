@@ -41,7 +41,7 @@ namespace sistem.pdf_kreator
             prgHeading.Add(new Chunk(naslov.ToUpper(), fntHead));
             document.Add(prgHeading);
 
-            string slika = @"C:\Users\Nikola\Desktop\tpj-projekat\sistem\slike\admin.png";
+            string slika = @"C:\Users\NikolaTošić\Desktop\projekat\sistem\slike\admin.png";
             iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(slika);
             //Resize image depend upon your need
             png.ScaleToFit(140f, 120f);
