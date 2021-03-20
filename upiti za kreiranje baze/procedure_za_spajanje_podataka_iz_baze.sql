@@ -134,6 +134,8 @@ begin
     declare diplomirao tinyint default 0;
     declare fak_godina_in tinyint unsigned default 0;
     
+    declare predmet_polozen tinyint unsigned default 0;
+    
     /*dodato*/
     declare fak_godina_test_duplikat tinyint unsigned default 0;
   
@@ -151,38 +153,52 @@ begin
     select max(id) into fak_godina_in
     from fakultetska_godina;
     
-    select s.diplomirao into diplomirao 
-    from student as s 
-    where s.broj_indeksa = student_in;
+    select count(*) into predmet_polozen
+    from student_polozio_predmet
+    where predmet_id = predmet_in and student_broj_indeksa = student_in;
     
-    if diplomirao = 0 then
-		select count(*) into zapis_vec_postoji
-		from student_slusa_predmet
-		where student = student_in and predmet = predmet_in;
+    if predmet_polozen is null then
+       set predmet_polozen = 0;
+	end if;
     
-		if zapis_vec_postoji = 0 then
-			insert into student_slusa_predmet(student, predmet, fakultetska_godina)
-			values(student_in, predmet_in, fak_godina_in);
+    if predmet_polozen = 0 then
+   
+       select s.diplomirao into diplomirao 
+       from student as s 
+	   where s.broj_indeksa = student_in;
+    
+       if diplomirao = 0 then
+		   select count(*) into zapis_vec_postoji
+		   from student_slusa_predmet
+		   where student = student_in and predmet = predmet_in;
+    
+		   if zapis_vec_postoji = 0 then
+			    insert into student_slusa_predmet(student, predmet, fakultetska_godina)
+			    values(student_in, predmet_in, fak_godina_in);
         
-			select 'uspešno dodeljen predmet studentu, student prvi put sluša predmet' as 'msg';
-		else
-            /*test za duplikat*/
-            select fakultetska_godina into fak_godina_test_duplikat
-            from student_slusa_predmet
-            where student = student_in and predmet = predmet_in;
+			    select 'uspešno dodeljen predmet studentu, student prvi put sluša predmet' as 'msg';
+		   else
+               /*test za duplikat*/
+                select fakultetska_godina into fak_godina_test_duplikat
+                from student_slusa_predmet
+                where student = student_in and predmet = predmet_in;
             
-            if fak_godina_test_duplikat = fak_godina_in then
-				select 'nije moguće dodavanje predmeta, student već sluša predmet u tekućoj fakultetskoj godini' as 'msg';
-            else
-				update student_slusa_predmet
-				set fakultetska_godina = fak_godina_in, broj_slusanja = broj_slusanja + 1
-				where student = student_in and predmet = predmet_in;
+                if fak_godina_test_duplikat = fak_godina_in then
+				    select 'nije moguće dodavanje predmeta, student već sluša predmet u tekućoj fakultetskoj godini' as 'msg';
+				else
+				    update student_slusa_predmet
+				    set fakultetska_godina = fak_godina_in, broj_slusanja = broj_slusanja + 1
+				     where student = student_in and predmet = predmet_in;
         
-				select 'student ponovo sluša predmet' as 'msg';
-            end if;
-		end if;
+				     select 'student ponovo sluša predmet' as 'msg';
+                 end if;
+		    end if;
+         else
+		    select 'student je diplomirao' as 'msg';
+         end if;
+    
     else
-		select 'student je diplomirao' as 'msg';
+		select 'student je položio predmet' as 'msg';
     end if;
     
     commit;

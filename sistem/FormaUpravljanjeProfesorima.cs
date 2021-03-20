@@ -134,5 +134,15 @@ namespace sistem
         {
             MenadzerFormi.dajFormu<FormaDodavanjeProfesora>(this, null, true);
         }
+
+        private void dugmePredmetiNaKojimaPredaje_Click(object sender, EventArgs e)
+        {
+            List<Tuple<string, string>> parametri = new List<Tuple<string, string>>();
+            parametri.Add(new Tuple<string, string>("id", idPrikaz.Text));
+            parametri.Add(new Tuple<string, string>("naslov", string.Format("{0}", profesorImePrikaz.Text)));
+
+
+            MenadzerFormi.dajFormu<FormaPredmetiNaKojimaPredajeProfesor>(this, parametri, true);
+        }
     }
 }

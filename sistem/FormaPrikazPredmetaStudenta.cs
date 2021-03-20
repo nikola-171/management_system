@@ -45,14 +45,14 @@ namespace sistem
 
                 }
 
-            }
-            catch (Exception exception)
+            }catch (Exception exception)
             {
                 loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
                 MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             //throw new NotImplementedException();
         }
 

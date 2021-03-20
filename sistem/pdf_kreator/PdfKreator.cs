@@ -27,7 +27,7 @@ namespace sistem.pdf_kreator
         #region kreiraj_pdf_dokument_i_prikaži_ga
         public void Kreiraj(Tuple<List<float>, DataTable> tabela_podataka, string lokacija, string naslov)
         {
-            System.IO.FileStream fs = new FileStream(lokacija, FileMode.Create, FileAccess.Write, FileShare.None);
+            System.IO.FileStream fs = new FileStream(lokacija, FileMode.CreateNew, FileAccess.Write, FileShare.None);
             Document document = new Document();
             document.SetPageSize(iTextSharp.text.PageSize.A4);
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
@@ -81,24 +81,28 @@ namespace sistem.pdf_kreator
             for (int i = 0; i < tabela_podataka.Item2.Columns.Count; i++)
             {
                 PdfPCell cell = new PdfPCell();
+                Paragraph paragraf = new Paragraph(new Chunk(tabela_podataka.Item2.Columns[i].ColumnName.ToUpper(), fntColumnHeader));
+                paragraf.Alignment = Element.ALIGN_CENTER;
 
                 cell.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
-                cell.AddElement(new Chunk(tabela_podataka.Item2.Columns[i].ColumnName.ToUpper(), fntColumnHeader));
+                cell.AddElement(paragraf);
                 table.AddCell(cell);
             }
 
             BaseFont font_tabela = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            Font f = new Font(font_tabela, 9, 1, iTextSharp.text.BaseColor.BLACK);
-            //table Data
+            Font f = new Font(font_tabela, 10, 2, iTextSharp.text.BaseColor.BLACK);
+            //podaci u tabeli
             for (int i = 0; i < tabela_podataka.Item2.Rows.Count; i++)
             {
                 for (int j = 0; j < tabela_podataka.Item2.Columns.Count; j++)
                 {
 
                     PdfPCell cell = new PdfPCell();
+                    Paragraph paragraf = new Paragraph(new Chunk(tabela_podataka.Item2.Rows[i][j].ToString(), f));
+                    paragraf.Alignment = Element.ALIGN_LEFT;
 
                     cell.BackgroundColor = iTextSharp.text.BaseColor.WHITE;
-                    cell.AddElement(new Chunk(tabela_podataka.Item2.Rows[i][j].ToString(), f));
+                    cell.AddElement(paragraf);
                     table.AddCell(cell);
                 }
             }

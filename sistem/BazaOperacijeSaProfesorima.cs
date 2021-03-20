@@ -187,7 +187,7 @@ namespace sistem
         #endregion
 
         #region daj_profesore_sa_predmetima_na_kojima_predaju
-        public List<Dictionary<string, string>> Daj_sve_profesore_sa_predmetima_na_kojima_predaju()
+        public List<Dictionary<string, string>> Daj_predmete_na_kojima_predaje_profesor(UInt32 profesor)
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
 
@@ -200,6 +200,7 @@ namespace sistem
                 MySqlCommand cmd = new MySqlCommand(rtn, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@profesor_in", profesor);
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -207,12 +208,16 @@ namespace sistem
                 {
                     Dictionary<string, string> red = new Dictionary<string, string>();
 
-                    red.Add("profesor_id", rdr.GetString(rdr.GetOrdinal("profesor_id")));
-                    red.Add("predmet_id", rdr.GetString(rdr.GetOrdinal("predmet_id")));
-                    red.Add("profesor_ime", rdr.GetString(rdr.GetOrdinal("profesor_ime")));
-                    red.Add("profesor_prezime", rdr.GetString(rdr.GetOrdinal("profesor_prezime")));
-                    red.Add("predmet_naziv", rdr.GetString(rdr.GetOrdinal("predmet_naziv")));
-               
+                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
+                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
+                    red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
+                    red.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
+                    red.Add("jmbg", rdr.GetString(rdr.GetOrdinal("jmbg")));
+
+                    red.Add("naziv", rdr.GetString(rdr.GetOrdinal("naziv")));
+                    red.Add("tip", rdr.GetString(rdr.GetOrdinal("tip")));
+
+
                     rezultat.Add(red);
                 }
 

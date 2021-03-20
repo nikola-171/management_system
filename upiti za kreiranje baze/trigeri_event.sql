@@ -1,67 +1,10 @@
 use fakultet;
 select * from student_slusa_predmet;
+select * from student_polozio_predmet;
 delete from 
 /*svake godine prazni arhive*/
 /*SET GLOBAL event_scheduler = ON;*/
 
-/*delimiter \\
-create event prazni_arhive
-on schedule every 1 year
-enable
-do
-begin
-	declare id_prom int unsigned default 0;
-	declare c_uni cursor for
-		select id from univerzitet_arhiva;
-	declare c_fakultet cursor for
-		select id from fakultet_arhiva;
-	declare c_stud cursor for
-		select broj_indeksa from student_arhiva;
-	declare c_prof cursor for
-		select id from profesor_arhiva;
-        
-	declare exit handler for not found
-    begin
-		set id_prom = 0;
-    end;
-	
-	declare exit handler for sqlexception
-    begin
-		GET DIAGNOSTICS CONDITION 1
-		@p2 = MESSAGE_TEXT;
-        select @p2 as 'msg';
-    end;
-    
-    open c_uni;
-		l: loop
-			fetch c_uni into id_prom;
-            delete from univerzitet_arhiva
-            where id = id_prom;
-        end loop l;
-    close c_uni;
-    open c_fakultet;
-		l:loop
-			fetch c_fakultet into id_prom;
-			delete from fakultet_arhiva
-			where id = id_prom;
-        end loop l;
-    close c_fakultet;
-    open c_stud;
-		l : loop
-			fetch c_stud into id_prom;
-			delete from student_arhiva
-			where broj_indeksa = id_prom;
-        end loop l;
-    close c_stud;
-    open c_prof;
-		l:loop
-			fetch c_prof into id_prom;
-            delete from profesor_arhiva
-            where id = id_prom;
-		end loop l;
-    close c_prof;
-end\\
-delimiter ;*/
 /*kada brišemo univerzitet prebacujemo ga u arhivu*/
 delimiter \\
 create trigger tr_brisanje_univerziteta
@@ -82,19 +25,7 @@ create trigger tr_brisanje_fakulteta
         values(old.id, old.naziv, old.mesto, old.univerzitet);
     end\\
 delimiter ;
-/*kada brišemo studenta prebacujemo ga u arhivu*/
-/*delimiter \\
-create trigger tr_brisanje_studenata
-	after delete on student
-    for each row
-    begin
-		insert into student_arhiva(broj_indeksa, ime, prezime, godina_rodjenja, mesec_rodjenja, dan_rodjenja,
-								 mesto_boravka, ulica, broj, telefon, email, espb, diplomirao)
-		values(old.broj_indeksa, old.ime, old.prezime, old.godina_rodjenja, old.mesec_rodjenja,
-			   old.dan_rodjenja, old.mesto_boravka, old.ulica, old.broj, old.telefon, old.email,
-               old.espb, old.diplomirao);
-    end\\
-delimiter ;*/
+
 /*čuvamo promene izvršene nad nekim fakultetom*/
 delimiter \\
 create trigger tr_fakultet_promena
@@ -146,6 +77,9 @@ create trigger tr_univerzitet_promena
 	end\\
 delimiter ;
 /*ažuriranje proseka studenta i broj espb bodova svaku put kada položi neki predmet*/
+drop trigger update_student_prosek_espb;
+select * from student_slusa_predmet;
+select * from student_polozio_predmet;
 delimiter \\
 create trigger update_student_prosek_espb
 after insert on student_polozio_predmet
@@ -199,7 +133,8 @@ begin
         where broj_indeksa = new.student_broj_indeksa;
         
       end if;
-    
+      
+      
     open c;
     petlja: loop
 		
@@ -210,27 +145,14 @@ begin
     end loop petlja;
     close c;
     
+    /*brisanje predmeta iz tabele student slusa predmer*/
+      delete from student_slusa_predmet
+	  where predmet_id = new.predmet_id and student_broj_indeksa = new.student_broj_indeksa;
+    
 end\\
 delimiter ;
 /*brisanje profesora - prebacujemo ga u arhivu*/
-/*delimiter \\
-create trigger tr_brisanje_profesora
-	after delete on profesor
-    for each row
-    begin
-        declare ime varchar(45) default '';
-        declare prezime varchar(45) default '';
-        declare godina_rodjenja date;
-        declare email varchar(45) default '';
-        declare telefon varchar(45) default '';
-        declare JMBG char(13);
-        declare zvanje varchar(45) default '';
-	
-        
-		insert into profesor_arhiva(id, ime, prezime, datum_rodjenja, email, telefon, JMBG)
-		values(old.id, old.ime, old.prezime, old.datum_rodjenja, old.email, old.telefon, old.JMBG);
-    end\\
-delimiter ;*/
+
 /*kada studentu obrišemo neki položen ispit moramo ponovo da mu ažuriramo prosek i broj espb bodova*/
 delimiter \\
 create trigger tr_brisanje_polozenog_predmeta

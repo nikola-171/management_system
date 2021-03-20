@@ -13,69 +13,8 @@ namespace sistem
 {
     public class GeneratorIzvestaja
     {
-        #region uzimanje_liste_profesora_iz_arhive
-        private static Tuple<List<float>, DataTable> Daj_sve_profesore_iz_arhive()
-        {
 
-            DataTable studenti = new DataTable();
-            var rezultat = Baza.daj_instancu().Daj_sve_profesore_iz_arhive();
-
-            studenti.Columns.Add("id");
-            studenti.Columns.Add("ime");
-            studenti.Columns.Add("kontakt");
-            studenti.Columns.Add("datum rođenja");
-
-
-            foreach (var elem in rezultat)
-            {
-                studenti.Rows.Add(elem["id"], elem["ime"] + " " + elem["prezime"],
-                                      elem["email"] + " " + elem["telefon"], elem["dan_rodjenja"] + "-" + elem["mesec_rodjenja"] + "-" + elem["godina_rodjenja"]);
-            }
-
-            /// nije dobro ovo sve mora da ide u model
-            List<float> velicina_kolone = new List<float>(4);
-            velicina_kolone.Add(20);
-            velicina_kolone.Add(40);
-            velicina_kolone.Add(60);
-            velicina_kolone.Add(30);
-
-            return new Tuple<List<float>, DataTable>(velicina_kolone, studenti);
-        }
-        #endregion
-
-        #region uzimanje_liste_studenata_iz_arhive
-        private static Tuple<List<float>, DataTable> Daj_sve_studente_iz_arhive()
-        {
-
-            DataTable studenti = new DataTable();
-            var rezultat = Baza.daj_instancu().Daj_sve_studente_iz_arhive();
-
-            studenti.Columns.Add("broj indeksa");
-            studenti.Columns.Add("ime");
-            studenti.Columns.Add("espb");
-            studenti.Columns.Add("email");
-            studenti.Columns.Add("telefon");
-
-
-
-            foreach (var elem in rezultat)
-            {
-                studenti.Rows.Add(elem["broj_indeksa"], elem["ime"] + " " + elem["prezime"],
-                                      elem["espb"], elem["email"], elem["telefon"]);
-            }
-
-            /// nije dobro ovo sve mora da ide u model
-            List<float> velicina_kolone = new List<float>(5);
-            velicina_kolone.Add(20);
-            velicina_kolone.Add(40);
-            velicina_kolone.Add(30);
-            velicina_kolone.Add(50);
-            velicina_kolone.Add(30);
-
-
-            return new Tuple<List<float>, DataTable>(velicina_kolone, studenti);
-        }
-        #endregion
+       
 
         #region uzimanje_liste_svih_promena_na_univerzitetima
         private static Tuple<List<float>, DataTable> Daj_sve_promene_na_univerzitetu()
@@ -96,7 +35,6 @@ namespace sistem
                                       
             }
 
-            /// nije dobro ovo sve mora da ide u model
             List<float> velicina_kolone = new List<float>(4);
             velicina_kolone.Add(60);
             velicina_kolone.Add(52);
@@ -235,8 +173,8 @@ namespace sistem
         private static Tuple<List<float>, DataTable> Daj_sve_profesore_sa_predmetima_na_kojima_predaju()
         {
 
-            DataTable studenti = new DataTable();
-            var rezultat = Baza.daj_instancu().Daj_sve_profesore_sa_predmetima_na_kojima_predaju();
+            DataTable studenti = new DataTable();//greskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            var rezultat = Baza.daj_instancu().Daj_predmete_na_kojima_predaje_profesor(1);
 
             studenti.Columns.Add("profesor id");
             studenti.Columns.Add("ime");
@@ -301,12 +239,7 @@ namespace sistem
             System.Diagnostics.Process.Start(@lokacija);
         }
 
-        public static void Kreiraj_izvestaj_svih_studenata_iz_arhive(string lokacija)
-        {
-            Tuple<List<float>, DataTable> podaci = Daj_sve_studente_iz_arhive();
-            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Studenti iz arhive");
-            System.Diagnostics.Process.Start(@lokacija);
-        }
+       
 
         public static void Kreiraj_izvestaj_svih_diplomiranih_studenata(string lokacija)
         {
@@ -336,12 +269,7 @@ namespace sistem
             System.Diagnostics.Process.Start(@lokacija);
         }
 
-        public static void Kreiraj_izvestaj_svih_profesora_iz_arhive(string lokacija)
-        {
-            Tuple<List<float>, DataTable> podaci = Daj_sve_profesore_iz_arhive();
-            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Profesori iz arhive");
-            System.Diagnostics.Process.Start(@lokacija);
-        }
+       
 
         public static void Kreiraj_izvestaj_svih_predmeta(string lokacija)
         {

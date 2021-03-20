@@ -266,7 +266,6 @@ C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaUpravljanje
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaUpravljanjeProfesorima.resources
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaUpravljanjeStudentima.resources
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaUpravljanjeUniverzitetom.resources
-C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaUpravljanjeZaposlenima.resources
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.Properties.Resources.resources
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.csproj.GenerateResource.cache
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.csproj.CoreCompileInputs.cache
@@ -275,3 +274,4 @@ C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.exe
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.pdb
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaPrikazPredmetaStudenta.resources
 C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaPolozeniPredmetiStudenta.resources
+C:\Users\NikolaTošić\Desktop\projekat\sistem\obj\Debug\sistem.FormaPredmetiNaKojimaPredajeProfesor.resources
