@@ -91,9 +91,12 @@ namespace sistem
 
 
             }
-            catch (Exception ee)
+            catch (Exception exception)
             {
-                MessageBox.Show("doslo je do greske " + ee.ToString());
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

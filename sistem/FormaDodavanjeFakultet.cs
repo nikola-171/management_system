@@ -91,7 +91,7 @@ namespace sistem
             try
             {
                 Baza.daj_instancu().Dodavanje_fakulteta(nazivUnos.Text, gradUnos.Text, mapa_id_naziv[Convert.ToString(comboUniverziteti.SelectedItem)]);
-                MessageBox.Show("uspešno dodat fakultet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("uspešno dodat fakultet", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception exception)

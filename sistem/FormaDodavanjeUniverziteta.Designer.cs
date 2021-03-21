@@ -86,7 +86,7 @@ namespace sistem
             this.dugmeZaProsledi.Location = new System.Drawing.Point(55, 234);
             this.dugmeZaProsledi.Name = "dugmeZaProsledi";
             this.dugmeZaProsledi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeZaProsledi.Size = new System.Drawing.Size(287, 55);
+            this.dugmeZaProsledi.Size = new System.Drawing.Size(317, 55);
             this.dugmeZaProsledi.TabIndex = 7;
             this.dugmeZaProsledi.Text = "dodaj";
             this.dugmeZaProsledi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -99,7 +99,7 @@ namespace sistem
             this.gradUnos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gradUnos.Location = new System.Drawing.Point(156, 176);
             this.gradUnos.Name = "gradUnos";
-            this.gradUnos.Size = new System.Drawing.Size(186, 29);
+            this.gradUnos.Size = new System.Drawing.Size(216, 29);
             this.gradUnos.TabIndex = 5;
             // 
             // drzavaUnos
@@ -107,7 +107,7 @@ namespace sistem
             this.drzavaUnos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drzavaUnos.Location = new System.Drawing.Point(156, 113);
             this.drzavaUnos.Name = "drzavaUnos";
-            this.drzavaUnos.Size = new System.Drawing.Size(186, 29);
+            this.drzavaUnos.Size = new System.Drawing.Size(216, 29);
             this.drzavaUnos.TabIndex = 4;
             // 
             // nazivUnos
@@ -115,14 +115,14 @@ namespace sistem
             this.nazivUnos.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nazivUnos.Location = new System.Drawing.Point(156, 48);
             this.nazivUnos.Name = "nazivUnos";
-            this.nazivUnos.Size = new System.Drawing.Size(186, 29);
+            this.nazivUnos.Size = new System.Drawing.Size(216, 29);
             this.nazivUnos.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 178);
+            this.label3.Location = new System.Drawing.Point(69, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 23);
             this.label3.TabIndex = 2;
@@ -142,7 +142,7 @@ namespace sistem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 50);
+            this.label1.Location = new System.Drawing.Point(56, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 23);
             this.label1.TabIndex = 0;
@@ -214,7 +214,7 @@ namespace sistem
             this.dugmeZaNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeZaNazad.IconSize = 50;
             this.dugmeZaNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeZaNazad.Location = new System.Drawing.Point(0, 186);
+            this.dugmeZaNazad.Location = new System.Drawing.Point(0, 209);
             this.dugmeZaNazad.Name = "dugmeZaNazad";
             this.dugmeZaNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeZaNazad.Size = new System.Drawing.Size(199, 68);
@@ -231,7 +231,7 @@ namespace sistem
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 186);
+            this.panelLogo.Size = new System.Drawing.Size(199, 209);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox2
@@ -239,7 +239,7 @@ namespace sistem
             this.pictureBox2.Image = global::sistem.Properties.Resources.univerzitet1;
             this.pictureBox2.Location = new System.Drawing.Point(3, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(193, 183);
+            this.pictureBox2.Size = new System.Drawing.Size(193, 206);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;

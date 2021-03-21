@@ -54,17 +54,16 @@ namespace sistem
             this.labelaPrezime = new System.Windows.Forms.Label();
             this.labelaEmail = new System.Windows.Forms.Label();
             this.labelaIme = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.datumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.panelMeni = new System.Windows.Forms.Panel();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.datumRodjenja = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelNaslov.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -77,7 +76,7 @@ namespace sistem
             this.korisnickoImeUnos.Location = new System.Drawing.Point(161, 39);
             this.korisnickoImeUnos.MaxLength = 45;
             this.korisnickoImeUnos.Name = "korisnickoImeUnos";
-            this.korisnickoImeUnos.Size = new System.Drawing.Size(161, 26);
+            this.korisnickoImeUnos.Size = new System.Drawing.Size(172, 26);
             this.korisnickoImeUnos.TabIndex = 11;
             // 
             // labelaKorisnickoIme
@@ -96,10 +95,11 @@ namespace sistem
             // 
             this.lozinkaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lozinkaUnos.Location = new System.Drawing.Point(154, 89);
+            this.lozinkaUnos.Location = new System.Drawing.Point(161, 86);
             this.lozinkaUnos.MaxLength = 45;
             this.lozinkaUnos.Name = "lozinkaUnos";
-            this.lozinkaUnos.Size = new System.Drawing.Size(161, 26);
+            this.lozinkaUnos.PasswordChar = '*';
+            this.lozinkaUnos.Size = new System.Drawing.Size(172, 26);
             this.lozinkaUnos.TabIndex = 12;
             // 
             // labelaLozinkaPonovo
@@ -107,7 +107,7 @@ namespace sistem
             this.labelaLozinkaPonovo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaLozinkaPonovo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaLozinkaPonovo.ForeColor = System.Drawing.Color.White;
-            this.labelaLozinkaPonovo.Location = new System.Drawing.Point(28, 136);
+            this.labelaLozinkaPonovo.Location = new System.Drawing.Point(16, 124);
             this.labelaLozinkaPonovo.Name = "labelaLozinkaPonovo";
             this.labelaLozinkaPonovo.Size = new System.Drawing.Size(130, 35);
             this.labelaLozinkaPonovo.TabIndex = 12;
@@ -118,10 +118,11 @@ namespace sistem
             // 
             this.lozinkaPonovoUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lozinkaPonovoUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lozinkaPonovoUnos.Location = new System.Drawing.Point(164, 141);
+            this.lozinkaPonovoUnos.Location = new System.Drawing.Point(161, 133);
             this.lozinkaPonovoUnos.MaxLength = 45;
             this.lozinkaPonovoUnos.Name = "lozinkaPonovoUnos";
-            this.lozinkaPonovoUnos.Size = new System.Drawing.Size(161, 26);
+            this.lozinkaPonovoUnos.PasswordChar = '*';
+            this.lozinkaPonovoUnos.Size = new System.Drawing.Size(172, 26);
             this.lozinkaPonovoUnos.TabIndex = 13;
             // 
             // labelaLozinka
@@ -129,7 +130,7 @@ namespace sistem
             this.labelaLozinka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaLozinka.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaLozinka.ForeColor = System.Drawing.Color.White;
-            this.labelaLozinka.Location = new System.Drawing.Point(59, 84);
+            this.labelaLozinka.Location = new System.Drawing.Point(79, 81);
             this.labelaLozinka.Name = "labelaLozinka";
             this.labelaLozinka.Size = new System.Drawing.Size(67, 35);
             this.labelaLozinka.TabIndex = 13;
@@ -143,7 +144,7 @@ namespace sistem
             this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNaslov.Location = new System.Drawing.Point(199, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(926, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(926, 114);
             this.panelNaslov.TabIndex = 14;
             // 
             // labelaNaslov
@@ -163,10 +164,9 @@ namespace sistem
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(271, 114);
+            this.panel1.Location = new System.Drawing.Point(260, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 378);
+            this.panel1.Size = new System.Drawing.Size(807, 393);
             this.panel1.TabIndex = 16;
             // 
             // groupBox3
@@ -174,18 +174,18 @@ namespace sistem
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.zvanjeUnos);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.jmbgUnos);
-            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.dugmeDodaj);
             this.groupBox3.Controls.Add(this.lozinkaPonovoUnos);
             this.groupBox3.Controls.Add(this.lozinkaUnos);
+            this.groupBox3.Controls.Add(this.emailUnos);
             this.groupBox3.Controls.Add(this.korisnickoImeUnos);
             this.groupBox3.Controls.Add(this.labelaLozinka);
             this.groupBox3.Controls.Add(this.labelaLozinkaPonovo);
             this.groupBox3.Controls.Add(this.labelaKorisnickoIme);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Controls.Add(this.labelaEmail);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(358, 15);
+            this.groupBox3.Location = new System.Drawing.Point(417, 11);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(353, 358);
             this.groupBox3.TabIndex = 18;
@@ -196,10 +196,10 @@ namespace sistem
             // 
             this.zvanjeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.zvanjeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zvanjeUnos.Location = new System.Drawing.Point(164, 228);
+            this.zvanjeUnos.Location = new System.Drawing.Point(161, 227);
             this.zvanjeUnos.MaxLength = 45;
             this.zvanjeUnos.Name = "zvanjeUnos";
-            this.zvanjeUnos.Size = new System.Drawing.Size(161, 26);
+            this.zvanjeUnos.Size = new System.Drawing.Size(172, 26);
             this.zvanjeUnos.TabIndex = 20;
             // 
             // label2
@@ -218,10 +218,10 @@ namespace sistem
             // 
             this.jmbgUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.jmbgUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jmbgUnos.Location = new System.Drawing.Point(164, 176);
+            this.jmbgUnos.Location = new System.Drawing.Point(134, 212);
             this.jmbgUnos.MaxLength = 45;
             this.jmbgUnos.Name = "jmbgUnos";
-            this.jmbgUnos.Size = new System.Drawing.Size(161, 26);
+            this.jmbgUnos.Size = new System.Drawing.Size(172, 26);
             this.jmbgUnos.TabIndex = 18;
             // 
             // label1
@@ -229,9 +229,9 @@ namespace sistem
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, 171);
+            this.label1.Location = new System.Drawing.Point(55, 207);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 35);
+            this.label1.Size = new System.Drawing.Size(66, 35);
             this.label1.TabIndex = 17;
             this.label1.Text = "JMBG:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,19 +259,21 @@ namespace sistem
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.datumRodjenja);
             this.groupBox2.Controls.Add(this.telefonUnos);
+            this.groupBox2.Controls.Add(this.jmbgUnos);
             this.groupBox2.Controls.Add(this.labelaTelefon);
-            this.groupBox2.Controls.Add(this.emailUnos);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.prezimeUnos);
             this.groupBox2.Controls.Add(this.imeUnos);
             this.groupBox2.Controls.Add(this.labelaPrezime);
-            this.groupBox2.Controls.Add(this.labelaEmail);
             this.groupBox2.Controls.Add(this.labelaIme);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(21, 15);
+            this.groupBox2.Location = new System.Drawing.Point(21, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(317, 176);
+            this.groupBox2.Size = new System.Drawing.Size(369, 358);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "osnovni podaci";
@@ -280,10 +282,10 @@ namespace sistem
             // 
             this.telefonUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.telefonUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telefonUnos.Location = new System.Drawing.Point(146, 128);
+            this.telefonUnos.Location = new System.Drawing.Point(134, 164);
             this.telefonUnos.MaxLength = 15;
             this.telefonUnos.Name = "telefonUnos";
-            this.telefonUnos.Size = new System.Drawing.Size(124, 26);
+            this.telefonUnos.Size = new System.Drawing.Size(172, 26);
             this.telefonUnos.TabIndex = 4;
             // 
             // labelaTelefon
@@ -291,7 +293,7 @@ namespace sistem
             this.labelaTelefon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaTelefon.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaTelefon.ForeColor = System.Drawing.Color.White;
-            this.labelaTelefon.Location = new System.Drawing.Point(35, 123);
+            this.labelaTelefon.Location = new System.Drawing.Point(54, 162);
             this.labelaTelefon.Name = "labelaTelefon";
             this.labelaTelefon.Size = new System.Drawing.Size(67, 35);
             this.labelaTelefon.TabIndex = 17;
@@ -302,30 +304,30 @@ namespace sistem
             // 
             this.emailUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailUnos.Location = new System.Drawing.Point(146, 93);
+            this.emailUnos.Location = new System.Drawing.Point(94, 180);
             this.emailUnos.MaxLength = 45;
             this.emailUnos.Name = "emailUnos";
-            this.emailUnos.Size = new System.Drawing.Size(124, 26);
+            this.emailUnos.Size = new System.Drawing.Size(239, 26);
             this.emailUnos.TabIndex = 3;
             // 
             // prezimeUnos
             // 
             this.prezimeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.prezimeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezimeUnos.Location = new System.Drawing.Point(146, 58);
+            this.prezimeUnos.Location = new System.Drawing.Point(134, 116);
             this.prezimeUnos.MaxLength = 25;
             this.prezimeUnos.Name = "prezimeUnos";
-            this.prezimeUnos.Size = new System.Drawing.Size(124, 26);
+            this.prezimeUnos.Size = new System.Drawing.Size(172, 26);
             this.prezimeUnos.TabIndex = 2;
             // 
             // imeUnos
             // 
             this.imeUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imeUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imeUnos.Location = new System.Drawing.Point(146, 23);
+            this.imeUnos.Location = new System.Drawing.Point(134, 68);
             this.imeUnos.MaxLength = 25;
             this.imeUnos.Name = "imeUnos";
-            this.imeUnos.Size = new System.Drawing.Size(124, 26);
+            this.imeUnos.Size = new System.Drawing.Size(172, 26);
             this.imeUnos.TabIndex = 1;
             // 
             // labelaPrezime
@@ -333,9 +335,9 @@ namespace sistem
             this.labelaPrezime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaPrezime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaPrezime.ForeColor = System.Drawing.Color.White;
-            this.labelaPrezime.Location = new System.Drawing.Point(29, 53);
+            this.labelaPrezime.Location = new System.Drawing.Point(48, 112);
             this.labelaPrezime.Name = "labelaPrezime";
-            this.labelaPrezime.Size = new System.Drawing.Size(89, 35);
+            this.labelaPrezime.Size = new System.Drawing.Size(73, 35);
             this.labelaPrezime.TabIndex = 13;
             this.labelaPrezime.Text = "prezime:";
             this.labelaPrezime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +347,7 @@ namespace sistem
             this.labelaEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaEmail.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaEmail.ForeColor = System.Drawing.Color.White;
-            this.labelaEmail.Location = new System.Drawing.Point(51, 88);
+            this.labelaEmail.Location = new System.Drawing.Point(21, 178);
             this.labelaEmail.Name = "labelaEmail";
             this.labelaEmail.Size = new System.Drawing.Size(67, 35);
             this.labelaEmail.TabIndex = 12;
@@ -357,32 +359,12 @@ namespace sistem
             this.labelaIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaIme.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaIme.ForeColor = System.Drawing.Color.White;
-            this.labelaIme.Location = new System.Drawing.Point(61, 18);
+            this.labelaIme.Location = new System.Drawing.Point(80, 63);
             this.labelaIme.Name = "labelaIme";
             this.labelaIme.Size = new System.Drawing.Size(41, 35);
             this.labelaIme.TabIndex = 11;
             this.labelaIme.Text = "ime:";
             this.labelaIme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.datumRodjenja);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(21, 197);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(317, 176);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "datum rođenja";
-            // 
-            // datumRodjenja
-            // 
-            this.datumRodjenja.Location = new System.Drawing.Point(39, 84);
-            this.datumRodjenja.Name = "datumRodjenja";
-            this.datumRodjenja.Size = new System.Drawing.Size(237, 25);
-            this.datumRodjenja.TabIndex = 0;
             // 
             // panelMeni
             // 
@@ -393,7 +375,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 525);
+            this.panelMeni.Size = new System.Drawing.Size(199, 563);
             this.panelMeni.TabIndex = 15;
             // 
             // dugmeNazad
@@ -436,12 +418,36 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // datumRodjenja
+            // 
+            this.datumRodjenja.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datumRodjenja.Location = new System.Drawing.Point(184, 260);
+            this.datumRodjenja.MaxDate = new System.DateTime(2000, 3, 21, 0, 0, 0, 0);
+            this.datumRodjenja.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
+            this.datumRodjenja.Name = "datumRodjenja";
+            this.datumRodjenja.Size = new System.Drawing.Size(122, 29);
+            this.datumRodjenja.TabIndex = 0;
+            this.datumRodjenja.Value = new System.DateTime(2000, 3, 21, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(33, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 35);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "datum rođenja:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormaDodavanjeProfesora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(1125, 525);
+            this.ClientSize = new System.Drawing.Size(1125, 563);
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMeni);
@@ -456,7 +462,6 @@ namespace sistem
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -486,7 +491,6 @@ namespace sistem
         private System.Windows.Forms.Label labelaPrezime;
         private System.Windows.Forms.Label labelaEmail;
         private System.Windows.Forms.Label labelaIme;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panelMeni;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton dugmeDodaj;
@@ -494,6 +498,7 @@ namespace sistem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox jmbgUnos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker datumRodjenja;
     }
 }

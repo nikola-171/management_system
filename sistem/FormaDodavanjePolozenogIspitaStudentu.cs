@@ -96,7 +96,7 @@ namespace sistem
             // dodavanje studentu položen predmet
             if(listaOcena.SelectedIndex < 0 || listaStudent.SelectedIndex < 0 || listaPredmet.SelectedIndex < 0)
             {
-                MessageBox.Show("Prazna polja nisu dozvoljena", "prazno polje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -120,7 +120,7 @@ namespace sistem
                     }
                     else
                     {
-                        MessageBox.Show("Uspešno evidentiran položen ispit studentu", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Uspešno evidentiran položen ispit studentu", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception exception)

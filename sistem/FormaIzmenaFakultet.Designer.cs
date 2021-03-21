@@ -196,7 +196,7 @@ namespace sistem
             this.dugmeZaNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeZaNazad.IconSize = 50;
             this.dugmeZaNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeZaNazad.Location = new System.Drawing.Point(0, 215);
+            this.dugmeZaNazad.Location = new System.Drawing.Point(0, 226);
             this.dugmeZaNazad.Name = "dugmeZaNazad";
             this.dugmeZaNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeZaNazad.Size = new System.Drawing.Size(199, 68);
@@ -213,7 +213,7 @@ namespace sistem
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 215);
+            this.panelLogo.Size = new System.Drawing.Size(199, 226);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox2
@@ -221,7 +221,7 @@ namespace sistem
             this.pictureBox2.Image = global::sistem.Properties.Resources.univerzitet1;
             this.pictureBox2.Location = new System.Drawing.Point(3, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(193, 212);
+            this.pictureBox2.Size = new System.Drawing.Size(193, 222);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
