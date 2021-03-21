@@ -290,11 +290,9 @@
     </Compile>
     <Compile Include="GeneratorIzvestaja.cs" />
     <Compile Include="ISesija.cs" />
-    <Compile Include="kreatori\StudentKreator.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MenadzerFormi.cs" />
     <Compile Include="MenadzerStatusnihKodova.cs" />
-    <Compile Include="modeli\StudentModel.cs" />
     <Compile Include="pdf_kreator\IKreator.cs" />
     <Compile Include="pdf_kreator\PdfKreator.cs" />
     <Compile Include="Program.cs" />

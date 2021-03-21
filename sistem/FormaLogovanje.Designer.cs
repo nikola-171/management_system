@@ -180,7 +180,6 @@ namespace sistem
             this.Name = "FormaLogovanje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logovanje";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormaLogovanje_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
