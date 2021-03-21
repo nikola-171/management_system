@@ -31,7 +31,6 @@ namespace sistem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPocetnaStrana));
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.dugmeUpravljanjeZaposlenima = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjeProfesorima = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjeStudentima = new FontAwesome.Sharp.IconButton();
             this.dugmeUpravljanjePredmetima = new FontAwesome.Sharp.IconButton();
@@ -76,7 +75,6 @@ namespace sistem
             // panelMeni
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMeni.Controls.Add(this.dugmeUpravljanjeZaposlenima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeProfesorima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjeStudentima);
             this.panelMeni.Controls.Add(this.dugmeUpravljanjePredmetima);
@@ -91,28 +89,6 @@ namespace sistem
             this.panelMeni.Name = "panelMeni";
             this.panelMeni.Size = new System.Drawing.Size(199, 719);
             this.panelMeni.TabIndex = 6;
-            // 
-            // dugmeUpravljanjeZaposlenima
-            // 
-            this.dugmeUpravljanjeZaposlenima.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeUpravljanjeZaposlenima.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dugmeUpravljanjeZaposlenima.FlatAppearance.BorderSize = 0;
-            this.dugmeUpravljanjeZaposlenima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeUpravljanjeZaposlenima.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeUpravljanjeZaposlenima.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            this.dugmeUpravljanjeZaposlenima.IconColor = System.Drawing.Color.Black;
-            this.dugmeUpravljanjeZaposlenima.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeUpravljanjeZaposlenima.IconSize = 50;
-            this.dugmeUpravljanjeZaposlenima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeZaposlenima.Location = new System.Drawing.Point(0, 644);
-            this.dugmeUpravljanjeZaposlenima.Name = "dugmeUpravljanjeZaposlenima";
-            this.dugmeUpravljanjeZaposlenima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjeZaposlenima.Size = new System.Drawing.Size(199, 68);
-            this.dugmeUpravljanjeZaposlenima.TabIndex = 8;
-            this.dugmeUpravljanjeZaposlenima.Text = "upravljanje zaposlenima";
-            this.dugmeUpravljanjeZaposlenima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeZaposlenima.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeUpravljanjeZaposlenima.UseVisualStyleBackColor = true;
             // 
             // dugmeUpravljanjeProfesorima
             // 
@@ -334,6 +310,7 @@ namespace sistem
             this.dugmeInformacije.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dugmeInformacije.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dugmeInformacije.UseVisualStyleBackColor = true;
+            this.dugmeInformacije.Click += new System.EventHandler(this.dugmeInformacije_Click);
             // 
             // labelaIme
             // 
@@ -440,7 +417,7 @@ namespace sistem
             this.dugmeIzvestajPromeneFakultet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeIzvestajPromeneFakultet.IconSize = 40;
             this.dugmeIzvestajPromeneFakultet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeIzvestajPromeneFakultet.Location = new System.Drawing.Point(41, 249);
+            this.dugmeIzvestajPromeneFakultet.Location = new System.Drawing.Point(41, 386);
             this.dugmeIzvestajPromeneFakultet.Name = "dugmeIzvestajPromeneFakultet";
             this.dugmeIzvestajPromeneFakultet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeIzvestajPromeneFakultet.Size = new System.Drawing.Size(209, 76);
@@ -462,7 +439,7 @@ namespace sistem
             this.dugmeIzvestajPromeneUniverzitet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeIzvestajPromeneUniverzitet.IconSize = 40;
             this.dugmeIzvestajPromeneUniverzitet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeIzvestajPromeneUniverzitet.Location = new System.Drawing.Point(41, 140);
+            this.dugmeIzvestajPromeneUniverzitet.Location = new System.Drawing.Point(41, 250);
             this.dugmeIzvestajPromeneUniverzitet.Name = "dugmeIzvestajPromeneUniverzitet";
             this.dugmeIzvestajPromeneUniverzitet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeIzvestajPromeneUniverzitet.Size = new System.Drawing.Size(209, 88);
@@ -484,7 +461,7 @@ namespace sistem
             this.listaPredmetaIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.listaPredmetaIzvestaj.IconSize = 40;
             this.listaPredmetaIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.listaPredmetaIzvestaj.Location = new System.Drawing.Point(41, 31);
+            this.listaPredmetaIzvestaj.Location = new System.Drawing.Point(41, 116);
             this.listaPredmetaIzvestaj.Name = "listaPredmetaIzvestaj";
             this.listaPredmetaIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.listaPredmetaIzvestaj.Size = new System.Drawing.Size(209, 86);
@@ -677,7 +654,6 @@ namespace sistem
         private FontAwesome.Sharp.IconButton listaPredmetaIzvestaj;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneFakultet;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneUniverzitet;
-        private FontAwesome.Sharp.IconButton dugmeUpravljanjeZaposlenima;
     }
 }
 

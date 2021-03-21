@@ -12,6 +12,8 @@ namespace sistem
 {
     public partial class FormaRegistracija : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         public FormaRegistracija()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace sistem
         {
             if (zakljucaj)
             {
-                ucitavanje_poruka.Text = "Loading, please wait...";
+                ucitavanje_poruka.Text = "učitavanje, molimo sačekajte...";
             }
             else
             {
@@ -60,19 +62,19 @@ namespace sistem
                lozinka_ponovo_unos.Text.Trim().Equals("") || email_unos.Text.Trim().Equals("") ||
                telefon_unos.Text.Trim().Equals(""))
             {
-                MessageBox.Show("prazna polja nisu dozvoljena", "Prazno polje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (!lozinka_unos.Text.Trim().Equals(lozinka_ponovo_unos.Text.Trim()))
                 {
-                    MessageBox.Show("Lozinke se ne poklapaju", "Lozinka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(MenadzerStatusnihKodova.NEPOKLAPANJE_LOZINKI_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     
                     this.UseWaitCursor = true;
-                    ucitavanje_poruka.Text = "Loading, please wait...";
+                    ucitavanje_poruka.Text = "Učitavanje, molimo sačekajte...";
                     dugme_nazad.Enabled = false;
                     dugme_registracija.Enabled = false;
                     ime_unos.Enabled = false;
@@ -100,27 +102,29 @@ namespace sistem
                         }
                         else
                         {
-                            MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije. " +status , "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." , "registracija", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }             
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." + exception.ToString(), "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                        MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
-                        korisnicko_ime_unos.Text = "";
-                        lozinka_unos.Text = "";
-                        ime_unos.Text = "";
-                        prezime_unos.Text = "";
-                        email_unos.Text = "";
-                        telefon_unos.Text = "";
-                        lozinka_ponovo_unos.Text = "";
+                        korisnicko_ime_unos.Text = string.Empty;
+                        lozinka_unos.Text = string.Empty;
+                        ime_unos.Text = string.Empty;
+                        prezime_unos.Text = string.Empty;
+                        email_unos.Text = string.Empty;
+                        telefon_unos.Text = string.Empty;
+                        lozinka_ponovo_unos.Text = string.Empty;
 
                        
 
                         this.UseWaitCursor = false;
-                        ucitavanje_poruka.Text = "";
+                        ucitavanje_poruka.Text = string.Empty;
                         dugme_nazad.Enabled = true;
                         dugme_registracija.Enabled = true;
                         ime_unos.Enabled = true;

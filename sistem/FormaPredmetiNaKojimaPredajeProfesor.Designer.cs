@@ -37,8 +37,9 @@ namespace sistem
             this.labelaProfesorUnos = new System.Windows.Forms.Label();
             this.labelaNaslov = new System.Windows.Forms.Label();
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
+            this.dugmeStampajIspite = new FontAwesome.Sharp.IconButton();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabelaPrikazPredmeta = new System.Windows.Forms.DataGridView();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +88,7 @@ namespace sistem
             // panelMeni
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMeni.Controls.Add(this.dugmeStampajIspite);
             this.panelMeni.Controls.Add(this.dugmeNazad);
             this.panelMeni.Controls.Add(this.panelLogo);
             this.panelMeni.Dock = System.Windows.Forms.DockStyle.Left;
@@ -96,13 +98,27 @@ namespace sistem
             this.panelMeni.Size = new System.Drawing.Size(199, 479);
             this.panelMeni.TabIndex = 6;
             // 
-            // panelLogo
+            // dugmeStampajIspite
             // 
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Location = new System.Drawing.Point(0, 93);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 223);
-            this.panelLogo.TabIndex = 0;
+            this.dugmeStampajIspite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeStampajIspite.FlatAppearance.BorderSize = 0;
+            this.dugmeStampajIspite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeStampajIspite.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeStampajIspite.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.dugmeStampajIspite.IconColor = System.Drawing.Color.Black;
+            this.dugmeStampajIspite.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeStampajIspite.IconSize = 50;
+            this.dugmeStampajIspite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeStampajIspite.Location = new System.Drawing.Point(0, 391);
+            this.dugmeStampajIspite.Name = "dugmeStampajIspite";
+            this.dugmeStampajIspite.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeStampajIspite.Size = new System.Drawing.Size(199, 68);
+            this.dugmeStampajIspite.TabIndex = 3;
+            this.dugmeStampajIspite.Text = "štampaj predmete";
+            this.dugmeStampajIspite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeStampajIspite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeStampajIspite.UseVisualStyleBackColor = true;
+            this.dugmeStampajIspite.Click += new System.EventHandler(this.dugmeStampajIspite_Click);
             // 
             // dugmeNazad
             // 
@@ -125,6 +141,14 @@ namespace sistem
             this.dugmeNazad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dugmeNazad.UseVisualStyleBackColor = true;
             this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Location = new System.Drawing.Point(0, 93);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(199, 223);
+            this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -230,5 +254,6 @@ namespace sistem
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn tip;
+        private FontAwesome.Sharp.IconButton dugmeStampajIspite;
     }
 }

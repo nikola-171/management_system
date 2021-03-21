@@ -12,8 +12,10 @@ namespace sistem
 {
     public partial class FormaIzmenaFakultet : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
         private string naziv = "", mesto = "";
         private int ID = -1;
+
         public FormaIzmenaFakultet()
         {
             InitializeComponent();
@@ -57,9 +59,23 @@ namespace sistem
 
         }
 
+
+        private bool validacija()
+        {
+            return (!nazivUnos.Text.Trim(' ').Equals(string.Empty) &&
+                    !mestoUnos.Text.Trim(' ').Equals(string.Empty));
+        }
+
         private void dugmeZaIzmenu_Click(object sender, EventArgs e)
         {
             //izmena fakulteta
+            if (!validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
             try
             {
                 Baza.daj_instancu().Izmeni_fakultet(this.ID, nazivUnos.Text, mestoUnos.Text);
@@ -75,17 +91,22 @@ namespace sistem
         private void dugmeZaBrisanje_Click(object sender, EventArgs e)
         {
             //brisanje fakulteta
-            try
+            DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete fakultet?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if(res == DialogResult.OK)
             {
-                Baza.daj_instancu().Izbrisi_fakultet(this.ID);
-                MessageBox.Show("Uspešno izbrisan fakultet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    Baza.daj_instancu().Izbrisi_fakultet(this.ID);
+                    MessageBox.Show("Uspešno izbrisan fakultet", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this, null, true);
-            }
-            catch (Exception excpetion)
-            {
-                MessageBox.Show("došlo je do greške " + excpetion.ToString());
-            }
+                    MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this, null, true);
+                }
+                catch (Exception exception)
+                {
+                    loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                    MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }    
         }
 
         private void FormaIzmenaFakultet_Load(object sender, EventArgs e)

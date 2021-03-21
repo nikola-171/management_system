@@ -113,21 +113,25 @@ namespace sistem
 
         private void dugmeUkloniProfesora_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete profesora?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
             {
-                Baza.daj_instancu().Izbrisi_profesora(this.id_profesora_za_brisanje);
-                Osvezi_sadrzaj();
-                MessageBox.Show(MenadzerStatusnihKodova.PROFESOR_OBRISAN, MenadzerStatusnihKodova.USPEH,
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    Baza.daj_instancu().Izbrisi_profesora(this.id_profesora_za_brisanje);
+                    Osvezi_sadrzaj();
+                    MessageBox.Show(MenadzerStatusnihKodova.PROFESOR_OBRISAN, MenadzerStatusnihKodova.USPEH,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
-            catch (Exception exception)
-            {
-                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                }
+                catch (Exception exception)
+                {
+                    loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
-                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);             
-            }
+                    MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }  
         }
 
         private void dugmeDodajStudenta_Click(object sender, EventArgs e)
@@ -139,7 +143,7 @@ namespace sistem
         {
             List<Tuple<string, string>> parametri = new List<Tuple<string, string>>();
             parametri.Add(new Tuple<string, string>("id", idPrikaz.Text));
-            parametri.Add(new Tuple<string, string>("naslov", string.Format("{0}", profesorImePrikaz.Text)));
+            parametri.Add(new Tuple<string, string>("naslov", string.Format("{0} {1}", profesorImePrikaz.Text, this.id_profesora_za_brisanje)));
 
 
             MenadzerFormi.dajFormu<FormaPredmetiNaKojimaPredajeProfesor>(this, parametri, true);

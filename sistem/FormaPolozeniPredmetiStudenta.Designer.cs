@@ -45,6 +45,7 @@ namespace sistem
             this.datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ocena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fakultetska_godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dugmeStampajIspite = new FontAwesome.Sharp.IconButton();
             this.panelNaslov.SuspendLayout();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -88,6 +89,7 @@ namespace sistem
             // panelMeni
             // 
             this.panelMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMeni.Controls.Add(this.dugmeStampajIspite);
             this.panelMeni.Controls.Add(this.dugmeNazad);
             this.panelMeni.Controls.Add(this.panelLogo);
             this.panelMeni.Dock = System.Windows.Forms.DockStyle.Left;
@@ -201,6 +203,28 @@ namespace sistem
             this.fakultetska_godina.HeaderText = "fakultetska godina";
             this.fakultetska_godina.Name = "fakultetska_godina";
             // 
+            // dugmeStampajIspite
+            // 
+            this.dugmeStampajIspite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeStampajIspite.FlatAppearance.BorderSize = 0;
+            this.dugmeStampajIspite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeStampajIspite.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeStampajIspite.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.dugmeStampajIspite.IconColor = System.Drawing.Color.Black;
+            this.dugmeStampajIspite.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeStampajIspite.IconSize = 50;
+            this.dugmeStampajIspite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeStampajIspite.Location = new System.Drawing.Point(0, 391);
+            this.dugmeStampajIspite.Name = "dugmeStampajIspite";
+            this.dugmeStampajIspite.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeStampajIspite.Size = new System.Drawing.Size(199, 68);
+            this.dugmeStampajIspite.TabIndex = 2;
+            this.dugmeStampajIspite.Text = "štampaj ispite";
+            this.dugmeStampajIspite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeStampajIspite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeStampajIspite.UseVisualStyleBackColor = true;
+            this.dugmeStampajIspite.Click += new System.EventHandler(this.dugmeStampajIspite_Click);
+            // 
             // FormaPolozeniPredmetiStudenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,5 +261,6 @@ namespace sistem
         private System.Windows.Forms.DataGridViewTextBoxColumn datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ocena;
         private System.Windows.Forms.DataGridViewTextBoxColumn fakultetska_godina;
+        private FontAwesome.Sharp.IconButton dugmeStampajIspite;
     }
 }

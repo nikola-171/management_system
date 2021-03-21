@@ -14,6 +14,8 @@ namespace sistem
 {
     public partial class FormaLogovanje : Form, DodavanjeParametara
     {
+        private static readonly log4net.ILog loger = Logger.GetLogger();
+
         public FormaLogovanje()
         {
             InitializeComponent();
@@ -46,9 +48,7 @@ namespace sistem
                     if (status)
                     {
                         /*stavljamo korisnika u sesiji*/
-                        
-                        //OVDE GRESKAAA
-                        
+                                                    
                         Sesija.dajSessiju().Registruj_korisnika(korisnicko_ime_unos.Text.Trim());
                         korisnicko_ime_unos.Text = "";
                         lozinka_unos.Text = "";
@@ -62,7 +62,9 @@ namespace sistem
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("Nismo uspeli da uspostavimo konekciju ka serveru, molimo pokušajte kasnije." + exception.ToString(), "Neuspešno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                    MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {

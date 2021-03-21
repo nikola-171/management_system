@@ -75,63 +75,58 @@ namespace sistem
         }
         #endregion
 
-        #region uzimanje_svih_profesora
-        private static Tuple<List<float>, DataTable> Daj_sve_profesore()
+        #region stampa_polozenih_ispita_studenta
+        private static Tuple<List<float>, DataTable> Stampaj_polozene_ispite(List<Dictionary<string, string>> rezultat)
         {
 
-            DataTable studenti = new DataTable();
-            var rezultat = Baza.daj_instancu().Daj_sve_profesore();
+            DataTable promene = new DataTable();
 
-            studenti.Columns.Add("id");
-            studenti.Columns.Add("ime");     
-            studenti.Columns.Add("kontakt");
-            studenti.Columns.Add("datum rođenja");
+            promene.Columns.Add("predmet");
+            promene.Columns.Add("datum");
+            promene.Columns.Add("ocena");
+            promene.Columns.Add("fakultetska godina");
 
 
             foreach (var elem in rezultat)
             {
-                studenti.Rows.Add(elem["id"], elem["ime"] + " " + elem["prezime"],
-                                      elem["email"] + " " + elem["telefon"], elem["dan_rodjenja"] + "-" + elem["mesec_rodjenja"] + "-" +elem["godina_rodjenja"]);
+                promene.Rows.Add(elem["predmet"], elem["datum"], elem["ocena"], elem["fakultetska_godina"]);
+
             }
 
             /// nije dobro ovo sve mora da ide u model
             List<float> velicina_kolone = new List<float>(4);
-            velicina_kolone.Add(20);
-            velicina_kolone.Add(40);
             velicina_kolone.Add(60);
-            velicina_kolone.Add(30);
+            velicina_kolone.Add(52);
+            velicina_kolone.Add(55);
+            velicina_kolone.Add(100);
 
-            return new Tuple<List<float>, DataTable>(velicina_kolone, studenti);
+            return new Tuple<List<float>, DataTable>(velicina_kolone, promene);
         }
         #endregion
 
-        #region uzimanje_svih_studenata
-        private static Tuple<List<float>, DataTable> Daj_sve_studente()
+        #region stampa_predmeta_na_kojima_predaje_profesor
+        private static Tuple<List<float>, DataTable> Stampaj_predmete_profesora(List<Dictionary<string, string>> rezultat)
         {
-            
-            DataTable studenti = new DataTable();        
-            var rezultat = Baza.daj_instancu().Daj_sve_studente();
 
-            studenti.Columns.Add("broj indeksa");
-            studenti.Columns.Add("ime");
-            studenti.Columns.Add("fakultet");
-            studenti.Columns.Add("status");
-      
+            DataTable promene = new DataTable();
 
-            foreach(var elem in rezultat)
+            promene.Columns.Add("email");
+            promene.Columns.Add("naziv");
+            promene.Columns.Add("tip");
+        
+
+            foreach (var elem in rezultat)
             {
-                studenti.Rows.Add(elem["broj_indeksa"], elem["ime"]+ " " + elem["prezime"],
-                                      elem["fakultet"] + " " + elem["departman"], elem["prosek"]+ " espb: "+ elem["espb"]);
+                promene.Rows.Add(elem["email"], elem["naziv"], elem["tip"]);
+
             }
 
-            /// nije dobro ovo sve mora da ide u model
-            List<float> velicina_kolone = new List<float>(4);
-            velicina_kolone.Add(20);
-            velicina_kolone.Add(40);
-            velicina_kolone.Add(60);
-            velicina_kolone.Add(30);
-
-            return  new Tuple<List<float>, DataTable>(velicina_kolone, studenti);       
+            List<float> velicina_kolone = new List<float>(3);
+            velicina_kolone.Add(80);
+            velicina_kolone.Add(50);
+            velicina_kolone.Add(45);
+            
+            return new Tuple<List<float>, DataTable>(velicina_kolone, promene);
         }
         #endregion
 
@@ -168,38 +163,7 @@ namespace sistem
             return new Tuple<List<float>, DataTable>(velicina_kolone, studenti);
         }
         #endregion
-
-        #region uzimanje_svih_profesora_sa_predmetima_na_kojima_predaju
-        private static Tuple<List<float>, DataTable> Daj_sve_profesore_sa_predmetima_na_kojima_predaju()
-        {
-
-            DataTable studenti = new DataTable();//greskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            var rezultat = Baza.daj_instancu().Daj_predmete_na_kojima_predaje_profesor(1);
-
-            studenti.Columns.Add("profesor id");
-            studenti.Columns.Add("ime");
-            studenti.Columns.Add("predmet id");
-            studenti.Columns.Add("predmet");
-
-
-            foreach (var elem in rezultat)
-            {
-                studenti.Rows.Add(elem["profesor_id"], elem["profesor_ime"] + " " + elem["profesor_ime"],
-                                      elem["predmet_id"], elem["predmet_naziv"]);
-            }
-
-            /// nije dobro ovo sve mora da ide u model
-            List<float> velicina_kolone = new List<float>(4);
-            velicina_kolone.Add(20);
-            velicina_kolone.Add(40);
-            velicina_kolone.Add(60);
-            velicina_kolone.Add(30);
-
-            return new Tuple<List<float>, DataTable>(velicina_kolone, studenti);
-        }
-        #endregion
-
-        //nije završeno
+    
         #region uzimanje_svih_studenata_koji_su_diplomirali
         private static Tuple<List<float>, DataTable> Daj_sve_studente_koji_su_diplomirali()
         {
@@ -232,14 +196,23 @@ namespace sistem
         #endregion
 
 
-        public static void Kreiraj_izvestaj_svih_studenata(string lokacija)
+     
+
+        public static void Kreiraj_izvestaj_polozenih_ispita_studentu(string lokacija, List<Dictionary<string, string>> rezultat, string naslov)
         {
-            Tuple<List<float>, DataTable> podaci = Daj_sve_studente();
-            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Studenti");                   
+            Tuple<List<float>, DataTable> podaci = Stampaj_polozene_ispite(rezultat);
+            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, naslov);
             System.Diagnostics.Process.Start(@lokacija);
         }
 
-       
+        public static void Kreiraj_izvestaj_predmeta_na_kojima_predaje_profesor(string lokacija, List<Dictionary<string, string>> rezultat, string naslov)
+        {
+            Tuple<List<float>, DataTable> podaci = Stampaj_predmete_profesora(rezultat);
+            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, naslov);
+            System.Diagnostics.Process.Start(@lokacija);
+        }
+
+
 
         public static void Kreiraj_izvestaj_svih_diplomiranih_studenata(string lokacija)
         {
@@ -260,16 +233,7 @@ namespace sistem
             Tuple<List<float>, DataTable> podaci = Daj_sve_promene_na_fakultetu();
             PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Promene na fakultetima");
             System.Diagnostics.Process.Start(@lokacija);
-        }
-
-        public static void Kreiraj_izvestaj_svih_profesora(string lokacija)
-        {
-            Tuple<List<float>, DataTable> podaci = Daj_sve_profesore();
-            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Profesori");
-            System.Diagnostics.Process.Start(@lokacija);
-        }
-
-       
+        } 
 
         public static void Kreiraj_izvestaj_svih_predmeta(string lokacija)
         {
@@ -278,12 +242,7 @@ namespace sistem
             System.Diagnostics.Process.Start(@lokacija);
         }
 
-        public static void Kreiraj_izvestaj_svih_predmeta_sa_profesorima(string lokacija)
-        {
-            Tuple<List<float>, DataTable> podaci = Daj_sve_profesore_sa_predmetima_na_kojima_predaju();
-            PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Predmeti sa profesorima");
-            System.Diagnostics.Process.Start(@lokacija);
-        }
+    
 
     }
 }

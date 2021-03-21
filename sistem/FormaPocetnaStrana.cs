@@ -130,45 +130,7 @@ namespace sistem
         {
             MenadzerFormi.dajFormu<FormaUpravljanjePredmetima>(this, null, true);
         }
-
-        private void GenerisiIzvestaj(string naziv_dokumenta)
-        {
-            string lokacija = @"D:\";
-            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
-
-            DialogResult rezultat = dijalog_lokacija.ShowDialog();
-
-            if (rezultat.Equals(DialogResult.OK))
-            {
-                lokacija = dijalog_lokacija.SelectedPath;
-            }
-            else if (rezultat.Equals(DialogResult.Cancel))
-            {
-                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }
-
-            
-            if (File.Exists(string.Format(@"{0}\{1}", lokacija, naziv_dokumenta)))
-            {
-                MessageBox.Show("Na unetoj lokaciji već postoji fajl sa istim nazivom", "duplikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }
-
-            try
-            {
-                GeneratorIzvestaja.Kreiraj_izvestaj_svih_studenata(string.Format(@"{0}\{1}", lokacija, naziv_dokumenta));
-            }
-            catch (Exception exception)
-            {
-                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
-
-                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-       
+     
 
         private void dugmeAzurirajFakultetskuGodinu_Click(object sender, EventArgs e)
         {
@@ -210,42 +172,7 @@ namespace sistem
         }
 
 
-        private void listaProfesoraIzvestaj_Click(object sender, EventArgs e)
-        {
-            string lokacija = @"D:\";
-            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
-
-            DialogResult rezultat = dijalog_lokacija.ShowDialog();
-
-            if (rezultat.Equals(DialogResult.OK))
-            {
-                lokacija = dijalog_lokacija.SelectedPath;
-            }
-            else if (rezultat.Equals(DialogResult.Cancel))
-            {
-                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }
-
-
-            if (File.Exists(string.Format(@"{0}\{1}", lokacija, "profesori")))
-            {
-                MessageBox.Show("Na unetoj lokaciji već postoji fajl sa istim nazivom", "duplikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }
-
-            try
-            {
-                GeneratorIzvestaja.Kreiraj_izvestaj_svih_profesora(string.Format(@"{0}\{1}", lokacija, "profesori"));
-            }
-            catch (Exception exception)
-            {
-                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
-
-                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
        
         private void listaPredmetaIzvestaj_Click(object sender, EventArgs e)
@@ -278,35 +205,7 @@ namespace sistem
             }
         }
 
-        private void dugmeIzvestajPredmetiSaProfesorima_Click(object sender, EventArgs e)
-        {
-            string lokacija = @"D:\";
-            FolderBrowserDialog dijalog_lokacija = new FolderBrowserDialog();
-
-            DialogResult rezultat = dijalog_lokacija.ShowDialog();
-
-            if (rezultat.Equals(DialogResult.OK))
-            {
-                lokacija = dijalog_lokacija.SelectedPath;
-            }
-            else if (rezultat.Equals(DialogResult.Cancel))
-            {
-                MessageBox.Show("niste izabrali lokaciju", "lokacija dokumenta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }
-
-            try
-            {
-                GeneratorIzvestaja.Kreiraj_izvestaj_svih_predmeta_sa_profesorima(string.Format(@"{0}\{1}", lokacija, "predmeti_sa_profesorima.pdf"));
-            }
-            catch (Exception exception)
-            {
-                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
-
-                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
         private void dugmeIzvestajPromeneUniverzitet_Click(object sender, EventArgs e)
         {
@@ -368,10 +267,12 @@ namespace sistem
             }
         }
 
-        private void dugmeIzvestajDiplomiraniStudenti_Click(object sender, EventArgs e)
+        private void dugmeInformacije_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(string.Format("{0}\n{1}", 
+                                          "aplikacija za upravljanje univerzitetom",
+                                          "autor Nikola Tošić"),
+                                          "App", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        
     }
 }

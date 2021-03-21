@@ -34,13 +34,13 @@ namespace sistem
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelaUcitavanje = new System.Windows.Forms.Label();
             this.dugme_registracija = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dugme_logovanje = new System.Windows.Forms.Button();
             this.lozinka_unos = new System.Windows.Forms.TextBox();
             this.korisnicko_ime_unos = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelaUcitavanje = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,15 @@ namespace sistem
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ulogujte se";
+            // 
+            // labelaUcitavanje
+            // 
+            this.labelaUcitavanje.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaUcitavanje.Location = new System.Drawing.Point(10, 216);
+            this.labelaUcitavanje.Name = "labelaUcitavanje";
+            this.labelaUcitavanje.Size = new System.Drawing.Size(248, 20);
+            this.labelaUcitavanje.TabIndex = 8;
+            this.labelaUcitavanje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dugme_registracija
             // 
@@ -156,15 +165,6 @@ namespace sistem
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // labelaUcitavanje
-            // 
-            this.labelaUcitavanje.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaUcitavanje.Location = new System.Drawing.Point(10, 216);
-            this.labelaUcitavanje.Name = "labelaUcitavanje";
-            this.labelaUcitavanje.Size = new System.Drawing.Size(248, 20);
-            this.labelaUcitavanje.TabIndex = 8;
-            this.labelaUcitavanje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormaLogovanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +180,7 @@ namespace sistem
             this.Name = "FormaLogovanje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logovanje";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormaLogovanje_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

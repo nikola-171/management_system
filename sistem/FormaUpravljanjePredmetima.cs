@@ -13,7 +13,7 @@ namespace sistem
     public partial class FormaUpravljanjePredmetima : Form, DodavanjeParametara
     {
         private List<Dictionary<string, string>> departmani_iz_baze = new List<Dictionary<string, string>>();
-      
+        private static readonly log4net.ILog loger = Logger.GetLogger();
 
         public FormaUpravljanjePredmetima()
         {
@@ -25,10 +25,10 @@ namespace sistem
             this.departmani_iz_baze.Clear();
             listaDepartmana.Items.Clear();
 
-            nazivUnos.Text = "";
-            godinaUnos.Text = "";
-            semestarUnos.Text = "";
-            espbUnos.Text = "";
+            nazivUnos.Text = string.Empty;
+            godinaUnos.Text = string.Empty;
+            semestarUnos.Text = string.Empty;
+            espbUnos.Text = string.Empty;
 
 
             try
@@ -51,7 +51,8 @@ namespace sistem
             }
             catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + exception.Message);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -76,14 +77,23 @@ namespace sistem
             MenadzerFormi.dajFormu<FormaPocetnaStrana>(this);
         }
 
-        private bool validacija()
+        private bool Validacija()
         {
-            return true;
+            return (!nazivUnos.Text.Trim(' ').Equals(string.Empty) &&
+                    !godinaUnos.Text.Trim(' ').Equals(string.Empty) &&
+                    !semestarUnos.Text.Trim(' ').Equals(string.Empty) &&
+                    !espbUnos.Text.Trim(' ').Equals(string.Empty) &&
+                    !listaDepartmana.SelectedIndex.Equals(-1));
         }
 
         private void dugmeDodajPredmet_Click(object sender, EventArgs e)
         {
-
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                               MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
                 UInt32 id_departmana = 0;
@@ -99,9 +109,11 @@ namespace sistem
                 Baza.daj_instancu().Dodavanje_predmeta(nazivUnos.Text, Convert.ToSByte(godinaUnos.Text), Convert.ToSByte(semestarUnos.Text), Convert.ToSByte(espbUnos.Text), Convert.ToUInt32(id_departmana));
                 MessageBox.Show("uspešno registrovan predmet", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }catch(Exception exception)
+            }
+            catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + exception.ToString());
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

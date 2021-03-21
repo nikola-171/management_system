@@ -31,6 +31,7 @@ namespace sistem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaUpravljanjeProfesorima));
             this.panelPrikazRezultata = new System.Windows.Forms.Panel();
+            this.dugmePredmetiNaKojimaPredaje = new FontAwesome.Sharp.IconButton();
             this.jmbg = new System.Windows.Forms.Label();
             this.jmbgPrikaz = new System.Windows.Forms.Label();
             this.zvanjePrikaz = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@ namespace sistem
             this.emailPrikaz = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.dugmeUkloniProfesora = new FontAwesome.Sharp.IconButton();
             this.telefonPrikaz = new System.Windows.Forms.Label();
             this.labelaSmer = new System.Windows.Forms.Label();
             this.datumRodjenjaPrikaz = new System.Windows.Forms.Label();
@@ -48,24 +50,25 @@ namespace sistem
             this.profesorImePrikaz = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelaPretraga = new System.Windows.Forms.Label();
+            this.dugmePretraga = new FontAwesome.Sharp.IconButton();
             this.idUnos = new System.Windows.Forms.TextBox();
             this.BrojIndeksa = new System.Windows.Forms.Label();
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.labelaNaslov = new System.Windows.Forms.Label();
-            this.panelNaslov = new System.Windows.Forms.Panel();
-            this.dugmePredmetiNaKojimaPredaje = new FontAwesome.Sharp.IconButton();
-            this.dugmeUkloniProfesora = new FontAwesome.Sharp.IconButton();
-            this.dugmePretraga = new FontAwesome.Sharp.IconButton();
             this.dugmeDodajProfesora = new FontAwesome.Sharp.IconButton();
             this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelaNaslov = new System.Windows.Forms.Label();
+            this.panelNaslov = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelPrikazRezultata.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.panelNaslov.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelNaslov.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrikazRezultata
@@ -89,11 +92,32 @@ namespace sistem
             this.panelPrikazRezultata.Controls.Add(this.korisnickoImePrikaz);
             this.panelPrikazRezultata.Controls.Add(this.idPrikaz);
             this.panelPrikazRezultata.Controls.Add(this.profesorImePrikaz);
-            this.panelPrikazRezultata.Location = new System.Drawing.Point(14, 170);
+            this.panelPrikazRezultata.Location = new System.Drawing.Point(14, 136);
             this.panelPrikazRezultata.Name = "panelPrikazRezultata";
             this.panelPrikazRezultata.Size = new System.Drawing.Size(717, 335);
             this.panelPrikazRezultata.TabIndex = 23;
             this.panelPrikazRezultata.Visible = false;
+            // 
+            // dugmePredmetiNaKojimaPredaje
+            // 
+            this.dugmePredmetiNaKojimaPredaje.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dugmePredmetiNaKojimaPredaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmePredmetiNaKojimaPredaje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmePredmetiNaKojimaPredaje.FlatAppearance.BorderSize = 0;
+            this.dugmePredmetiNaKojimaPredaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmePredmetiNaKojimaPredaje.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmePredmetiNaKojimaPredaje.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmePredmetiNaKojimaPredaje.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.dugmePredmetiNaKojimaPredaje.IconColor = System.Drawing.Color.Black;
+            this.dugmePredmetiNaKojimaPredaje.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmePredmetiNaKojimaPredaje.Location = new System.Drawing.Point(431, 254);
+            this.dugmePredmetiNaKojimaPredaje.Name = "dugmePredmetiNaKojimaPredaje";
+            this.dugmePredmetiNaKojimaPredaje.Size = new System.Drawing.Size(188, 49);
+            this.dugmePredmetiNaKojimaPredaje.TabIndex = 42;
+            this.dugmePredmetiNaKojimaPredaje.Text = "predmeti na kojima predaje";
+            this.dugmePredmetiNaKojimaPredaje.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmePredmetiNaKojimaPredaje.UseVisualStyleBackColor = false;
+            this.dugmePredmetiNaKojimaPredaje.Click += new System.EventHandler(this.dugmePredmetiNaKojimaPredaje_Click);
             // 
             // jmbg
             // 
@@ -203,6 +227,28 @@ namespace sistem
             this.label16.Text = "ID:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dugmeUkloniProfesora
+            // 
+            this.dugmeUkloniProfesora.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dugmeUkloniProfesora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeUkloniProfesora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeUkloniProfesora.Enabled = false;
+            this.dugmeUkloniProfesora.FlatAppearance.BorderSize = 0;
+            this.dugmeUkloniProfesora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeUkloniProfesora.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmeUkloniProfesora.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeUkloniProfesora.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
+            this.dugmeUkloniProfesora.IconColor = System.Drawing.Color.Black;
+            this.dugmeUkloniProfesora.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeUkloniProfesora.Location = new System.Drawing.Point(431, 185);
+            this.dugmeUkloniProfesora.Name = "dugmeUkloniProfesora";
+            this.dugmeUkloniProfesora.Size = new System.Drawing.Size(188, 49);
+            this.dugmeUkloniProfesora.TabIndex = 23;
+            this.dugmeUkloniProfesora.Text = "ukloni profesora";
+            this.dugmeUkloniProfesora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeUkloniProfesora.UseVisualStyleBackColor = false;
+            this.dugmeUkloniProfesora.Click += new System.EventHandler(this.dugmeUkloniProfesora_Click);
+            // 
             // telefonPrikaz
             // 
             this.telefonPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -280,13 +326,12 @@ namespace sistem
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panelPrikazRezultata);
-            this.panel2.Controls.Add(this.labelaPretraga);
             this.panel2.Controls.Add(this.dugmePretraga);
             this.panel2.Controls.Add(this.idUnos);
             this.panel2.Controls.Add(this.BrojIndeksa);
-            this.panel2.Location = new System.Drawing.Point(227, 134);
+            this.panel2.Location = new System.Drawing.Point(227, 201);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 546);
+            this.panel2.Size = new System.Drawing.Size(750, 479);
             this.panel2.TabIndex = 16;
             // 
             // labelaPretraga
@@ -294,18 +339,42 @@ namespace sistem
             this.labelaPretraga.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelaPretraga.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaPretraga.ForeColor = System.Drawing.Color.White;
-            this.labelaPretraga.Location = new System.Drawing.Point(65, 9);
+            this.labelaPretraga.Location = new System.Drawing.Point(22, 13);
             this.labelaPretraga.Name = "labelaPretraga";
-            this.labelaPretraga.Size = new System.Drawing.Size(641, 56);
+            this.labelaPretraga.Size = new System.Drawing.Size(710, 43);
             this.labelaPretraga.TabIndex = 13;
             this.labelaPretraga.Text = "Pretraga profesora na osnovu ID-ja";
             this.labelaPretraga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dugmePretraga
+            // 
+            this.dugmePretraga.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dugmePretraga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmePretraga.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmePretraga.FlatAppearance.BorderSize = 0;
+            this.dugmePretraga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmePretraga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmePretraga.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmePretraga.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.dugmePretraga.IconColor = System.Drawing.Color.Black;
+            this.dugmePretraga.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmePretraga.Location = new System.Drawing.Point(213, 69);
+            this.dugmePretraga.Margin = new System.Windows.Forms.Padding(0);
+            this.dugmePretraga.Name = "dugmePretraga";
+            this.dugmePretraga.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dugmePretraga.Size = new System.Drawing.Size(316, 47);
+            this.dugmePretraga.TabIndex = 6;
+            this.dugmePretraga.Text = "pretraga";
+            this.dugmePretraga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmePretraga.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmePretraga.UseVisualStyleBackColor = false;
+            this.dugmePretraga.Click += new System.EventHandler(this.dugmePretraga_Click);
             // 
             // idUnos
             // 
             this.idUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.idUnos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idUnos.Location = new System.Drawing.Point(343, 71);
+            this.idUnos.Location = new System.Drawing.Point(343, 37);
             this.idUnos.MaxLength = 5;
             this.idUnos.Name = "idUnos";
             this.idUnos.Size = new System.Drawing.Size(186, 26);
@@ -316,7 +385,7 @@ namespace sistem
             this.BrojIndeksa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BrojIndeksa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrojIndeksa.ForeColor = System.Drawing.Color.White;
-            this.BrojIndeksa.Location = new System.Drawing.Point(209, 65);
+            this.BrojIndeksa.Location = new System.Drawing.Point(209, 31);
             this.BrojIndeksa.Name = "BrojIndeksa";
             this.BrojIndeksa.Size = new System.Drawing.Size(128, 35);
             this.BrojIndeksa.TabIndex = 4;
@@ -335,103 +404,6 @@ namespace sistem
             this.panelMeni.Name = "panelMeni";
             this.panelMeni.Size = new System.Drawing.Size(199, 599);
             this.panelMeni.TabIndex = 15;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pictureBox2);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 174);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // labelaNaslov
-            // 
-            this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaNaslov.ForeColor = System.Drawing.Color.White;
-            this.labelaNaslov.Location = new System.Drawing.Point(204, 26);
-            this.labelaNaslov.Name = "labelaNaslov";
-            this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
-            this.labelaNaslov.TabIndex = 2;
-            this.labelaNaslov.Text = "Upravljanje profesorima";
-            this.labelaNaslov.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelNaslov
-            // 
-            this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelNaslov.Controls.Add(this.labelaNaslov);
-            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNaslov.Location = new System.Drawing.Point(0, 0);
-            this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(989, 93);
-            this.panelNaslov.TabIndex = 14;
-            // 
-            // dugmePredmetiNaKojimaPredaje
-            // 
-            this.dugmePredmetiNaKojimaPredaje.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dugmePredmetiNaKojimaPredaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmePredmetiNaKojimaPredaje.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmePredmetiNaKojimaPredaje.FlatAppearance.BorderSize = 0;
-            this.dugmePredmetiNaKojimaPredaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmePredmetiNaKojimaPredaje.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmePredmetiNaKojimaPredaje.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmePredmetiNaKojimaPredaje.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.dugmePredmetiNaKojimaPredaje.IconColor = System.Drawing.Color.Black;
-            this.dugmePredmetiNaKojimaPredaje.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmePredmetiNaKojimaPredaje.Location = new System.Drawing.Point(431, 254);
-            this.dugmePredmetiNaKojimaPredaje.Name = "dugmePredmetiNaKojimaPredaje";
-            this.dugmePredmetiNaKojimaPredaje.Size = new System.Drawing.Size(188, 49);
-            this.dugmePredmetiNaKojimaPredaje.TabIndex = 42;
-            this.dugmePredmetiNaKojimaPredaje.Text = "predmeti na kojima predaje";
-            this.dugmePredmetiNaKojimaPredaje.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmePredmetiNaKojimaPredaje.UseVisualStyleBackColor = false;
-            this.dugmePredmetiNaKojimaPredaje.Click += new System.EventHandler(this.dugmePredmetiNaKojimaPredaje_Click);
-            // 
-            // dugmeUkloniProfesora
-            // 
-            this.dugmeUkloniProfesora.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dugmeUkloniProfesora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeUkloniProfesora.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeUkloniProfesora.Enabled = false;
-            this.dugmeUkloniProfesora.FlatAppearance.BorderSize = 0;
-            this.dugmeUkloniProfesora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeUkloniProfesora.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmeUkloniProfesora.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmeUkloniProfesora.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
-            this.dugmeUkloniProfesora.IconColor = System.Drawing.Color.Black;
-            this.dugmeUkloniProfesora.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeUkloniProfesora.Location = new System.Drawing.Point(431, 185);
-            this.dugmeUkloniProfesora.Name = "dugmeUkloniProfesora";
-            this.dugmeUkloniProfesora.Size = new System.Drawing.Size(188, 49);
-            this.dugmeUkloniProfesora.TabIndex = 23;
-            this.dugmeUkloniProfesora.Text = "ukloni profesora";
-            this.dugmeUkloniProfesora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeUkloniProfesora.UseVisualStyleBackColor = false;
-            this.dugmeUkloniProfesora.Click += new System.EventHandler(this.dugmeUkloniProfesora_Click);
-            // 
-            // dugmePretraga
-            // 
-            this.dugmePretraga.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dugmePretraga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmePretraga.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmePretraga.FlatAppearance.BorderSize = 0;
-            this.dugmePretraga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmePretraga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmePretraga.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmePretraga.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.dugmePretraga.IconColor = System.Drawing.Color.Black;
-            this.dugmePretraga.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmePretraga.Location = new System.Drawing.Point(213, 103);
-            this.dugmePretraga.Margin = new System.Windows.Forms.Padding(0);
-            this.dugmePretraga.Name = "dugmePretraga";
-            this.dugmePretraga.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dugmePretraga.Size = new System.Drawing.Size(316, 47);
-            this.dugmePretraga.TabIndex = 6;
-            this.dugmePretraga.Text = "pretraga";
-            this.dugmePretraga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmePretraga.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmePretraga.UseVisualStyleBackColor = false;
-            this.dugmePretraga.Click += new System.EventHandler(this.dugmePretraga_Click);
             // 
             // dugmeDodajProfesora
             // 
@@ -475,6 +447,15 @@ namespace sistem
             this.dugmeNazad.UseVisualStyleBackColor = true;
             this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox2);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(199, 174);
+            this.panelLogo.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::sistem.Properties.Resources.student_ikonica;
@@ -485,12 +466,54 @@ namespace sistem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // labelaNaslov
+            // 
+            this.labelaNaslov.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaNaslov.ForeColor = System.Drawing.Color.White;
+            this.labelaNaslov.Location = new System.Drawing.Point(204, 26);
+            this.labelaNaslov.Name = "labelaNaslov";
+            this.labelaNaslov.Size = new System.Drawing.Size(335, 35);
+            this.labelaNaslov.TabIndex = 2;
+            this.labelaNaslov.Text = "Upravljanje profesorima";
+            this.labelaNaslov.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelNaslov
+            // 
+            this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelNaslov.Controls.Add(this.panel1);
+            this.panelNaslov.Controls.Add(this.labelaNaslov);
+            this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNaslov.Location = new System.Drawing.Point(0, 0);
+            this.panelNaslov.Name = "panelNaslov";
+            this.panelNaslov.Size = new System.Drawing.Size(989, 93);
+            this.panelNaslov.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(231, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(748, 85);
+            this.panel1.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.labelaPretraga);
+            this.panel3.Location = new System.Drawing.Point(227, 115);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(750, 80);
+            this.panel3.TabIndex = 17;
+            // 
             // FormaUpravljanjeProfesorima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(989, 692);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMeni);
             this.Controls.Add(this.panelNaslov);
@@ -505,8 +528,9 @@ namespace sistem
             this.panel2.PerformLayout();
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            this.panelNaslov.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelNaslov.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -543,5 +567,7 @@ namespace sistem
         private System.Windows.Forms.Label jmbgPrikaz;
         private System.Windows.Forms.Label zvanjePrikaz;
         private FontAwesome.Sharp.IconButton dugmePredmetiNaKojimaPredaje;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
     }
 }

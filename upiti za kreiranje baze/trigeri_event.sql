@@ -1,10 +1,4 @@
 use fakultet;
-select * from student_slusa_predmet;
-select * from student_polozio_predmet;
-delete from 
-/*svake godine prazni arhive*/
-/*SET GLOBAL event_scheduler = ON;*/
-
 /*kada brišemo univerzitet prebacujemo ga u arhivu*/
 delimiter \\
 create trigger tr_brisanje_univerziteta
@@ -77,9 +71,6 @@ create trigger tr_univerzitet_promena
 	end\\
 delimiter ;
 /*ažuriranje proseka studenta i broj espb bodova svaku put kada položi neki predmet*/
-drop trigger update_student_prosek_espb;
-select * from student_slusa_predmet;
-select * from student_polozio_predmet;
 delimiter \\
 create trigger update_student_prosek_espb
 after insert on student_polozio_predmet
@@ -151,45 +142,4 @@ begin
     
 end\\
 delimiter ;
-/*brisanje profesora - prebacujemo ga u arhivu*/
 
-/*kada studentu obrišemo neki položen ispit moramo ponovo da mu ažuriramo prosek i broj espb bodova*/
-delimiter \\
-create trigger tr_brisanje_polozenog_predmeta
-	after delete on student_polozio_predmet
-    for each row
-    begin
-		declare espb_priv tinyint unsigned default 0;
-        declare broj_predmeta tinyint default 0;
-        declare suma_predmeta tinyint default 0;
-		declare ocena_priv tinyint default 0;
-        declare novi_prosek float default 0.0;
-       
-        declare c cursor for
-			select ocena
-            from student_polozio_predmet
-            where student_broj_indeksa = old.student_broj_indeksa;
-            
-		declare exit handler for not found
-        begin
-			set novi_prosek = suma_predmeta / broj_predmeta;
-            
-            update student 
-            set prosek = novi_prosek, espb = espb - espb_priv
-            where broj_indeksa = old.student_broj_indeksa;
-        end;
-        
-        select espb into espb_priv
-        from predmet
-        where id = old.predmet_id;
-        
-        open c;
-        l : loop
-			fetch c into ocena_priv;
-            set broj_predmeta = broj_predmeta + 1;
-            set suma_predmeta = suma_predmeta + ocena_priv;
-        end loop l;
-        close c;
-       
-    end\\
-delimiter ;

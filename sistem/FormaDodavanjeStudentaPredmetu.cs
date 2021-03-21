@@ -119,6 +119,12 @@ namespace sistem
             }
         }
 
+        private bool Validacija()
+        {
+            return (!listaPredmet.SelectedIndex.Equals(-1) &&
+                    !listaStudent.SelectedIndex.Equals(-1));
+        }
+
         private void dugmePretragaStudenta_Click(object sender, EventArgs e)
         {
             Ocisti_student_unos();
@@ -153,6 +159,12 @@ namespace sistem
         private void dugmeDodajPredmet_Click(object sender, EventArgs e)
         {
             // dodavanje studenta predmetu
+            if (!Validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                               MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {            
                 var broj_indeksa = from student in this.studenti_iz_baze

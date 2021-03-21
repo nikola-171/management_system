@@ -1,9 +1,6 @@
 use fakultet;
 /*upis administratora u bazi, samo jednom će se izvršiti ova procedure
   i tom prilikom će se uneti i podaci*/
-  /*select * from administrator;
-  drop procedure upis_administratora;
-  call upis_administratora('','d','','','','');*/
 delimiter \\
 create procedure upis_administratora(in admin_ime varchar(45), in admin_lozinka varchar(255),
                                      in email_in varchar(45), in telefon_in varchar(45), 
@@ -35,17 +32,6 @@ begin
 		insert into fakultetska_godina(fakultetska_godina)
 		values('2017/18');
         
-        /*unos odeljenja*/
-        insert into odeljenje_sekretarijat(naziv)
-        values('služba za opšte i pravne poslove'),
-			  ('služba za materijalno i finansijsko poslovanje'),
-              ('služba za nastavu i studentska pitanja'),
-              ('služba za tehničke poslove i obezbeđenje zgrade');
-		
-        insert into odeljenje_nastava_i_nauka(naziv)
-        values('biblioteka'),
-			  ('računarski centar'),
-              ('izdavačka delatnost');
     end if;
     
     select admin_vec_registrovan as 'status';
@@ -79,8 +65,6 @@ begin
 end\\
 delimiter ;
 /*upis novog studenta u bazi*/
-/*select * from student;*/
-/*call dodaj_novog_studenta(1,'dd','d','1998-5-9','d','d','d','d','d',1,'d','d');*/
 delimiter \\
 create procedure dodaj_novog_studenta(in smer_in int, in ime_in varchar(45), in prezime_in varchar(45),
 									  in datum_rodjenja_in varchar(45), 

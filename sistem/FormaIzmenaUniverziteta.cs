@@ -13,8 +13,7 @@ namespace sistem
     public partial class FormaIzmenaUniverziteta : Form, DodavanjeParametara
     {
         private static readonly log4net.ILog loger = Logger.GetLogger();
-
-        private string naziv = "", drzava = "", grad = "";
+        private string naziv = string.Empty, drzava = string.Empty, grad = string.Empty;
         private int ID = -1;
         
         public FormaIzmenaUniverziteta()
@@ -48,11 +47,7 @@ namespace sistem
             gradUnos.Text = this.grad;
         }
 
-        private void dugmeIzmeni_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+      
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -63,12 +58,7 @@ namespace sistem
             MenadzerFormi.Zatvori();
         }
 
-        private void dugmeBrisi_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
+      
         private void dugmeZaNazad_Click(object sender, EventArgs e)
         {
             MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
@@ -77,19 +67,23 @@ namespace sistem
         private void dugmeZaBrisanje_Click(object sender, EventArgs e)
         {
             //brisanje univerziteta
-            try
+            DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete fakultet?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res.Equals(DialogResult.OK))
             {
-                Baza.daj_instancu().Izbrisi_univerzitet(this.ID);
-                MessageBox.Show("Univerzitet uspešno obrisan", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
+                try
+                {
+                    Baza.daj_instancu().Izbrisi_univerzitet(this.ID);
+                    MessageBox.Show("Univerzitet uspešno obrisan", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MenadzerFormi.dajFormu<FormaUpravljanjeUniverzitetom>(this, null, true);
 
-            }
-            catch (Exception exception)
-            {
-                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                }
+                catch (Exception exception)
+                {
+                    loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
-                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }  
         }
 
         private void FormaIzmenaUniverziteta_Load(object sender, EventArgs e)
@@ -98,9 +92,22 @@ namespace sistem
 
         }
 
+        private bool validacija()
+        {
+            return (!nazivUnos.Text.Trim(' ').Equals(string.Empty) && 
+                    !drzavaUnos.Text.Trim(' ').Equals(string.Empty) &&
+                    !gradUnos.Text.Trim(' ').Equals(string.Empty));
+        }
+
         private void dugmeZaIzmenu_Click(object sender, EventArgs e)
         {
             // sacuvaj izmene na univerzitetu
+            if (!validacija())
+            {
+                MessageBox.Show(MenadzerStatusnihKodova.NEPRAVILAN_UNOS_PORUKA, MenadzerStatusnihKodova.NEPRAVILAN_UNOS,
+                                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
 

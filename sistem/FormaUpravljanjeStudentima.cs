@@ -134,24 +134,28 @@ namespace sistem
         private void dugmeUkloniStudenta_Click(object sender, EventArgs e)
         {
             //brisanje studenta
-            try
+            DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete studenta?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if(res == DialogResult.OK)
             {
-                MessageBox.Show(this.id_studenta_za_brisanje.ToString());
-                Baza.daj_instancu().Izbrisi_studenta(this.id_studenta_za_brisanje);
-                MessageBox.Show(MenadzerStatusnihKodova.STUDENT_OBRISAN, MenadzerStatusnihKodova.USPEH,
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch(Exception exception)
-            {
-                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+                try
+                {
+                    MessageBox.Show(this.id_studenta_za_brisanje.ToString());
+                    Baza.daj_instancu().Izbrisi_studenta(this.id_studenta_za_brisanje);
+                    MessageBox.Show(MenadzerStatusnihKodova.STUDENT_OBRISAN, MenadzerStatusnihKodova.USPEH,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exception)
+                {
+                    loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
 
-                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Osvezi_sadrzaj();
-            }
+                    MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    Osvezi_sadrzaj();
+                }
+            }      
         }
 
         private void dugmeDodajStudenta_Click(object sender, EventArgs e)
