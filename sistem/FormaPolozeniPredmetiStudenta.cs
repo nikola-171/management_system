@@ -28,6 +28,7 @@ namespace sistem
         public void Osvezi_sadrzaj()
         {
             tabelaPolozeniPredmeti.Rows.Clear();
+            this.predmeti.Clear();
 
             try
             {

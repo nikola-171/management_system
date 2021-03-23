@@ -1,5 +1,4 @@
-use fakultet;
-call daj_student_polozeni_predmeti(1);
+use fakultet;    
 /*uzimanje podataka o administratoru*/
 delimiter \\
 create procedure daj_podatke_o_administrator(in admin_ime_in varchar(45))
@@ -145,8 +144,11 @@ delimiter ;
 delimiter \\
 create procedure daj_studente_sa_predmetima_koje_slusaju(in broj_indeksa_in int unsigned)
 begin
-	select * from studenti_sa_predmetima_koje_slusaju
-    where indeks = broj_indeksa_in;
+	select s.broj_indeksa as 'indeks', s.ime as 'ime', s.prezime as 'prezime',
+		   sm.naziv as 'smer', p.naziv as 'predmet', p.id as 'id', f.fakultetska_godina as 'fakultetska_godina'
+	from student as s, student_slusa_predmet as ssp, predmet as p, fakultetska_godina as f, smer as sm
+	where s.broj_indeksa = ssp.student and ssp.predmet = p.id and ssp.fakultetska_godina = f.id and sm.id = s.smer and s.broj_indeksa = broj_indeksa_in;
+	
 end\\
 delimiter ;
 /*studenti koji nisu diplomirali*/

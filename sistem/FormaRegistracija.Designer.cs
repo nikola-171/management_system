@@ -273,7 +273,6 @@ namespace sistem
             this.Name = "FormaRegistracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija";
-            this.Load += new System.EventHandler(this.FormaRegistracija_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
