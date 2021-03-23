@@ -150,9 +150,7 @@ namespace sistem
             }
 
             try
-            {
-                MessageBox.Show(fakultetskaGodinaUnos.Text);
-             
+            {        
                  Baza.daj_instancu().Azuriraj_fakultetsku_godinu(fakultetskaGodinaUnos.Text);
 
                 

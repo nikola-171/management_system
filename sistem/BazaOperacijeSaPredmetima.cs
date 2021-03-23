@@ -36,7 +36,31 @@ namespace sistem
                 }       
         }
 
-   
+        #region brisanje_predmeta_koji_student_slusa
+        public void Brisanje_predmeta_koji_student_slusa(UInt32 student, UInt32 predmet)
+        {
+
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "izbrisi_studenta_sa_predmeta";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                cmd.Parameters.AddWithValue("@student_in", student);
+                cmd.Parameters.AddWithValue("@predmet_in", predmet);
+         
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+            }
+        }
+        #endregion
+
+
         public List<Dictionary<string, string>> Daj_sve_predmete()
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();

@@ -14,8 +14,6 @@ namespace sistem
     public class GeneratorIzvestaja
     {
 
-       
-
         #region uzimanje_liste_svih_promena_na_univerzitetima
         private static Tuple<List<float>, DataTable> Daj_sve_promene_na_univerzitetu()
         {
@@ -196,8 +194,6 @@ namespace sistem
         #endregion
 
 
-     
-
         public static void Kreiraj_izvestaj_polozenih_ispita_studentu(string lokacija, List<Dictionary<string, string>> rezultat, string naslov)
         {
             Tuple<List<float>, DataTable> podaci = Stampaj_polozene_ispite(rezultat);
@@ -211,7 +207,6 @@ namespace sistem
             PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, naslov);
             System.Diagnostics.Process.Start(@lokacija);
         }
-
 
 
         public static void Kreiraj_izvestaj_svih_diplomiranih_studenata(string lokacija)
@@ -241,9 +236,6 @@ namespace sistem
             PdfKreator.Daj_pdf_kreatora().Kreiraj(podaci, lokacija, "Predmeti");
             System.Diagnostics.Process.Start(@lokacija);
         }
-
-    
-
     }
 }
 

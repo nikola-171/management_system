@@ -71,6 +71,8 @@ namespace sistem
             // 
             // panelNaslov
             // 
+            this.panelNaslov.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNaslov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelNaslov.Controls.Add(this.labelaNaslov);
             this.panelNaslov.Location = new System.Drawing.Point(0, 0);

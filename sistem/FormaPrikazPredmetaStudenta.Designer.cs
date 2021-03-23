@@ -29,22 +29,23 @@ namespace sistem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPrikazPredmetaStudenta));
             this.tabelaPrikazPredmeta = new System.Windows.Forms.DataGridView();
-            this.panelNaslov = new System.Windows.Forms.Panel();
-            this.labelaNaslov = new System.Windows.Forms.Label();
-            this.panelMeni = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.dugmeNazad = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelaUnosStudent = new System.Windows.Forms.Label();
             this.predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.smer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_predmeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fakultetska_godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.akcija = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panelNaslov = new System.Windows.Forms.Panel();
+            this.labelaUnosStudent = new System.Windows.Forms.Label();
+            this.labelaNaslov = new System.Windows.Forms.Label();
+            this.panelMeni = new System.Windows.Forms.Panel();
+            this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaPrikazPredmeta)).BeginInit();
             this.panelNaslov.SuspendLayout();
             this.panelMeni.SuspendLayout();
@@ -64,37 +65,65 @@ namespace sistem
             this.tabelaPrikazPredmeta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabelaPrikazPredmeta.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.tabelaPrikazPredmeta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabelaPrikazPredmeta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaPrikazPredmeta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabelaPrikazPredmeta.ColumnHeadersHeight = 50;
             this.tabelaPrikazPredmeta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.predmet,
             this.smer,
             this.id_predmeta,
-            this.fakultetska_godina});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabelaPrikazPredmeta.DefaultCellStyle = dataGridViewCellStyle8;
+            this.fakultetska_godina,
+            this.akcija});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabelaPrikazPredmeta.DefaultCellStyle = dataGridViewCellStyle2;
             this.tabelaPrikazPredmeta.EnableHeadersVisualStyles = false;
             this.tabelaPrikazPredmeta.Location = new System.Drawing.Point(199, 93);
             this.tabelaPrikazPredmeta.Name = "tabelaPrikazPredmeta";
             this.tabelaPrikazPredmeta.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.tabelaPrikazPredmeta.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.tabelaPrikazPredmeta.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPrikazPredmeta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabelaPrikazPredmeta.RowTemplate.Height = 30;
             this.tabelaPrikazPredmeta.Size = new System.Drawing.Size(871, 477);
             this.tabelaPrikazPredmeta.TabIndex = 6;
+            this.tabelaPrikazPredmeta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaPrikazPredmeta_CellClick);
+            // 
+            // predmet
+            // 
+            this.predmet.HeaderText = "predmet";
+            this.predmet.Name = "predmet";
+            // 
+            // smer
+            // 
+            this.smer.HeaderText = "smer";
+            this.smer.Name = "smer";
+            // 
+            // id_predmeta
+            // 
+            this.id_predmeta.HeaderText = "id_predmeta";
+            this.id_predmeta.Name = "id_predmeta";
+            // 
+            // fakultetska_godina
+            // 
+            this.fakultetska_godina.HeaderText = "fakultetska_godina";
+            this.fakultetska_godina.Name = "fakultetska_godina";
+            // 
+            // akcija
+            // 
+            this.akcija.HeaderText = "akcija";
+            this.akcija.Name = "akcija";
             // 
             // panelNaslov
             // 
@@ -106,6 +135,17 @@ namespace sistem
             this.panelNaslov.Name = "panelNaslov";
             this.panelNaslov.Size = new System.Drawing.Size(871, 93);
             this.panelNaslov.TabIndex = 5;
+            // 
+            // labelaUnosStudent
+            // 
+            this.labelaUnosStudent.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaUnosStudent.ForeColor = System.Drawing.Color.White;
+            this.labelaUnosStudent.Location = new System.Drawing.Point(385, 27);
+            this.labelaUnosStudent.Name = "labelaUnosStudent";
+            this.labelaUnosStudent.Size = new System.Drawing.Size(335, 35);
+            this.labelaUnosStudent.TabIndex = 3;
+            this.labelaUnosStudent.Text = "nedefinisano";
+            this.labelaUnosStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelaNaslov
             // 
@@ -130,14 +170,6 @@ namespace sistem
             this.panelMeni.Size = new System.Drawing.Size(199, 570);
             this.panelMeni.TabIndex = 4;
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Location = new System.Drawing.Point(0, 93);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 223);
-            this.panelLogo.TabIndex = 0;
-            // 
             // dugmeNazad
             // 
             this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -160,6 +192,14 @@ namespace sistem
             this.dugmeNazad.UseVisualStyleBackColor = true;
             this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Location = new System.Drawing.Point(0, 93);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(199, 223);
+            this.panelLogo.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sistem.Properties.Resources.univerzitet1;
@@ -169,37 +209,6 @@ namespace sistem
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // labelaUnosStudent
-            // 
-            this.labelaUnosStudent.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaUnosStudent.ForeColor = System.Drawing.Color.White;
-            this.labelaUnosStudent.Location = new System.Drawing.Point(385, 27);
-            this.labelaUnosStudent.Name = "labelaUnosStudent";
-            this.labelaUnosStudent.Size = new System.Drawing.Size(335, 35);
-            this.labelaUnosStudent.TabIndex = 3;
-            this.labelaUnosStudent.Text = "nedefinisano";
-            this.labelaUnosStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // predmet
-            // 
-            this.predmet.HeaderText = "predmet";
-            this.predmet.Name = "predmet";
-            // 
-            // smer
-            // 
-            this.smer.HeaderText = "smer";
-            this.smer.Name = "smer";
-            // 
-            // id_predmeta
-            // 
-            this.id_predmeta.HeaderText = "id_predmeta";
-            this.id_predmeta.Name = "id_predmeta";
-            // 
-            // fakultetska_godina
-            // 
-            this.fakultetska_godina.HeaderText = "fakultetska_godina";
-            this.fakultetska_godina.Name = "fakultetska_godina";
             // 
             // FormaPrikazPredmetaStudenta
             // 
@@ -237,5 +246,6 @@ namespace sistem
         private System.Windows.Forms.DataGridViewTextBoxColumn smer;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_predmeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fakultetska_godina;
+        private System.Windows.Forms.DataGridViewButtonColumn akcija;
     }
 }

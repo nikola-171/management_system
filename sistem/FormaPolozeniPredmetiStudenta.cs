@@ -16,6 +16,8 @@ namespace sistem
         private static readonly log4net.ILog loger = Logger.GetLogger();
         private UInt32 broj_indeksa = 0;
         private List<Dictionary<string, string>> predmeti = new List<Dictionary<string, string>>();
+        bool potrebno_azuriranje = false;
+
         private string student = string.Empty;
 
         public FormaPolozeniPredmetiStudenta()
@@ -32,7 +34,7 @@ namespace sistem
                 var rezultat = Baza.daj_instancu().Daj_listu_polozenih_ispita(this.broj_indeksa);
                 foreach(var elem in rezultat)
                 {
-                    tabelaPolozeniPredmeti.Rows.Add(elem["predmet"], elem["datum"], elem["ocena"], elem["fakultetska_godina"]);
+                    tabelaPolozeniPredmeti.Rows.Add(elem["predmet"], elem["predmet_id"] , elem["datum"], elem["ocena"], elem["fakultetska_godina"], "obriši");
 
                     Dictionary<string, string> red = new Dictionary<string, string>();
                     red.Add("predmet", elem["predmet"]);
@@ -40,6 +42,7 @@ namespace sistem
                     red.Add("ocena", elem["ocena"]);
                     red.Add("fakultetska_godina", elem["fakultetska_godina"]);
                     this.predmeti.Add(red);
+
                 }
             }
             catch (Exception exception)
@@ -77,7 +80,8 @@ namespace sistem
 
         private void dugmeNazad_Click(object sender, EventArgs e)
         {
-            MenadzerFormi.dajFormu<FormaUpravljanjeStudentima>(this, null, false);
+
+            MenadzerFormi.dajFormu<FormaUpravljanjeStudentima>(this, null, this.potrebno_azuriranje ? true : false);
         }
 
         private void FormaPolozeniPredmetiStudenta_Load(object sender, EventArgs e)
@@ -119,6 +123,43 @@ namespace sistem
                 MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tabelaPolozeniPredmeti_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == tabelaPolozeniPredmeti.Columns["akcija"].Index && e.RowIndex >= 0)
+            {
+                DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete položen predmet?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res.Equals(DialogResult.OK))
+                {
+                    int izabraniIndex = tabelaPolozeniPredmeti.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = tabelaPolozeniPredmeti.Rows[izabraniIndex];
+                    UInt32 id_predmeta = Convert.ToUInt32(selectedRow.Cells["predmet_id"].Value);
+
+                    try
+                    {
+                        string rezultat = Baza.daj_instancu().Izbrisi_polozen_ispit_studentu(this.broj_indeksa, id_predmeta);
+
+                        if (rezultat.Equals(string.Empty))
+                        {
+                            MessageBox.Show("uspešno izbrisan položen predmet studentu", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.potrebno_azuriranje = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show(string.Format("nismo uspeli da izvršimo operaciju {0}", rezultat), MenadzerStatusnihKodova.GRESKA, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                        MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
         }
     }
 }

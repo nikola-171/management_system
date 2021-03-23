@@ -76,7 +76,7 @@ begin
     where broj_indeksa = id_in;
 end\\
 delimiter ;
-/*brisanje predmeta sa smera*/
+/*brisanje predmeta sa smera*/ /*OVO NEMA ZA SADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 delimiter \\
 create procedure izbrisi_predmet_sa_smera(in predmet_in int unsigned, in smer_in int unsigned)
 begin
@@ -92,7 +92,7 @@ begin
     where predmet = predmet_in and smer = smer_in;
 end\\
 delimiter ;
-/*brisanje predmeta*/
+/*brisanje predmeta*/ /*OVO NEMA ZA SADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 delimiter \\
 create procedure izbrisi_predmet(in predmet_in int unsigned)
 begin

@@ -43,9 +43,11 @@ namespace sistem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabelaPolozeniPredmeti = new System.Windows.Forms.DataGridView();
             this.predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predmet_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ocena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fakultetska_godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.akcija = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelNaslov.SuspendLayout();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -184,9 +186,11 @@ namespace sistem
             this.tabelaPolozeniPredmeti.ColumnHeadersHeight = 50;
             this.tabelaPolozeniPredmeti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.predmet,
+            this.predmet_id,
             this.datum,
             this.ocena,
-            this.fakultetska_godina});
+            this.fakultetska_godina,
+            this.akcija});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,13 +206,21 @@ namespace sistem
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.tabelaPolozeniPredmeti.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPolozeniPredmeti.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabelaPolozeniPredmeti.RowTemplate.Height = 30;
             this.tabelaPolozeniPredmeti.Size = new System.Drawing.Size(843, 477);
             this.tabelaPolozeniPredmeti.TabIndex = 8;
+            this.tabelaPolozeniPredmeti.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaPolozeniPredmeti_CellClick);
             // 
             // predmet
             // 
             this.predmet.HeaderText = "predmet";
             this.predmet.Name = "predmet";
+            // 
+            // predmet_id
+            // 
+            this.predmet_id.HeaderText = "predmet_id";
+            this.predmet_id.Name = "predmet_id";
+            this.predmet_id.Visible = false;
             // 
             // datum
             // 
@@ -224,6 +236,11 @@ namespace sistem
             // 
             this.fakultetska_godina.HeaderText = "fakultetska godina";
             this.fakultetska_godina.Name = "fakultetska_godina";
+            // 
+            // akcija
+            // 
+            this.akcija.HeaderText = "akcija";
+            this.akcija.Name = "akcija";
             // 
             // FormaPolozeniPredmetiStudenta
             // 
@@ -257,10 +274,12 @@ namespace sistem
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView tabelaPolozeniPredmeti;
+        private FontAwesome.Sharp.IconButton dugmeStampajIspite;
         private System.Windows.Forms.DataGridViewTextBoxColumn predmet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn predmet_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ocena;
         private System.Windows.Forms.DataGridViewTextBoxColumn fakultetska_godina;
-        private FontAwesome.Sharp.IconButton dugmeStampajIspite;
+        private System.Windows.Forms.DataGridViewButtonColumn akcija;
     }
 }

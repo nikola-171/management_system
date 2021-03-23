@@ -10,6 +10,29 @@ namespace sistem
 {
     public partial class Baza
     {
+        #region brisanje_departmana
+        public void Izbriši_departman(int id)
+        {
+
+
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
+
+                string rtn = "izbrisi_smer";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_in", id);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                //d.Add("smer", rdr.GetString(rdr.GetOrdinal("smer")));
+
+            }
+        }
+        #endregion
+
+        #region dodavanje-novog_departmana
         public void Dodaj_departman(int fakultet, string naziv, string trajanje, string espb, string nivo_studija)
         {
             List<Tuple<string, Tuple<string, string>>> parametri = new List<Tuple<string, Tuple<string, string>>>();
@@ -22,6 +45,9 @@ namespace sistem
 
             Izvrši_upit("dodaj_smer", ref parametri);
         }
+        #endregion
+
+        #region uzimanje_liste_svih-departmana
         public List<Dictionary<string, string>> Daj_sve_departmane()
         {
             
@@ -57,5 +83,6 @@ namespace sistem
 
             }
         }
+        #endregion
     }
 }

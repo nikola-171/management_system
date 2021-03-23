@@ -102,7 +102,7 @@ namespace sistem
             this.dugmeUpravljanjeProfesorima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeProfesorima.IconSize = 50;
             this.dugmeUpravljanjeProfesorima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeProfesorima.Location = new System.Drawing.Point(0, 576);
+            this.dugmeUpravljanjeProfesorima.Location = new System.Drawing.Point(0, 599);
             this.dugmeUpravljanjeProfesorima.Name = "dugmeUpravljanjeProfesorima";
             this.dugmeUpravljanjeProfesorima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeUpravljanjeProfesorima.Size = new System.Drawing.Size(199, 68);
@@ -125,7 +125,7 @@ namespace sistem
             this.dugmeUpravljanjeStudentima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeStudentima.IconSize = 50;
             this.dugmeUpravljanjeStudentima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeStudentima.Location = new System.Drawing.Point(0, 508);
+            this.dugmeUpravljanjeStudentima.Location = new System.Drawing.Point(0, 531);
             this.dugmeUpravljanjeStudentima.Name = "dugmeUpravljanjeStudentima";
             this.dugmeUpravljanjeStudentima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeUpravljanjeStudentima.Size = new System.Drawing.Size(199, 68);
@@ -148,7 +148,7 @@ namespace sistem
             this.dugmeUpravljanjePredmetima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjePredmetima.IconSize = 50;
             this.dugmeUpravljanjePredmetima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjePredmetima.Location = new System.Drawing.Point(0, 440);
+            this.dugmeUpravljanjePredmetima.Location = new System.Drawing.Point(0, 463);
             this.dugmeUpravljanjePredmetima.Name = "dugmeUpravljanjePredmetima";
             this.dugmeUpravljanjePredmetima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeUpravljanjePredmetima.Size = new System.Drawing.Size(199, 68);
@@ -171,7 +171,7 @@ namespace sistem
             this.dugmeUpravljanjeDepartmanima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeDepartmanima.IconSize = 50;
             this.dugmeUpravljanjeDepartmanima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeDepartmanima.Location = new System.Drawing.Point(0, 372);
+            this.dugmeUpravljanjeDepartmanima.Location = new System.Drawing.Point(0, 395);
             this.dugmeUpravljanjeDepartmanima.Name = "dugmeUpravljanjeDepartmanima";
             this.dugmeUpravljanjeDepartmanima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeUpravljanjeDepartmanima.Size = new System.Drawing.Size(199, 68);
@@ -194,7 +194,7 @@ namespace sistem
             this.dugmeUpravljanjeFakultetom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeFakultetom.IconSize = 50;
             this.dugmeUpravljanjeFakultetom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeFakultetom.Location = new System.Drawing.Point(0, 304);
+            this.dugmeUpravljanjeFakultetom.Location = new System.Drawing.Point(0, 327);
             this.dugmeUpravljanjeFakultetom.Name = "dugmeUpravljanjeFakultetom";
             this.dugmeUpravljanjeFakultetom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeUpravljanjeFakultetom.Size = new System.Drawing.Size(199, 68);
@@ -217,7 +217,7 @@ namespace sistem
             this.dugmeUpravljanjeUniverzitetom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeUniverzitetom.IconSize = 50;
             this.dugmeUpravljanjeUniverzitetom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeUniverzitetom.Location = new System.Drawing.Point(0, 236);
+            this.dugmeUpravljanjeUniverzitetom.Location = new System.Drawing.Point(0, 259);
             this.dugmeUpravljanjeUniverzitetom.Name = "dugmeUpravljanjeUniverzitetom";
             this.dugmeUpravljanjeUniverzitetom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeUpravljanjeUniverzitetom.Size = new System.Drawing.Size(199, 68);
@@ -240,7 +240,7 @@ namespace sistem
             this.dugmeLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeLogout.IconSize = 50;
             this.dugmeLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeLogout.Location = new System.Drawing.Point(0, 168);
+            this.dugmeLogout.Location = new System.Drawing.Point(0, 191);
             this.dugmeLogout.Name = "dugmeLogout";
             this.dugmeLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.dugmeLogout.Size = new System.Drawing.Size(199, 68);
@@ -257,7 +257,7 @@ namespace sistem
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 168);
+            this.panelLogo.Size = new System.Drawing.Size(199, 191);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox2
@@ -265,7 +265,7 @@ namespace sistem
             this.pictureBox2.Image = global::sistem.Properties.Resources.admin;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(193, 165);
+            this.pictureBox2.Size = new System.Drawing.Size(193, 188);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -289,7 +289,7 @@ namespace sistem
             this.panelNaslov.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNaslov.Location = new System.Drawing.Point(199, 0);
             this.panelNaslov.Name = "panelNaslov";
-            this.panelNaslov.Size = new System.Drawing.Size(933, 93);
+            this.panelNaslov.Size = new System.Drawing.Size(933, 113);
             this.panelNaslov.TabIndex = 7;
             // 
             // dugmeInformacije
@@ -303,7 +303,7 @@ namespace sistem
             this.dugmeInformacije.IconColor = System.Drawing.Color.Black;
             this.dugmeInformacije.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeInformacije.IconSize = 50;
-            this.dugmeInformacije.Location = new System.Drawing.Point(849, 23);
+            this.dugmeInformacije.Location = new System.Drawing.Point(849, 43);
             this.dugmeInformacije.Name = "dugmeInformacije";
             this.dugmeInformacije.Size = new System.Drawing.Size(72, 49);
             this.dugmeInformacije.TabIndex = 16;
@@ -385,7 +385,7 @@ namespace sistem
             this.panelInformacije.Controls.Add(this.groupBox3);
             this.panelInformacije.Controls.Add(this.groupBox2);
             this.panelInformacije.Controls.Add(this.groupBox1);
-            this.panelInformacije.Location = new System.Drawing.Point(205, 123);
+            this.panelInformacije.Location = new System.Drawing.Point(205, 133);
             this.panelInformacije.Name = "panelInformacije";
             this.panelInformacije.Size = new System.Drawing.Size(915, 559);
             this.panelInformacije.TabIndex = 15;

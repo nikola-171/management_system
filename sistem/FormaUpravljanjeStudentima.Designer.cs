@@ -424,7 +424,7 @@ namespace sistem
             this.statusPrikaz.ForeColor = System.Drawing.Color.White;
             this.statusPrikaz.Location = new System.Drawing.Point(408, 54);
             this.statusPrikaz.Name = "statusPrikaz";
-            this.statusPrikaz.Size = new System.Drawing.Size(223, 35);
+            this.statusPrikaz.Size = new System.Drawing.Size(322, 35);
             this.statusPrikaz.TabIndex = 18;
             this.statusPrikaz.Text = "nedefinisano";
             this.statusPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

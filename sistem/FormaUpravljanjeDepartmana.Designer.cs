@@ -46,6 +46,7 @@ namespace sistem
             this.fakultet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departman = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nivo_studija = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.akcija = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,7 +172,8 @@ namespace sistem
             this.univerzitet,
             this.fakultet,
             this.departman,
-            this.nivo_studija});
+            this.nivo_studija,
+            this.akcija});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,8 +189,10 @@ namespace sistem
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.tabelaPrikazDepartmana.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPrikazDepartmana.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabelaPrikazDepartmana.RowTemplate.Height = 30;
             this.tabelaPrikazDepartmana.Size = new System.Drawing.Size(809, 403);
             this.tabelaPrikazDepartmana.TabIndex = 3;
+            this.tabelaPrikazDepartmana.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaPrikazDepartmana_CellClick);
             // 
             // id
             // 
@@ -221,6 +225,11 @@ namespace sistem
             this.nivo_studija.HeaderText = "nivo studija";
             this.nivo_studija.Name = "nivo_studija";
             this.nivo_studija.ReadOnly = true;
+            // 
+            // akcija
+            // 
+            this.akcija.HeaderText = "akcija";
+            this.akcija.Name = "akcija";
             // 
             // FormaUpravljanjeDepartmana
             // 
@@ -260,5 +269,6 @@ namespace sistem
         private System.Windows.Forms.DataGridViewTextBoxColumn fakultet;
         private System.Windows.Forms.DataGridViewTextBoxColumn departman;
         private System.Windows.Forms.DataGridViewTextBoxColumn nivo_studija;
+        private System.Windows.Forms.DataGridViewButtonColumn akcija;
     }
 }

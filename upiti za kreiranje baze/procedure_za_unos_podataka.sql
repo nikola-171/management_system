@@ -191,7 +191,6 @@ begin
     begin
     end;
     
-	
     declare exit handler for sqlexception
     begin
         rollback;
@@ -204,23 +203,16 @@ begin
     select max(id) into id_stare_godine
     from fakultetska_godina;
     
-     select id_stare_godine as "stara_godina";
-     
     insert into fakultetska_godina(fakultetska_godina)
     values(godina);
     
     select max(id) into id_nove_godine
 	from fakultetska_godina;
     
-    
-    select id_nove_godine as'godina';
-         select id_nove_godine as "nova_godina";
-
     open c;
      l : loop
 		fetch c into student_indeks;
          
-       select student_indeks as "tekuci student";
         
         select sum(p.espb) into broj_bodova
         from predmet as p, student_polozio_predmet as spp
@@ -230,15 +222,13 @@ begin
 		if broj_bodova is null then
 			set broj_bodova = 0;
         end if;
-	   select broj_bodova as "broj_bodova_studenta";
+	
               
 		if broj_bodova >= potreban_broj_bodova then
-            select "ima potreban broj bodova" as "poruka";
-		set novi_status = 1;
+		    set novi_status = 1;
 		else
-        set novi_status = 0;
-           select "nema potreban broj bodova" as "poruka";
-       end if;
+			set novi_status = 0;
+        end if;
         
         update student
         set status_studenta = novi_status, fakultetska_godina = id_nove_godine

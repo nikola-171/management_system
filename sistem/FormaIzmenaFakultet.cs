@@ -13,7 +13,7 @@ namespace sistem
     public partial class FormaIzmenaFakultet : Form, DodavanjeParametara
     {
         private static readonly log4net.ILog loger = Logger.GetLogger();
-        private string naziv = "", mesto = "";
+        private string naziv = string.Empty, mesto = string.Empty;
         private int ID = -1;
 
         public FormaIzmenaFakultet()
@@ -41,17 +41,7 @@ namespace sistem
             MenadzerFormi.dajFormu<FormaUpravljanjeFakultetom>(this,null,true);
         }
 
-        private void dugmeBrisi_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void dugmeIzmeni_Click(object sender, EventArgs e)
-        {
-            
-
-        }
+       
 
         private void dugmeZaNazad_Click(object sender, EventArgs e)
         {
@@ -79,12 +69,15 @@ namespace sistem
             try
             {
                 Baza.daj_instancu().Izmeni_fakultet(this.ID, nazivUnos.Text, mestoUnos.Text);
-                MessageBox.Show("Uspešno izmenjen fakultet ", "uspešno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Uspešno izmenjen fakultet ", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            catch (Exception excpetion)
+            catch (Exception exception)
             {
-                MessageBox.Show("došlo je do greške " + excpetion.ToString());
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

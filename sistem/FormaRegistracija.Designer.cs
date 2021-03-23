@@ -31,6 +31,7 @@ namespace sistem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaRegistracija));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucitavanje_poruka = new System.Windows.Forms.Label();
             this.dugme_nazad = new System.Windows.Forms.Button();
             this.dugme_registracija = new System.Windows.Forms.Button();
             this.telefon_unos = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@ namespace sistem
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.ucitavanje_poruka = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,16 @@ namespace sistem
             this.groupBox1.Size = new System.Drawing.Size(383, 421);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // ucitavanje_poruka
+            // 
+            this.ucitavanje_poruka.AutoSize = true;
+            this.ucitavanje_poruka.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucitavanje_poruka.Location = new System.Drawing.Point(102, 386);
+            this.ucitavanje_poruka.Name = "ucitavanje_poruka";
+            this.ucitavanje_poruka.Size = new System.Drawing.Size(0, 21);
+            this.ucitavanje_poruka.TabIndex = 16;
+            this.ucitavanje_poruka.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dugme_nazad
             // 
@@ -248,16 +258,6 @@ namespace sistem
             this.label8.TabIndex = 1;
             this.label8.Text = "Registracija korisnika";
             // 
-            // ucitavanje_poruka
-            // 
-            this.ucitavanje_poruka.AutoSize = true;
-            this.ucitavanje_poruka.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucitavanje_poruka.Location = new System.Drawing.Point(102, 386);
-            this.ucitavanje_poruka.Name = "ucitavanje_poruka";
-            this.ucitavanje_poruka.Size = new System.Drawing.Size(0, 21);
-            this.ucitavanje_poruka.TabIndex = 16;
-            this.ucitavanje_poruka.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormaRegistracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -273,6 +273,7 @@ namespace sistem
             this.Name = "FormaRegistracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registracija";
+            this.Load += new System.EventHandler(this.FormaRegistracija_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

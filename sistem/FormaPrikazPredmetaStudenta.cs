@@ -13,9 +13,9 @@ namespace sistem
     public partial class FormaPrikazPredmetaStudenta : Form, DodavanjeParametara
     {
         private static readonly log4net.ILog loger = Logger.GetLogger();
-
-        List<Dictionary<string, string>> predmeti = new List<Dictionary<string, string>>();
+        Dictionary<string, UInt32> mapa_predmet_id = new Dictionary<string, uint>();
         UInt32 broj_indeksa = 0;
+
 
         public FormaPrikazPredmetaStudenta()
         {
@@ -35,13 +35,19 @@ namespace sistem
         public void Osvezi_sadrzaj()
         {
             tabelaPrikazPredmeta.Rows.Clear();
+            this.mapa_predmet_id.Clear();
             try
             {
                 var rezultat = Baza.daj_instancu().Daj_slistu_predmeta_koje_student_slusa(this.broj_indeksa);
 
                 foreach(var elem in rezultat)
                 {
-                    tabelaPrikazPredmeta.Rows.Add(elem["predmet"], elem["smer"], elem["id"], elem["fakultetska_godina"]);
+                    tabelaPrikazPredmeta.Rows.Add(elem["predmet"], elem["smer"], elem["id"], elem["fakultetska_godina"], "akcija");
+
+                    if (!this.mapa_predmet_id.ContainsKey(elem["predmet"]))
+                    {
+                        this.mapa_predmet_id.Add(elem["predmet"], Convert.ToUInt32(elem["id"]));
+                    }   
 
                 }
 
@@ -52,8 +58,7 @@ namespace sistem
                 MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            //throw new NotImplementedException();
+                  
         }
 
         public void Postavi_parametre(List<Tuple<string, string>> parametri)
@@ -79,6 +84,36 @@ namespace sistem
         private void dugmeNazad_Click(object sender, EventArgs e)
         {
             MenadzerFormi.dajFormu<FormaUpravljanjeStudentima>(this, null, false);
+        }
+
+        private void tabelaPrikazPredmeta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == tabelaPrikazPredmeta.Columns["akcija"].Index && e.RowIndex >= 0)
+            {
+                DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete departman?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res.Equals(DialogResult.OK))
+                {
+                    int izabraniIndex = tabelaPrikazPredmeta.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = tabelaPrikazPredmeta.Rows[izabraniIndex];
+                    UInt32 id_predmeta = Convert.ToUInt32(selectedRow.Cells["id_predmeta"].Value);
+
+                    try
+                    {
+                        Baza.daj_instancu().Brisanje_predmeta_koji_student_slusa(this.broj_indeksa, id_predmeta);
+                        MessageBox.Show("uspešno obrisan predmet studentu", MenadzerStatusnihKodova.USPEH, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Osvezi_sadrzaj();
+
+                    }
+                    catch (Exception exception)
+                    {
+                        loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                        MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
         }
     }
 }

@@ -10,6 +10,35 @@ namespace sistem
 {
     public partial class Baza
     {
+        #region izbrisi_polozen_ispit_studentu
+        public string Izbrisi_polozen_ispit_studentu(UInt32 student, UInt32 predmet)
+        {
+            string poruka = string.Empty;
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                
+                con.Open();
+
+                string rtn = "izbrisi_polozen_ispit_studentu";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@student_in", student);
+                cmd.Parameters.AddWithValue("@predmet_in", predmet);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                
+
+                if (rdr.Read())
+                {
+                    poruka = rdr.GetString(rdr.GetOrdinal("msg"));
+                }
+            }
+            return poruka;
+        }
+        #endregion
+
         #region brisanje_studenta_iz_baze
         public void Izbrisi_studenta(int id)
         {
@@ -344,6 +373,7 @@ namespace sistem
                     red.Add("predmet", rdr.GetString(rdr.GetOrdinal("predmet_naziv")));
                     red.Add("ocena", rdr.GetString(rdr.GetOrdinal("ocena")));
                     red.Add("datum", rdr.GetString(rdr.GetOrdinal("datum")));
+                    red.Add("predmet_id", rdr.GetString(rdr.GetOrdinal("predmet_id")));
                     red.Add("fakultetska_godina", rdr.GetString(rdr.GetOrdinal("fakultetska_godina")));
 
 
