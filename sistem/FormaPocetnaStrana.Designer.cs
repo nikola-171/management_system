@@ -149,9 +149,9 @@ namespace sistem
             this.labelaEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaEmail.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaEmail.ForeColor = System.Drawing.Color.White;
-            this.labelaEmail.Location = new System.Drawing.Point(3, 94);
+            this.labelaEmail.Location = new System.Drawing.Point(4, 94);
             this.labelaEmail.Name = "labelaEmail";
-            this.labelaEmail.Size = new System.Drawing.Size(108, 94);
+            this.labelaEmail.Size = new System.Drawing.Size(107, 92);
             this.labelaEmail.TabIndex = 10;
             this.labelaEmail.Text = "Email:";
             this.labelaEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,9 +161,9 @@ namespace sistem
             this.labelaTelefon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaTelefon.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaTelefon.ForeColor = System.Drawing.Color.White;
-            this.labelaTelefon.Location = new System.Drawing.Point(3, 188);
+            this.labelaTelefon.Location = new System.Drawing.Point(4, 187);
             this.labelaTelefon.Name = "labelaTelefon";
-            this.labelaTelefon.Size = new System.Drawing.Size(108, 95);
+            this.labelaTelefon.Size = new System.Drawing.Size(107, 95);
             this.labelaTelefon.TabIndex = 11;
             this.labelaTelefon.Text = "Telefon:";
             this.labelaTelefon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,9 +173,9 @@ namespace sistem
             this.labelaTelefonPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaTelefonPrikaz.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaTelefonPrikaz.ForeColor = System.Drawing.Color.White;
-            this.labelaTelefonPrikaz.Location = new System.Drawing.Point(117, 188);
+            this.labelaTelefonPrikaz.Location = new System.Drawing.Point(118, 187);
             this.labelaTelefonPrikaz.Name = "labelaTelefonPrikaz";
-            this.labelaTelefonPrikaz.Size = new System.Drawing.Size(280, 95);
+            this.labelaTelefonPrikaz.Size = new System.Drawing.Size(278, 95);
             this.labelaTelefonPrikaz.TabIndex = 12;
             this.labelaTelefonPrikaz.Text = "nedefinisano";
             this.labelaTelefonPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,9 +185,9 @@ namespace sistem
             this.labelaEmailPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaEmailPrikaz.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaEmailPrikaz.ForeColor = System.Drawing.Color.White;
-            this.labelaEmailPrikaz.Location = new System.Drawing.Point(117, 94);
+            this.labelaEmailPrikaz.Location = new System.Drawing.Point(118, 94);
             this.labelaEmailPrikaz.Name = "labelaEmailPrikaz";
-            this.labelaEmailPrikaz.Size = new System.Drawing.Size(280, 94);
+            this.labelaEmailPrikaz.Size = new System.Drawing.Size(278, 92);
             this.labelaEmailPrikaz.TabIndex = 13;
             this.labelaEmailPrikaz.Text = "nedefinisano";
             this.labelaEmailPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,9 +197,9 @@ namespace sistem
             this.labelaImePrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaImePrikaz.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaImePrikaz.ForeColor = System.Drawing.Color.White;
-            this.labelaImePrikaz.Location = new System.Drawing.Point(117, 0);
+            this.labelaImePrikaz.Location = new System.Drawing.Point(118, 1);
             this.labelaImePrikaz.Name = "labelaImePrikaz";
-            this.labelaImePrikaz.Size = new System.Drawing.Size(280, 94);
+            this.labelaImePrikaz.Size = new System.Drawing.Size(278, 92);
             this.labelaImePrikaz.TabIndex = 14;
             this.labelaImePrikaz.Text = "nedefinisano";
             this.labelaImePrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,9 +263,9 @@ namespace sistem
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 94);
+            this.label3.Size = new System.Drawing.Size(107, 92);
             this.label3.TabIndex = 15;
             this.label3.Text = "Ime:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -637,6 +637,7 @@ namespace sistem
             // 
             // tableLayoutPanelInfoAdmin
             // 
+            this.tableLayoutPanelInfoAdmin.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelInfoAdmin.ColumnCount = 2;
             this.tableLayoutPanelInfoAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tableLayoutPanelInfoAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
@@ -682,7 +683,7 @@ namespace sistem
             this.labela.Size = new System.Drawing.Size(284, 46);
             this.labela.TabIndex = 14;
             this.labela.Text = "Prilikom unosa nova fakultetske godine vrši se presek studenata.";
-            this.labela.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labela.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fakultetskaGodinaPrikaz
             // 
@@ -747,9 +748,9 @@ namespace sistem
             this.tableLayoutPanelPrikazFakGodina.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelPrikazFakGodina.ColumnCount = 1;
             this.tableLayoutPanelPrikazFakGodina.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.labela, 0, 0);
             this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.tableLayoutPanelTekucaGodina, 0, 1);
             this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.tableLayoutPanelUnosNoveGodine, 0, 2);
+            this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.labela, 0, 0);
             this.tableLayoutPanelPrikazFakGodina.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelPrikazFakGodina.Location = new System.Drawing.Point(411, 3);
             this.tableLayoutPanelPrikazFakGodina.Name = "tableLayoutPanelPrikazFakGodina";
