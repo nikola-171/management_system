@@ -14,7 +14,6 @@ namespace sistem
         public void Izbriši_departman(int id)
         {
 
-
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
             {
                 con.Open();
@@ -24,9 +23,7 @@ namespace sistem
                 MySqlCommand cmd = new MySqlCommand(rtn, con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_in", id);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                //d.Add("smer", rdr.GetString(rdr.GetOrdinal("smer")));
+                MySqlDataReader rdr = cmd.ExecuteReader();       
 
             }
         }
@@ -35,15 +32,24 @@ namespace sistem
         #region dodavanje-novog_departmana
         public void Dodaj_departman(int fakultet, string naziv, string trajanje, string espb, string nivo_studija)
         {
-            List<Tuple<string, Tuple<string, string>>> parametri = new List<Tuple<string, Tuple<string, string>>>();
-            parametri.Add(new Tuple<string, Tuple<string, string>>("int", new Tuple<string, string>("fakultet_in", fakultet.ToString())));
-            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("naziv_in", naziv)));
-            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("nivo_studija_in", nivo_studija)));
-            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("espb_in", espb)));
-            parametri.Add(new Tuple<string, Tuple<string, string>>("string", new Tuple<string, string>("trajanje_in", trajanje)));
 
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
 
-            Izvrši_upit("dodaj_smer", ref parametri);
+                string rtn = "dodaj_smer";
+
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fakultet_in", fakultet);
+                cmd.Parameters.AddWithValue("@naziv_in", naziv);
+                cmd.Parameters.AddWithValue("@nivo_studija_in", nivo_studija);
+                cmd.Parameters.AddWithValue("@espb_in", espb);
+                cmd.Parameters.AddWithValue("@trajanje_in", trajanje);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+            }    
         }
         #endregion
 

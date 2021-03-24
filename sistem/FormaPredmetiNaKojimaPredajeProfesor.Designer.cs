@@ -200,6 +200,7 @@ namespace sistem
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.tabelaPrikazPredmeta.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPrikazPredmeta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabelaPrikazPredmeta.RowTemplate.Height = 30;
             this.tabelaPrikazPredmeta.Size = new System.Drawing.Size(795, 477);
             this.tabelaPrikazPredmeta.TabIndex = 8;
             // 

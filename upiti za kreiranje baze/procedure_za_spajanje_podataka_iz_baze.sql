@@ -79,7 +79,7 @@ begin
     begin
 		GET DIAGNOSTICS CONDITION 1
 		@p2 = MESSAGE_TEXT;
-        select @p2 as 'msg';
+        /*select @p2 as 'msg';*/
 		rollback;
     end;
 	start transaction;
@@ -144,8 +144,7 @@ begin
 		rollback;
 		GET DIAGNOSTICS CONDITION 1
 		@p2 = MESSAGE_TEXT;
-        
-        select @p2 as 'msg';
+        /*select @p2 as 'msg';*/
     end;
         
     start transaction;

@@ -138,12 +138,20 @@ namespace sistem
         #region izbriši_profesora_na_osnovu_njegovo_ID
         public void Izbrisi_profesora(int id)
         {
+            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
+            {
+                con.Open();
 
-            List<Tuple<string, Tuple<string, string>>> parametri = new List<Tuple<string, Tuple<string, string>>>();
-            parametri.Add(new Tuple<string, Tuple<string, string>>("int", new Tuple<string, string>("id_in", id.ToString())));
+                string rtn = "izbrisi_profesora";
 
+                MySqlCommand cmd = new MySqlCommand(rtn, con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            Izvrši_upit("izbrisi_profesora", ref parametri);
+                cmd.Parameters.AddWithValue("@id_in", id);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();    
+
+            }
 
         }
         #endregion
@@ -186,7 +194,7 @@ namespace sistem
         }
         #endregion
 
-        #region daj_profesore_sa_predmetima_na_kojima_predaju
+        #region daj_predmete_na_kojima_predaje_profesor
         public List<Dictionary<string, string>> Daj_predmete_na_kojima_predaje_profesor(UInt32 profesor)
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
@@ -195,12 +203,12 @@ namespace sistem
             {
                 con.Open();
 
-                string rtn = "daj_profesore_po_predmetima";
+                string rtn = "daj_predmete_na_kojima_predaje_profesor";
 
                 MySqlCommand cmd = new MySqlCommand(rtn, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@profesor_in", profesor);
+                cmd.Parameters.AddWithValue("@id_in", profesor);
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -208,12 +216,9 @@ namespace sistem
                 {
                     Dictionary<string, string> red = new Dictionary<string, string>();
 
-                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
-                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
+                   
                     red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
-                    red.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
-                    red.Add("jmbg", rdr.GetString(rdr.GetOrdinal("jmbg")));
-
+        
                     red.Add("naziv", rdr.GetString(rdr.GetOrdinal("naziv")));
                     red.Add("tip", rdr.GetString(rdr.GetOrdinal("tip")));
 
