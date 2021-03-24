@@ -390,6 +390,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="slike\pocetna4.jpg" />
+    <None Include="slike\pocetna3.png" />
+    <None Include="slike\pocetna2.png" />
+    <None Include="slike\pocetna.png" />
     <None Include="slike\polozen.png" />
     <None Include="slike\polozen_ispit.png" />
     <None Include="slike\slika_knjige.png" />
