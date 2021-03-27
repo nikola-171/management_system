@@ -1,4 +1,13 @@
-use fakultet;    
+use fakultet;
+/*uzimanje liste predmeta na kojima predaje profesor*/
+delimiter \\
+create procedure daj_predmete_na_kojima_predaje_profesor(in id_in int unsigned)
+begin
+	select r.email, p.naziv, pnp.tip
+	from radnik as r, predmet as p, profesor as pr, profesor_na_predmetu as pnp
+	where r.id = id_in and r.id = pr.radnik_id and pr.radnik_id = pnp.profesor_id and pnp.predmet_id = p.id;
+end\\
+delimiter ;
 /*uzimanje podataka o administratoru*/
 delimiter \\
 create procedure daj_podatke_o_administrator(in admin_ime_in varchar(45))
