@@ -121,7 +121,7 @@
   <data name="pocetna" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\pocetna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="univerzitet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="univerzitet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\univerzitet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="student" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -136,8 +136,11 @@
   <data name="student_ikonica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\student_ikonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="univerzitet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\slike\univerzitet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="departman3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\departman3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="polozen_ispit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\polozen_ispit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="profesor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\profesor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,23 +148,38 @@
   <data name="title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="departman2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\departman2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="slika_profesor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\slika_profesor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="polozen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\slike\polozen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="univerzitet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\univerzitet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pocetna5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\pocetna5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ispit_polozen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\ispit_polozen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pocetna6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\pocetna6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="title1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pocetna4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\pocetna4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pocetna2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\pocetna2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="polozen_ispit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\slike\polozen_ispit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="polozen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\polozen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slika_student1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\slika_student.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="slika_knjige" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\slika_knjige.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +190,7 @@
   <data name="admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\slike\admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pocetna4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\slike\pocetna4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="slika_student2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\slike\slika_student.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

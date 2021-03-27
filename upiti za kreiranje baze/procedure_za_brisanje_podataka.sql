@@ -29,21 +29,6 @@ begin
     where id = id_in;
 end\\
 delimiter ;
-/*brisanje smera na osnovu njegovo ID-a*/
-delimiter \\
-create procedure izbrisi_smer(in id_in int)
-begin
-	declare exit handler for sqlexception
-     begin
-		  GET DIAGNOSTICS CONDITION 1
-		@p2 = MESSAGE_TEXT;
-        
-        select @p2 as 'msg';
-     end;
-	delete from smer
-    where id = id_in;
-end\\
-delimiter ;
 /*brisanje profesora na osnovu njegovog ID-a*/
 delimiter \\
 create procedure izbrisi_profesora(in id_in int unsigned)
@@ -74,39 +59,6 @@ begin
     
     delete from student
     where broj_indeksa = id_in;
-end\\
-delimiter ;
-/*brisanje predmeta sa smera*/ /*OVO NEMA ZA SADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
-delimiter \\
-create procedure izbrisi_predmet_sa_smera(in predmet_in int unsigned, in smer_in int unsigned)
-begin
-	declare exit handler for sqlexception
-    begin
-		  GET DIAGNOSTICS CONDITION 1
-		@p2 = MESSAGE_TEXT;
-        
-        select @p2 as 'msg';
-    end;
-    
-    delete from predmet_na_smeru
-    where predmet = predmet_in and smer = smer_in;
-end\\
-delimiter ;
-/*brisanje predmeta*/ /*OVO NEMA ZA SADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
-delimiter \\
-create procedure izbrisi_predmet(in predmet_in int unsigned)
-begin
-	declare exit handler for sqlexception
-    begin
-		  GET DIAGNOSTICS CONDITION 1
-		@p2 = MESSAGE_TEXT;
-        
-        select @p2 as 'msg';
-    end;
-    
-    delete from predmet
-    where id = predmet_in;
-    
 end\\
 delimiter ;
 /*brisanje profesora sa predmeta*/

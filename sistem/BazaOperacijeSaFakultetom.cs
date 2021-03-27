@@ -12,6 +12,7 @@ namespace sistem
     {
         // operacije sa fakultetom
 
+        #region izmeni_fakultet
         public void Izmeni_fakultet(int id, string naziv, string mesto)
         {
 
@@ -31,9 +32,11 @@ namespace sistem
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-            }         
+            }
         }
+        #endregion
 
+        #region izbrisi_fakultet
         public void Izbrisi_fakultet(int id)
         {
             
@@ -53,7 +56,9 @@ namespace sistem
 
             }       
         }
+        #endregion
 
+        #region dodavanje_fakulteta
         public void Dodavanje_fakulteta(string naziv, string mesto, int univerzitet)
         {
             using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
@@ -76,9 +81,9 @@ namespace sistem
             }
 
         }
-            
-        
+        #endregion
 
+        #region daj_sve_fakultete
         public List<Dictionary<string, string>> Daj_sve_fakultete()
         {
             List<Dictionary<string, string>> rez = null;
@@ -111,7 +116,9 @@ namespace sistem
             
             return rez;
         }
+        #endregion
 
+        #region daj_sve_promene_na_fakultetu
         public List<Dictionary<string, string>> Daj_sve_promene_na_fakultetu()
         {
             List<Dictionary<string, string>> rez = null;
@@ -142,5 +149,6 @@ namespace sistem
             }
             return rez;
         }
+        #endregion
     }
 }

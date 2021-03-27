@@ -18,14 +18,6 @@ select s.broj_indeksa, s.JMBG, s.ime, s.prezime, sm.naziv, f.naziv as 'fakultet'
 
 end\\
 delimiter ;
-/*uzimanje podataka o administratoru*/
-delimiter \\
-create procedure daj_administratora()
-begin
-	select administrator_ime, administrator_lozinka, email, telefon
-    from administrator;
-end\\
-delimiter ;
 /*uzimanje liste svih univerziteta*/
 delimiter \\
 create procedure daj_sve_univerzitete()
@@ -215,13 +207,7 @@ begin
    select * from student_arhiva;
 end\\
 delimiter ;
-/*daj profesore iz arhive*/
-delimiter \\
-create procedure daj_listu_profesora_iz_arhive()
-begin
-   select * from profesor_arhiva;
-end\\
-delimiter ;
+
 
 
 

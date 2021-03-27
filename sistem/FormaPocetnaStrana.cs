@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,6 +37,7 @@ namespace sistem
 
         private void FormaPocetnaStrana_Load(object sender, EventArgs e)
         {
+           
             this.WindowState = FormWindowState.Maximized;
             /*ucitavanje podataka o administratoru*/   
             try

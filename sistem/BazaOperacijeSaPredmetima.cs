@@ -10,6 +10,8 @@ namespace sistem
 {
     public partial class Baza
     {
+
+        #region dodavanje_predmeta
         public void Dodavanje_predmeta(string naziv, sbyte godina, sbyte semestar, sbyte espb, UInt32 departman)
         {
             
@@ -35,6 +37,7 @@ namespace sistem
 
                 }       
         }
+        #endregion
 
         #region brisanje_predmeta_koji_student_slusa
         public void Brisanje_predmeta_koji_student_slusa(UInt32 student, UInt32 predmet)
@@ -60,7 +63,7 @@ namespace sistem
         }
         #endregion
 
-
+        #region daj_sve_predmete
         public List<Dictionary<string, string>> Daj_sve_predmete()
         {
             List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
@@ -93,5 +96,6 @@ namespace sistem
 
             return rezultat;
         }
+        #endregion
     }
 }
