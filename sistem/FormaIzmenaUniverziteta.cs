@@ -67,7 +67,7 @@ namespace sistem
         private void dugmeZaBrisanje_Click(object sender, EventArgs e)
         {
             //brisanje univerziteta
-            DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete fakultet?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete univerzitet?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (res.Equals(DialogResult.OK))
             {
                 try

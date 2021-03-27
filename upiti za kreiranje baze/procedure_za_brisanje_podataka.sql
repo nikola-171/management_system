@@ -124,3 +124,10 @@ begin
      
 end\\
 delimiter ;
+/*brisanje departmana*/
+delimiter \\
+create procedure izbrisi_smer(in id_in int)
+begin
+	delete from smer where id = id_in;
+end\\
+delimiter ;

@@ -96,10 +96,11 @@ namespace sistem
             // comboUniverziteti
             // 
             this.comboUniverziteti.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboUniverziteti.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboUniverziteti.FormattingEnabled = true;
             this.comboUniverziteti.Location = new System.Drawing.Point(158, 159);
             this.comboUniverziteti.Name = "comboUniverziteti";
-            this.comboUniverziteti.Size = new System.Drawing.Size(268, 35);
+            this.comboUniverziteti.Size = new System.Drawing.Size(268, 31);
             this.comboUniverziteti.TabIndex = 9;
             // 
             // label4
@@ -114,16 +115,18 @@ namespace sistem
             // 
             // gradUnos
             // 
+            this.gradUnos.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gradUnos.Location = new System.Drawing.Point(158, 111);
             this.gradUnos.Name = "gradUnos";
-            this.gradUnos.Size = new System.Drawing.Size(268, 35);
+            this.gradUnos.Size = new System.Drawing.Size(268, 32);
             this.gradUnos.TabIndex = 5;
             // 
             // nazivUnos
             // 
+            this.nazivUnos.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nazivUnos.Location = new System.Drawing.Point(158, 62);
             this.nazivUnos.Name = "nazivUnos";
-            this.nazivUnos.Size = new System.Drawing.Size(268, 35);
+            this.nazivUnos.Size = new System.Drawing.Size(268, 32);
             this.nazivUnos.TabIndex = 3;
             // 
             // label3

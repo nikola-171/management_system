@@ -87,7 +87,7 @@ namespace sistem
             this.dugmeDodaj.Name = "dugmeDodaj";
             this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
             this.dugmeDodaj.TabIndex = 3;
-            this.dugmeDodaj.Text = "dodaj univerzitet";
+            this.dugmeDodaj.Text = "dodaj fakultet";
             this.dugmeDodaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dugmeDodaj.UseVisualStyleBackColor = true;
             this.dugmeDodaj.Click += new System.EventHandler(this.dugmeDodaj_Click);
