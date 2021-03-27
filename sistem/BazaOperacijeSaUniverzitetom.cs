@@ -10,6 +10,7 @@ namespace sistem
 {
     public partial class Baza
     {
+        #region dodavanje_univerziteta
         public void Dodavanje_univerziteta(string naziv, string drzava, string grad)
         {
             
@@ -34,7 +35,9 @@ namespace sistem
 
            
         }
+        #endregion
 
+        #region izbrisi_univerzitet
         public void Izbrisi_univerzitet(int id)
         {
             
@@ -55,7 +58,9 @@ namespace sistem
             }
            
         }
+        #endregion
 
+        #region sacuvaj_izmene_na_univerzitetu
         public void Sacuvaj_izmene_na_univerzitetu(int id, string naziv, string drzava, string grad)
         {
             
@@ -77,7 +82,9 @@ namespace sistem
 
             }
         }
+        #endregion
 
+        #region daj_sve_univerzitete
         public List<Dictionary<string, string>> Daj_sve_univerzitete()
         {
             List<Dictionary<string, string>> rez = null;
@@ -108,7 +115,9 @@ namespace sistem
             }
             return rez;
         }
+        #endregion
 
+        #region daj_sve_promene_na_univerzitetu
         public List<Dictionary<string, string>> Daj_sve_promene_na_univerzitetu()
         {
             List<Dictionary<string, string>> rez = null;
@@ -139,8 +148,7 @@ namespace sistem
             }
             return rez;
         }
-
-
+        #endregion
 
     }
 }

@@ -79,6 +79,7 @@ namespace sistem
             this.panelNaslov.Name = "panelNaslov";
             this.panelNaslov.Size = new System.Drawing.Size(1374, 113);
             this.panelNaslov.TabIndex = 21;
+            this.panelNaslov.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNaslov_Paint);
             // 
             // labelaNaslov
             // 

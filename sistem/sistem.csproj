@@ -390,6 +390,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="slike\pocetna6.jpg" />
+    <None Include="slike\pocetna5.png" />
+    <None Include="slike\pocetna4.jpg" />
+    <None Include="slike\pocetna3.png" />
+    <None Include="slike\pocetna2.png" />
+    <None Include="slike\pocetna.png" />
     <None Include="slike\polozen.png" />
     <None Include="slike\polozen_ispit.png" />
     <None Include="slike\slika_knjige.png" />
@@ -402,6 +408,8 @@
     <Content Include="slike\app.ico" />
     <None Include="slike\departman.png" />
     <None Include="slike\ispit_polozen.png" />
+    <None Include="slike\departman2.png" />
+    <None Include="slike\departman3.png" />
     <Content Include="slike\korisnik.png" />
     <None Include="slike\title.png" />
     <None Include="slike\univerzitet.png" />

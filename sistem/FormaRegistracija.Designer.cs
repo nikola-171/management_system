@@ -84,11 +84,10 @@ namespace sistem
             // 
             // ucitavanje_poruka
             // 
-            this.ucitavanje_poruka.AutoSize = true;
             this.ucitavanje_poruka.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucitavanje_poruka.Location = new System.Drawing.Point(102, 386);
+            this.ucitavanje_poruka.Location = new System.Drawing.Point(10, 377);
             this.ucitavanje_poruka.Name = "ucitavanje_poruka";
-            this.ucitavanje_poruka.Size = new System.Drawing.Size(0, 21);
+            this.ucitavanje_poruka.Size = new System.Drawing.Size(359, 41);
             this.ucitavanje_poruka.TabIndex = 16;
             this.ucitavanje_poruka.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -98,7 +97,7 @@ namespace sistem
             this.dugme_nazad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dugme_nazad.Location = new System.Drawing.Point(10, 342);
             this.dugme_nazad.Name = "dugme_nazad";
-            this.dugme_nazad.Size = new System.Drawing.Size(339, 32);
+            this.dugme_nazad.Size = new System.Drawing.Size(359, 32);
             this.dugme_nazad.TabIndex = 15;
             this.dugme_nazad.Text = "nazad";
             this.dugme_nazad.UseVisualStyleBackColor = false;
@@ -110,7 +109,7 @@ namespace sistem
             this.dugme_registracija.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dugme_registracija.Location = new System.Drawing.Point(10, 301);
             this.dugme_registracija.Name = "dugme_registracija";
-            this.dugme_registracija.Size = new System.Drawing.Size(339, 32);
+            this.dugme_registracija.Size = new System.Drawing.Size(359, 32);
             this.dugme_registracija.TabIndex = 14;
             this.dugme_registracija.Text = "prosledi";
             this.dugme_registracija.UseVisualStyleBackColor = false;
@@ -122,7 +121,7 @@ namespace sistem
             this.telefon_unos.Location = new System.Drawing.Point(159, 256);
             this.telefon_unos.MaxLength = 15;
             this.telefon_unos.Name = "telefon_unos";
-            this.telefon_unos.Size = new System.Drawing.Size(190, 25);
+            this.telefon_unos.Size = new System.Drawing.Size(210, 25);
             this.telefon_unos.TabIndex = 13;
             // 
             // email_unos
@@ -131,7 +130,7 @@ namespace sistem
             this.email_unos.Location = new System.Drawing.Point(159, 221);
             this.email_unos.MaxLength = 40;
             this.email_unos.Name = "email_unos";
-            this.email_unos.Size = new System.Drawing.Size(190, 25);
+            this.email_unos.Size = new System.Drawing.Size(210, 25);
             this.email_unos.TabIndex = 12;
             // 
             // lozinka_ponovo_unos
@@ -140,7 +139,7 @@ namespace sistem
             this.lozinka_ponovo_unos.Location = new System.Drawing.Point(159, 186);
             this.lozinka_ponovo_unos.MaxLength = 20;
             this.lozinka_ponovo_unos.Name = "lozinka_ponovo_unos";
-            this.lozinka_ponovo_unos.Size = new System.Drawing.Size(190, 25);
+            this.lozinka_ponovo_unos.Size = new System.Drawing.Size(210, 25);
             this.lozinka_ponovo_unos.TabIndex = 11;
             this.lozinka_ponovo_unos.UseSystemPasswordChar = true;
             // 
@@ -150,7 +149,7 @@ namespace sistem
             this.lozinka_unos.Location = new System.Drawing.Point(159, 151);
             this.lozinka_unos.MaxLength = 20;
             this.lozinka_unos.Name = "lozinka_unos";
-            this.lozinka_unos.Size = new System.Drawing.Size(190, 25);
+            this.lozinka_unos.Size = new System.Drawing.Size(210, 25);
             this.lozinka_unos.TabIndex = 10;
             this.lozinka_unos.UseSystemPasswordChar = true;
             // 
@@ -161,7 +160,7 @@ namespace sistem
             this.korisnicko_ime_unos.Location = new System.Drawing.Point(159, 116);
             this.korisnicko_ime_unos.MaxLength = 20;
             this.korisnicko_ime_unos.Name = "korisnicko_ime_unos";
-            this.korisnicko_ime_unos.Size = new System.Drawing.Size(190, 25);
+            this.korisnicko_ime_unos.Size = new System.Drawing.Size(210, 25);
             this.korisnicko_ime_unos.TabIndex = 9;
             // 
             // prezime_unos
@@ -171,7 +170,7 @@ namespace sistem
             this.prezime_unos.Location = new System.Drawing.Point(159, 81);
             this.prezime_unos.MaxLength = 15;
             this.prezime_unos.Name = "prezime_unos";
-            this.prezime_unos.Size = new System.Drawing.Size(190, 25);
+            this.prezime_unos.Size = new System.Drawing.Size(210, 25);
             this.prezime_unos.TabIndex = 8;
             // 
             // ime_unos
@@ -181,7 +180,7 @@ namespace sistem
             this.ime_unos.Location = new System.Drawing.Point(159, 46);
             this.ime_unos.MaxLength = 15;
             this.ime_unos.Name = "ime_unos";
-            this.ime_unos.Size = new System.Drawing.Size(190, 25);
+            this.ime_unos.Size = new System.Drawing.Size(210, 25);
             this.ime_unos.TabIndex = 7;
             // 
             // label7

@@ -47,59 +47,53 @@ namespace sistem
             this.labelaEmailPrikaz = new System.Windows.Forms.Label();
             this.labelaImePrikaz = new System.Windows.Forms.Label();
             this.panelInformacije = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelCentar = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelPrikazAdminInformacije = new System.Windows.Forms.TableLayoutPanel();
+            this.panelAdminPodaci = new System.Windows.Forms.Panel();
+            this.tableLayoutPanelInfoAdmin = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanelPrikazFakGodina = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelTekucaGodina = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fakultetskaGodinaPrikaz = new System.Windows.Forms.Label();
+            this.tableLayoutPanelUnosNoveGodine = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dugmeAzurirajFakultetskuGodinu = new FontAwesome.Sharp.IconButton();
             this.fakultetskaGodinaUnos = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.labela = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dugmeIzvestajPromeneFakultet = new FontAwesome.Sharp.IconButton();
-            this.dugmeIzvestajPromeneUniverzitet = new FontAwesome.Sharp.IconButton();
-            this.listaPredmetaIzvestaj = new FontAwesome.Sharp.IconButton();
-            this.dugmeInformacije = new FontAwesome.Sharp.IconButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNaslov = new System.Windows.Forms.Panel();
             this.panelMeniIzvestaji = new System.Windows.Forms.Panel();
             this.tableLayoutPanelMeniIzvestaji = new System.Windows.Forms.TableLayoutPanel();
+            this.dugmeIzvestajPromeneFakultet = new FontAwesome.Sharp.IconButton();
+            this.dugmeInformacije = new FontAwesome.Sharp.IconButton();
             this.labelaizvestaji = new System.Windows.Forms.Label();
-            this.tableLayoutPanelCentar = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelPrikazAdminInformacije = new System.Windows.Forms.TableLayoutPanel();
-            this.panelAdmininformacije = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelAdminInfoTabela = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelFakultetskaGodina = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelUnosFakultetskeGodine = new System.Windows.Forms.TableLayoutPanel();
-            this.fakultetskaGodinaPrikaz = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelUnosFakultetskeGodine = new System.Windows.Forms.Panel();
+            this.dugmeIzvestajPromeneUniverzitet = new FontAwesome.Sharp.IconButton();
+            this.listaPredmetaIzvestaj = new FontAwesome.Sharp.IconButton();
             this.panelMeni.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelInformacije.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanelCentar.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanelPrikazAdminInformacije.SuspendLayout();
+            this.panelAdminPodaci.SuspendLayout();
+            this.tableLayoutPanelInfoAdmin.SuspendLayout();
+            this.tableLayoutPanelPrikazFakGodina.SuspendLayout();
+            this.tableLayoutPanelTekucaGodina.SuspendLayout();
+            this.tableLayoutPanelUnosNoveGodine.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelNaslov.SuspendLayout();
             this.panelMeniIzvestaji.SuspendLayout();
             this.tableLayoutPanelMeniIzvestaji.SuspendLayout();
-            this.tableLayoutPanelCentar.SuspendLayout();
-            this.tableLayoutPanelPrikazAdminInformacije.SuspendLayout();
-            this.panelAdmininformacije.SuspendLayout();
-            this.tableLayoutPanelAdminInfoTabela.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panelFakultetskaGodina.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanelUnosFakultetskeGodine.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panelUnosFakultetskeGodine.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMeni
@@ -110,7 +104,7 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 738);
+            this.panelMeni.Size = new System.Drawing.Size(199, 752);
             this.panelMeni.TabIndex = 6;
             // 
             // tableLayoutPanel1
@@ -138,7 +132,7 @@ namespace sistem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.38903F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.38903F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(199, 738);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(199, 752);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dugmeUpravljanjeProfesorima
@@ -153,10 +147,10 @@ namespace sistem
             this.dugmeUpravljanjeProfesorima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeProfesorima.IconSize = 50;
             this.dugmeUpravljanjeProfesorima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeProfesorima.Location = new System.Drawing.Point(3, 508);
+            this.dugmeUpravljanjeProfesorima.Location = new System.Drawing.Point(3, 520);
             this.dugmeUpravljanjeProfesorima.Name = "dugmeUpravljanjeProfesorima";
             this.dugmeUpravljanjeProfesorima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjeProfesorima.Size = new System.Drawing.Size(193, 70);
+            this.dugmeUpravljanjeProfesorima.Size = new System.Drawing.Size(193, 72);
             this.dugmeUpravljanjeProfesorima.TabIndex = 7;
             this.dugmeUpravljanjeProfesorima.Text = "upravljanje profesorima";
             this.dugmeUpravljanjeProfesorima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,10 +170,10 @@ namespace sistem
             this.dugmeUpravljanjeStudentima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeStudentima.IconSize = 50;
             this.dugmeUpravljanjeStudentima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeStudentima.Location = new System.Drawing.Point(3, 584);
+            this.dugmeUpravljanjeStudentima.Location = new System.Drawing.Point(3, 598);
             this.dugmeUpravljanjeStudentima.Name = "dugmeUpravljanjeStudentima";
             this.dugmeUpravljanjeStudentima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjeStudentima.Size = new System.Drawing.Size(193, 70);
+            this.dugmeUpravljanjeStudentima.Size = new System.Drawing.Size(193, 72);
             this.dugmeUpravljanjeStudentima.TabIndex = 6;
             this.dugmeUpravljanjeStudentima.Text = "upravljanje studentima";
             this.dugmeUpravljanjeStudentima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,10 +193,10 @@ namespace sistem
             this.dugmeUpravljanjePredmetima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjePredmetima.IconSize = 50;
             this.dugmeUpravljanjePredmetima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjePredmetima.Location = new System.Drawing.Point(3, 660);
+            this.dugmeUpravljanjePredmetima.Location = new System.Drawing.Point(3, 676);
             this.dugmeUpravljanjePredmetima.Name = "dugmeUpravljanjePredmetima";
             this.dugmeUpravljanjePredmetima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjePredmetima.Size = new System.Drawing.Size(193, 75);
+            this.dugmeUpravljanjePredmetima.Size = new System.Drawing.Size(193, 73);
             this.dugmeUpravljanjePredmetima.TabIndex = 5;
             this.dugmeUpravljanjePredmetima.Text = "upravljanje predmetima";
             this.dugmeUpravljanjePredmetima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,7 +210,7 @@ namespace sistem
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogo.Location = new System.Drawing.Point(3, 3);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(193, 195);
+            this.panelLogo.Size = new System.Drawing.Size(193, 199);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox2
@@ -225,7 +219,7 @@ namespace sistem
             this.pictureBox2.Image = global::sistem.Properties.Resources.admin;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(193, 195);
+            this.pictureBox2.Size = new System.Drawing.Size(193, 199);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -242,10 +236,10 @@ namespace sistem
             this.dugmeLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeLogout.IconSize = 50;
             this.dugmeLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeLogout.Location = new System.Drawing.Point(3, 204);
+            this.dugmeLogout.Location = new System.Drawing.Point(3, 208);
             this.dugmeLogout.Name = "dugmeLogout";
             this.dugmeLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeLogout.Size = new System.Drawing.Size(193, 70);
+            this.dugmeLogout.Size = new System.Drawing.Size(193, 72);
             this.dugmeLogout.TabIndex = 1;
             this.dugmeLogout.Text = "logout";
             this.dugmeLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,10 +259,10 @@ namespace sistem
             this.dugmeUpravljanjeFakultetom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeFakultetom.IconSize = 50;
             this.dugmeUpravljanjeFakultetom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeFakultetom.Location = new System.Drawing.Point(3, 356);
+            this.dugmeUpravljanjeFakultetom.Location = new System.Drawing.Point(3, 364);
             this.dugmeUpravljanjeFakultetom.Name = "dugmeUpravljanjeFakultetom";
             this.dugmeUpravljanjeFakultetom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjeFakultetom.Size = new System.Drawing.Size(193, 70);
+            this.dugmeUpravljanjeFakultetom.Size = new System.Drawing.Size(193, 72);
             this.dugmeUpravljanjeFakultetom.TabIndex = 3;
             this.dugmeUpravljanjeFakultetom.Text = "upravljanje fakultetom";
             this.dugmeUpravljanjeFakultetom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -288,10 +282,10 @@ namespace sistem
             this.dugmeUpravljanjeUniverzitetom.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeUniverzitetom.IconSize = 50;
             this.dugmeUpravljanjeUniverzitetom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeUniverzitetom.Location = new System.Drawing.Point(3, 280);
+            this.dugmeUpravljanjeUniverzitetom.Location = new System.Drawing.Point(3, 286);
             this.dugmeUpravljanjeUniverzitetom.Name = "dugmeUpravljanjeUniverzitetom";
             this.dugmeUpravljanjeUniverzitetom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjeUniverzitetom.Size = new System.Drawing.Size(193, 70);
+            this.dugmeUpravljanjeUniverzitetom.Size = new System.Drawing.Size(193, 72);
             this.dugmeUpravljanjeUniverzitetom.TabIndex = 2;
             this.dugmeUpravljanjeUniverzitetom.Text = "upravljanje univerzitetom";
             this.dugmeUpravljanjeUniverzitetom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,10 +305,10 @@ namespace sistem
             this.dugmeUpravljanjeDepartmanima.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dugmeUpravljanjeDepartmanima.IconSize = 50;
             this.dugmeUpravljanjeDepartmanima.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeUpravljanjeDepartmanima.Location = new System.Drawing.Point(3, 432);
+            this.dugmeUpravljanjeDepartmanima.Location = new System.Drawing.Point(3, 442);
             this.dugmeUpravljanjeDepartmanima.Name = "dugmeUpravljanjeDepartmanima";
             this.dugmeUpravljanjeDepartmanima.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeUpravljanjeDepartmanima.Size = new System.Drawing.Size(193, 70);
+            this.dugmeUpravljanjeDepartmanima.Size = new System.Drawing.Size(193, 72);
             this.dugmeUpravljanjeDepartmanima.TabIndex = 4;
             this.dugmeUpravljanjeDepartmanima.Text = "upravljanje departmanima";
             this.dugmeUpravljanjeDepartmanima.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,9 +321,9 @@ namespace sistem
             this.labelaEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaEmail.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaEmail.ForeColor = System.Drawing.Color.White;
-            this.labelaEmail.Location = new System.Drawing.Point(3, 85);
+            this.labelaEmail.Location = new System.Drawing.Point(4, 95);
             this.labelaEmail.Name = "labelaEmail";
-            this.labelaEmail.Size = new System.Drawing.Size(137, 85);
+            this.labelaEmail.Size = new System.Drawing.Size(107, 93);
             this.labelaEmail.TabIndex = 10;
             this.labelaEmail.Text = "Email:";
             this.labelaEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -339,9 +333,9 @@ namespace sistem
             this.labelaTelefon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaTelefon.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaTelefon.ForeColor = System.Drawing.Color.White;
-            this.labelaTelefon.Location = new System.Drawing.Point(3, 170);
+            this.labelaTelefon.Location = new System.Drawing.Point(4, 189);
             this.labelaTelefon.Name = "labelaTelefon";
-            this.labelaTelefon.Size = new System.Drawing.Size(137, 86);
+            this.labelaTelefon.Size = new System.Drawing.Size(107, 93);
             this.labelaTelefon.TabIndex = 11;
             this.labelaTelefon.Text = "Telefon:";
             this.labelaTelefon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -351,36 +345,36 @@ namespace sistem
             this.labelaTelefonPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaTelefonPrikaz.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaTelefonPrikaz.ForeColor = System.Drawing.Color.White;
-            this.labelaTelefonPrikaz.Location = new System.Drawing.Point(146, 170);
+            this.labelaTelefonPrikaz.Location = new System.Drawing.Point(118, 189);
             this.labelaTelefonPrikaz.Name = "labelaTelefonPrikaz";
-            this.labelaTelefonPrikaz.Size = new System.Drawing.Size(355, 86);
+            this.labelaTelefonPrikaz.Size = new System.Drawing.Size(278, 93);
             this.labelaTelefonPrikaz.TabIndex = 12;
             this.labelaTelefonPrikaz.Text = "nedefinisano";
-            this.labelaTelefonPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelaTelefonPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelaEmailPrikaz
             // 
             this.labelaEmailPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaEmailPrikaz.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaEmailPrikaz.ForeColor = System.Drawing.Color.White;
-            this.labelaEmailPrikaz.Location = new System.Drawing.Point(146, 85);
+            this.labelaEmailPrikaz.Location = new System.Drawing.Point(118, 95);
             this.labelaEmailPrikaz.Name = "labelaEmailPrikaz";
-            this.labelaEmailPrikaz.Size = new System.Drawing.Size(355, 85);
+            this.labelaEmailPrikaz.Size = new System.Drawing.Size(278, 93);
             this.labelaEmailPrikaz.TabIndex = 13;
             this.labelaEmailPrikaz.Text = "nedefinisano";
-            this.labelaEmailPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelaEmailPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelaImePrikaz
             // 
             this.labelaImePrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelaImePrikaz.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaImePrikaz.ForeColor = System.Drawing.Color.White;
-            this.labelaImePrikaz.Location = new System.Drawing.Point(146, 0);
+            this.labelaImePrikaz.Location = new System.Drawing.Point(118, 1);
             this.labelaImePrikaz.Name = "labelaImePrikaz";
-            this.labelaImePrikaz.Size = new System.Drawing.Size(355, 85);
+            this.labelaImePrikaz.Size = new System.Drawing.Size(278, 93);
             this.labelaImePrikaz.TabIndex = 14;
             this.labelaImePrikaz.Text = "nedefinisano";
-            this.labelaImePrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelaImePrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelInformacije
             // 
@@ -389,95 +383,24 @@ namespace sistem
             this.panelInformacije.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInformacije.Location = new System.Drawing.Point(199, 137);
             this.panelInformacije.Name = "panelInformacije";
-            this.panelInformacije.Size = new System.Drawing.Size(933, 601);
+            this.panelInformacije.Size = new System.Drawing.Size(933, 615);
             this.panelInformacije.TabIndex = 15;
             // 
-            // groupBox2
+            // tableLayoutPanelCentar
             // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(3, 302);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(925, 294);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "fakultetska godina";
-            // 
-            // dugmeAzurirajFakultetskuGodinu
-            // 
-            this.dugmeAzurirajFakultetskuGodinu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dugmeAzurirajFakultetskuGodinu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeAzurirajFakultetskuGodinu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeAzurirajFakultetskuGodinu.FlatAppearance.BorderSize = 0;
-            this.dugmeAzurirajFakultetskuGodinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeAzurirajFakultetskuGodinu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dugmeAzurirajFakultetskuGodinu.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeAzurirajFakultetskuGodinu.IconChar = FontAwesome.Sharp.IconChar.CalendarPlus;
-            this.dugmeAzurirajFakultetskuGodinu.IconColor = System.Drawing.Color.Black;
-            this.dugmeAzurirajFakultetskuGodinu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeAzurirajFakultetskuGodinu.IconSize = 50;
-            this.dugmeAzurirajFakultetskuGodinu.Location = new System.Drawing.Point(38, 54);
-            this.dugmeAzurirajFakultetskuGodinu.Name = "dugmeAzurirajFakultetskuGodinu";
-            this.dugmeAzurirajFakultetskuGodinu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeAzurirajFakultetskuGodinu.Size = new System.Drawing.Size(197, 53);
-            this.dugmeAzurirajFakultetskuGodinu.TabIndex = 17;
-            this.dugmeAzurirajFakultetskuGodinu.Text = "ažuriraj";
-            this.dugmeAzurirajFakultetskuGodinu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeAzurirajFakultetskuGodinu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeAzurirajFakultetskuGodinu.UseVisualStyleBackColor = false;
-            this.dugmeAzurirajFakultetskuGodinu.Click += new System.EventHandler(this.dugmeAzurirajFakultetskuGodinu_Click);
-            // 
-            // fakultetskaGodinaUnos
-            // 
-            this.fakultetskaGodinaUnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.fakultetskaGodinaUnos.Location = new System.Drawing.Point(38, 16);
-            this.fakultetskaGodinaUnos.MaxLength = 7;
-            this.fakultetskaGodinaUnos.Name = "fakultetskaGodinaUnos";
-            this.fakultetskaGodinaUnos.Size = new System.Drawing.Size(197, 32);
-            this.fakultetskaGodinaUnos.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(3, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(267, 66);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Unesite novu fakultetsku godinu:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labela
-            // 
-            this.labela.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labela.AutoSize = true;
-            this.labela.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labela.ForeColor = System.Drawing.Color.White;
-            this.labela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labela.Location = new System.Drawing.Point(135, 41);
-            this.labela.MaximumSize = new System.Drawing.Size(300, 100);
-            this.labela.Name = "labela";
-            this.labela.Size = new System.Drawing.Size(284, 46);
-            this.labela.TabIndex = 14;
-            this.labela.Text = "Prilikom unosa nova fakultetske godine vrši se presek studenata.";
-            this.labela.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(61, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 51);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Tekuća fakultetska godina:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tableLayoutPanelCentar.ColumnCount = 1;
+            this.tableLayoutPanelCentar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelCentar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelCentar.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanelCentar.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelCentar.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelCentar.Name = "tableLayoutPanelCentar";
+            this.tableLayoutPanelCentar.RowCount = 2;
+            this.tableLayoutPanelCentar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.67047F));
+            this.tableLayoutPanelCentar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.32953F));
+            this.tableLayoutPanelCentar.Size = new System.Drawing.Size(931, 613);
+            this.tableLayoutPanelCentar.TabIndex = 17;
             // 
             // groupBox1
             // 
@@ -487,99 +410,260 @@ namespace sistem
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(925, 293);
+            this.groupBox1.Size = new System.Drawing.Size(925, 322);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "informacije o administratoru";
+            this.groupBox1.Text = "informacije o administratoru / fakultetska godina";
             // 
-            // dugmeIzvestajPromeneFakultet
+            // tableLayoutPanelPrikazAdminInformacije
             // 
-            this.dugmeIzvestajPromeneFakultet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeIzvestajPromeneFakultet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeIzvestajPromeneFakultet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dugmeIzvestajPromeneFakultet.FlatAppearance.BorderSize = 0;
-            this.dugmeIzvestajPromeneFakultet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeIzvestajPromeneFakultet.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeIzvestajPromeneFakultet.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
-            this.dugmeIzvestajPromeneFakultet.IconColor = System.Drawing.Color.Black;
-            this.dugmeIzvestajPromeneFakultet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeIzvestajPromeneFakultet.IconSize = 40;
-            this.dugmeIzvestajPromeneFakultet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeIzvestajPromeneFakultet.Location = new System.Drawing.Point(624, 3);
-            this.dugmeIzvestajPromeneFakultet.Name = "dugmeIzvestajPromeneFakultet";
-            this.dugmeIzvestajPromeneFakultet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeIzvestajPromeneFakultet.Size = new System.Drawing.Size(201, 131);
-            this.dugmeIzvestajPromeneFakultet.TabIndex = 14;
-            this.dugmeIzvestajPromeneFakultet.Text = "promene na fakultetu";
-            this.dugmeIzvestajPromeneFakultet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeIzvestajPromeneFakultet.UseVisualStyleBackColor = false;
-            this.dugmeIzvestajPromeneFakultet.Click += new System.EventHandler(this.dugmeIzvestajPromeneFakultet_Click);
+            this.tableLayoutPanelPrikazAdminInformacije.ColumnCount = 2;
+            this.tableLayoutPanelPrikazAdminInformacije.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.44444F));
+            this.tableLayoutPanelPrikazAdminInformacije.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanelPrikazAdminInformacije.Controls.Add(this.panelAdminPodaci, 0, 0);
+            this.tableLayoutPanelPrikazAdminInformacije.Controls.Add(this.tableLayoutPanelPrikazFakGodina, 1, 0);
+            this.tableLayoutPanelPrikazAdminInformacije.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelPrikazAdminInformacije.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanelPrikazAdminInformacije.Name = "tableLayoutPanelPrikazAdminInformacije";
+            this.tableLayoutPanelPrikazAdminInformacije.RowCount = 1;
+            this.tableLayoutPanelPrikazAdminInformacije.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelPrikazAdminInformacije.Size = new System.Drawing.Size(919, 291);
+            this.tableLayoutPanelPrikazAdminInformacije.TabIndex = 15;
             // 
-            // dugmeIzvestajPromeneUniverzitet
+            // panelAdminPodaci
             // 
-            this.dugmeIzvestajPromeneUniverzitet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.dugmeIzvestajPromeneUniverzitet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeIzvestajPromeneUniverzitet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dugmeIzvestajPromeneUniverzitet.FlatAppearance.BorderSize = 0;
-            this.dugmeIzvestajPromeneUniverzitet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeIzvestajPromeneUniverzitet.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeIzvestajPromeneUniverzitet.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
-            this.dugmeIzvestajPromeneUniverzitet.IconColor = System.Drawing.Color.Black;
-            this.dugmeIzvestajPromeneUniverzitet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeIzvestajPromeneUniverzitet.IconSize = 40;
-            this.dugmeIzvestajPromeneUniverzitet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dugmeIzvestajPromeneUniverzitet.Location = new System.Drawing.Point(417, 3);
-            this.dugmeIzvestajPromeneUniverzitet.Name = "dugmeIzvestajPromeneUniverzitet";
-            this.dugmeIzvestajPromeneUniverzitet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeIzvestajPromeneUniverzitet.Size = new System.Drawing.Size(201, 131);
-            this.dugmeIzvestajPromeneUniverzitet.TabIndex = 13;
-            this.dugmeIzvestajPromeneUniverzitet.Text = "promene na univerzitetu";
-            this.dugmeIzvestajPromeneUniverzitet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeIzvestajPromeneUniverzitet.UseVisualStyleBackColor = false;
-            this.dugmeIzvestajPromeneUniverzitet.Click += new System.EventHandler(this.dugmeIzvestajPromeneUniverzitet_Click);
+            this.panelAdminPodaci.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAdminPodaci.Controls.Add(this.tableLayoutPanelInfoAdmin);
+            this.panelAdminPodaci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAdminPodaci.Location = new System.Drawing.Point(3, 3);
+            this.panelAdminPodaci.Name = "panelAdminPodaci";
+            this.panelAdminPodaci.Size = new System.Drawing.Size(402, 285);
+            this.panelAdminPodaci.TabIndex = 17;
             // 
-            // listaPredmetaIzvestaj
+            // tableLayoutPanelInfoAdmin
             // 
-            this.listaPredmetaIzvestaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.listaPredmetaIzvestaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listaPredmetaIzvestaj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listaPredmetaIzvestaj.FlatAppearance.BorderSize = 0;
-            this.listaPredmetaIzvestaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.listaPredmetaIzvestaj.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.listaPredmetaIzvestaj.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.listaPredmetaIzvestaj.IconColor = System.Drawing.Color.Black;
-            this.listaPredmetaIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.listaPredmetaIzvestaj.IconSize = 40;
-            this.listaPredmetaIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.listaPredmetaIzvestaj.Location = new System.Drawing.Point(210, 3);
-            this.listaPredmetaIzvestaj.Name = "listaPredmetaIzvestaj";
-            this.listaPredmetaIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.listaPredmetaIzvestaj.Size = new System.Drawing.Size(201, 131);
-            this.listaPredmetaIzvestaj.TabIndex = 12;
-            this.listaPredmetaIzvestaj.Text = "lista predmeta";
-            this.listaPredmetaIzvestaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.listaPredmetaIzvestaj.UseVisualStyleBackColor = false;
-            this.listaPredmetaIzvestaj.Click += new System.EventHandler(this.listaPredmetaIzvestaj_Click);
+            this.tableLayoutPanelInfoAdmin.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanelInfoAdmin.ColumnCount = 2;
+            this.tableLayoutPanelInfoAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.tableLayoutPanelInfoAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
+            this.tableLayoutPanelInfoAdmin.Controls.Add(this.labelaTelefonPrikaz, 1, 2);
+            this.tableLayoutPanelInfoAdmin.Controls.Add(this.labelaTelefon, 0, 2);
+            this.tableLayoutPanelInfoAdmin.Controls.Add(this.labelaEmailPrikaz, 1, 1);
+            this.tableLayoutPanelInfoAdmin.Controls.Add(this.labelaEmail, 0, 1);
+            this.tableLayoutPanelInfoAdmin.Controls.Add(this.labelaImePrikaz, 1, 0);
+            this.tableLayoutPanelInfoAdmin.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanelInfoAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelInfoAdmin.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelInfoAdmin.Name = "tableLayoutPanelInfoAdmin";
+            this.tableLayoutPanelInfoAdmin.RowCount = 3;
+            this.tableLayoutPanelInfoAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelInfoAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelInfoAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelInfoAdmin.Size = new System.Drawing.Size(400, 283);
+            this.tableLayoutPanelInfoAdmin.TabIndex = 17;
             // 
-            // dugmeInformacije
+            // label3
             // 
-            this.dugmeInformacije.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeInformacije.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dugmeInformacije.FlatAppearance.BorderSize = 0;
-            this.dugmeInformacije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeInformacije.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeInformacije.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.dugmeInformacije.IconColor = System.Drawing.Color.Black;
-            this.dugmeInformacije.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeInformacije.IconSize = 50;
-            this.dugmeInformacije.Location = new System.Drawing.Point(831, 3);
-            this.dugmeInformacije.Name = "dugmeInformacije";
-            this.dugmeInformacije.Size = new System.Drawing.Size(99, 131);
-            this.dugmeInformacije.TabIndex = 16;
-            this.dugmeInformacije.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeInformacije.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeInformacije.UseVisualStyleBackColor = true;
-            this.dugmeInformacije.Click += new System.EventHandler(this.dugmeInformacije_Click);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 93);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Ime:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanelPrikazFakGodina
+            // 
+            this.tableLayoutPanelPrikazFakGodina.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanelPrikazFakGodina.ColumnCount = 1;
+            this.tableLayoutPanelPrikazFakGodina.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.tableLayoutPanelTekucaGodina, 0, 1);
+            this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.tableLayoutPanelUnosNoveGodine, 0, 2);
+            this.tableLayoutPanelPrikazFakGodina.Controls.Add(this.labela, 0, 0);
+            this.tableLayoutPanelPrikazFakGodina.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelPrikazFakGodina.Location = new System.Drawing.Point(411, 3);
+            this.tableLayoutPanelPrikazFakGodina.Name = "tableLayoutPanelPrikazFakGodina";
+            this.tableLayoutPanelPrikazFakGodina.RowCount = 3;
+            this.tableLayoutPanelPrikazFakGodina.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.21341F));
+            this.tableLayoutPanelPrikazFakGodina.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.8933F));
+            this.tableLayoutPanelPrikazFakGodina.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.8933F));
+            this.tableLayoutPanelPrikazFakGodina.Size = new System.Drawing.Size(505, 285);
+            this.tableLayoutPanelPrikazFakGodina.TabIndex = 18;
+            // 
+            // tableLayoutPanelTekucaGodina
+            // 
+            this.tableLayoutPanelTekucaGodina.ColumnCount = 2;
+            this.tableLayoutPanelTekucaGodina.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelTekucaGodina.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelTekucaGodina.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanelTekucaGodina.Controls.Add(this.fakultetskaGodinaPrikaz, 1, 0);
+            this.tableLayoutPanelTekucaGodina.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelTekucaGodina.Location = new System.Drawing.Point(4, 67);
+            this.tableLayoutPanelTekucaGodina.Name = "tableLayoutPanelTekucaGodina";
+            this.tableLayoutPanelTekucaGodina.RowCount = 1;
+            this.tableLayoutPanelTekucaGodina.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelTekucaGodina.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanelTekucaGodina.Size = new System.Drawing.Size(497, 103);
+            this.tableLayoutPanelTekucaGodina.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(242, 103);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Tekuća fakultetska godina:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // fakultetskaGodinaPrikaz
+            // 
+            this.fakultetskaGodinaPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fakultetskaGodinaPrikaz.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fakultetskaGodinaPrikaz.ForeColor = System.Drawing.Color.White;
+            this.fakultetskaGodinaPrikaz.Location = new System.Drawing.Point(251, 0);
+            this.fakultetskaGodinaPrikaz.Name = "fakultetskaGodinaPrikaz";
+            this.fakultetskaGodinaPrikaz.Size = new System.Drawing.Size(243, 103);
+            this.fakultetskaGodinaPrikaz.TabIndex = 13;
+            this.fakultetskaGodinaPrikaz.Text = "nedefinisano";
+            this.fakultetskaGodinaPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanelUnosNoveGodine
+            // 
+            this.tableLayoutPanelUnosNoveGodine.ColumnCount = 2;
+            this.tableLayoutPanelUnosNoveGodine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelUnosNoveGodine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelUnosNoveGodine.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanelUnosNoveGodine.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanelUnosNoveGodine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelUnosNoveGodine.Location = new System.Drawing.Point(4, 177);
+            this.tableLayoutPanelUnosNoveGodine.Name = "tableLayoutPanelUnosNoveGodine";
+            this.tableLayoutPanelUnosNoveGodine.RowCount = 1;
+            this.tableLayoutPanelUnosNoveGodine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelUnosNoveGodine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanelUnosNoveGodine.Size = new System.Drawing.Size(497, 104);
+            this.tableLayoutPanelUnosNoveGodine.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(242, 104);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Unesite novu fakultetsku godinu:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.dugmeAzurirajFakultetskuGodinu, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.fakultetskaGodinaUnos, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(251, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(243, 98);
+            this.tableLayoutPanel3.TabIndex = 16;
+            // 
+            // dugmeAzurirajFakultetskuGodinu
+            // 
+            this.dugmeAzurirajFakultetskuGodinu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeAzurirajFakultetskuGodinu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeAzurirajFakultetskuGodinu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dugmeAzurirajFakultetskuGodinu.FlatAppearance.BorderSize = 0;
+            this.dugmeAzurirajFakultetskuGodinu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeAzurirajFakultetskuGodinu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmeAzurirajFakultetskuGodinu.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeAzurirajFakultetskuGodinu.IconChar = FontAwesome.Sharp.IconChar.CalendarPlus;
+            this.dugmeAzurirajFakultetskuGodinu.IconColor = System.Drawing.Color.Black;
+            this.dugmeAzurirajFakultetskuGodinu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeAzurirajFakultetskuGodinu.IconSize = 50;
+            this.dugmeAzurirajFakultetskuGodinu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeAzurirajFakultetskuGodinu.Location = new System.Drawing.Point(3, 45);
+            this.dugmeAzurirajFakultetskuGodinu.Name = "dugmeAzurirajFakultetskuGodinu";
+            this.dugmeAzurirajFakultetskuGodinu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeAzurirajFakultetskuGodinu.Size = new System.Drawing.Size(237, 50);
+            this.dugmeAzurirajFakultetskuGodinu.TabIndex = 17;
+            this.dugmeAzurirajFakultetskuGodinu.Text = "ažuriraj";
+            this.dugmeAzurirajFakultetskuGodinu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeAzurirajFakultetskuGodinu.UseVisualStyleBackColor = false;
+            this.dugmeAzurirajFakultetskuGodinu.Click += new System.EventHandler(this.dugmeAzurirajFakultetskuGodinu_Click);
+            // 
+            // fakultetskaGodinaUnos
+            // 
+            this.fakultetskaGodinaUnos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fakultetskaGodinaUnos.Location = new System.Drawing.Point(3, 3);
+            this.fakultetskaGodinaUnos.MaxLength = 7;
+            this.fakultetskaGodinaUnos.Name = "fakultetskaGodinaUnos";
+            this.fakultetskaGodinaUnos.Size = new System.Drawing.Size(237, 32);
+            this.fakultetskaGodinaUnos.TabIndex = 16;
+            // 
+            // labela
+            // 
+            this.labela.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labela.AutoSize = true;
+            this.labela.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labela.ForeColor = System.Drawing.Color.White;
+            this.labela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labela.Location = new System.Drawing.Point(113, 9);
+            this.labela.MaximumSize = new System.Drawing.Size(300, 100);
+            this.labela.Name = "labela";
+            this.labela.Size = new System.Drawing.Size(279, 46);
+            this.labela.TabIndex = 14;
+            this.labela.Text = "Prilikom unosa nova fakultetske godine vrši se presek studenata.";
+            this.labela.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(3, 331);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(925, 279);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(919, 248);
+            this.tableLayoutPanel2.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::sistem.Properties.Resources.pocetna6;
+            this.pictureBox1.Location = new System.Drawing.Point(140, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(637, 242);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panelNaslov
             // 
@@ -621,6 +705,50 @@ namespace sistem
             this.tableLayoutPanelMeniIzvestaji.Size = new System.Drawing.Size(933, 137);
             this.tableLayoutPanelMeniIzvestaji.TabIndex = 0;
             // 
+            // dugmeIzvestajPromeneFakultet
+            // 
+            this.dugmeIzvestajPromeneFakultet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajPromeneFakultet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajPromeneFakultet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dugmeIzvestajPromeneFakultet.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajPromeneFakultet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajPromeneFakultet.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmeIzvestajPromeneFakultet.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajPromeneFakultet.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.dugmeIzvestajPromeneFakultet.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajPromeneFakultet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajPromeneFakultet.IconSize = 40;
+            this.dugmeIzvestajPromeneFakultet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajPromeneFakultet.Location = new System.Drawing.Point(624, 3);
+            this.dugmeIzvestajPromeneFakultet.Name = "dugmeIzvestajPromeneFakultet";
+            this.dugmeIzvestajPromeneFakultet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajPromeneFakultet.Size = new System.Drawing.Size(201, 131);
+            this.dugmeIzvestajPromeneFakultet.TabIndex = 14;
+            this.dugmeIzvestajPromeneFakultet.Text = "promene na fakultetu";
+            this.dugmeIzvestajPromeneFakultet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajPromeneFakultet.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajPromeneFakultet.Click += new System.EventHandler(this.dugmeIzvestajPromeneFakultet_Click);
+            // 
+            // dugmeInformacije
+            // 
+            this.dugmeInformacije.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeInformacije.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dugmeInformacije.FlatAppearance.BorderSize = 0;
+            this.dugmeInformacije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeInformacije.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeInformacije.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.dugmeInformacije.IconColor = System.Drawing.Color.Black;
+            this.dugmeInformacije.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeInformacije.IconSize = 50;
+            this.dugmeInformacije.Location = new System.Drawing.Point(831, 3);
+            this.dugmeInformacije.Name = "dugmeInformacije";
+            this.dugmeInformacije.Size = new System.Drawing.Size(99, 131);
+            this.dugmeInformacije.TabIndex = 16;
+            this.dugmeInformacije.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeInformacije.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeInformacije.UseVisualStyleBackColor = true;
+            this.dugmeInformacije.Click += new System.EventHandler(this.dugmeInformacije_Click);
+            // 
             // labelaizvestaji
             // 
             this.labelaizvestaji.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -633,216 +761,64 @@ namespace sistem
             this.labelaizvestaji.Text = "generišite izveštaj";
             this.labelaizvestaji.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanelCentar
+            // dugmeIzvestajPromeneUniverzitet
             // 
-            this.tableLayoutPanelCentar.ColumnCount = 1;
-            this.tableLayoutPanelCentar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCentar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelCentar.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanelCentar.Controls.Add(this.groupBox2, 0, 1);
-            this.tableLayoutPanelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelCentar.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelCentar.Name = "tableLayoutPanelCentar";
-            this.tableLayoutPanelCentar.RowCount = 2;
-            this.tableLayoutPanelCentar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelCentar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelCentar.Size = new System.Drawing.Size(931, 599);
-            this.tableLayoutPanelCentar.TabIndex = 17;
+            this.dugmeIzvestajPromeneUniverzitet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.dugmeIzvestajPromeneUniverzitet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeIzvestajPromeneUniverzitet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dugmeIzvestajPromeneUniverzitet.FlatAppearance.BorderSize = 0;
+            this.dugmeIzvestajPromeneUniverzitet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeIzvestajPromeneUniverzitet.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dugmeIzvestajPromeneUniverzitet.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeIzvestajPromeneUniverzitet.IconChar = FontAwesome.Sharp.IconChar.ExchangeAlt;
+            this.dugmeIzvestajPromeneUniverzitet.IconColor = System.Drawing.Color.Black;
+            this.dugmeIzvestajPromeneUniverzitet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeIzvestajPromeneUniverzitet.IconSize = 40;
+            this.dugmeIzvestajPromeneUniverzitet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dugmeIzvestajPromeneUniverzitet.Location = new System.Drawing.Point(417, 3);
+            this.dugmeIzvestajPromeneUniverzitet.Name = "dugmeIzvestajPromeneUniverzitet";
+            this.dugmeIzvestajPromeneUniverzitet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeIzvestajPromeneUniverzitet.Size = new System.Drawing.Size(201, 131);
+            this.dugmeIzvestajPromeneUniverzitet.TabIndex = 13;
+            this.dugmeIzvestajPromeneUniverzitet.Text = "promene na univerzitetu";
+            this.dugmeIzvestajPromeneUniverzitet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeIzvestajPromeneUniverzitet.UseVisualStyleBackColor = false;
+            this.dugmeIzvestajPromeneUniverzitet.Click += new System.EventHandler(this.dugmeIzvestajPromeneUniverzitet_Click);
             // 
-            // tableLayoutPanelPrikazAdminInformacije
+            // listaPredmetaIzvestaj
             // 
-            this.tableLayoutPanelPrikazAdminInformacije.ColumnCount = 3;
-            this.tableLayoutPanelPrikazAdminInformacije.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanelPrikazAdminInformacije.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanelPrikazAdminInformacije.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanelPrikazAdminInformacije.Controls.Add(this.panelAdmininformacije, 1, 0);
-            this.tableLayoutPanelPrikazAdminInformacije.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelPrikazAdminInformacije.Location = new System.Drawing.Point(3, 28);
-            this.tableLayoutPanelPrikazAdminInformacije.Name = "tableLayoutPanelPrikazAdminInformacije";
-            this.tableLayoutPanelPrikazAdminInformacije.RowCount = 1;
-            this.tableLayoutPanelPrikazAdminInformacije.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelPrikazAdminInformacije.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelPrikazAdminInformacije.Size = new System.Drawing.Size(919, 262);
-            this.tableLayoutPanelPrikazAdminInformacije.TabIndex = 15;
-            // 
-            // panelAdmininformacije
-            // 
-            this.panelAdmininformacije.Controls.Add(this.tableLayoutPanelAdminInfoTabela);
-            this.panelAdmininformacije.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAdmininformacije.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelAdmininformacije.Location = new System.Drawing.Point(207, 3);
-            this.panelAdmininformacije.Name = "panelAdmininformacije";
-            this.panelAdmininformacije.Size = new System.Drawing.Size(504, 256);
-            this.panelAdmininformacije.TabIndex = 16;
-            // 
-            // tableLayoutPanelAdminInfoTabela
-            // 
-            this.tableLayoutPanelAdminInfoTabela.ColumnCount = 2;
-            this.tableLayoutPanelAdminInfoTabela.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.tableLayoutPanelAdminInfoTabela.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
-            this.tableLayoutPanelAdminInfoTabela.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanelAdminInfoTabela.Controls.Add(this.labelaTelefonPrikaz, 1, 2);
-            this.tableLayoutPanelAdminInfoTabela.Controls.Add(this.labelaImePrikaz, 1, 0);
-            this.tableLayoutPanelAdminInfoTabela.Controls.Add(this.labelaEmailPrikaz, 1, 1);
-            this.tableLayoutPanelAdminInfoTabela.Controls.Add(this.labelaTelefon, 0, 2);
-            this.tableLayoutPanelAdminInfoTabela.Controls.Add(this.labelaEmail, 0, 1);
-            this.tableLayoutPanelAdminInfoTabela.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAdminInfoTabela.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelAdminInfoTabela.Name = "tableLayoutPanelAdminInfoTabela";
-            this.tableLayoutPanelAdminInfoTabela.RowCount = 3;
-            this.tableLayoutPanelAdminInfoTabela.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelAdminInfoTabela.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelAdminInfoTabela.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelAdminInfoTabela.Size = new System.Drawing.Size(504, 256);
-            this.tableLayoutPanelAdminInfoTabela.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 85);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Ime:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.79898F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.20102F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.panelFakultetskaGodina, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 28);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(919, 263);
-            this.tableLayoutPanel2.TabIndex = 18;
-            // 
-            // panelFakultetskaGodina
-            // 
-            this.panelFakultetskaGodina.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFakultetskaGodina.Controls.Add(this.tableLayoutPanel4);
-            this.panelFakultetskaGodina.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFakultetskaGodina.Location = new System.Drawing.Point(359, 3);
-            this.panelFakultetskaGodina.Name = "panelFakultetskaGodina";
-            this.panelFakultetskaGodina.Size = new System.Drawing.Size(557, 257);
-            this.panelFakultetskaGodina.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 257);
-            this.panel1.TabIndex = 18;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(350, 257);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.labela, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(555, 255);
-            this.tableLayoutPanel4.TabIndex = 17;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tableLayoutPanelUnosFakultetskeGodine);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 131);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(547, 120);
-            this.panel2.TabIndex = 15;
-            // 
-            // tableLayoutPanelUnosFakultetskeGodine
-            // 
-            this.tableLayoutPanelUnosFakultetskeGodine.ColumnCount = 2;
-            this.tableLayoutPanelUnosFakultetskeGodine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelUnosFakultetskeGodine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelUnosFakultetskeGodine.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanelUnosFakultetskeGodine.Controls.Add(this.panelUnosFakultetskeGodine, 1, 0);
-            this.tableLayoutPanelUnosFakultetskeGodine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelUnosFakultetskeGodine.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelUnosFakultetskeGodine.Name = "tableLayoutPanelUnosFakultetskeGodine";
-            this.tableLayoutPanelUnosFakultetskeGodine.RowCount = 1;
-            this.tableLayoutPanelUnosFakultetskeGodine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelUnosFakultetskeGodine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelUnosFakultetskeGodine.Size = new System.Drawing.Size(547, 120);
-            this.tableLayoutPanelUnosFakultetskeGodine.TabIndex = 0;
-            // 
-            // fakultetskaGodinaPrikaz
-            // 
-            this.fakultetskaGodinaPrikaz.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.fakultetskaGodinaPrikaz.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fakultetskaGodinaPrikaz.ForeColor = System.Drawing.Color.White;
-            this.fakultetskaGodinaPrikaz.Location = new System.Drawing.Point(59, 131);
-            this.fakultetskaGodinaPrikaz.Name = "fakultetskaGodinaPrikaz";
-            this.fakultetskaGodinaPrikaz.Size = new System.Drawing.Size(169, 35);
-            this.fakultetskaGodinaPrikaz.TabIndex = 13;
-            this.fakultetskaGodinaPrikaz.Text = "nedefinisano";
-            this.fakultetskaGodinaPrikaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.fakultetskaGodinaPrikaz);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 251);
-            this.panel3.TabIndex = 14;
-            // 
-            // panelUnosFakultetskeGodine
-            // 
-            this.panelUnosFakultetskeGodine.Controls.Add(this.dugmeAzurirajFakultetskuGodinu);
-            this.panelUnosFakultetskeGodine.Controls.Add(this.fakultetskaGodinaUnos);
-            this.panelUnosFakultetskeGodine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUnosFakultetskeGodine.Location = new System.Drawing.Point(276, 3);
-            this.panelUnosFakultetskeGodine.Name = "panelUnosFakultetskeGodine";
-            this.panelUnosFakultetskeGodine.Size = new System.Drawing.Size(268, 114);
-            this.panelUnosFakultetskeGodine.TabIndex = 16;
+            this.listaPredmetaIzvestaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.listaPredmetaIzvestaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listaPredmetaIzvestaj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listaPredmetaIzvestaj.FlatAppearance.BorderSize = 0;
+            this.listaPredmetaIzvestaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.listaPredmetaIzvestaj.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaPredmetaIzvestaj.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.listaPredmetaIzvestaj.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.listaPredmetaIzvestaj.IconColor = System.Drawing.Color.Black;
+            this.listaPredmetaIzvestaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.listaPredmetaIzvestaj.IconSize = 40;
+            this.listaPredmetaIzvestaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.listaPredmetaIzvestaj.Location = new System.Drawing.Point(210, 3);
+            this.listaPredmetaIzvestaj.Name = "listaPredmetaIzvestaj";
+            this.listaPredmetaIzvestaj.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.listaPredmetaIzvestaj.Size = new System.Drawing.Size(201, 131);
+            this.listaPredmetaIzvestaj.TabIndex = 12;
+            this.listaPredmetaIzvestaj.Text = "lista predmeta";
+            this.listaPredmetaIzvestaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.listaPredmetaIzvestaj.UseVisualStyleBackColor = false;
+            this.listaPredmetaIzvestaj.Click += new System.EventHandler(this.listaPredmetaIzvestaj_Click);
             // 
             // FormaPocetnaStrana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(1132, 738);
+            this.ClientSize = new System.Drawing.Size(1132, 752);
             this.Controls.Add(this.panelInformacije);
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panelMeni);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormaPocetnaStrana";
@@ -854,26 +830,23 @@ namespace sistem
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelInformacije.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanelCentar.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanelPrikazAdminInformacije.ResumeLayout(false);
+            this.panelAdminPodaci.ResumeLayout(false);
+            this.tableLayoutPanelInfoAdmin.ResumeLayout(false);
+            this.tableLayoutPanelPrikazFakGodina.ResumeLayout(false);
+            this.tableLayoutPanelPrikazFakGodina.PerformLayout();
+            this.tableLayoutPanelTekucaGodina.ResumeLayout(false);
+            this.tableLayoutPanelUnosNoveGodine.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelNaslov.ResumeLayout(false);
             this.panelMeniIzvestaji.ResumeLayout(false);
             this.tableLayoutPanelMeniIzvestaji.ResumeLayout(false);
-            this.tableLayoutPanelCentar.ResumeLayout(false);
-            this.tableLayoutPanelPrikazAdminInformacije.ResumeLayout(false);
-            this.panelAdmininformacije.ResumeLayout(false);
-            this.tableLayoutPanelAdminInfoTabela.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.panelFakultetskaGodina.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanelUnosFakultetskeGodine.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panelUnosFakultetskeGodine.ResumeLayout(false);
-            this.panelUnosFakultetskeGodine.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -897,11 +870,6 @@ namespace sistem
         private System.Windows.Forms.Panel panelInformacije;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labela;
-        private System.Windows.Forms.TextBox fakultetskaGodinaUnos;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton dugmeAzurirajFakultetskuGodinu;
         private FontAwesome.Sharp.IconButton listaPredmetaIzvestaj;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneFakultet;
         private FontAwesome.Sharp.IconButton dugmeIzvestajPromeneUniverzitet;
@@ -913,19 +881,21 @@ namespace sistem
         private System.Windows.Forms.Label labelaizvestaji;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCentar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelPrikazAdminInformacije;
-        private System.Windows.Forms.Panel panelAdmininformacije;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAdminInfoTabela;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panelFakultetskaGodina;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelUnosFakultetskeGodine;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Panel panelUnosFakultetskeGodine;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelAdminPodaci;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelInfoAdmin;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelPrikazFakGodina;
+        private System.Windows.Forms.Label labela;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTekucaGodina;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label fakultetskaGodinaPrikaz;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelUnosNoveGodine;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private FontAwesome.Sharp.IconButton dugmeAzurirajFakultetskuGodinu;
+        private System.Windows.Forms.TextBox fakultetskaGodinaUnos;
     }
 }
 

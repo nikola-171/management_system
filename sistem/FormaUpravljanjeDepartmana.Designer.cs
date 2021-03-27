@@ -34,10 +34,7 @@ namespace sistem
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaUpravljanjeDepartmana));
             this.panelMeni = new System.Windows.Forms.Panel();
-            this.dugmeDodaj = new FontAwesome.Sharp.IconButton();
-            this.dugmeNazad = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNaslov = new System.Windows.Forms.Panel();
             this.labelaNaslov = new System.Windows.Forms.Label();
             this.tabelaPrikazDepartmana = new System.Windows.Forms.DataGridView();
@@ -47,11 +44,14 @@ namespace sistem
             this.departman = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nivo_studija = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.akcija = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dugmeDodaj = new FontAwesome.Sharp.IconButton();
+            this.dugmeNazad = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMeni.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelNaslov.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaPrikazDepartmana)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMeni
@@ -64,66 +64,16 @@ namespace sistem
             this.panelMeni.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMeni.Location = new System.Drawing.Point(0, 0);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(199, 496);
+            this.panelMeni.Size = new System.Drawing.Size(199, 515);
             this.panelMeni.TabIndex = 1;
-            // 
-            // dugmeDodaj
-            // 
-            this.dugmeDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeDodaj.FlatAppearance.BorderSize = 0;
-            this.dugmeDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeDodaj.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
-            this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeDodaj.Location = new System.Drawing.Point(0, 391);
-            this.dugmeDodaj.Name = "dugmeDodaj";
-            this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
-            this.dugmeDodaj.TabIndex = 2;
-            this.dugmeDodaj.Text = "dodaj departman";
-            this.dugmeDodaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeDodaj.UseVisualStyleBackColor = true;
-            this.dugmeDodaj.Click += new System.EventHandler(this.dugmeDodaj_Click);
-            // 
-            // dugmeNazad
-            // 
-            this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dugmeNazad.FlatAppearance.BorderSize = 0;
-            this.dugmeNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dugmeNazad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dugmeNazad.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
-            this.dugmeNazad.IconColor = System.Drawing.Color.Black;
-            this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dugmeNazad.IconSize = 50;
-            this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeNazad.Location = new System.Drawing.Point(0, 317);
-            this.dugmeNazad.Name = "dugmeNazad";
-            this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dugmeNazad.Size = new System.Drawing.Size(199, 68);
-            this.dugmeNazad.TabIndex = 1;
-            this.dugmeNazad.Text = "nazad";
-            this.dugmeNazad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dugmeNazad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.dugmeNazad.UseVisualStyleBackColor = true;
-            this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click_1);
             // 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Location = new System.Drawing.Point(0, 93);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 223);
+            this.panelLogo.Size = new System.Drawing.Size(199, 244);
             this.panelLogo.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::sistem.Properties.Resources.univerzitet1;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 217);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panelNaslov
             // 
@@ -190,7 +140,7 @@ namespace sistem
             this.tabelaPrikazDepartmana.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tabelaPrikazDepartmana.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabelaPrikazDepartmana.RowTemplate.Height = 30;
-            this.tabelaPrikazDepartmana.Size = new System.Drawing.Size(809, 403);
+            this.tabelaPrikazDepartmana.Size = new System.Drawing.Size(809, 422);
             this.tabelaPrikazDepartmana.TabIndex = 3;
             this.tabelaPrikazDepartmana.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaPrikazDepartmana_CellClick);
             // 
@@ -231,12 +181,62 @@ namespace sistem
             this.akcija.HeaderText = "akcija";
             this.akcija.Name = "akcija";
             // 
+            // dugmeDodaj
+            // 
+            this.dugmeDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeDodaj.FlatAppearance.BorderSize = 0;
+            this.dugmeDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeDodaj.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dugmeDodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.dugmeDodaj.IconColor = System.Drawing.Color.Black;
+            this.dugmeDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeDodaj.Location = new System.Drawing.Point(0, 423);
+            this.dugmeDodaj.Name = "dugmeDodaj";
+            this.dugmeDodaj.Size = new System.Drawing.Size(199, 68);
+            this.dugmeDodaj.TabIndex = 2;
+            this.dugmeDodaj.Text = "dodaj departman";
+            this.dugmeDodaj.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeDodaj.UseVisualStyleBackColor = true;
+            this.dugmeDodaj.Click += new System.EventHandler(this.dugmeDodaj_Click);
+            // 
+            // dugmeNazad
+            // 
+            this.dugmeNazad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dugmeNazad.FlatAppearance.BorderSize = 0;
+            this.dugmeNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dugmeNazad.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dugmeNazad.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.dugmeNazad.IconColor = System.Drawing.Color.Black;
+            this.dugmeNazad.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dugmeNazad.IconSize = 50;
+            this.dugmeNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeNazad.Location = new System.Drawing.Point(0, 343);
+            this.dugmeNazad.Name = "dugmeNazad";
+            this.dugmeNazad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dugmeNazad.Size = new System.Drawing.Size(199, 74);
+            this.dugmeNazad.TabIndex = 1;
+            this.dugmeNazad.Text = "nazad";
+            this.dugmeNazad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dugmeNazad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dugmeNazad.UseVisualStyleBackColor = true;
+            this.dugmeNazad.Click += new System.EventHandler(this.dugmeNazad_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::sistem.Properties.Resources.slika_student1;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 239);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormaUpravljanjeDepartmana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1008, 496);
+            this.ClientSize = new System.Drawing.Size(1008, 515);
             this.Controls.Add(this.tabelaPrikazDepartmana);
             this.Controls.Add(this.panelNaslov);
             this.Controls.Add(this.panelMeni);
@@ -248,9 +248,9 @@ namespace sistem
             this.Load += new System.EventHandler(this.FormaUpravljanjeDepartmana_Load);
             this.panelMeni.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelNaslov.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabelaPrikazDepartmana)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

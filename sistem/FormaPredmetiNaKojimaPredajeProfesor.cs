@@ -45,12 +45,12 @@ namespace sistem
 
                 foreach(var elem in rezultat)
                 {
-                    tabelaPrikazPredmeta.Rows.Add(elem["email"], elem["naziv"], Convert.ToInt32(elem["tip"]) == 1 ? "profesor" : "asistent");
+                    tabelaPrikazPredmeta.Rows.Add(elem["email"], elem["naziv"], Convert.ToInt32(elem["tip"]) == 1 ? "asistent" : "profesor");
 
                     Dictionary<string, string> red = new Dictionary<string, string>();
                     red.Add("email", elem["email"]);
                     red.Add("naziv", elem["naziv"]);
-                    red.Add("tip", Convert.ToInt32(elem["tip"]) == 1 ? "profesor" : "asistent");
+                    red.Add("tip", Convert.ToInt32(elem["tip"]) == 1 ? "asistent" : "profesor");
 
                     this.predmeti.Add(red);
                 }

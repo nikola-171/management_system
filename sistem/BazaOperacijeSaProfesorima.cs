@@ -218,49 +218,9 @@ namespace sistem
 
                    
                     red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
-        
                     red.Add("naziv", rdr.GetString(rdr.GetOrdinal("naziv")));
                     red.Add("tip", rdr.GetString(rdr.GetOrdinal("tip")));
 
-
-                    rezultat.Add(red);
-                }
-
-            }
-
-            return rezultat;
-        }
-        #endregion
-
-        #region daj_sve_profesore_iz_arhive
-        public List<Dictionary<string, string>> Daj_sve_profesore_iz_arhive()
-        {
-            List<Dictionary<string, string>> rezultat = new List<Dictionary<string, string>>();
-
-            using (MySqlConnection con = new MySqlConnection(Baza.KONEKCIJA))
-            {
-                con.Open();
-
-                string rtn = "daj_listu_profesora_iz_arhive";
-
-                MySqlCommand cmd = new MySqlCommand(rtn, con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                if (rdr.Read())
-                {
-                    Dictionary<string, string> red = new Dictionary<string, string>();
-
-                    red.Add("id", rdr.GetString(rdr.GetOrdinal("id")));
-                    red.Add("ime", rdr.GetString(rdr.GetOrdinal("ime")));
-                    red.Add("prezime", rdr.GetString(rdr.GetOrdinal("prezime")));
-                    red.Add("email", rdr.GetString(rdr.GetOrdinal("email")));
-                    red.Add("telefon", rdr.GetString(rdr.GetOrdinal("telefon")));
-                    red.Add("godina_rodjenja", rdr.GetString(rdr.GetOrdinal("godina_rodjenja")));
-                    red.Add("mesec_rodjenja", rdr.GetString(rdr.GetOrdinal("mesec_rodjenja")));
-                    red.Add("dan_rodjenja", rdr.GetString(rdr.GetOrdinal("dan_rodjenja")));
 
                     rezultat.Add(red);
                 }
