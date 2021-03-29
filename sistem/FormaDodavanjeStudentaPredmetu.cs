@@ -38,6 +38,7 @@ namespace sistem
             {
                 // uzimanje liste studenata iz baze i nad njima vršiti upite
                 listaStudent.Items.Clear();
+                studenti_iz_baze.Clear();
                 var rezultat = Baza.daj_instancu().Daj_sve_studente();
 
                 foreach(var elem in rezultat)
@@ -56,6 +57,7 @@ namespace sistem
 
                 //uzimanje liste predmeta iz baze i nad njima vršiti upite
                 listaPredmet.Items.Clear();
+                predmeti_iz_baze.Clear();
                 rezultat = Baza.daj_instancu().Daj_sve_predmete();
 
                 foreach(var elem in rezultat)
@@ -75,7 +77,10 @@ namespace sistem
             }
             catch(Exception exception)
             {
-                MessageBox.Show("doslo je do greske " + exception.Message);
+                loger.Error(MenadzerStatusnihKodova.GRESKA, exception);
+
+                MessageBox.Show(MenadzerStatusnihKodova.GRESKA_TEKST, MenadzerStatusnihKodova.GRESKA,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

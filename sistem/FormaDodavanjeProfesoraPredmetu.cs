@@ -203,7 +203,6 @@ namespace sistem
                 }
                 sbyte tip = Convert.ToSByte(this.tip_zaposlenja[Convert.ToString(listaTip.SelectedItem)]);
 
-                MessageBox.Show(tip.ToString());
 
                 string status = Baza.daj_instancu().Dodeli_predmet_profesoru(id_profesora, id_predmeta, tip);
                 MessageBox.Show(string.Format("{0}", status), MenadzerStatusnihKodova.USPEH,

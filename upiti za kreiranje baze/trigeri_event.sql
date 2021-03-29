@@ -1,25 +1,4 @@
 use fakultet;
-/*kada brišemo univerzitet prebacujemo ga u arhivu*/
-delimiter \\
-create trigger tr_brisanje_univerziteta
-	after delete on univerzitet
-    for each row
-    begin
-		insert into univerzitet_arhiva(id,naziv,drzava,grad)
-        values(old.id, old.naziv, old.drzava, old.grad);
-    end\\
-delimiter ;
-/*kada brišemo fakultet prebacujemo ga u arhivu*/
-delimiter \\
-create trigger tr_brisanje_fakulteta
-	after delete on fakultet
-    for each row
-    begin
-		insert into fakultet_arhiva(id,naziv,mesto, univerzitet)
-        values(old.id, old.naziv, old.mesto, old.univerzitet);
-    end\\
-delimiter ;
-
 /*čuvamo promene izvršene nad nekim fakultetom*/
 delimiter \\
 create trigger tr_fakultet_promena

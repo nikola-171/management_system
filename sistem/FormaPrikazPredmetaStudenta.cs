@@ -42,7 +42,7 @@ namespace sistem
 
                 foreach(var elem in rezultat)
                 {
-                    tabelaPrikazPredmeta.Rows.Add(elem["predmet"], elem["smer"], elem["id"], elem["fakultetska_godina"], "akcija");
+                    tabelaPrikazPredmeta.Rows.Add(elem["predmet"], elem["smer"], elem["id"], elem["fakultetska_godina"], "obriši");
 
                     if (!this.mapa_predmet_id.ContainsKey(elem["predmet"]))
                     {
@@ -90,7 +90,7 @@ namespace sistem
         {
             if (e.ColumnIndex == tabelaPrikazPredmeta.Columns["akcija"].Index && e.RowIndex >= 0)
             {
-                DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete departman?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult res = MessageBox.Show("Da li ste sigurni da želite da obrišete predmet?", "Potvrda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (res.Equals(DialogResult.OK))
                 {
                     int izabraniIndex = tabelaPrikazPredmeta.SelectedCells[0].RowIndex;
