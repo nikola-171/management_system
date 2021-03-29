@@ -35,6 +35,8 @@ namespace sistem
         {
             try
             {
+                studenti_iz_baze.Clear();
+                predmeti_iz_baze.Clear();
                 // uzimanje liste studenata iz baze i nad njima vršiti upite
                 listaStudent.Items.Clear();
                 var rezultat = Baza.daj_instancu().Daj_sve_studente();
